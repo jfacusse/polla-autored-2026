@@ -133,7 +133,8 @@
         👥 Participantes ({{ n_activos }} activos{% if all_parts|length > n_activos %} / {{ all_parts|length }} total{% endif %})
         <span style="font-size:.72rem;font-weight:400;color:var(--green);margin-left:8px">💵 {{ n_pagados }}/{{ all_parts|length }} pagados</span>
       </div>
-      <table>
+      <div style="overflow-x:auto">
+      <table style="min-width:520px">
         <thead><tr><th>Correo</th><th>PIN</th><th>Picks</th><th>Pts</th><th>Pago</th><th>Estado</th><th></th></tr></thead>
         <tbody>
         {% for uid, p in parts.items() %}{% if not p.es_admin %}
@@ -178,6 +179,7 @@
         {% endif %}{% endfor %}
         </tbody>
       </table>
+      </div>
       <!-- agregar participante -->
       <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border)">
         <div style="font-size:.75rem;color:var(--muted);margin-bottom:8px;font-weight:700">Agregar participante</div>
