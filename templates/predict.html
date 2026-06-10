@@ -84,6 +84,23 @@
   </div>
 </div>
 
+<!-- BANNERS INFO -->
+<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px">
+  <div style="background:var(--dark2);border:1px solid rgba(255,215,0,.35);border-left:4px solid var(--gold);
+    border-radius:10px;padding:12px 16px;font-size:.82rem;line-height:1.5">
+    <strong style="color:var(--gold)">Cada partido se cierra 5 min antes del kickoff.</strong>
+    Puedes editar tus marcadores hasta justo antes de que ruede la pelota.
+    Tus picks del torneo (campeón, bota de oro, etc.) cierran el <strong>11 Jun a las 12:00</strong>.
+  </div>
+  <div style="background:var(--dark2);border:1px solid rgba(255,215,0,.35);border-left:4px solid var(--gold);
+    border-radius:10px;padding:12px 16px;font-size:.82rem;line-height:1.5">
+    <strong style="color:var(--gold)">Cómo se puntúa.</strong>
+    Marcador exacto = <strong>{{ cfg.pts_exacto }} pts</strong> ·
+    acertar solo el ganador = <strong>{{ cfg.pts_resultado }} pts</strong>.
+    Tienes <strong style="color:#b388ff">{{ cfg.jokers_disponibles }} jokers ×2</strong> para tus jugadas más confianzudas.
+  </div>
+</div>
+
 {% if not upcoming %}
 <div class="card" style="text-align:center;padding:40px">
   <div style="font-size:3rem;margin-bottom:12px">🏁</div>
