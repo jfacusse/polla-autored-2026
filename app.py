@@ -44,6 +44,10 @@ app = Flask(__name__)
 app.secret_key = "polla_autored_2026_secret"
 BASE = Path(__file__).parent
 
+@app.template_filter("fecha")
+def fecha_filter(date_str):
+    return date_pretty(date_str)
+
 # ── DATA HELPERS ────────────────────────────────────────────────────────────
 def _load(name):
     f = DATA_DIR / f"{name}.json"
