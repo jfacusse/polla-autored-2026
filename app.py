@@ -62,12 +62,7 @@ def fixtures():
     f = BASE / "static_data" / "fixtures.json"
     if not f.exists():
         return []
-    fixts = json.loads(f.read_text())
-    teams = teams_data()
-    for fix in fixts:
-        fix["home_flag"] = teams.get(fix["home"], {}).get("flag", "🏳️")
-        fix["away_flag"] = teams.get(fix["away"], {}).get("flag", "🏳️")
-    return fixts
+    return json.loads(f.read_text())
 
 def predictions_data():
     f = BASE / "static_data" / "predictions.json"
@@ -174,8 +169,6 @@ def index():
         f["score_home"] = r.get("score_home")
         f["score_away"] = r.get("score_away")
 
-    # attach prediction data to upcoming
-    model_preds = predictions_data()
     user_id = session.get("user")
     user_picks = _load("predictions").get(user_id, {}) if user_id else {}
     parts = _load("participants")
@@ -183,19 +176,6 @@ def index():
     jokers_max = cfg.get("jokers_disponibles", 3)
 
     for f in upcoming:
-        mp = model_preds.get(f["id"], {})
-        f["hw"] = mp.get("home_win", 0)
-        f["draw"] = mp.get("draw", 0)
-        f["aw"] = mp.get("away_win", 0)
-        f["likely_score"] = mp.get("likely_score", "—")
-        f["corners_total"] = mp.get("corners_total_exp", "—")
-        f["over25"] = mp.get("over2_5", 0)
-        f["btts"] = mp.get("btts", 0)
-        p = mp.get("polla", {})
-        f["polla_pick"] = p.get("play_pick", "—")
-        f["polla_type"] = p.get("play_type", "—")
-        f["polla_ev"] = p.get("expected_value", 0)
-        f["joker_rec"] = p.get("joker_recommended", False)
         f["user_pick"] = user_picks.get(f["id"])
         f["is_joker"] = f["id"] in jokers_usados
 
@@ -320,20 +300,6 @@ def predict():
 
     upcoming = [f for f in fixts if f["status"] == "upcoming"]
     for f in upcoming:
-        mp = model.get(f["id"], {})
-        f["hw"] = mp.get("home_win", 0)
-        f["draw"] = mp.get("draw", 0)
-        f["aw"] = mp.get("away_win", 0)
-        f["likely_score"] = mp.get("likely_score", "—")
-        f["top_scores"] = mp.get("top_scores", [])[:4]
-        f["over25"] = mp.get("over2_5", 0)
-        f["btts"] = mp.get("btts", 0)
-        f["corners_total"] = mp.get("corners_total_exp", "—")
-        p = mp.get("polla", {})
-        f["polla_pick"] = p.get("play_pick", "—")
-        f["polla_type"] = p.get("play_type", "—")
-        f["polla_ev"] = p.get("expected_value", 0)
-        f["joker_rec"] = p.get("joker_recommended", False)
         f["user_pick"] = user_picks.get(f["id"])
         f["is_joker"] = f["id"] in (parts[uid].get("jokers_usados", []))
     already_locked = [fid for fid in user_picks if res.get(fid)]
@@ -402,7 +368,6 @@ def admin():
     fixts = fixtures()
     res   = _load("results")
     preds = _load("predictions")
-    model = predictions_data()
 
     if request.method == "POST":
         action = request.form.get("action")
@@ -492,10 +457,6 @@ def admin():
     finished = [f for f in fixts if f["status"] == "finished"]
     now = datetime.now()
     for f in upcoming:
-        mp = model.get(f["id"], {})
-        f["likely_score"] = mp.get("likely_score","—")
-        f["hw"] = mp.get("home_win",0)
-        f["aw"] = mp.get("away_win",0)
         match_dt = parse_match_dt(f["date"], f["time"])
         f["can_enter_result"] = (match_dt is None) or (now >= match_dt)
         f["unlocks_at"] = match_dt.strftime("%H:%M") if match_dt else ""

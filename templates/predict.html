@@ -87,37 +87,6 @@
       </div>
     </div>
 
-    <!-- proba bar -->
-    {% if f.hw %}
-    <div class="prob-bar">
-      <div class="pb-h" style="width:{{ (f.hw*100)|round(1) }}%"></div>
-      <div class="pb-d" style="width:{{ (f.draw*100)|round(1) }}%"></div>
-      <div class="pb-a" style="width:{{ (f.aw*100)|round(1) }}%"></div>
-    </div>
-    <div class="prob-labels">
-      <span>{{ (f.hw*100)|round(0)|int }}%</span>
-      <span>{{ (f.draw*100)|round(0)|int }}%</span>
-      <span>{{ (f.aw*100)|round(0)|int }}%</span>
-    </div>
-    {% endif %}
-
-    <!-- marcadores sugeridos (clic para rellenar) -->
-    {% if f.top_scores %}
-    <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px">
-      <span style="font-size:.65rem;color:var(--muted);align-self:center">Toca para elegir:</span>
-      {% for s in f.top_scores %}
-      <button type="button"
-        onclick="setScore('{{ f.id }}','{{ s.score.split('-')[0] }}','{{ s.score.split('-')[1] }}')"
-        style="background:var(--dark3);border:1px solid var(--border);border-radius:5px;
-          padding:3px 8px;font-size:.72rem;color:var(--muted);cursor:pointer;transition:all .15s"
-        onmouseover="this.style.borderColor='var(--ar)';this.style.color='var(--ar)'"
-        onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">
-        {{ s.score }} <span style="opacity:.5">({{ s.prob }}%)</span>
-      </button>
-      {% endfor %}
-    </div>
-    {% endif %}
-
     <!-- input marcador -->
     <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin:8px 0">
       <div style="text-align:center">

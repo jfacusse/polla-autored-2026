@@ -86,13 +86,6 @@
             </div>
           </div>
 
-          <!-- modelo -->
-          {% if f.hw %}
-          <div style="font-size:.67rem;color:var(--ar);margin-bottom:8px">
-            🤖 {{ f.likely_score }} · {{ (f.hw*100)|round(0)|int }}% / {{ (f.aw*100)|round(0)|int }}%
-          </div>
-          {% endif %}
-
           <!-- form o mensaje de bloqueo -->
           {% if f.can_enter_result %}
           <form method="POST" style="display:flex;align-items:center;gap:6px">

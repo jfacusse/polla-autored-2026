@@ -138,30 +138,6 @@
       <span class="score-vs">vs</span>
       <div class="team"><div class="team-flag">{{ f.away_flag }}</div><div class="team-name">{{ f.away }}</div></div>
     </div>
-    {% if f.hw %}
-    <div class="prob-bar">
-      <div class="pb-h" style="width:{{ (f.hw*100)|round(1) }}%"></div>
-      <div class="pb-d" style="width:{{ (f.draw*100)|round(1) }}%"></div>
-      <div class="pb-a" style="width:{{ (f.aw*100)|round(1) }}%"></div>
-    </div>
-    <div class="prob-labels">
-      <span>{{ (f.hw*100)|round(0)|int }}% local</span>
-      <span>{{ (f.draw*100)|round(0)|int }}% emp</span>
-      <span>{{ (f.aw*100)|round(0)|int }}% visita</span>
-    </div>
-    {% endif %}
-    <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px">
-      {% if f.likely_score and f.likely_score != '—' %}
-      <span style="background:var(--dark3);border:1px solid var(--ar);color:var(--ar);padding:2px 7px;border-radius:5px;font-size:.68rem">
-        🤖 {{ f.likely_score }}
-      </span>
-      {% endif %}
-      {% if f.over25 %}
-      <span style="background:var(--dark3);border:1px solid var(--border);color:var(--muted);padding:2px 7px;border-radius:5px;font-size:.68rem">
-        +2.5: {{ (f.over25*100)|round(0)|int }}%
-      </span>
-      {% endif %}
-    </div>
     {% if session.user and session.user != 'admin' %}
       {% if f.user_pick %}
       <div style="background:rgba(0,230,118,.07);border:1px solid rgba(0,230,118,.3);
