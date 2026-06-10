@@ -18,13 +18,17 @@
 
 <!-- PILLS DE PUNTUACIÓN -->
 <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+  {% set _pe  = cfg.get('pts_exacto', 5) %}
+  {% set _pr  = cfg.get('pts_resultado', 3) %}
+  {% set _jd  = cfg.get('jokers_disponibles', 3) %}
+  {% set _pc  = cfg.get('pts_campeon', 20) %}
   {% set pills = [
-    (cfg.pts_exacto,        'var(--gold)',    'Marcador exacto'),
-    (cfg.pts_resultado,     'var(--green)',   'Resultado 1X2'),
-    ('×2',                  '#b388ff',        'Comodín (' ~ cfg.jokers_disponibles ~ ' disp.)'),
-    (cfg.pts_exacto * 2,   'var(--ar)',      'Máx/partido c.comodín'),
-    (cfg.pts_campeon or 20, 'var(--ar)',      'Campeón correcto'),
-    (15,                    'var(--green)',   'Bota de Oro')
+    (_pe,        'var(--gold)',    'Marcador exacto'),
+    (_pr,        'var(--green)',   'Resultado 1X2'),
+    ('×2',       '#b388ff',        'Comodín (' ~ _jd ~ ' disp.)'),
+    (_pe * 2,    'var(--ar)',      'Máx/partido c.comodín'),
+    (_pc,        'var(--ar)',      'Campeón correcto'),
+    (15,         'var(--green)',   'Bota de Oro')
   ] %}
   {% for val, color, label in pills %}
   <div style="background:var(--dark2);border:1px solid var(--border);border-radius:10px;
