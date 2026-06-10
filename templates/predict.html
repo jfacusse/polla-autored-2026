@@ -132,23 +132,22 @@
   <button type="submit" class="btn btn-primary">💾 Guardar todo</button>
 </div>
 
-<!-- PARTIDOS POR JORNADA + FECHA -->
-{% set ns = namespace(current_key='') %}
+<!-- PARTIDOS POR JORNADA -->
+{% set ns = namespace(current_round='') %}
 {% for f in upcoming %}
-  {% set group_key = f.round|string + '_' + f.date %}
-  {% if group_key != ns.current_key %}
-    {% if ns.current_key != '' %}</div></div>{% endif %}
-    {% set ns.current_key = group_key %}
-    {% set day_matches = upcoming | selectattr('round','eq',f.round) | selectattr('date','eq',f.date) | list %}
-    {% set day_picks = day_matches | selectattr('user_pick') | list | length %}
+  {% if f.round|string != ns.current_round %}
+    {% if ns.current_round != '' %}</div></div>{% endif %}
+    {% set ns.current_round = f.round|string %}
+    {% set round_matches = upcoming | selectattr('round','eq',f.round) | list %}
+    {% set round_picks = round_matches | selectattr('user_pick') | list | length %}
     <div class="card" style="margin-bottom:14px">
       <div class="card-title">
-        Jornada {{ f.round }} · {{ f.date | fecha }}
+        Jornada {{ f.round }}
         <span style="font-size:.72rem;font-weight:400;color:var(--muted)">
-          — {{ day_matches|length }} partidos
+          — {{ round_matches|length }} partidos
           &nbsp;·&nbsp;
-          <span style="color:{% if day_picks > 0 %}var(--green){% else %}var(--muted){% endif %}">
-            {{ day_picks }} completados
+          <span style="color:{% if round_picks > 0 %}var(--green){% else %}var(--muted){% endif %}">
+            {{ round_picks }} completados
           </span>
         </span>
       </div>

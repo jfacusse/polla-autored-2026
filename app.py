@@ -352,7 +352,8 @@ def predict():
         flash("✅ Predicciones guardadas correctamente.", "ok")
         return redirect(url_for("predict"))
 
-    upcoming = [f for f in fixts if f["status"] == "upcoming"]
+    upcoming = sorted([f for f in fixts if f["status"] == "upcoming"],
+                      key=lambda x: (x.get("round", 0), x.get("date",""), x.get("time","")))
     for f in upcoming:
         f["user_pick"] = user_picks.get(f["id"])
         f["is_joker"] = f["id"] in (parts[uid].get("jokers_usados", []))
