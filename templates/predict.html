@@ -61,9 +61,7 @@
 
     {% set premios = [
       ('🏆', 'Campeón', cfg.get('pts_campeon', 20), 'campeon', 'equipo'),
-      ('⚽', 'Máximo Goleador', 15, 'goleador', 'jugador'),
-      ('🧤', 'Mejor Arquero', 10, 'arquero', 'jugador'),
-      ('⭐', 'Mejor Jugador', 15, 'mejor_jugador', 'jugador')
+      ('⚽', 'Máximo Goleador', 15, 'goleador', 'jugador')
     ] %}
 
     {% for icon, label, pts, key, tipo in premios %}

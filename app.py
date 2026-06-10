@@ -162,8 +162,7 @@ def calcular_puntos(user_id):
     torneo_res   = _load("torneo_results")
     torneo_picks = preds.get(user_id, {}).get("torneo", {})
     torneo_pts_map = {
-        "goleador": 15, "arquero": 10,
-        "mejor_jugador": 15, "campeon": cfg.get("pts_campeon", 20)
+        "goleador": 15, "campeon": cfg.get("pts_campeon", 20)
     }
     for key, bonus in torneo_pts_map.items():
         winner = torneo_res.get(key)
@@ -328,7 +327,7 @@ def predict():
                 if not isinstance(preds.get(uid), dict):
                     preds[uid] = {}
                 torneo = preds[uid].get("torneo", {})
-                for key in ("goleador", "arquero", "mejor_jugador", "campeon"):
+                for key in ("goleador", "campeon"):
                     val = request.form.get(f"torneo_{key}", "").strip()
                     if val:
                         torneo[key] = val
@@ -493,7 +492,7 @@ def admin():
 
         elif action == "torneo_resultado":
             torneo_res = _load("torneo_results")
-            for key in ("campeon", "goleador", "arquero", "mejor_jugador"):
+            for key in ("campeon", "goleador"):
                 val = request.form.get(key, "").strip()
                 torneo_res[key] = val if val else None
             _save("torneo_results", torneo_res)
