@@ -4,5 +4,7 @@
   "pts_exacto": 5,
   "pts_resultado": 3,
   "jokers_disponibles": 3,
-  "activa": true
+  "pts_campeon": 20,
+  "activa": true,
+  "torneo_deadline": "2026-06-11 16:00"
 }

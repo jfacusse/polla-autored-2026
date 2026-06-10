@@ -215,7 +215,12 @@
       <form method="POST">
         <input type="hidden" name="action" value="torneo_resultado">
         <div class="form-group">
-          <label class="form-label">⚽ Goleador <span style="color:var(--gold);font-size:.7rem">+15 pts</span></label>
+          <label class="form-label">🏆 Campeón <span style="color:var(--gold);font-size:.7rem">+{{ cfg.pts_campeon or 20 }} pts</span></label>
+          <input class="form-input" name="campeon" placeholder="Nombre del equipo"
+            value="{{ torneo_res.campeon or '' }}">
+        </div>
+        <div class="form-group">
+          <label class="form-label">⚽ Máximo Goleador <span style="color:var(--gold);font-size:.7rem">+15 pts</span></label>
           <input class="form-input" name="goleador" placeholder="Nombre del jugador"
             value="{{ torneo_res.goleador or '' }}">
         </div>

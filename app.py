@@ -18,6 +18,15 @@ DIAS   = ["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"]
 MESES  = ["enero","febrero","marzo","abril","mayo","junio","julio",
           "agosto","septiembre","octubre","noviembre","diciembre"]
 
+def torneo_is_open():
+    cfg = _load("config")
+    deadline_str = cfg.get("torneo_deadline", "2026-06-11 16:00")
+    try:
+        deadline = datetime.strptime(deadline_str, "%Y-%m-%d %H:%M")
+        return datetime.utcnow() < deadline
+    except Exception:
+        return True
+
 def parse_match_dt(date_str, time_str):
     try:
         return datetime.strptime(f"{date_str} {time_str}", "%Y-%m-%d %H:%M")
@@ -124,9 +133,13 @@ def calcular_puntos(user_id):
         total += pts
         detalle.append({"fid": fid, **result, "pick": pick, "pts": pts, "tipo": tipo, "joker": fid in jokers})
     # torneo bonus
+    cfg          = _load("config")
     torneo_res   = _load("torneo_results")
     torneo_picks = preds.get(user_id, {}).get("torneo", {})
-    torneo_pts_map = {"goleador": 15, "arquero": 10, "mejor_jugador": 15}
+    torneo_pts_map = {
+        "goleador": 15, "arquero": 10,
+        "mejor_jugador": 15, "campeon": cfg.get("pts_campeon", 20)
+    }
     for key, bonus in torneo_pts_map.items():
         winner = torneo_res.get(key)
         pick   = torneo_picks.get(key, "").strip().lower()
@@ -298,16 +311,17 @@ def predict():
                       if f["status"] == "upcoming"
                       and request.form.get(f"joker_{f['id']}") == "1"]
         parts[uid]["jokers_usados"] = jokers_new[:jokers_max]
-        # torneo picks
-        torneo = {}
-        for key in ("goleador", "arquero", "mejor_jugador"):
-            val = request.form.get(f"torneo_{key}", "").strip()
-            if val:
-                torneo[key] = val
         if not isinstance(preds.get(uid), dict):
             preds[uid] = {}
         preds[uid] = user_picks
-        preds[uid]["torneo"] = torneo
+        # torneo picks — solo si aún está abierto
+        if torneo_is_open():
+            torneo = preds[uid].get("torneo", {})
+            for key in ("goleador", "arquero", "mejor_jugador", "campeon"):
+                val = request.form.get(f"torneo_{key}", "").strip()
+                if val:
+                    torneo[key] = val
+            preds[uid]["torneo"] = torneo
         _save("predictions", preds)
         _save("participants", parts)
         flash("✅ Predicciones guardadas correctamente.", "ok")
@@ -321,11 +335,16 @@ def predict():
     torneo_picks = preds.get(uid, {}).get("torneo", {})
     torneo_res   = _load("torneo_results")
 
+    cfg = _load("config")
+    deadline_str = cfg.get("torneo_deadline", "2026-06-11 16:00")
+
     return render_template("predict.html",
         cfg=cfg, upcoming=upcoming, user=uid, nombre=session["nombre"],
         jokers_usados=parts[uid].get("jokers_usados",[]),
         jokers_max=jokers_max, already_locked=already_locked,
-        torneo_picks=torneo_picks, torneo_res=torneo_res)
+        torneo_picks=torneo_picks, torneo_res=torneo_res,
+        torneo_abierto=torneo_is_open(),
+        torneo_deadline=deadline_str)
 
 
 @app.route("/mis-picks")
@@ -439,7 +458,7 @@ def admin():
 
         elif action == "torneo_resultado":
             torneo_res = _load("torneo_results")
-            for key in ("goleador", "arquero", "mejor_jugador"):
+            for key in ("campeon", "goleador", "arquero", "mejor_jugador"):
                 val = request.form.get(key, "").strip()
                 torneo_res[key] = val if val else None
             _save("torneo_results", torneo_res)
