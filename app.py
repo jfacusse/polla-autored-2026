@@ -304,7 +304,7 @@ def logout():
 @app.route("/predecir", methods=["GET","POST"])
 @login_required
 def predict():
-    cfg    = _load("config")
+    cfg    = {**DEFAULT_CONFIG, **_load("config")}
     parts  = _load("participants")
     fixts  = fixtures()
     model  = predictions_data()
@@ -360,7 +360,6 @@ def predict():
     torneo_picks = preds.get(uid, {}).get("torneo", {})
     torneo_res   = _load("torneo_results")
 
-    cfg = _load("config")
     deadline_str = cfg.get("torneo_deadline", "2026-06-11 16:00")
 
     return render_template("predict.html",
