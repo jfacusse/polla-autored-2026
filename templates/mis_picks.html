@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}Mis picks — Polla AutoRed{% endblock %}
+{% block content %}
+
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:18px">
+  <h2 style="font-size:1.3rem;font-weight:800">📋 Mis picks — {{ nombre }}</h2>
+  <a href="/predecir" class="btn btn-primary btn-sm">✏️ Editar predicciones</a>
+</div>
+
+<div class="stat-row">
+  <div class="stat"><div class="stat-val gold">{{ pts_total }}</div><div class="stat-label">Puntos</div></div>
+  <div class="stat"><div class="stat-val green">{{ rows|selectattr('tipo','eq','exacto')|list|length }}</div><div class="stat-label">Exactos ✅</div></div>
+  <div class="stat"><div class="stat-val" style="color:#8bc34a">{{ rows|selectattr('tipo','eq','resultado')|list|length }}</div><div class="stat-label">Resultado 🔵</div></div>
+  <div class="stat"><div class="stat-val" style="color:var(--red)">{{ rows|selectattr('tipo','eq','fallo')|list|length }}</div><div class="stat-label">Fallados ❌</div></div>
+  <div class="stat"><div class="stat-val" style="color:#b388ff">{{ jokers_usados }}/{{ jokers_max }}</div><div class="stat-label">Comodines 🃏</div></div>
+  <div class="stat"><div class="stat-val" style="color:var(--ar)">{{ rows|selectattr('tipo','eq','pending')|list|length }}</div><div class="stat-label">Pendientes ⏳</div></div>
+</div>
+
+<div class="card">
+  <div class="card-title">Historial de picks</div>
+  {% if rows %}
+  <table>
+    <thead><tr>
+      <th>Partido</th><th>Fecha</th><th>Tu Pick</th><th>Resultado Real</th><th>Estado</th><th>Puntos</th>
+    </tr></thead>
+    <tbody>
+    {% for r in rows %}
+    <tr>
+      <td style="font-weight:600">{{ r.home }} vs {{ r.away }}
+        <span style="color:var(--muted);font-size:.72rem;margin-left:4px">[Gr.{{ r.group }}]</span>
+      </td>
+      <td style="color:var(--muted)">{{ r.date }}</td>
+      <td style="font-weight:700;color:var(--ar)">
+        {{ r.pick_h }}-{{ r.pick_a }}
+        {% if r.joker %}<span class="pill pill-joker">🃏</span>{% endif %}
+      </td>
+      <td style="font-weight:700">
+        {% if r.real_h is not none %}
+          <span style="color:var(--gold)">{{ r.real_h }}-{{ r.real_a }}</span>
+        {% else %}
+          <span style="color:var(--muted)">—</span>
+        {% endif %}
+      </td>
+      <td>
+        {% if r.tipo == 'exacto' %}<span class="pill pill-exacto">✅ Exacto</span>
+        {% elif r.tipo == 'resultado' %}<span class="pill pill-resultado">🔵 Resultado</span>
+        {% elif r.tipo == 'fallo' %}<span class="pill pill-fallo">❌ Falló</span>
+        {% else %}<span class="pill pill-pending">⏳ Pendiente</span>
+        {% endif %}
+      </td>
+      <td style="font-size:1rem;font-weight:900;color:{{ 'var(--gold)' if r.pts else 'var(--muted)' }}">
+        {% if r.pts is not none %}{{ r.pts }}{% else %}—{% endif %}
+        {% if r.joker and r.pts %}<span style="font-size:.7rem;color:#b388ff">×2</span>{% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <div style="text-align:center;padding:30px;color:var(--muted)">
+    Aún no tienes picks guardados. <a href="/predecir">Ingresar predicciones →</a>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

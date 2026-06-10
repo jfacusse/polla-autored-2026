@@ -1,0 +1,267 @@
+{% extends "base.html" %}
+{% block title %}Admin — Polla AutoRed{% endblock %}
+{% block content %}
+
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:18px">
+  <div>
+    <h2 style="font-size:1.3rem;font-weight:800">🔑 Panel de Administración</h2>
+    <p style="color:var(--muted);font-size:.8rem;margin-top:3px">Solo tú ves esta pantalla</p>
+  </div>
+  <div style="background:var(--dark3);border:1px solid var(--ar);border-radius:10px;padding:10px 16px;font-size:.78rem">
+    <div style="color:var(--muted)">Link para compartir</div>
+    <code id="share-link" style="color:var(--ar)">http://localhost:5002</code>
+    <button onclick="copyLink()" class="btn btn-secondary btn-sm" style="margin-left:8px">Copiar</button>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stat-row" style="margin-bottom:20px">
+  <div class="stat"><div class="stat-val gold">{{ parts.values() | rejectattr('es_admin') | selectattr('activo') | list | length }}</div><div class="stat-label">Participantes</div></div>
+  <div class="stat"><div class="stat-val green">{{ res|length }}</div><div class="stat-label">Resultados ingresados</div></div>
+  <div class="stat"><div class="stat-val" style="color:var(--ar)">{{ upcoming|length }}</div><div class="stat-label">Partidos pendientes</div></div>
+  <div class="stat"><div class="stat-val" style="color:var(--muted)">{{ 72 - res|length }}</div><div class="stat-label">Por jugar</div></div>
+</div>
+
+<div style="display:grid;grid-template-columns:2fr 1fr;gap:16px;align-items:start">
+
+  <!-- COLUMNA IZQUIERDA: INGRESAR RESULTADOS -->
+  <div>
+    <div class="card">
+      <div class="card-title">⚽ Ingresar resultados</div>
+      <p style="font-size:.78rem;color:var(--muted);margin-bottom:14px">
+        Ingresa los goles de cada equipo y guarda. El puntaje de todos los participantes se recalcula automáticamente.
+      </p>
+
+      {% set ns = namespace(current_date='') %}
+      {% for f in upcoming %}
+        {% if f.date != ns.current_date %}
+          {% if ns.current_date != '' %}</div>{% endif %}
+          {% set ns.current_date = f.date %}
+          {% set day_matches = upcoming | selectattr('date','eq',f.date) | list %}
+          {% set day_done = day_matches | selectattr('id','in',res) | list %}
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;{% if not loop.first %}margin-top:24px{% endif %}">
+            <div style="background:var(--ar);color:var(--dark);font-weight:900;font-size:.8rem;
+              padding:4px 12px;border-radius:20px;white-space:nowrap">{{ f.date_pretty }}</div>
+            <div style="flex:1;height:1px;background:var(--border)"></div>
+            <span style="font-size:.7rem;color:var(--muted);white-space:nowrap">
+              {{ day_matches|length }} partidos
+              {% if day_done|length > 0 %}· <span style="color:var(--green)">{{ day_done|length }} ingresados</span>{% endif %}
+            </span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px">
+        {% endif %}
+
+        <!-- tarjeta del partido -->
+        <div style="background:var(--dark2);border:1px solid {{ 'rgba(0,230,118,.35)' if res.get(f.id) else 'var(--border)' }};
+          border-radius:10px;padding:12px;
+          {{ 'background:rgba(0,230,118,.04)' if res.get(f.id) else '' }}
+          {{ 'opacity:.55' if not f.can_enter_result and not res.get(f.id) else '' }}">
+
+          <!-- header: id + hora + badge -->
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-size:.68rem;color:var(--muted)">{{ f.id }} · Grupo {{ f.group }} · {{ f.time }}</span>
+            {% if res.get(f.id) %}
+              <span style="font-size:.68rem;color:var(--green);background:rgba(0,230,118,.1);padding:1px 7px;border-radius:4px">✅ ingresado</span>
+            {% elif not f.can_enter_result %}
+              <span style="font-size:.68rem;color:var(--muted);background:var(--dark3);padding:1px 7px;border-radius:4px">🔒 desde {{ f.unlocks_at }}</span>
+            {% endif %}
+          </div>
+
+          <!-- equipos -->
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+            <div style="display:flex;align-items:center;gap:5px;flex:1">
+              <span style="font-size:1.35rem">{{ f.home_flag }}</span>
+              <span style="font-size:.82rem;font-weight:600">{{ f.home }}</span>
+            </div>
+            {% if res.get(f.id) %}
+              <span style="font-weight:900;font-size:1.15rem;color:var(--gold);padding:0 8px">
+                {{ res[f.id].score_home }}–{{ res[f.id].score_away }}
+              </span>
+            {% else %}
+              <span style="color:var(--muted);padding:0 8px">vs</span>
+            {% endif %}
+            <div style="display:flex;align-items:center;gap:5px;flex:1;justify-content:flex-end">
+              <span style="font-size:.82rem;font-weight:600">{{ f.away }}</span>
+              <span style="font-size:1.35rem">{{ f.away_flag }}</span>
+            </div>
+          </div>
+
+          <!-- modelo -->
+          {% if f.hw %}
+          <div style="font-size:.67rem;color:var(--ar);margin-bottom:8px">
+            🤖 {{ f.likely_score }} · {{ (f.hw*100)|round(0)|int }}% / {{ (f.aw*100)|round(0)|int }}%
+          </div>
+          {% endif %}
+
+          <!-- form o mensaje de bloqueo -->
+          {% if f.can_enter_result %}
+          <form method="POST" style="display:flex;align-items:center;gap:6px">
+            <input type="hidden" name="action" value="resultado">
+            <input type="hidden" name="fid" value="{{ f.id }}">
+            <div style="display:flex;align-items:center;gap:4px;flex:1">
+              <input class="form-input" type="number" name="score_home" min="0" max="25"
+                placeholder="{{ f.home[:3] }}"
+                value="{{ res[f.id].score_home if res.get(f.id) else '' }}"
+                style="width:52px;text-align:center;font-size:1.1rem;font-weight:700;padding:6px">
+              <span style="font-weight:900;color:var(--muted)">–</span>
+              <input class="form-input" type="number" name="score_away" min="0" max="25"
+                placeholder="{{ f.away[:3] }}"
+                value="{{ res[f.id].score_away if res.get(f.id) else '' }}"
+                style="width:52px;text-align:center;font-size:1.1rem;font-weight:700;padding:6px">
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm" style="white-space:nowrap">
+              {% if res.get(f.id) %}✏️ Editar{% else %}✅ Guardar{% endif %}
+            </button>
+          </form>
+          {% else %}
+          <div style="text-align:center;font-size:.72rem;color:var(--muted);padding:6px 0;
+            background:var(--dark3);border-radius:6px">
+            🔒 Se habilita a las {{ f.unlocks_at }} cuando empiece el partido
+          </div>
+          {% endif %}
+
+        </div>
+
+        {% if loop.last %}</div>{% endif %}
+      {% endfor %}
+
+    </div>
+  </div>
+
+  <!-- COLUMNA DERECHA: PARTICIPANTES + CONFIG -->
+  <div>
+
+    <!-- PARTICIPANTES -->
+    <div class="card">
+      {% set all_parts = parts.values() | rejectattr('es_admin') | list %}
+      {% set n_activos = all_parts | selectattr('activo') | list | length %}
+      <div class="card-title">👥 Participantes ({{ n_activos }} activos{% if all_parts|length > n_activos %} / {{ all_parts|length }} total{% endif %})</div>
+      <table>
+        <thead><tr><th>Correo</th><th>PIN</th><th>Picks</th><th>Pts</th><th>Estado</th><th></th></tr></thead>
+        <tbody>
+        {% for uid, p in parts.items() %}{% if not p.es_admin %}
+        {% set activo = p.get('activo', True) %}
+        <tr style="{{ 'opacity:.45' if not activo else '' }}">
+          <td style="font-weight:600;font-size:.82rem">{{ p.nombre }}</td>
+          <td style="font-family:monospace;color:var(--muted)">{{ p.pin }}</td>
+          <td style="color:var(--ar)">{{ preds.get(uid,{})|length }}</td>
+          <td style="font-weight:700;color:var(--gold)">
+            {% for r in tabla %}{% if r.id == uid %}{{ r.pts }}{% endif %}{% endfor %}
+          </td>
+          <td>
+            <form method="POST" style="display:inline">
+              <input type="hidden" name="action" value="toggle_activo">
+              <input type="hidden" name="uid" value="{{ uid }}">
+              <button type="submit" class="btn btn-sm"
+                style="{{ 'background:#0a2800;color:var(--green);border:1px solid var(--green)' if activo else 'background:#2a0000;color:var(--red);border:1px solid var(--red)' }}">
+                {{ '✅ Activo' if activo else '⛔ Inactivo' }}
+              </button>
+            </form>
+          </td>
+          <td>
+            <form method="POST" style="display:inline">
+              <input type="hidden" name="action" value="del_user">
+              <input type="hidden" name="uid" value="{{ uid }}">
+              <button type="submit" class="btn btn-danger btn-sm"
+                onclick="return confirm('¿Eliminar a {{ p.nombre }}?')">✕</button>
+            </form>
+          </td>
+        </tr>
+        {% endif %}{% endfor %}
+        </tbody>
+      </table>
+      <!-- agregar participante -->
+      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border)">
+        <div style="font-size:.75rem;color:var(--muted);margin-bottom:8px;font-weight:700">Agregar participante</div>
+        <form method="POST" style="display:flex;gap:6px;flex-wrap:wrap">
+          <input type="hidden" name="action" value="add_user">
+          <input class="form-input" name="nombre" placeholder="Nombre" style="flex:1;min-width:100px">
+          <input class="form-input" name="pin" placeholder="PIN" style="width:70px">
+          <button type="submit" class="btn btn-primary btn-sm">+ Agregar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- CONFIGURACIÓN -->
+    <div class="card" style="margin-top:0">
+      <div class="card-title">⚙️ Configuración</div>
+      <form method="POST">
+        <input type="hidden" name="action" value="update_config">
+        <div class="form-group">
+          <label class="form-label">Nombre de la polla</label>
+          <input class="form-input" name="nombre_polla" value="{{ cfg.nombre_polla }}">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div class="form-group">
+            <label class="form-label">Pts exacto</label>
+            <input class="form-input" name="pts_exacto" type="number" value="{{ cfg.pts_exacto }}">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Pts resultado</label>
+            <input class="form-input" name="pts_resultado" type="number" value="{{ cfg.pts_resultado }}">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Comodines</label>
+            <input class="form-input" name="jokers_disponibles" type="number" value="{{ cfg.jokers_disponibles }}">
+          </div>
+          <div class="form-group">
+            <label class="form-label">PIN admin</label>
+            <input class="form-input" name="admin_pin" value="{{ cfg.admin_pin }}">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm" style="width:100%">💾 Guardar config</button>
+      </form>
+    </div>
+
+    <!-- PREMIOS TORNEO -->
+    <div class="card" style="margin-top:0">
+      <div class="card-title">🏅 Premios del torneo</div>
+      <p style="font-size:.72rem;color:var(--muted);margin-bottom:12px">
+        Al ingresar el ganador, se suman los puntos automáticamente a quienes lo acertaron.
+      </p>
+      <form method="POST">
+        <input type="hidden" name="action" value="torneo_resultado">
+        <div class="form-group">
+          <label class="form-label">⚽ Goleador <span style="color:var(--gold);font-size:.7rem">+15 pts</span></label>
+          <input class="form-input" name="goleador" placeholder="Nombre del jugador"
+            value="{{ torneo_res.goleador or '' }}">
+        </div>
+        <div class="form-group">
+          <label class="form-label">🧤 Mejor Arquero <span style="color:var(--gold);font-size:.7rem">+10 pts</span></label>
+          <input class="form-input" name="arquero" placeholder="Nombre del jugador"
+            value="{{ torneo_res.arquero or '' }}">
+        </div>
+        <div class="form-group">
+          <label class="form-label">⭐ Mejor Jugador <span style="color:var(--gold);font-size:.7rem">+15 pts</span></label>
+          <input class="form-input" name="mejor_jugador" placeholder="Nombre del jugador"
+            value="{{ torneo_res.mejor_jugador or '' }}">
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm" style="width:100%">💾 Guardar premios</button>
+      </form>
+    </div>
+
+    <!-- TABLA CLASIFICACIÓN -->
+    <div class="card" style="margin-top:0">
+      <div class="card-title">🏆 Clasificación actual</div>
+      {% for p in tabla %}
+      <div style="display:flex;align-items:center;gap:10px;padding:7px 0;
+        border-bottom:{{ '1px solid var(--border)' if not loop.last else 'none' }}">
+        <span style="font-size:1.1rem;min-width:28px">{{ ['🥇','🥈','🥉'][loop.index0] if loop.index0 < 3 else loop.index }}</span>
+        <span style="flex:1;font-size:.88rem;font-weight:600">{{ p.nombre }}</span>
+        <span style="font-weight:900;color:var(--gold)">{{ p.pts }}</span>
+        <span style="font-size:.72rem;color:var(--muted)">{{ p.picks }} picks</span>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+<script>
+function copyLink() {
+  const url = window.location.origin;
+  navigator.clipboard.writeText(url).then(()=>alert('Link copiado: '+url));
+}
+document.getElementById('share-link').textContent = window.location.origin;
+</script>
+{% endblock %}

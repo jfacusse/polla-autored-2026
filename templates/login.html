@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Entrar — {{ cfg.nombre_polla }}{% endblock %}
+{% block content %}
+<div style="max-width:420px;margin:40px auto">
+  <div class="card">
+    <div style="text-align:center;margin-bottom:24px">
+      <div style="font-size:3rem;margin-bottom:8px">⚽</div>
+      <h2 style="font-size:1.3rem;font-weight:800">{{ cfg.nombre_polla }}</h2>
+      <p style="color:var(--muted);font-size:.82rem;margin-top:6px">
+        Solo para colaboradores AutoRed.<br>
+        Ingresa tu correo <strong style="color:var(--ar)">@autored.cl</strong> y tu PIN personal.
+      </p>
+    </div>
+    <form method="POST">
+      <div class="form-group">
+        <label class="form-label">Correo AutoRed</label>
+        <div style="position:relative">
+          <input class="form-input" name="email" type="email"
+            placeholder="tunombre@autored.cl"
+            pattern=".+@autored\.cl"
+            title="Debe ser un correo @autored.cl"
+            required autocomplete="off"
+            style="padding-right:90px">
+          <span style="position:absolute;right:12px;top:50%;transform:translateY(-50%);
+            font-size:.72rem;color:var(--ar);font-weight:700;pointer-events:none">@autored.cl</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">PIN (mínimo 4 dígitos)</label>
+        <input class="form-input" name="pin" type="password" placeholder="••••" required autocomplete="off">
+        <div style="font-size:.7rem;color:var(--muted);margin-top:4px">
+          Primera vez: elige cualquier PIN y quédate con él para siempre.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;padding:12px;font-size:.95rem">
+        Entrar ⚽
+      </button>
+    </form>
+    <div style="margin-top:16px;padding:12px;background:var(--dark3);border-radius:8px;font-size:.75rem;color:var(--muted)">
+      <strong style="color:var(--ar)">Puntuación:</strong>
+      {{ cfg.pts_exacto }}pts marcador exacto · {{ cfg.pts_resultado }}pts resultado correcto · {{ cfg.jokers_disponibles }} comodines ×2
+      · 🏅 Premios torneo: Goleador 15pts · Arquero 10pts · Mejor Jugador 15pts
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Polla AutoRed 2026{% endblock %}</title>
+<style>
+:root{
+  --ar:#00AACC;--ar2:#0088AA;--ar3:#006688;
+  --dark:#08111a;--dark2:#0e1c28;--dark3:#142230;
+  --card:#192b38;--border:#1e3344;--text:#e8f4f8;--muted:#6a8fa0;
+  --gold:#FFD700;--green:#00e676;--red:#ff4560;--orange:#FF8C00;
+  --white:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:var(--text);min-height:100vh}
+a{color:var(--ar);text-decoration:none}
+a:hover{text-decoration:underline}
+/* HEADER */
+.hdr{background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 60%,var(--dark) 100%);
+  border-bottom:2px solid var(--ar);padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;height:62px}
+.hdr-brand{display:flex;align-items:center;gap:12px}
+.hdr-logo{font-size:1.6rem;filter:drop-shadow(0 0 8px var(--ar))}
+.hdr-title{font-size:1.1rem;font-weight:800;color:var(--white)}
+.hdr-title span{color:var(--ar)}
+.hdr-nav{display:flex;align-items:center;gap:4px}
+.nav-link{padding:8px 14px;border-radius:8px;font-size:.82rem;font-weight:600;
+  color:var(--muted);transition:all .2s}
+.nav-link:hover,.nav-link.active{background:var(--dark3);color:var(--ar);text-decoration:none}
+.nav-link.cta{background:var(--ar);color:var(--white) !important;padding:7px 16px}
+.nav-link.cta:hover{background:var(--ar2);text-decoration:none}
+/* MAIN */
+.main{max-width:1200px;margin:0 auto;padding:24px 16px}
+/* ALERTS */
+.alert{padding:10px 16px;border-radius:8px;margin-bottom:16px;font-size:.85rem;font-weight:600}
+.alert-ok{background:#0a2800;border:1px solid var(--green);color:var(--green)}
+.alert-error{background:#2a0000;border:1px solid var(--red);color:var(--red)}
+/* CARDS */
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:16px}
+.card-title{font-size:1rem;font-weight:700;color:var(--ar);margin-bottom:14px;
+  display:flex;align-items:center;gap:8px}
+.card-title::after{content:'';flex:1;height:1px;background:var(--border)}
+/* STAT PILLS */
+.stat-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.stat{background:var(--dark3);border:1px solid var(--border);border-radius:10px;
+  padding:12px 16px;text-align:center;min-width:110px}
+.stat-val{font-size:1.6rem;font-weight:900;color:var(--ar)}
+.stat-val.gold{color:var(--gold)}.stat-val.green{color:var(--green)}.stat-val.orange{color:var(--orange)}
+.stat-label{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+/* TABLA */
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+th{background:var(--dark3);color:var(--muted);font-size:.68rem;text-transform:uppercase;
+  letter-spacing:.05em;padding:9px 13px;text-align:left}
+td{padding:10px 13px;border-bottom:1px solid var(--border)}
+tr:last-child td{border:none}
+tr:hover td{background:var(--dark3)}
+.pill{display:inline-block;padding:2px 8px;border-radius:6px;font-size:.7rem;font-weight:700}
+.pill-exacto{background:#0a2800;color:var(--green);border:1px solid var(--green)}
+.pill-resultado{background:#0a1800;color:#8bc34a;border:1px solid #558b2f}
+.pill-fallo{background:#2a0000;color:var(--red);border:1px solid var(--red)}
+.pill-pending{background:#0a1522;color:var(--ar);border:1px solid var(--ar)}
+.pill-joker{background:#1a0030;color:#b388ff;border:1px solid #7c4dff;font-size:.65rem}
+/* BUTTONS */
+.btn{display:inline-block;padding:9px 18px;border-radius:8px;font-size:.85rem;font-weight:700;
+  cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+.btn-primary{background:var(--ar);color:var(--white)}
+.btn-primary:hover{background:var(--ar2);text-decoration:none;color:var(--white)}
+.btn-secondary{background:var(--dark3);color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--ar);text-decoration:none}
+.btn-danger{background:#2a0000;color:var(--red);border:1px solid var(--red)}
+.btn-danger:hover{background:var(--red);color:white;text-decoration:none}
+.btn-sm{padding:5px 12px;font-size:.78rem}
+/* FORM */
+.form-group{margin-bottom:14px}
+.form-label{display:block;font-size:.8rem;font-weight:600;color:var(--muted);margin-bottom:5px}
+.form-input{width:100%;background:var(--dark3);border:1px solid var(--border);border-radius:8px;
+  color:var(--text);padding:9px 13px;font-size:.9rem;outline:none;transition:border-color .2s}
+.form-input:focus{border-color:var(--ar)}
+.form-input-sm{width:60px;text-align:center;font-size:1.1rem;font-weight:700}
+/* MATCH CARD */
+.match-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px}
+.match-card{background:var(--dark2);border:1px solid var(--border);border-radius:12px;padding:14px;transition:border-color .2s}
+.match-card:hover{border-color:var(--ar)}
+.match-meta{display:flex;justify-content:space-between;font-size:.68rem;margin-bottom:10px}
+.match-group{color:var(--ar);font-weight:700}
+.match-date{color:var(--muted)}
+.match-teams{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.team{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1}
+.team-flag{font-size:1.8rem}
+.team-name{font-size:.75rem;font-weight:600;text-align:center}
+.score-vs{font-size:1rem;color:var(--muted);padding:0 8px}
+/* prob bar */
+.prob-bar{display:flex;height:4px;border-radius:2px;overflow:hidden;margin-bottom:6px;gap:2px}
+.pb-h{background:var(--ar)}.pb-d{background:var(--gold)}.pb-a{background:var(--orange)}
+.prob-labels{display:flex;justify-content:space-between;font-size:.65rem;color:var(--muted);margin-bottom:8px}
+/* input scores */
+.pick-row{display:flex;align-items:center;justify-content:center;gap:8px;margin:10px 0}
+.pick-sep{font-size:1.2rem;color:var(--muted);font-weight:900}
+/* joker toggle */
+.joker-btn{display:flex;align-items:center;gap:6px;cursor:pointer;user-select:none;
+  background:var(--dark3);border:1px solid var(--border);border-radius:8px;
+  padding:5px 10px;font-size:.75rem;color:var(--muted);transition:all .2s}
+.joker-btn.active{background:#1a0030;border-color:#7c4dff;color:#b388ff}
+.joker-btn input{display:none}
+/* RANK */
+.rank-medal{font-size:1.2rem}
+.rank-bar{height:6px;border-radius:3px;background:var(--ar);min-width:4px;transition:width .5s}
+/* FORM BADGES */
+.form-w{background:#0a2800;color:var(--green);font-size:.62rem;font-weight:700;border-radius:3px;padding:1px 4px;margin:0 1px}
+.form-d{background:#1a1400;color:var(--gold);font-size:.62rem;font-weight:700;border-radius:3px;padding:1px 4px;margin:0 1px}
+.form-l{background:#2a0000;color:var(--red);font-size:.62rem;font-weight:700;border-radius:3px;padding:1px 4px;margin:0 1px}
+/* RESPONSIVE */
+@media(max-width:600px){
+  .hdr{flex-direction:column;height:auto;padding:12px 16px;gap:10px}
+  .hdr-nav{flex-wrap:wrap;justify-content:center}
+  .match-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="hdr-brand">
+    <span class="hdr-logo">⚽</span>
+    <span class="hdr-title"><span>AutoRed</span> Polla Mundial 2026</span>
+  </div>
+  <nav class="hdr-nav">
+    <a href="/" class="nav-link {% if request.path=='/' %}active{% endif %}">🏠 Inicio</a>
+    <a href="/tabla" class="nav-link {% if request.path=='/tabla' %}active{% endif %}">🏆 Tabla</a>
+    {% if session.user %}
+    <a href="/predecir" class="nav-link {% if request.path=='/predecir' %}active{% endif %}">🎯 Predecir</a>
+    <a href="/mis-picks" class="nav-link {% if request.path=='/mis-picks' %}active{% endif %}">📋 Mis picks</a>
+    {% endif %}
+    {% if session.is_admin %}
+    <a href="/admin" class="nav-link {% if request.path=='/admin' %}active{% endif %}">🔑 Admin</a>
+    {% endif %}
+    {% if session.user %}
+    <a href="/logout" class="nav-link">👋 Salir ({{ session.nombre }})</a>
+    {% else %}
+    <a href="/login" class="nav-link cta">Entrar / Registrarse</a>
+    {% endif %}
+  </nav>
+</div>
+<div class="main">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for cat, msg in messages %}
+      <div class="alert alert-{{ 'ok' if cat == 'ok' else 'error' }}">{{ msg }}</div>
+    {% endfor %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</div>
+</body>
+</html>

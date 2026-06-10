@@ -1,0 +1,7490 @@
+{
+  "A1": {
+    "home_win": 0.6939,
+    "draw": 0.1947,
+    "away_win": 0.1114,
+    "exp_home": 1.8,
+    "exp_away": 0.81,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 13.19
+      },
+      {
+        "score": "2-0",
+        "prob": 11.89
+      },
+      {
+        "score": "1-1",
+        "prob": 10.71
+      },
+      {
+        "score": "2-1",
+        "prob": 9.66
+      },
+      {
+        "score": "0-0",
+        "prob": 7.31
+      },
+      {
+        "score": "3-0",
+        "prob": 7.15
+      }
+    ],
+    "over0_5": 0.9269,
+    "over1_5": 0.7357,
+    "over2_5": 0.4855,
+    "over3_5": 0.2674,
+    "over4_5": 0.1248,
+    "btts": 0.4645,
+    "first_goal_home": 0.69,
+    "corners_exp_home": 5.74,
+    "corners_exp_away": 3.18,
+    "corners_total_exp": 8.92,
+    "corners_over7_5": 0.6667,
+    "corners_over8_5": 0.5338,
+    "corners_over9_5": 0.4021,
+    "corners_over10_5": 0.2846,
+    "corners_over11_5": 0.1894,
+    "corners_over12_5": 0.1185,
+    "corners_home_handicap": 0.6364,
+    "cards_exp_total": 3.7,
+    "cards_over2_5": 0.7146,
+    "cards_over3_5": 0.5058,
+    "cards_over4_5": 0.3128,
+    "cards_over5_5": 0.1699,
+    "possession_home_pct": 55.6,
+    "shots_ot_home": 4.4,
+    "shots_ot_away": 3.2,
+    "shots_ratio": 0.579,
+    "xg_dominance": 0.587,
+    "clean_sheet_home": 0.33,
+    "clean_sheet_away": 0.18,
+    "sp_taker_home": "Álvarez / Lozano",
+    "sp_taker_away": "Appollis / Mokoena",
+    "style_home": "Local fuerte, bloque medio, contraataque",
+    "style_away": "Físico, presión, contraataque",
+    "form_home": "WDWWW",
+    "form_away": "WWDLW",
+    "elo_home": 1648,
+    "elo_away": 1428,
+    "best_bet": {
+      "market": "Gana Mexico o Empate (1X)",
+      "prob": 0.8886,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Mexico",
+      "alt_prob": 0.6939
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Mexico",
+      "expected_value": 2.082,
+      "score_prob": 0.1319,
+      "result_1x2_best": "Gana Mexico",
+      "result_1x2_prob": 0.6939,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 13.19
+        },
+        {
+          "score": "2-0",
+          "prob": 11.89
+        },
+        {
+          "score": "1-1",
+          "prob": 10.71
+        }
+      ],
+      "cumulative_top3": 0.358,
+      "confidence": "Media"
+    }
+  },
+  "A2": {
+    "home_win": 0.537,
+    "draw": 0.2293,
+    "away_win": 0.2337,
+    "exp_home": 1.42,
+    "exp_away": 1.03,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 12.61
+      },
+      {
+        "score": "1-0",
+        "prob": 12.24
+      },
+      {
+        "score": "2-1",
+        "prob": 8.97
+      },
+      {
+        "score": "0-1",
+        "prob": 8.86
+      },
+      {
+        "score": "2-0",
+        "prob": 8.71
+      },
+      {
+        "score": "0-0",
+        "prob": 8.6
+      }
+    ],
+    "over0_5": 0.914,
+    "over1_5": 0.703,
+    "over2_5": 0.4441,
+    "over3_5": 0.2325,
+    "over4_5": 0.1027,
+    "btts": 0.4881,
+    "first_goal_home": 0.58,
+    "corners_exp_home": 4.03,
+    "corners_exp_away": 4.59,
+    "corners_total_exp": 8.62,
+    "corners_over7_5": 0.6295,
+    "corners_over8_5": 0.4931,
+    "corners_over9_5": 0.3624,
+    "corners_over10_5": 0.2498,
+    "corners_over11_5": 0.1616,
+    "corners_over12_5": 0.0982,
+    "corners_home_handicap": 0.2383,
+    "cards_exp_total": 3.2,
+    "cards_over2_5": 0.6201,
+    "cards_over3_5": 0.3975,
+    "cards_over4_5": 0.2194,
+    "cards_over5_5": 0.1054,
+    "possession_home_pct": 49.0,
+    "shots_ot_home": 4.1,
+    "shots_ot_away": 4.0,
+    "shots_ratio": 0.506,
+    "xg_dominance": 0.504,
+    "clean_sheet_home": 0.26,
+    "clean_sheet_away": 0.26,
+    "sp_taker_home": "Son / Lee Kang-In",
+    "sp_taker_away": "Coufal / Provod",
+    "style_home": "Transición técnica, Son determinante",
+    "style_away": "Organizado, eficiente, muchos corners",
+    "form_home": "WWDWW",
+    "form_away": "WWWDL",
+    "elo_home": 1552,
+    "elo_away": 1488,
+    "best_bet": {
+      "market": "Gana South Korea o Empate (1X)",
+      "prob": 0.7663,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana South Korea",
+      "alt_prob": 0.537
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana South Korea",
+      "expected_value": 1.611,
+      "score_prob": 0.1261,
+      "result_1x2_best": "Gana South Korea",
+      "result_1x2_prob": 0.537,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 12.61
+        },
+        {
+          "score": "1-0",
+          "prob": 12.24
+        },
+        {
+          "score": "2-1",
+          "prob": 8.97
+        }
+      ],
+      "cumulative_top3": 0.338,
+      "confidence": "Baja"
+    }
+  },
+  "A3": {
+    "home_win": 0.5808,
+    "draw": 0.2178,
+    "away_win": 0.2014,
+    "exp_home": 1.57,
+    "exp_away": 0.99,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 12.09
+      },
+      {
+        "score": "1-1",
+        "prob": 12.03
+      },
+      {
+        "score": "2-0",
+        "prob": 9.47
+      },
+      {
+        "score": "2-1",
+        "prob": 9.42
+      },
+      {
+        "score": "0-0",
+        "prob": 7.72
+      },
+      {
+        "score": "0-1",
+        "prob": 7.68
+      }
+    ],
+    "over0_5": 0.9228,
+    "over1_5": 0.7252,
+    "over2_5": 0.472,
+    "over3_5": 0.2558,
+    "over4_5": 0.1173,
+    "btts": 0.4987,
+    "first_goal_home": 0.612,
+    "corners_exp_home": 5.17,
+    "corners_exp_away": 4.24,
+    "corners_total_exp": 9.41,
+    "corners_over7_5": 0.7214,
+    "corners_over8_5": 0.5964,
+    "corners_over9_5": 0.4658,
+    "corners_over10_5": 0.343,
+    "corners_over11_5": 0.238,
+    "corners_over12_5": 0.1557,
+    "corners_home_handicap": 0.4233,
+    "cards_exp_total": 3.3,
+    "cards_over2_5": 0.6406,
+    "cards_over3_5": 0.4197,
+    "cards_over4_5": 0.2374,
+    "cards_over5_5": 0.1171,
+    "possession_home_pct": 51.0,
+    "shots_ot_home": 4.4,
+    "shots_ot_away": 4.1,
+    "shots_ratio": 0.518,
+    "xg_dominance": 0.543,
+    "clean_sheet_home": 0.33,
+    "clean_sheet_away": 0.26,
+    "sp_taker_home": "Álvarez / Lozano",
+    "sp_taker_away": "Son / Lee Kang-In",
+    "style_home": "Local fuerte, bloque medio, contraataque",
+    "style_away": "Transición técnica, Son determinante",
+    "form_home": "WDWWW",
+    "form_away": "WWDWW",
+    "elo_home": 1648,
+    "elo_away": 1552,
+    "best_bet": {
+      "market": "Gana Mexico o Empate (1X)",
+      "prob": 0.7986,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Mexico",
+      "alt_prob": 0.5808
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Mexico",
+      "expected_value": 1.742,
+      "score_prob": 0.1209,
+      "result_1x2_best": "Gana Mexico",
+      "result_1x2_prob": 0.5808,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 12.09
+        },
+        {
+          "score": "1-1",
+          "prob": 12.03
+        },
+        {
+          "score": "2-0",
+          "prob": 9.47
+        }
+      ],
+      "cumulative_top3": 0.336,
+      "confidence": "Baja"
+    }
+  },
+  "A4": {
+    "home_win": 0.4037,
+    "draw": 0.241,
+    "away_win": 0.3553,
+    "exp_home": 1.16,
+    "exp_away": 1.19,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 13.17
+      },
+      {
+        "score": "0-1",
+        "prob": 11.34
+      },
+      {
+        "score": "1-0",
+        "prob": 11.11
+      },
+      {
+        "score": "0-0",
+        "prob": 9.56
+      },
+      {
+        "score": "1-2",
+        "prob": 7.81
+      },
+      {
+        "score": "2-1",
+        "prob": 7.65
+      }
+    ],
+    "over0_5": 0.9044,
+    "over1_5": 0.6799,
+    "over2_5": 0.4165,
+    "over3_5": 0.2104,
+    "over4_5": 0.0894,
+    "btts": 0.4771,
+    "first_goal_home": 0.495,
+    "corners_exp_home": 3.02,
+    "corners_exp_away": 5.1,
+    "corners_total_exp": 8.12,
+    "corners_over7_5": 0.5637,
+    "corners_over8_5": 0.4242,
+    "corners_over9_5": 0.2984,
+    "corners_over10_5": 0.1962,
+    "corners_over11_5": 0.1208,
+    "corners_over12_5": 0.0698,
+    "corners_home_handicap": 0.1001,
+    "cards_exp_total": 3.6,
+    "cards_over2_5": 0.6973,
+    "cards_over3_5": 0.4848,
+    "cards_over4_5": 0.2936,
+    "cards_over5_5": 0.1559,
+    "possession_home_pct": 44.4,
+    "shots_ot_home": 3.2,
+    "shots_ot_away": 4.0,
+    "shots_ratio": 0.444,
+    "xg_dominance": 0.46,
+    "clean_sheet_home": 0.18,
+    "clean_sheet_away": 0.26,
+    "sp_taker_home": "Appollis / Mokoena",
+    "sp_taker_away": "Coufal / Provod",
+    "style_home": "Físico, presión, contraataque",
+    "style_away": "Organizado, eficiente, muchos corners",
+    "form_home": "WWDLW",
+    "form_away": "WWWDL",
+    "elo_home": 1428,
+    "elo_away": 1488,
+    "best_bet": {
+      "market": "Gana South Africa o Empate (1X)",
+      "prob": 0.6447,
+      "type": "doble",
+      "confidence": "Media",
+      "alt_market": "Gana Czechia o Empate (X2)",
+      "alt_prob": 0.5963
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana South Africa",
+      "expected_value": 1.211,
+      "score_prob": 0.1317,
+      "result_1x2_best": "Gana South Africa",
+      "result_1x2_prob": 0.4037,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 13.17
+        },
+        {
+          "score": "0-1",
+          "prob": 11.34
+        },
+        {
+          "score": "1-0",
+          "prob": 11.11
+        }
+      ],
+      "cumulative_top3": 0.356,
+      "confidence": "Baja"
+    }
+  },
+  "A5": {
+    "home_win": 0.6307,
+    "draw": 0.2128,
+    "away_win": 0.1565,
+    "exp_home": 1.63,
+    "exp_away": 0.91,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 12.83
+      },
+      {
+        "score": "1-1",
+        "prob": 11.72
+      },
+      {
+        "score": "2-0",
+        "prob": 10.43
+      },
+      {
+        "score": "2-1",
+        "prob": 9.53
+      },
+      {
+        "score": "0-0",
+        "prob": 7.89
+      },
+      {
+        "score": "0-1",
+        "prob": 7.21
+      }
+    ],
+    "over0_5": 0.9211,
+    "over1_5": 0.7208,
+    "over2_5": 0.4664,
+    "over3_5": 0.251,
+    "over4_5": 0.1142,
+    "btts": 0.4812,
+    "first_goal_home": 0.64,
+    "corners_exp_home": 4.37,
+    "corners_exp_away": 4.59,
+    "corners_total_exp": 8.95,
+    "corners_over7_5": 0.6707,
+    "corners_over8_5": 0.5382,
+    "corners_over9_5": 0.4065,
+    "corners_over10_5": 0.2885,
+    "corners_over11_5": 0.1925,
+    "corners_over12_5": 0.1209,
+    "corners_home_handicap": 0.2792,
+    "cards_exp_total": 3.5,
+    "cards_over2_5": 0.6792,
+    "cards_over3_5": 0.4634,
+    "cards_over4_5": 0.2746,
+    "cards_over5_5": 0.1424,
+    "possession_home_pct": 50.0,
+    "shots_ot_home": 4.4,
+    "shots_ot_away": 4.0,
+    "shots_ratio": 0.524,
+    "xg_dominance": 0.547,
+    "clean_sheet_home": 0.33,
+    "clean_sheet_away": 0.26,
+    "sp_taker_home": "Álvarez / Lozano",
+    "sp_taker_away": "Coufal / Provod",
+    "style_home": "Local fuerte, bloque medio, contraataque",
+    "style_away": "Organizado, eficiente, muchos corners",
+    "form_home": "WDWWW",
+    "form_away": "WWWDL",
+    "elo_home": 1648,
+    "elo_away": 1488,
+    "best_bet": {
+      "market": "Gana Mexico o Empate (1X)",
+      "prob": 0.8435,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Mexico",
+      "alt_prob": 0.6307
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Mexico",
+      "expected_value": 1.892,
+      "score_prob": 0.1283,
+      "result_1x2_best": "Gana Mexico",
+      "result_1x2_prob": 0.6307,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 12.83
+        },
+        {
+          "score": "1-1",
+          "prob": 11.72
+        },
+        {
+          "score": "2-0",
+          "prob": 10.43
+        }
+      ],
+      "cumulative_top3": 0.35,
+      "confidence": "Baja"
+    }
+  },
+  "A6": {
+    "home_win": 0.6075,
+    "draw": 0.2172,
+    "away_win": 0.1753,
+    "exp_home": 1.58,
+    "exp_away": 0.92,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 13.03
+      },
+      {
+        "score": "1-1",
+        "prob": 11.94
+      },
+      {
+        "score": "2-0",
+        "prob": 10.28
+      },
+      {
+        "score": "2-1",
+        "prob": 9.42
+      },
+      {
+        "score": "0-0",
+        "prob": 8.26
+      },
+      {
+        "score": "0-1",
+        "prob": 7.56
+      }
+    ],
+    "over0_5": 0.9174,
+    "over1_5": 0.7115,
+    "over2_5": 0.4547,
+    "over3_5": 0.2411,
+    "over4_5": 0.108,
+    "btts": 0.476,
+    "first_goal_home": 0.633,
+    "corners_exp_home": 5.3,
+    "corners_exp_away": 3.18,
+    "corners_total_exp": 8.48,
+    "corners_over7_5": 0.6117,
+    "corners_over8_5": 0.474,
+    "corners_over9_5": 0.3443,
+    "corners_over10_5": 0.2343,
+    "corners_over11_5": 0.1495,
+    "corners_over12_5": 0.0896,
+    "corners_home_handicap": 0.581,
+    "cards_exp_total": 3.4,
+    "cards_over2_5": 0.6603,
+    "cards_over3_5": 0.4416,
+    "cards_over4_5": 0.2558,
+    "cards_over5_5": 0.1295,
+    "possession_home_pct": 54.5,
+    "shots_ot_home": 4.1,
+    "shots_ot_away": 3.2,
+    "shots_ratio": 0.562,
+    "xg_dominance": 0.545,
+    "clean_sheet_home": 0.26,
+    "clean_sheet_away": 0.18,
+    "sp_taker_home": "Son / Lee Kang-In",
+    "sp_taker_away": "Appollis / Mokoena",
+    "style_home": "Transición técnica, Son determinante",
+    "style_away": "Físico, presión, contraataque",
+    "form_home": "WWDWW",
+    "form_away": "WWDLW",
+    "elo_home": 1552,
+    "elo_away": 1428,
+    "best_bet": {
+      "market": "Gana South Korea o Empate (1X)",
+      "prob": 0.8247,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana South Korea",
+      "alt_prob": 0.6075
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana South Korea",
+      "expected_value": 1.823,
+      "score_prob": 0.1303,
+      "result_1x2_best": "Gana South Korea",
+      "result_1x2_prob": 0.6075,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 13.03
+        },
+        {
+          "score": "1-1",
+          "prob": 11.94
+        },
+        {
+          "score": "2-0",
+          "prob": 10.28
+        }
+      ],
+      "cumulative_top3": 0.352,
+      "confidence": "Baja"
+    }
+  },
+  "B1": {
+    "home_win": 0.5361,
+    "draw": 0.2286,
+    "away_win": 0.2353,
+    "exp_home": 1.44,
+    "exp_away": 1.0,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 12.55
+      },
+      {
+        "score": "1-0",
+        "prob": 12.51
+      },
+      {
+        "score": "2-1",
+        "prob": 9.03
+      },
+      {
+        "score": "2-0",
+        "prob": 9.01
+      },
+      {
+        "score": "0-1",
+        "prob": 8.72
+      },
+      {
+        "score": "0-0",
+        "prob": 8.69
+      }
+    ],
+    "over0_5": 0.9131,
+    "over1_5": 0.7007,
+    "over2_5": 0.4413,
+    "over3_5": 0.2302,
+    "over4_5": 0.1013,
+    "btts": 0.4831,
+    "first_goal_home": 0.589,
+    "corners_exp_home": 5.4,
+    "corners_exp_away": 3.71,
+    "corners_total_exp": 9.11,
+    "corners_over7_5": 0.6888,
+    "corners_over8_5": 0.5587,
+    "corners_over9_5": 0.427,
+    "corners_over10_5": 0.3071,
+    "corners_over11_5": 0.2077,
+    "corners_over12_5": 0.1323,
+    "corners_home_handicap": 0.5212,
+    "cards_exp_total": 4.0,
+    "cards_over2_5": 0.7619,
+    "cards_over3_5": 0.5665,
+    "cards_over4_5": 0.3712,
+    "cards_over5_5": 0.2149,
+    "possession_home_pct": 52.2,
+    "shots_ot_home": 4.2,
+    "shots_ot_away": 3.7,
+    "shots_ratio": 0.532,
+    "xg_dominance": 0.526,
+    "clean_sheet_home": 0.24,
+    "clean_sheet_away": 0.2,
+    "sp_taker_home": "Davies / David",
+    "sp_taker_away": "Dzeko / Pjanic",
+    "style_home": "Físico, veloz, pressing alto",
+    "style_away": "Físico, Dzeko en el área",
+    "form_home": "WWDWL",
+    "form_away": "WDLWW",
+    "elo_home": 1508,
+    "elo_away": 1458,
+    "best_bet": {
+      "market": "Gana Canada o Empate (1X)",
+      "prob": 0.7647,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Más de 3.5 tarjetas amarillas",
+      "alt_prob": 0.5665
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Canada",
+      "expected_value": 1.608,
+      "score_prob": 0.1255,
+      "result_1x2_best": "Gana Canada",
+      "result_1x2_prob": 0.5361,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 12.55
+        },
+        {
+          "score": "1-0",
+          "prob": 12.51
+        },
+        {
+          "score": "2-1",
+          "prob": 9.03
+        }
+      ],
+      "cumulative_top3": 0.341,
+      "confidence": "Baja"
+    }
+  },
+  "B2": {
+    "home_win": 0.6967,
+    "draw": 0.1948,
+    "away_win": 0.1085,
+    "exp_home": 1.8,
+    "exp_away": 0.79,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 13.55
+      },
+      {
+        "score": "2-0",
+        "prob": 12.17
+      },
+      {
+        "score": "1-1",
+        "prob": 10.68
+      },
+      {
+        "score": "2-1",
+        "prob": 9.59
+      },
+      {
+        "score": "0-0",
+        "prob": 7.55
+      },
+      {
+        "score": "3-0",
+        "prob": 7.29
+      }
+    ],
+    "over0_5": 0.9245,
+    "over1_5": 0.7296,
+    "over2_5": 0.4776,
+    "over3_5": 0.2606,
+    "over4_5": 0.1204,
+    "btts": 0.4548,
+    "first_goal_home": 0.695,
+    "corners_exp_home": 5.97,
+    "corners_exp_away": 2.75,
+    "corners_total_exp": 8.71,
+    "corners_over7_5": 0.6411,
+    "corners_over8_5": 0.5056,
+    "corners_over9_5": 0.3745,
+    "corners_over10_5": 0.2603,
+    "corners_over11_5": 0.1698,
+    "corners_over12_5": 0.1042,
+    "corners_home_handicap": 0.7183,
+    "cards_exp_total": 3.3,
+    "cards_over2_5": 0.6406,
+    "cards_over3_5": 0.4197,
+    "cards_over4_5": 0.2374,
+    "cards_over5_5": 0.1171,
+    "possession_home_pct": 56.5,
+    "shots_ot_home": 4.6,
+    "shots_ot_away": 3.0,
+    "shots_ratio": 0.605,
+    "xg_dominance": 0.584,
+    "clean_sheet_home": 0.36,
+    "clean_sheet_away": 0.16,
+    "sp_taker_home": "Xhaka / Shaqiri",
+    "sp_taker_away": "Afif / Boudiaf",
+    "style_home": "Organizado, equilibrado, eficiente",
+    "style_away": "Posesión limitada, organizado defensivamente",
+    "form_home": "WWWDW",
+    "form_away": "WLLWW",
+    "elo_home": 1618,
+    "elo_away": 1398,
+    "best_bet": {
+      "market": "Gana Switzerland o Empate (1X)",
+      "prob": 0.8915,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Switzerland",
+      "alt_prob": 0.6967
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Switzerland",
+      "expected_value": 2.09,
+      "score_prob": 0.1355,
+      "result_1x2_best": "Gana Switzerland",
+      "result_1x2_prob": 0.6967,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 13.55
+        },
+        {
+          "score": "2-0",
+          "prob": 12.17
+        },
+        {
+          "score": "1-1",
+          "prob": 10.68
+        }
+      ],
+      "cumulative_top3": 0.364,
+      "confidence": "Media"
+    }
+  },
+  "B3": {
+    "home_win": 0.3712,
+    "draw": 0.2348,
+    "away_win": 0.394,
+    "exp_home": 1.19,
+    "exp_away": 1.26,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 12.94
+      },
+      {
+        "score": "0-1",
+        "prob": 10.86
+      },
+      {
+        "score": "1-0",
+        "prob": 10.27
+      },
+      {
+        "score": "0-0",
+        "prob": 8.62
+      },
+      {
+        "score": "1-2",
+        "prob": 8.15
+      },
+      {
+        "score": "2-1",
+        "prob": 7.71
+      }
+    ],
+    "over0_5": 0.9138,
+    "over1_5": 0.7025,
+    "over2_5": 0.4435,
+    "over3_5": 0.232,
+    "over4_5": 0.1024,
+    "btts": 0.4986,
+    "first_goal_home": 0.486,
+    "corners_exp_home": 4.6,
+    "corners_exp_away": 4.66,
+    "corners_total_exp": 9.25,
+    "corners_over7_5": 0.705,
+    "corners_over8_5": 0.5773,
+    "corners_over9_5": 0.446,
+    "corners_over10_5": 0.3245,
+    "corners_over11_5": 0.2223,
+    "corners_over12_5": 0.1435,
+    "corners_home_handicap": 0.3005,
+    "cards_exp_total": 3.5,
+    "cards_over2_5": 0.6792,
+    "cards_over3_5": 0.4634,
+    "cards_over4_5": 0.2746,
+    "cards_over5_5": 0.1424,
+    "possession_home_pct": 48.0,
+    "shots_ot_home": 4.2,
+    "shots_ot_away": 4.6,
+    "shots_ratio": 0.477,
+    "xg_dominance": 0.474,
+    "clean_sheet_home": 0.24,
+    "clean_sheet_away": 0.36,
+    "sp_taker_home": "Davies / David",
+    "sp_taker_away": "Xhaka / Shaqiri",
+    "style_home": "Físico, veloz, pressing alto",
+    "style_away": "Organizado, equilibrado, eficiente",
+    "form_home": "WWDWL",
+    "form_away": "WWWDW",
+    "elo_home": 1508,
+    "elo_away": 1618,
+    "best_bet": {
+      "market": "Gana Switzerland o Empate (X2)",
+      "prob": 0.6288,
+      "type": "doble",
+      "confidence": "Media",
+      "alt_market": "Gana Canada o Empate (1X)",
+      "alt_prob": 0.606
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Switzerland",
+      "expected_value": 1.182,
+      "score_prob": 0.1294,
+      "result_1x2_best": "Gana Switzerland",
+      "result_1x2_prob": 0.394,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 12.94
+        },
+        {
+          "score": "0-1",
+          "prob": 10.86
+        },
+        {
+          "score": "1-0",
+          "prob": 10.27
+        }
+      ],
+      "cumulative_top3": 0.341,
+      "confidence": "Baja"
+    }
+  },
+  "B4": {
+    "home_win": 0.5474,
+    "draw": 0.2304,
+    "away_win": 0.2222,
+    "exp_home": 1.43,
+    "exp_away": 0.95,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 13.21
+      },
+      {
+        "score": "1-1",
+        "prob": 12.57
+      },
+      {
+        "score": "2-0",
+        "prob": 9.44
+      },
+      {
+        "score": "0-0",
+        "prob": 9.23
+      },
+      {
+        "score": "2-1",
+        "prob": 8.99
+      },
+      {
+        "score": "0-1",
+        "prob": 8.79
+      }
+    ],
+    "over0_5": 0.9077,
+    "over1_5": 0.6877,
+    "over2_5": 0.4257,
+    "over3_5": 0.2176,
+    "over4_5": 0.0937,
+    "btts": 0.4672,
+    "first_goal_home": 0.6,
+    "corners_exp_home": 4.75,
+    "corners_exp_away": 3.23,
+    "corners_total_exp": 7.98,
+    "corners_over7_5": 0.5436,
+    "corners_over8_5": 0.404,
+    "corners_over9_5": 0.2803,
+    "corners_over10_5": 0.1817,
+    "corners_over11_5": 0.1102,
+    "corners_over12_5": 0.0626,
+    "corners_home_handicap": 0.4987,
+    "cards_exp_total": 3.8,
+    "cards_over2_5": 0.7311,
+    "cards_over3_5": 0.5265,
+    "cards_over4_5": 0.3322,
+    "cards_over5_5": 0.1844,
+    "possession_home_pct": 52.4,
+    "shots_ot_home": 3.7,
+    "shots_ot_away": 3.0,
+    "shots_ratio": 0.552,
+    "xg_dominance": 0.531,
+    "clean_sheet_home": 0.2,
+    "clean_sheet_away": 0.16,
+    "sp_taker_home": "Dzeko / Pjanic",
+    "sp_taker_away": "Afif / Boudiaf",
+    "style_home": "Físico, Dzeko en el área",
+    "style_away": "Posesión limitada, organizado defensivamente",
+    "form_home": "WDLWW",
+    "form_away": "WLLWW",
+    "elo_home": 1458,
+    "elo_away": 1398,
+    "best_bet": {
+      "market": "Gana Bosnia o Empate (1X)",
+      "prob": 0.7778,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Bosnia",
+      "alt_prob": 0.5474
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Bosnia",
+      "expected_value": 1.642,
+      "score_prob": 0.1321,
+      "result_1x2_best": "Gana Bosnia",
+      "result_1x2_prob": 0.5474,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 13.21
+        },
+        {
+          "score": "1-1",
+          "prob": 12.57
+        },
+        {
+          "score": "2-0",
+          "prob": 9.44
+        }
+      ],
+      "cumulative_top3": 0.352,
+      "confidence": "Baja"
+    }
+  },
+  "B5": {
+    "home_win": 0.6031,
+    "draw": 0.2187,
+    "away_win": 0.1782,
+    "exp_home": 1.56,
+    "exp_away": 0.89,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 13.49
+      },
+      {
+        "score": "1-1",
+        "prob": 11.96
+      },
+      {
+        "score": "2-0",
+        "prob": 10.55
+      },
+      {
+        "score": "2-1",
+        "prob": 9.35
+      },
+      {
+        "score": "0-0",
+        "prob": 8.63
+      },
+      {
+        "score": "0-1",
+        "prob": 7.65
+      }
+    ],
+    "over0_5": 0.9137,
+    "over1_5": 0.7023,
+    "over2_5": 0.4433,
+    "over3_5": 0.2318,
+    "over4_5": 0.1022,
+    "btts": 0.4648,
+    "first_goal_home": 0.638,
+    "corners_exp_home": 5.74,
+    "corners_exp_away": 3.02,
+    "corners_total_exp": 8.76,
+    "corners_over7_5": 0.6477,
+    "corners_over8_5": 0.5128,
+    "corners_over9_5": 0.3815,
+    "corners_over10_5": 0.2664,
+    "corners_over11_5": 0.1747,
+    "corners_over12_5": 0.1077,
+    "corners_home_handicap": 0.6575,
+    "cards_exp_total": 3.8,
+    "cards_over2_5": 0.7311,
+    "cards_over3_5": 0.5265,
+    "cards_over4_5": 0.3322,
+    "cards_over5_5": 0.1844,
+    "possession_home_pct": 54.5,
+    "shots_ot_home": 4.2,
+    "shots_ot_away": 3.0,
+    "shots_ratio": 0.583,
+    "xg_dominance": 0.557,
+    "clean_sheet_home": 0.24,
+    "clean_sheet_away": 0.16,
+    "sp_taker_home": "Davies / David",
+    "sp_taker_away": "Afif / Boudiaf",
+    "style_home": "Físico, veloz, pressing alto",
+    "style_away": "Posesión limitada, organizado defensivamente",
+    "form_home": "WWDWL",
+    "form_away": "WLLWW",
+    "elo_home": 1508,
+    "elo_away": 1398,
+    "best_bet": {
+      "market": "Gana Canada o Empate (1X)",
+      "prob": 0.8218,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Canada",
+      "alt_prob": 0.6031
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Canada",
+      "expected_value": 1.809,
+      "score_prob": 0.1349,
+      "result_1x2_best": "Gana Canada",
+      "result_1x2_prob": 0.6031,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 13.49
+        },
+        {
+          "score": "1-1",
+          "prob": 11.96
+        },
+        {
+          "score": "2-0",
+          "prob": 10.55
+        }
+      ],
+      "cumulative_top3": 0.36,
+      "confidence": "Baja"
+    }
+  },
+  "B6": {
+    "home_win": 0.6381,
+    "draw": 0.2102,
+    "away_win": 0.1517,
+    "exp_home": 1.65,
+    "exp_away": 0.89,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 12.97
+      },
+      {
+        "score": "1-1",
+        "prob": 11.57
+      },
+      {
+        "score": "2-0",
+        "prob": 10.73
+      },
+      {
+        "score": "2-1",
+        "prob": 9.56
+      },
+      {
+        "score": "0-0",
+        "prob": 7.84
+      },
+      {
+        "score": "0-1",
+        "prob": 6.99
+      }
+    ],
+    "over0_5": 0.9216,
+    "over1_5": 0.7219,
+    "over2_5": 0.4678,
+    "over3_5": 0.2522,
+    "over4_5": 0.115,
+    "btts": 0.4771,
+    "first_goal_home": 0.65,
+    "corners_exp_home": 5.61,
+    "corners_exp_away": 3.37,
+    "corners_total_exp": 8.98,
+    "corners_over7_5": 0.6737,
+    "corners_over8_5": 0.5417,
+    "corners_over9_5": 0.4099,
+    "corners_over10_5": 0.2916,
+    "corners_over11_5": 0.195,
+    "corners_over12_5": 0.1228,
+    "corners_home_handicap": 0.5932,
+    "cards_exp_total": 3.5,
+    "cards_over2_5": 0.6792,
+    "cards_over3_5": 0.4634,
+    "cards_over4_5": 0.2746,
+    "cards_over5_5": 0.1424,
+    "possession_home_pct": 54.2,
+    "shots_ot_home": 4.6,
+    "shots_ot_away": 3.7,
+    "shots_ratio": 0.554,
+    "xg_dominance": 0.552,
+    "clean_sheet_home": 0.36,
+    "clean_sheet_away": 0.2,
+    "sp_taker_home": "Xhaka / Shaqiri",
+    "sp_taker_away": "Dzeko / Pjanic",
+    "style_home": "Organizado, equilibrado, eficiente",
+    "style_away": "Físico, Dzeko en el área",
+    "form_home": "WWWDW",
+    "form_away": "WDLWW",
+    "elo_home": 1618,
+    "elo_away": 1458,
+    "best_bet": {
+      "market": "Gana Switzerland o Empate (1X)",
+      "prob": 0.8483,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Switzerland",
+      "alt_prob": 0.6381
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Switzerland",
+      "expected_value": 1.914,
+      "score_prob": 0.1297,
+      "result_1x2_best": "Gana Switzerland",
+      "result_1x2_prob": 0.6381,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 12.97
+        },
+        {
+          "score": "1-1",
+          "prob": 11.57
+        },
+        {
+          "score": "2-0",
+          "prob": 10.73
+        }
+      ],
+      "cumulative_top3": 0.353,
+      "confidence": "Baja"
+    }
+  },
+  "C1": {
+    "home_win": 0.6137,
+    "draw": 0.2077,
+    "away_win": 0.1786,
+    "exp_home": 1.69,
+    "exp_away": 1.02,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 11.48
+      },
+      {
+        "score": "1-0",
+        "prob": 11.26
+      },
+      {
+        "score": "2-1",
+        "prob": 9.69
+      },
+      {
+        "score": "2-0",
+        "prob": 9.5
+      },
+      {
+        "score": "0-1",
+        "prob": 6.81
+      },
+      {
+        "score": "0-0",
+        "prob": 6.68
+      }
+    ],
+    "over0_5": 0.9332,
+    "over1_5": 0.7525,
+    "over2_5": 0.508,
+    "over3_5": 0.2873,
+    "over4_5": 0.1381,
+    "btts": 0.5209,
+    "first_goal_home": 0.623,
+    "corners_exp_home": 6.2,
+    "corners_exp_away": 3.65,
+    "corners_total_exp": 9.85,
+    "corners_over7_5": 0.766,
+    "corners_over8_5": 0.6501,
+    "corners_over9_5": 0.5232,
+    "corners_over10_5": 0.3982,
+    "corners_over11_5": 0.2863,
+    "corners_over12_5": 0.1945,
+    "corners_home_handicap": 0.628,
+    "cards_exp_total": 3.7,
+    "cards_over2_5": 0.7146,
+    "cards_over3_5": 0.5058,
+    "cards_over4_5": 0.3128,
+    "cards_over5_5": 0.1699,
+    "possession_home_pct": 56.3,
+    "shots_ot_home": 5.5,
+    "shots_ot_away": 4.3,
+    "shots_ratio": 0.561,
+    "xg_dominance": 0.547,
+    "clean_sheet_home": 0.44,
+    "clean_sheet_away": 0.4,
+    "sp_taker_home": "Vinicius / Rodrygo",
+    "sp_taker_away": "Ziyech / Hakimi",
+    "style_home": "Posesión, dribbling, presión alta",
+    "style_away": "Bloque compacto, transición rápida",
+    "form_home": "WWDWW",
+    "form_away": "WWWDW",
+    "elo_home": 1808,
+    "elo_away": 1672,
+    "best_bet": {
+      "market": "Gana Brazil o Empate (1X)",
+      "prob": 0.8214,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Brazil",
+      "alt_prob": 0.6137
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Brazil",
+      "expected_value": 1.841,
+      "score_prob": 0.1148,
+      "result_1x2_best": "Gana Brazil",
+      "result_1x2_prob": 0.6137,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 11.48
+        },
+        {
+          "score": "1-0",
+          "prob": 11.26
+        },
+        {
+          "score": "2-1",
+          "prob": 9.69
+        }
+      ],
+      "cumulative_top3": 0.324,
+      "confidence": "Baja"
+    }
+  },
+  "C2": {
+    "home_win": 0.65,
+    "draw": 0.2102,
+    "away_win": 0.1398,
+    "exp_home": 1.65,
+    "exp_away": 0.82,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 13.91
+      },
+      {
+        "score": "1-1",
+        "prob": 11.47
+      },
+      {
+        "score": "2-0",
+        "prob": 11.46
+      },
+      {
+        "score": "2-1",
+        "prob": 9.44
+      },
+      {
+        "score": "0-0",
+        "prob": 8.44
+      },
+      {
+        "score": "0-1",
+        "prob": 6.96
+      }
+    ],
+    "over0_5": 0.9156,
+    "over1_5": 0.7068,
+    "over2_5": 0.4489,
+    "over3_5": 0.2364,
+    "over4_5": 0.1051,
+    "btts": 0.4533,
+    "first_goal_home": 0.667,
+    "corners_exp_home": 6.68,
+    "corners_exp_away": 2.29,
+    "corners_total_exp": 8.98,
+    "corners_over7_5": 0.6732,
+    "corners_over8_5": 0.5411,
+    "corners_over9_5": 0.4093,
+    "corners_over10_5": 0.2911,
+    "corners_over11_5": 0.1946,
+    "corners_over12_5": 0.1224,
+    "corners_home_handicap": 0.8352,
+    "cards_exp_total": 3.6,
+    "cards_over2_5": 0.6973,
+    "cards_over3_5": 0.4848,
+    "cards_over4_5": 0.2936,
+    "cards_over5_5": 0.1559,
+    "possession_home_pct": 56.8,
+    "shots_ot_home": 4.3,
+    "shots_ot_away": 2.8,
+    "shots_ratio": 0.606,
+    "xg_dominance": 0.569,
+    "clean_sheet_home": 0.3,
+    "clean_sheet_away": 0.14,
+    "sp_taker_home": "Robertson / McGinn",
+    "sp_taker_away": "Nerlens / Borgella",
+    "style_home": "Presión intensa, muchos corners",
+    "style_away": "Limitado, físico, aspirante humilde",
+    "form_home": "WWWDL",
+    "form_away": "WWDLL",
+    "elo_home": 1548,
+    "elo_away": 1382,
+    "best_bet": {
+      "market": "Gana Scotland o Empate (1X)",
+      "prob": 0.8602,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Scotland",
+      "alt_prob": 0.65
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Scotland",
+      "expected_value": 1.95,
+      "score_prob": 0.1391,
+      "result_1x2_best": "Gana Scotland",
+      "result_1x2_prob": 0.65,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 13.91
+        },
+        {
+          "score": "1-1",
+          "prob": 11.47
+        },
+        {
+          "score": "2-0",
+          "prob": 11.46
+        }
+      ],
+      "cumulative_top3": 0.368,
+      "confidence": "Baja"
+    }
+  },
+  "C3": {
+    "home_win": 0.7277,
+    "draw": 0.1783,
+    "away_win": 0.094,
+    "exp_home": 1.99,
+    "exp_away": 0.83,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 11.89
+      },
+      {
+        "score": "2-0",
+        "prob": 11.81
+      },
+      {
+        "score": "1-1",
+        "prob": 9.86
+      },
+      {
+        "score": "2-1",
+        "prob": 9.79
+      },
+      {
+        "score": "3-0",
+        "prob": 7.82
+      },
+      {
+        "score": "3-1",
+        "prob": 6.49
+      }
+    ],
+    "over0_5": 0.9402,
+    "over1_5": 0.7717,
+    "over2_5": 0.5344,
+    "over3_5": 0.3117,
+    "over4_5": 0.1549,
+    "btts": 0.4864,
+    "first_goal_home": 0.705,
+    "corners_exp_home": 5.26,
+    "corners_exp_away": 4.17,
+    "corners_total_exp": 9.43,
+    "corners_over7_5": 0.7238,
+    "corners_over8_5": 0.5993,
+    "corners_over9_5": 0.4689,
+    "corners_over10_5": 0.3459,
+    "corners_over11_5": 0.2404,
+    "corners_over12_5": 0.1576,
+    "corners_home_handicap": 0.4425,
+    "cards_exp_total": 3.4,
+    "cards_over2_5": 0.6603,
+    "cards_over3_5": 0.4416,
+    "cards_over4_5": 0.2558,
+    "cards_over5_5": 0.1295,
+    "possession_home_pct": 53.7,
+    "shots_ot_home": 5.5,
+    "shots_ot_away": 4.3,
+    "shots_ratio": 0.561,
+    "xg_dominance": 0.584,
+    "clean_sheet_home": 0.44,
+    "clean_sheet_away": 0.3,
+    "sp_taker_home": "Vinicius / Rodrygo",
+    "sp_taker_away": "Robertson / McGinn",
+    "style_home": "Posesión, dribbling, presión alta",
+    "style_away": "Presión intensa, muchos corners",
+    "form_home": "WWDWW",
+    "form_away": "WWWDL",
+    "elo_home": 1808,
+    "elo_away": 1548,
+    "best_bet": {
+      "market": "Gana Brazil o Empate (1X)",
+      "prob": 0.906,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Brazil",
+      "alt_prob": 0.7277
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Brazil",
+      "expected_value": 2.183,
+      "score_prob": 0.1189,
+      "result_1x2_best": "Gana Brazil",
+      "result_1x2_prob": 0.7277,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 11.89
+        },
+        {
+          "score": "2-0",
+          "prob": 11.81
+        },
+        {
+          "score": "1-1",
+          "prob": 9.86
+        }
+      ],
+      "cumulative_top3": 0.336,
+      "confidence": "Media"
+    }
+  },
+  "C4": {
+    "home_win": 0.7599,
+    "draw": 0.1695,
+    "away_win": 0.0706,
+    "exp_home": 2.02,
+    "exp_away": 0.7,
+    "likely_score": "2-0",
+    "top_scores": [
+      {
+        "score": "2-0",
+        "prob": 13.44
+      },
+      {
+        "score": "1-0",
+        "prob": 13.28
+      },
+      {
+        "score": "2-1",
+        "prob": 9.41
+      },
+      {
+        "score": "1-1",
+        "prob": 9.29
+      },
+      {
+        "score": "3-0",
+        "prob": 9.07
+      },
+      {
+        "score": "0-0",
+        "prob": 6.56
+      }
+    ],
+    "over0_5": 0.9344,
+    "over1_5": 0.7558,
+    "over2_5": 0.5124,
+    "over3_5": 0.2914,
+    "over4_5": 0.1408,
+    "btts": 0.4369,
+    "first_goal_home": 0.743,
+    "corners_exp_home": 5.85,
+    "corners_exp_away": 2.71,
+    "corners_total_exp": 8.55,
+    "corners_over7_5": 0.6211,
+    "corners_over8_5": 0.484,
+    "corners_over9_5": 0.3537,
+    "corners_over10_5": 0.2424,
+    "corners_over11_5": 0.1558,
+    "corners_over12_5": 0.0941,
+    "corners_home_handicap": 0.7106,
+    "cards_exp_total": 3.9,
+    "cards_over2_5": 0.7469,
+    "cards_over3_5": 0.5468,
+    "cards_over4_5": 0.3516,
+    "cards_over5_5": 0.1994,
+    "possession_home_pct": 54.2,
+    "shots_ot_home": 4.3,
+    "shots_ot_away": 2.8,
+    "shots_ratio": 0.606,
+    "xg_dominance": 0.609,
+    "clean_sheet_home": 0.4,
+    "clean_sheet_away": 0.14,
+    "sp_taker_home": "Ziyech / Hakimi",
+    "sp_taker_away": "Nerlens / Borgella",
+    "style_home": "Bloque compacto, transición rápida",
+    "style_away": "Limitado, físico, aspirante humilde",
+    "form_home": "WWWDW",
+    "form_away": "WWDLL",
+    "elo_home": 1672,
+    "elo_away": 1382,
+    "best_bet": {
+      "market": "Gana Morocco o Empate (1X)",
+      "prob": 0.9294,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Morocco",
+      "alt_prob": 0.7599
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Morocco",
+      "expected_value": 2.28,
+      "score_prob": 0.1344,
+      "result_1x2_best": "Gana Morocco",
+      "result_1x2_prob": 0.7599,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "2-0",
+          "prob": 13.44
+        },
+        {
+          "score": "1-0",
+          "prob": 13.28
+        },
+        {
+          "score": "2-1",
+          "prob": 9.41
+        }
+      ],
+      "cumulative_top3": 0.361,
+      "confidence": "Media"
+    }
+  },
+  "C5": {
+    "home_win": 0.8396,
+    "draw": 0.1291,
+    "away_win": 0.0313,
+    "exp_home": 2.44,
+    "exp_away": 0.62,
+    "likely_score": "2-0",
+    "top_scores": [
+      {
+        "score": "2-0",
+        "prob": 13.94
+      },
+      {
+        "score": "1-0",
+        "prob": 11.44
+      },
+      {
+        "score": "3-0",
+        "prob": 11.32
+      },
+      {
+        "score": "2-1",
+        "prob": 8.67
+      },
+      {
+        "score": "1-1",
+        "prob": 7.12
+      },
+      {
+        "score": "3-1",
+        "prob": 7.04
+      }
+    ],
+    "over0_5": 0.9531,
+    "over1_5": 0.8095,
+    "over2_5": 0.5899,
+    "over3_5": 0.3659,
+    "over4_5": 0.1947,
+    "btts": 0.4227,
+    "first_goal_home": 0.797,
+    "corners_exp_home": 7.28,
+    "corners_exp_away": 2.24,
+    "corners_total_exp": 9.51,
+    "corners_over7_5": 0.7327,
+    "corners_over8_5": 0.6097,
+    "corners_over9_5": 0.4798,
+    "corners_over10_5": 0.3562,
+    "corners_over11_5": 0.2494,
+    "corners_over12_5": 0.1646,
+    "corners_home_handicap": 0.8794,
+    "cards_exp_total": 3.8,
+    "cards_over2_5": 0.7311,
+    "cards_over3_5": 0.5265,
+    "cards_over4_5": 0.3322,
+    "cards_over5_5": 0.1844,
+    "possession_home_pct": 60.4,
+    "shots_ot_home": 5.5,
+    "shots_ot_away": 2.8,
+    "shots_ratio": 0.663,
+    "xg_dominance": 0.65,
+    "clean_sheet_home": 0.44,
+    "clean_sheet_away": 0.14,
+    "sp_taker_home": "Vinicius / Rodrygo",
+    "sp_taker_away": "Nerlens / Borgella",
+    "style_home": "Posesión, dribbling, presión alta",
+    "style_away": "Limitado, físico, aspirante humilde",
+    "form_home": "WWDWW",
+    "form_away": "WWDLL",
+    "elo_home": 1808,
+    "elo_away": 1382,
+    "best_bet": {
+      "market": "Gana Brazil o Empate (1X)",
+      "prob": 0.9687,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Brazil",
+      "alt_prob": 0.8396
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Brazil",
+      "expected_value": 2.519,
+      "score_prob": 0.1394,
+      "result_1x2_best": "Gana Brazil",
+      "result_1x2_prob": 0.8396,
+      "joker_recommended": true,
+      "top3_scores": [
+        {
+          "score": "2-0",
+          "prob": 13.94
+        },
+        {
+          "score": "1-0",
+          "prob": 11.44
+        },
+        {
+          "score": "3-0",
+          "prob": 11.32
+        }
+      ],
+      "cumulative_top3": 0.367,
+      "confidence": "Media"
+    }
+  },
+  "C6": {
+    "home_win": 0.6158,
+    "draw": 0.2106,
+    "away_win": 0.1736,
+    "exp_home": 1.65,
+    "exp_away": 0.93,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 12.46
+      },
+      {
+        "score": "1-1",
+        "prob": 11.63
+      },
+      {
+        "score": "2-0",
+        "prob": 10.28
+      },
+      {
+        "score": "2-1",
+        "prob": 9.6
+      },
+      {
+        "score": "0-0",
+        "prob": 7.55
+      },
+      {
+        "score": "0-1",
+        "prob": 7.04
+      }
+    ],
+    "over0_5": 0.9245,
+    "over1_5": 0.7295,
+    "over2_5": 0.4776,
+    "over3_5": 0.2606,
+    "over4_5": 0.1203,
+    "btts": 0.4903,
+    "first_goal_home": 0.639,
+    "corners_exp_home": 4.22,
+    "corners_exp_away": 5.05,
+    "corners_total_exp": 9.27,
+    "corners_over7_5": 0.7071,
+    "corners_over8_5": 0.5797,
+    "corners_over9_5": 0.4485,
+    "corners_over10_5": 0.3268,
+    "corners_over11_5": 0.2242,
+    "corners_over12_5": 0.145,
+    "corners_home_handicap": 0.2191,
+    "cards_exp_total": 3.5,
+    "cards_over2_5": 0.6792,
+    "cards_over3_5": 0.4634,
+    "cards_over4_5": 0.2746,
+    "cards_over5_5": 0.1424,
+    "possession_home_pct": 47.4,
+    "shots_ot_home": 4.3,
+    "shots_ot_away": 4.3,
+    "shots_ratio": 0.5,
+    "xg_dominance": 0.54,
+    "clean_sheet_home": 0.4,
+    "clean_sheet_away": 0.3,
+    "sp_taker_home": "Ziyech / Hakimi",
+    "sp_taker_away": "Robertson / McGinn",
+    "style_home": "Bloque compacto, transición rápida",
+    "style_away": "Presión intensa, muchos corners",
+    "form_home": "WWWDW",
+    "form_away": "WWWDL",
+    "elo_home": 1672,
+    "elo_away": 1548,
+    "best_bet": {
+      "market": "Gana Morocco o Empate (1X)",
+      "prob": 0.8264,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Morocco",
+      "alt_prob": 0.6158
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Morocco",
+      "expected_value": 1.847,
+      "score_prob": 0.1246,
+      "result_1x2_best": "Gana Morocco",
+      "result_1x2_prob": 0.6158,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 12.46
+        },
+        {
+          "score": "1-1",
+          "prob": 11.63
+        },
+        {
+          "score": "2-0",
+          "prob": 10.28
+        }
+      ],
+      "cumulative_top3": 0.344,
+      "confidence": "Baja"
+    }
+  },
+  "D1": {
+    "home_win": 0.5434,
+    "draw": 0.2217,
+    "away_win": 0.2349,
+    "exp_home": 1.5,
+    "exp_away": 1.08,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 12.26
+      },
+      {
+        "score": "1-0",
+        "prob": 11.39
+      },
+      {
+        "score": "2-1",
+        "prob": 9.22
+      },
+      {
+        "score": "2-0",
+        "prob": 8.57
+      },
+      {
+        "score": "0-1",
+        "prob": 8.15
+      },
+      {
+        "score": "0-0",
+        "prob": 7.57
+      }
+    ],
+    "over0_5": 0.9243,
+    "over1_5": 0.7289,
+    "over2_5": 0.4768,
+    "over3_5": 0.2599,
+    "over4_5": 0.1199,
+    "btts": 0.5127,
+    "first_goal_home": 0.583,
+    "corners_exp_home": 5.25,
+    "corners_exp_away": 4.61,
+    "corners_total_exp": 9.87,
+    "corners_over7_5": 0.7674,
+    "corners_over8_5": 0.6518,
+    "corners_over9_5": 0.5251,
+    "corners_over10_5": 0.4001,
+    "corners_over11_5": 0.288,
+    "corners_over12_5": 0.1959,
+    "corners_home_handicap": 0.3892,
+    "cards_exp_total": 3.8,
+    "cards_over2_5": 0.7311,
+    "cards_over3_5": 0.5265,
+    "cards_over4_5": 0.3322,
+    "cards_over5_5": 0.1844,
+    "possession_home_pct": 50.0,
+    "shots_ot_home": 4.8,
+    "shots_ot_away": 4.5,
+    "shots_ratio": 0.516,
+    "xg_dominance": 0.525,
+    "clean_sheet_home": 0.34,
+    "clean_sheet_away": 0.3,
+    "sp_taker_home": "Pulisic / McKennie",
+    "sp_taker_away": "Çalhanoğlu / Yılmaz",
+    "style_home": "Presión intensa, físico, versatilidad",
+    "style_away": "Físico, agresivo, muchas faltas",
+    "form_home": "WWDWW",
+    "form_away": "WWWWL",
+    "elo_home": 1652,
+    "elo_away": 1588,
+    "best_bet": {
+      "market": "Gana USA o Empate (1X)",
+      "prob": 0.7651,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana USA",
+      "alt_prob": 0.5434
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana USA",
+      "expected_value": 1.63,
+      "score_prob": 0.1226,
+      "result_1x2_best": "Gana USA",
+      "result_1x2_prob": 0.5434,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 12.26
+        },
+        {
+          "score": "1-0",
+          "prob": 11.39
+        },
+        {
+          "score": "2-1",
+          "prob": 9.22
+        }
+      ],
+      "cumulative_top3": 0.329,
+      "confidence": "Baja"
+    }
+  },
+  "D2": {
+    "home_win": 0.5338,
+    "draw": 0.2269,
+    "away_win": 0.2393,
+    "exp_home": 1.45,
+    "exp_away": 1.03,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 12.5
+      },
+      {
+        "score": "1-0",
+        "prob": 12.09
+      },
+      {
+        "score": "2-1",
+        "prob": 9.07
+      },
+      {
+        "score": "2-0",
+        "prob": 8.78
+      },
+      {
+        "score": "0-1",
+        "prob": 8.61
+      },
+      {
+        "score": "0-0",
+        "prob": 8.33
+      }
+    ],
+    "over0_5": 0.9167,
+    "over1_5": 0.7097,
+    "over2_5": 0.4524,
+    "over3_5": 0.2393,
+    "over4_5": 0.1069,
+    "btts": 0.4934,
+    "first_goal_home": 0.584,
+    "corners_exp_home": 5.08,
+    "corners_exp_away": 3.62,
+    "corners_total_exp": 8.7,
+    "corners_over7_5": 0.6404,
+    "corners_over8_5": 0.5049,
+    "corners_over9_5": 0.3738,
+    "corners_over10_5": 0.2597,
+    "corners_over11_5": 0.1693,
+    "corners_over12_5": 0.1038,
+    "corners_home_handicap": 0.4901,
+    "cards_exp_total": 3.8,
+    "cards_over2_5": 0.7311,
+    "cards_over3_5": 0.5265,
+    "cards_over4_5": 0.3322,
+    "cards_over5_5": 0.1844,
+    "possession_home_pct": 52.3,
+    "shots_ot_home": 4.2,
+    "shots_ot_away": 3.7,
+    "shots_ratio": 0.532,
+    "xg_dominance": 0.524,
+    "clean_sheet_home": 0.28,
+    "clean_sheet_away": 0.22,
+    "sp_taker_home": "Goodwin / Irvine",
+    "sp_taker_away": "Almiron / Sanabria",
+    "style_home": "Bloque medio, contraataque, físico",
+    "style_away": "Bloque defensivo, físico",
+    "form_home": "WWDDW",
+    "form_away": "DWWLL",
+    "elo_home": 1562,
+    "elo_away": 1512,
+    "best_bet": {
+      "market": "Gana Australia o Empate (1X)",
+      "prob": 0.7607,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Australia",
+      "alt_prob": 0.5338
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Australia",
+      "expected_value": 1.601,
+      "score_prob": 0.125,
+      "result_1x2_best": "Gana Australia",
+      "result_1x2_prob": 0.5338,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 12.5
+        },
+        {
+          "score": "1-0",
+          "prob": 12.09
+        },
+        {
+          "score": "2-1",
+          "prob": 9.07
+        }
+      ],
+      "cumulative_top3": 0.337,
+      "confidence": "Baja"
+    }
+  },
+  "D3": {
+    "home_win": 0.5746,
+    "draw": 0.2178,
+    "away_win": 0.2076,
+    "exp_home": 1.56,
+    "exp_away": 1.02,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 12.04
+      },
+      {
+        "score": "1-0",
+        "prob": 11.86
+      },
+      {
+        "score": "2-1",
+        "prob": 9.42
+      },
+      {
+        "score": "2-0",
+        "prob": 9.28
+      },
+      {
+        "score": "0-1",
+        "prob": 7.69
+      },
+      {
+        "score": "0-0",
+        "prob": 7.58
+      }
+    ],
+    "over0_5": 0.9242,
+    "over1_5": 0.7288,
+    "over2_5": 0.4766,
+    "over3_5": 0.2597,
+    "over4_5": 0.1198,
+    "btts": 0.5043,
+    "first_goal_home": 0.607,
+    "corners_exp_home": 5.64,
+    "corners_exp_away": 4.12,
+    "corners_total_exp": 9.76,
+    "corners_over7_5": 0.757,
+    "corners_over8_5": 0.639,
+    "corners_over9_5": 0.5112,
+    "corners_over10_5": 0.3864,
+    "corners_over11_5": 0.2758,
+    "corners_over12_5": 0.1859,
+    "corners_home_handicap": 0.4991,
+    "cards_exp_total": 3.2,
+    "cards_over2_5": 0.6201,
+    "cards_over3_5": 0.3975,
+    "cards_over4_5": 0.2194,
+    "cards_over5_5": 0.1054,
+    "possession_home_pct": 52.1,
+    "shots_ot_home": 4.8,
+    "shots_ot_away": 4.2,
+    "shots_ratio": 0.533,
+    "xg_dominance": 0.538,
+    "clean_sheet_home": 0.34,
+    "clean_sheet_away": 0.28,
+    "sp_taker_home": "Pulisic / McKennie",
+    "sp_taker_away": "Goodwin / Irvine",
+    "style_home": "Presión intensa, físico, versatilidad",
+    "style_away": "Bloque medio, contraataque, físico",
+    "form_home": "WWDWW",
+    "form_away": "WWDDW",
+    "elo_home": 1652,
+    "elo_away": 1562,
+    "best_bet": {
+      "market": "Gana USA o Empate (1X)",
+      "prob": 0.7924,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana USA",
+      "alt_prob": 0.5746
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana USA",
+      "expected_value": 1.724,
+      "score_prob": 0.1204,
+      "result_1x2_best": "Gana USA",
+      "result_1x2_prob": 0.5746,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 12.04
+        },
+        {
+          "score": "1-0",
+          "prob": 11.86
+        },
+        {
+          "score": "2-1",
+          "prob": 9.42
+        }
+      ],
+      "cumulative_top3": 0.333,
+      "confidence": "Baja"
+    }
+  },
+  "D4": {
+    "home_win": 0.5667,
+    "draw": 0.2202,
+    "away_win": 0.2131,
+    "exp_home": 1.54,
+    "exp_away": 0.99,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 12.23
+      },
+      {
+        "score": "1-1",
+        "prob": 12.15
+      },
+      {
+        "score": "2-0",
+        "prob": 9.41
+      },
+      {
+        "score": "2-1",
+        "prob": 9.35
+      },
+      {
+        "score": "0-0",
+        "prob": 7.94
+      },
+      {
+        "score": "0-1",
+        "prob": 7.89
+      }
+    ],
+    "over0_5": 0.9206,
+    "over1_5": 0.7194,
+    "over2_5": 0.4646,
+    "over3_5": 0.2494,
+    "over4_5": 0.1132,
+    "btts": 0.4946,
+    "first_goal_home": 0.608,
+    "corners_exp_home": 5.69,
+    "corners_exp_away": 3.38,
+    "corners_total_exp": 9.07,
+    "corners_over7_5": 0.684,
+    "corners_over8_5": 0.5532,
+    "corners_over9_5": 0.4215,
+    "corners_over10_5": 0.3021,
+    "corners_over11_5": 0.2036,
+    "corners_over12_5": 0.1292,
+    "corners_home_handicap": 0.6031,
+    "cards_exp_total": 4.4,
+    "cards_over2_5": 0.8149,
+    "cards_over3_5": 0.6406,
+    "cards_over4_5": 0.4488,
+    "cards_over5_5": 0.2801,
+    "possession_home_pct": 54.3,
+    "shots_ot_home": 4.5,
+    "shots_ot_away": 3.7,
+    "shots_ratio": 0.549,
+    "xg_dominance": 0.537,
+    "clean_sheet_home": 0.3,
+    "clean_sheet_away": 0.22,
+    "sp_taker_home": "Çalhanoğlu / Yılmaz",
+    "sp_taker_away": "Almiron / Sanabria",
+    "style_home": "Físico, agresivo, muchas faltas",
+    "style_away": "Bloque defensivo, físico",
+    "form_home": "WWWWL",
+    "form_away": "DWWLL",
+    "elo_home": 1588,
+    "elo_away": 1512,
+    "best_bet": {
+      "market": "Gana Turkey o Empate (1X)",
+      "prob": 0.7869,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Más de 3.5 tarjetas amarillas",
+      "alt_prob": 0.6406
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Turkey",
+      "expected_value": 1.7,
+      "score_prob": 0.1223,
+      "result_1x2_best": "Gana Turkey",
+      "result_1x2_prob": 0.5667,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 12.23
+        },
+        {
+          "score": "1-1",
+          "prob": 12.15
+        },
+        {
+          "score": "2-0",
+          "prob": 9.41
+        }
+      ],
+      "cumulative_top3": 0.338,
+      "confidence": "Baja"
+    }
+  },
+  "D5": {
+    "home_win": 0.6234,
+    "draw": 0.2103,
+    "away_win": 0.1663,
+    "exp_home": 1.66,
+    "exp_away": 0.93,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 12.43
+      },
+      {
+        "score": "1-1",
+        "prob": 11.61
+      },
+      {
+        "score": "2-0",
+        "prob": 10.29
+      },
+      {
+        "score": "2-1",
+        "prob": 9.61
+      },
+      {
+        "score": "0-0",
+        "prob": 7.51
+      },
+      {
+        "score": "0-1",
+        "prob": 7.01
+      }
+    ],
+    "over0_5": 0.9249,
+    "over1_5": 0.7305,
+    "over2_5": 0.4789,
+    "over3_5": 0.2617,
+    "over4_5": 0.1211,
+    "btts": 0.4911,
+    "first_goal_home": 0.639,
+    "corners_exp_home": 5.89,
+    "corners_exp_away": 3.46,
+    "corners_total_exp": 9.35,
+    "corners_over7_5": 0.7158,
+    "corners_over8_5": 0.5899,
+    "corners_over9_5": 0.459,
+    "corners_over10_5": 0.3366,
+    "corners_over11_5": 0.2325,
+    "corners_over12_5": 0.1514,
+    "corners_home_handicap": 0.617,
+    "cards_exp_total": 3.8,
+    "cards_over2_5": 0.7311,
+    "cards_over3_5": 0.5265,
+    "cards_over4_5": 0.3322,
+    "cards_over5_5": 0.1844,
+    "possession_home_pct": 54.3,
+    "shots_ot_home": 4.8,
+    "shots_ot_away": 3.7,
+    "shots_ratio": 0.565,
+    "xg_dominance": 0.562,
+    "clean_sheet_home": 0.34,
+    "clean_sheet_away": 0.22,
+    "sp_taker_home": "Pulisic / McKennie",
+    "sp_taker_away": "Almiron / Sanabria",
+    "style_home": "Presión intensa, físico, versatilidad",
+    "style_away": "Bloque defensivo, físico",
+    "form_home": "WWDWW",
+    "form_away": "DWWLL",
+    "elo_home": 1652,
+    "elo_away": 1512,
+    "best_bet": {
+      "market": "Gana USA o Empate (1X)",
+      "prob": 0.8337,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana USA",
+      "alt_prob": 0.6234
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana USA",
+      "expected_value": 1.87,
+      "score_prob": 0.1243,
+      "result_1x2_best": "Gana USA",
+      "result_1x2_prob": 0.6234,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 12.43
+        },
+        {
+          "score": "1-1",
+          "prob": 11.61
+        },
+        {
+          "score": "2-0",
+          "prob": 10.29
+        }
+      ],
+      "cumulative_top3": 0.343,
+      "confidence": "Baja"
+    }
+  },
+  "D6": {
+    "home_win": 0.5146,
+    "draw": 0.2255,
+    "away_win": 0.2599,
+    "exp_home": 1.46,
+    "exp_away": 1.08,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 12.45
+      },
+      {
+        "score": "1-0",
+        "prob": 11.53
+      },
+      {
+        "score": "2-1",
+        "prob": 9.06
+      },
+      {
+        "score": "0-1",
+        "prob": 8.56
+      },
+      {
+        "score": "2-0",
+        "prob": 8.39
+      },
+      {
+        "score": "0-0",
+        "prob": 7.92
+      }
+    ],
+    "over0_5": 0.9208,
+    "over1_5": 0.7198,
+    "over2_5": 0.4652,
+    "over3_5": 0.25,
+    "over4_5": 0.1136,
+    "btts": 0.5063,
+    "first_goal_home": 0.574,
+    "corners_exp_home": 5.44,
+    "corners_exp_away": 4.02,
+    "corners_total_exp": 9.46,
+    "corners_over7_5": 0.7275,
+    "corners_over8_5": 0.6036,
+    "corners_over9_5": 0.4734,
+    "corners_over10_5": 0.3501,
+    "corners_over11_5": 0.2441,
+    "corners_over12_5": 0.1605,
+    "corners_home_handicap": 0.4865,
+    "cards_exp_total": 3.8,
+    "cards_over2_5": 0.7311,
+    "cards_over3_5": 0.5265,
+    "cards_over4_5": 0.3322,
+    "cards_over5_5": 0.1844,
+    "possession_home_pct": 52.1,
+    "shots_ot_home": 4.5,
+    "shots_ot_away": 4.2,
+    "shots_ratio": 0.517,
+    "xg_dominance": 0.513,
+    "clean_sheet_home": 0.3,
+    "clean_sheet_away": 0.28,
+    "sp_taker_home": "Çalhanoğlu / Yılmaz",
+    "sp_taker_away": "Goodwin / Irvine",
+    "style_home": "Físico, agresivo, muchas faltas",
+    "style_away": "Bloque medio, contraataque, físico",
+    "form_home": "WWWWL",
+    "form_away": "WWDDW",
+    "elo_home": 1588,
+    "elo_away": 1562,
+    "best_bet": {
+      "market": "Gana Turkey o Empate (1X)",
+      "prob": 0.7401,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Más de 3.5 tarjetas amarillas",
+      "alt_prob": 0.5265
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Turkey",
+      "expected_value": 1.544,
+      "score_prob": 0.1245,
+      "result_1x2_best": "Gana Turkey",
+      "result_1x2_prob": 0.5146,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 12.45
+        },
+        {
+          "score": "1-0",
+          "prob": 11.53
+        },
+        {
+          "score": "2-1",
+          "prob": 9.06
+        }
+      ],
+      "cumulative_top3": 0.33,
+      "confidence": "Baja"
+    }
+  },
+  "E1": {
+    "home_win": 0.8415,
+    "draw": 0.1267,
+    "away_win": 0.0318,
+    "exp_home": 2.46,
+    "exp_away": 0.61,
+    "likely_score": "2-0",
+    "top_scores": [
+      {
+        "score": "2-0",
+        "prob": 14.01
+      },
+      {
+        "score": "3-0",
+        "prob": 11.48
+      },
+      {
+        "score": "1-0",
+        "prob": 11.39
+      },
+      {
+        "score": "2-1",
+        "prob": 8.59
+      },
+      {
+        "score": "4-0",
+        "prob": 7.06
+      },
+      {
+        "score": "3-1",
+        "prob": 7.04
+      }
+    ],
+    "over0_5": 0.9537,
+    "over1_5": 0.8114,
+    "over2_5": 0.5928,
+    "over3_5": 0.3689,
+    "over4_5": 0.197,
+    "btts": 0.4191,
+    "first_goal_home": 0.8,
+    "corners_exp_home": 8.75,
+    "corners_exp_away": 1.7,
+    "corners_total_exp": 10.45,
+    "corners_over7_5": 0.8177,
+    "corners_over8_5": 0.7156,
+    "corners_over9_5": 0.5971,
+    "corners_over10_5": 0.4732,
+    "corners_over11_5": 0.3555,
+    "corners_over12_5": 0.253,
+    "corners_home_handicap": 0.9642,
+    "cards_exp_total": 3.2,
+    "cards_over2_5": 0.6201,
+    "cards_over3_5": 0.3975,
+    "cards_over4_5": 0.2194,
+    "cards_over5_5": 0.1054,
+    "possession_home_pct": 63.8,
+    "shots_ot_home": 6.2,
+    "shots_ot_away": 2.5,
+    "shots_ratio": 0.713,
+    "xg_dominance": 0.66,
+    "clean_sheet_home": 0.42,
+    "clean_sheet_away": 0.1,
+    "sp_taker_home": "Kroos / Musiala",
+    "sp_taker_away": "Bonevacia / Aranguren",
+    "style_home": "Presión alta, posesión, muchos corners",
+    "style_away": "Limitado técnicamente, sorpresa del grupo",
+    "form_home": "WWWWW",
+    "form_away": "WLLWL",
+    "elo_home": 1758,
+    "elo_away": 1342,
+    "best_bet": {
+      "market": "Gana Germany o Empate (1X)",
+      "prob": 0.9682,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Germany",
+      "alt_prob": 0.8415
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Germany",
+      "expected_value": 2.525,
+      "score_prob": 0.1401,
+      "result_1x2_best": "Gana Germany",
+      "result_1x2_prob": 0.8415,
+      "joker_recommended": true,
+      "top3_scores": [
+        {
+          "score": "2-0",
+          "prob": 14.01
+        },
+        {
+          "score": "3-0",
+          "prob": 11.48
+        },
+        {
+          "score": "1-0",
+          "prob": 11.39
+        }
+      ],
+      "cumulative_top3": 0.369,
+      "confidence": "Media"
+    }
+  },
+  "E2": {
+    "home_win": 0.4976,
+    "draw": 0.2264,
+    "away_win": 0.276,
+    "exp_home": 1.43,
+    "exp_away": 1.12,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 12.51
+      },
+      {
+        "score": "1-0",
+        "prob": 11.14
+      },
+      {
+        "score": "2-1",
+        "prob": 8.93
+      },
+      {
+        "score": "0-1",
+        "prob": 8.77
+      },
+      {
+        "score": "2-0",
+        "prob": 7.95
+      },
+      {
+        "score": "0-0",
+        "prob": 7.81
+      }
+    ],
+    "over0_5": 0.9219,
+    "over1_5": 0.7229,
+    "over2_5": 0.469,
+    "over3_5": 0.2532,
+    "over4_5": 0.1157,
+    "btts": 0.5128,
+    "first_goal_home": 0.56,
+    "corners_exp_home": 4.67,
+    "corners_exp_away": 4.33,
+    "corners_total_exp": 9.0,
+    "corners_over7_5": 0.6763,
+    "corners_over8_5": 0.5446,
+    "corners_over9_5": 0.4129,
+    "corners_over10_5": 0.2943,
+    "corners_over11_5": 0.1972,
+    "corners_over12_5": 0.1244,
+    "corners_home_handicap": 0.3465,
+    "cards_exp_total": 4.1,
+    "cards_over2_5": 0.7762,
+    "cards_over3_5": 0.5858,
+    "cards_over4_5": 0.3907,
+    "cards_over5_5": 0.2307,
+    "possession_home_pct": 50.0,
+    "shots_ot_home": 4.0,
+    "shots_ot_away": 4.0,
+    "shots_ratio": 0.5,
+    "xg_dominance": 0.506,
+    "clean_sheet_home": 0.3,
+    "clean_sheet_away": 0.28,
+    "sp_taker_home": "Preciado / Plata",
+    "sp_taker_away": "Pépé / Seri",
+    "style_home": "Físico, directo, contraataque",
+    "style_away": "Físico, veloz extremos, desorganización defensiva",
+    "form_home": "WWDWL",
+    "form_away": "WWWDL",
+    "elo_home": 1592,
+    "elo_away": 1578,
+    "best_bet": {
+      "market": "Gana Ecuador o Empate (1X)",
+      "prob": 0.724,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Más de 3.5 tarjetas amarillas",
+      "alt_prob": 0.5858
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Ecuador",
+      "expected_value": 1.493,
+      "score_prob": 0.1251,
+      "result_1x2_best": "Gana Ecuador",
+      "result_1x2_prob": 0.4976,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 12.51
+        },
+        {
+          "score": "1-0",
+          "prob": 11.14
+        },
+        {
+          "score": "2-1",
+          "prob": 8.93
+        }
+      ],
+      "cumulative_top3": 0.326,
+      "confidence": "Baja"
+    }
+  },
+  "E3": {
+    "home_win": 0.6451,
+    "draw": 0.1996,
+    "away_win": 0.1553,
+    "exp_home": 1.78,
+    "exp_away": 0.98,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 11.21
+      },
+      {
+        "score": "1-1",
+        "prob": 11.03
+      },
+      {
+        "score": "2-0",
+        "prob": 9.98
+      },
+      {
+        "score": "2-1",
+        "prob": 9.83
+      },
+      {
+        "score": "0-0",
+        "prob": 6.29
+      },
+      {
+        "score": "0-1",
+        "prob": 6.19
+      }
+    ],
+    "over0_5": 0.9371,
+    "over1_5": 0.7632,
+    "over2_5": 0.5225,
+    "over3_5": 0.3006,
+    "over4_5": 0.1471,
+    "btts": 0.521,
+    "first_goal_home": 0.644,
+    "corners_exp_home": 7.64,
+    "corners_exp_away": 2.74,
+    "corners_total_exp": 10.37,
+    "corners_over7_5": 0.8113,
+    "corners_over8_5": 0.7073,
+    "corners_over9_5": 0.5875,
+    "corners_over10_5": 0.4632,
+    "corners_over11_5": 0.3461,
+    "corners_over12_5": 0.2448,
+    "corners_home_handicap": 0.8579,
+    "cards_exp_total": 3.4,
+    "cards_over2_5": 0.6603,
+    "cards_over3_5": 0.4416,
+    "cards_over4_5": 0.2558,
+    "cards_over5_5": 0.1295,
+    "possession_home_pct": 56.6,
+    "shots_ot_home": 6.2,
+    "shots_ot_away": 4.0,
+    "shots_ratio": 0.608,
+    "xg_dominance": 0.561,
+    "clean_sheet_home": 0.42,
+    "clean_sheet_away": 0.3,
+    "sp_taker_home": "Kroos / Musiala",
+    "sp_taker_away": "Preciado / Plata",
+    "style_home": "Presión alta, posesión, muchos corners",
+    "style_away": "Físico, directo, contraataque",
+    "form_home": "WWWWW",
+    "form_away": "WWDWL",
+    "elo_home": 1758,
+    "elo_away": 1592,
+    "best_bet": {
+      "market": "Gana Germany o Empate (1X)",
+      "prob": 0.8447,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Germany",
+      "alt_prob": 0.6451
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Germany",
+      "expected_value": 1.935,
+      "score_prob": 0.1121,
+      "result_1x2_best": "Gana Germany",
+      "result_1x2_prob": 0.6451,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 11.21
+        },
+        {
+          "score": "1-1",
+          "prob": 11.03
+        },
+        {
+          "score": "2-0",
+          "prob": 9.98
+        }
+      ],
+      "cumulative_top3": 0.322,
+      "confidence": "Baja"
+    }
+  },
+  "E4": {
+    "home_win": 0.2294,
+    "draw": 0.22,
+    "away_win": 0.5506,
+    "exp_home": 0.89,
+    "exp_away": 1.55,
+    "likely_score": "0-1",
+    "top_scores": [
+      {
+        "score": "0-1",
+        "prob": 13.53
+      },
+      {
+        "score": "1-1",
+        "prob": 12.02
+      },
+      {
+        "score": "0-2",
+        "prob": 10.48
+      },
+      {
+        "score": "1-2",
+        "prob": 9.32
+      },
+      {
+        "score": "0-0",
+        "prob": 8.73
+      },
+      {
+        "score": "1-0",
+        "prob": 7.76
+      }
+    ],
+    "over0_5": 0.9127,
+    "over1_5": 0.6999,
+    "over2_5": 0.4404,
+    "over3_5": 0.2294,
+    "over4_5": 0.1008,
+    "btts": 0.4638,
+    "first_goal_home": 0.364,
+    "corners_exp_home": 2.91,
+    "corners_exp_away": 4.96,
+    "corners_total_exp": 7.87,
+    "corners_over7_5": 0.5285,
+    "corners_over8_5": 0.3891,
+    "corners_over9_5": 0.2672,
+    "corners_over10_5": 0.1713,
+    "corners_over11_5": 0.1026,
+    "corners_over12_5": 0.0577,
+    "corners_home_handicap": 0.0978,
+    "cards_exp_total": 3.9,
+    "cards_over2_5": 0.7469,
+    "cards_over3_5": 0.5468,
+    "cards_over4_5": 0.3516,
+    "cards_over5_5": 0.1994,
+    "possession_home_pct": 42.5,
+    "shots_ot_home": 2.5,
+    "shots_ot_away": 4.0,
+    "shots_ratio": 0.385,
+    "xg_dominance": 0.401,
+    "clean_sheet_home": 0.1,
+    "clean_sheet_away": 0.28,
+    "sp_taker_home": "Bonevacia / Aranguren",
+    "sp_taker_away": "Pépé / Seri",
+    "style_home": "Limitado técnicamente, sorpresa del grupo",
+    "style_away": "Físico, veloz extremos, desorganización defensiva",
+    "form_home": "WLLWL",
+    "form_away": "WWWDL",
+    "elo_home": 1342,
+    "elo_away": 1578,
+    "best_bet": {
+      "market": "Gana Ivory Coast o Empate (X2)",
+      "prob": 0.7706,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Ivory Coast",
+      "alt_prob": 0.5506
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Ivory Coast",
+      "expected_value": 1.652,
+      "score_prob": 0.1353,
+      "result_1x2_best": "Gana Ivory Coast",
+      "result_1x2_prob": 0.5506,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "0-1",
+          "prob": 13.53
+        },
+        {
+          "score": "1-1",
+          "prob": 12.02
+        },
+        {
+          "score": "0-2",
+          "prob": 10.48
+        }
+      ],
+      "cumulative_top3": 0.36,
+      "confidence": "Baja"
+    }
+  },
+  "E5": {
+    "home_win": 0.6583,
+    "draw": 0.1964,
+    "away_win": 0.1453,
+    "exp_home": 1.82,
+    "exp_away": 0.97,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 11.24
+      },
+      {
+        "score": "1-1",
+        "prob": 10.85
+      },
+      {
+        "score": "2-0",
+        "prob": 10.21
+      },
+      {
+        "score": "2-1",
+        "prob": 9.86
+      },
+      {
+        "score": "3-0",
+        "prob": 6.19
+      },
+      {
+        "score": "0-0",
+        "prob": 6.18
+      }
+    ],
+    "over0_5": 0.9382,
+    "over1_5": 0.7661,
+    "over2_5": 0.5266,
+    "over3_5": 0.3044,
+    "over4_5": 0.1498,
+    "btts": 0.5188,
+    "first_goal_home": 0.653,
+    "corners_exp_home": 7.48,
+    "corners_exp_away": 2.8,
+    "corners_total_exp": 10.27,
+    "corners_over7_5": 0.8033,
+    "corners_over8_5": 0.697,
+    "corners_over9_5": 0.5756,
+    "corners_over10_5": 0.451,
+    "corners_over11_5": 0.3346,
+    "corners_over12_5": 0.2349,
+    "corners_home_handicap": 0.8422,
+    "cards_exp_total": 3.5,
+    "cards_over2_5": 0.6792,
+    "cards_over3_5": 0.4634,
+    "cards_over4_5": 0.2746,
+    "cards_over5_5": 0.1424,
+    "possession_home_pct": 56.6,
+    "shots_ot_home": 6.2,
+    "shots_ot_away": 4.0,
+    "shots_ratio": 0.608,
+    "xg_dominance": 0.566,
+    "clean_sheet_home": 0.42,
+    "clean_sheet_away": 0.28,
+    "sp_taker_home": "Kroos / Musiala",
+    "sp_taker_away": "Pépé / Seri",
+    "style_home": "Presión alta, posesión, muchos corners",
+    "style_away": "Físico, veloz extremos, desorganización defensiva",
+    "form_home": "WWWWW",
+    "form_away": "WWWDL",
+    "elo_home": 1758,
+    "elo_away": 1578,
+    "best_bet": {
+      "market": "Gana Germany o Empate (1X)",
+      "prob": 0.8547,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Germany",
+      "alt_prob": 0.6583
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Germany",
+      "expected_value": 1.975,
+      "score_prob": 0.1124,
+      "result_1x2_best": "Gana Germany",
+      "result_1x2_prob": 0.6583,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 11.24
+        },
+        {
+          "score": "1-1",
+          "prob": 10.85
+        },
+        {
+          "score": "2-0",
+          "prob": 10.21
+        }
+      ],
+      "cumulative_top3": 0.323,
+      "confidence": "Baja"
+    }
+  },
+  "E6": {
+    "home_win": 0.7354,
+    "draw": 0.1791,
+    "away_win": 0.0855,
+    "exp_home": 1.93,
+    "exp_away": 0.71,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 13.73
+      },
+      {
+        "score": "2-0",
+        "prob": 13.25
+      },
+      {
+        "score": "1-1",
+        "prob": 9.79
+      },
+      {
+        "score": "2-1",
+        "prob": 9.45
+      },
+      {
+        "score": "3-0",
+        "prob": 8.53
+      },
+      {
+        "score": "0-0",
+        "prob": 7.11
+      }
+    ],
+    "over0_5": 0.9289,
+    "over1_5": 0.7409,
+    "over2_5": 0.4925,
+    "over3_5": 0.2735,
+    "over4_5": 0.1288,
+    "btts": 0.4358,
+    "first_goal_home": 0.73,
+    "corners_exp_home": 5.47,
+    "corners_exp_away": 2.64,
+    "corners_total_exp": 8.1,
+    "corners_over7_5": 0.5614,
+    "corners_over8_5": 0.4219,
+    "corners_over9_5": 0.2963,
+    "corners_over10_5": 0.1945,
+    "corners_over11_5": 0.1195,
+    "corners_over12_5": 0.0689,
+    "corners_home_handicap": 0.6772,
+    "cards_exp_total": 3.8,
+    "cards_over2_5": 0.7311,
+    "cards_over3_5": 0.5265,
+    "cards_over4_5": 0.3322,
+    "cards_over5_5": 0.1844,
+    "possession_home_pct": 57.5,
+    "shots_ot_home": 4.0,
+    "shots_ot_away": 2.5,
+    "shots_ratio": 0.615,
+    "xg_dominance": 0.605,
+    "clean_sheet_home": 0.3,
+    "clean_sheet_away": 0.1,
+    "sp_taker_home": "Preciado / Plata",
+    "sp_taker_away": "Bonevacia / Aranguren",
+    "style_home": "Físico, directo, contraataque",
+    "style_away": "Limitado técnicamente, sorpresa del grupo",
+    "form_home": "WWDWL",
+    "form_away": "WLLWL",
+    "elo_home": 1592,
+    "elo_away": 1342,
+    "best_bet": {
+      "market": "Gana Ecuador o Empate (1X)",
+      "prob": 0.9145,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Ecuador",
+      "alt_prob": 0.7354
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Ecuador",
+      "expected_value": 2.206,
+      "score_prob": 0.1373,
+      "result_1x2_best": "Gana Ecuador",
+      "result_1x2_prob": 0.7354,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 13.73
+        },
+        {
+          "score": "2-0",
+          "prob": 13.25
+        },
+        {
+          "score": "1-1",
+          "prob": 9.79
+        }
+      ],
+      "cumulative_top3": 0.368,
+      "confidence": "Media"
+    }
+  },
+  "F1": {
+    "home_win": 0.7144,
+    "draw": 0.1849,
+    "away_win": 0.1007,
+    "exp_home": 1.92,
+    "exp_away": 0.86,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 11.96
+      },
+      {
+        "score": "2-0",
+        "prob": 11.49
+      },
+      {
+        "score": "1-1",
+        "prob": 10.23
+      },
+      {
+        "score": "2-1",
+        "prob": 9.83
+      },
+      {
+        "score": "3-0",
+        "prob": 7.36
+      },
+      {
+        "score": "3-1",
+        "prob": 6.3
+      }
+    ],
+    "over0_5": 0.9378,
+    "over1_5": 0.765,
+    "over2_5": 0.5251,
+    "over3_5": 0.303,
+    "over4_5": 0.1488,
+    "btts": 0.4908,
+    "first_goal_home": 0.692,
+    "corners_exp_home": 5.75,
+    "corners_exp_away": 3.43,
+    "corners_total_exp": 9.18,
+    "corners_over7_5": 0.6973,
+    "corners_over8_5": 0.5684,
+    "corners_over9_5": 0.4369,
+    "corners_over10_5": 0.3161,
+    "corners_over11_5": 0.2152,
+    "corners_over12_5": 0.1381,
+    "corners_home_handicap": 0.6034,
+    "cards_exp_total": 3.1,
+    "cards_over2_5": 0.5988,
+    "cards_over3_5": 0.3752,
+    "cards_over4_5": 0.2018,
+    "cards_over5_5": 0.0943,
+    "possession_home_pct": 54.3,
+    "shots_ot_home": 5.3,
+    "shots_ot_away": 3.9,
+    "shots_ratio": 0.576,
+    "xg_dominance": 0.582,
+    "clean_sheet_home": 0.38,
+    "clean_sheet_away": 0.24,
+    "sp_taker_home": "Depay / Xavi Simons",
+    "sp_taker_away": "Isak / Kulusevski",
+    "style_home": "Presión, posesión, creatividad",
+    "style_away": "Balanceado, físico nórdico, Isak dinámico",
+    "form_home": "WWDWW",
+    "form_away": "WDWWL",
+    "elo_home": 1738,
+    "elo_away": 1482,
+    "best_bet": {
+      "market": "Gana Netherlands o Empate (1X)",
+      "prob": 0.8993,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Netherlands",
+      "alt_prob": 0.7144
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Netherlands",
+      "expected_value": 2.143,
+      "score_prob": 0.1196,
+      "result_1x2_best": "Gana Netherlands",
+      "result_1x2_prob": 0.7144,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 11.96
+        },
+        {
+          "score": "2-0",
+          "prob": 11.49
+        },
+        {
+          "score": "1-1",
+          "prob": 10.23
+        }
+      ],
+      "cumulative_top3": 0.337,
+      "confidence": "Media"
+    }
+  },
+  "F2": {
+    "home_win": 0.6293,
+    "draw": 0.2102,
+    "away_win": 0.1605,
+    "exp_home": 1.66,
+    "exp_away": 0.91,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 12.7
+      },
+      {
+        "score": "1-1",
+        "prob": 11.59
+      },
+      {
+        "score": "2-0",
+        "prob": 10.51
+      },
+      {
+        "score": "2-1",
+        "prob": 9.59
+      },
+      {
+        "score": "0-0",
+        "prob": 7.67
+      },
+      {
+        "score": "0-1",
+        "prob": 7.0
+      }
+    ],
+    "over0_5": 0.9233,
+    "over1_5": 0.7263,
+    "over2_5": 0.4734,
+    "over3_5": 0.257,
+    "over4_5": 0.118,
+    "btts": 0.4841,
+    "first_goal_home": 0.645,
+    "corners_exp_home": 5.09,
+    "corners_exp_away": 3.87,
+    "corners_total_exp": 8.96,
+    "corners_over7_5": 0.6715,
+    "corners_over8_5": 0.5392,
+    "corners_over9_5": 0.4074,
+    "corners_over10_5": 0.2894,
+    "corners_over11_5": 0.1932,
+    "corners_over12_5": 0.1214,
+    "corners_home_handicap": 0.4588,
+    "cards_exp_total": 3.4,
+    "cards_over2_5": 0.6603,
+    "cards_over3_5": 0.4416,
+    "cards_over4_5": 0.2558,
+    "cards_over5_5": 0.1295,
+    "possession_home_pct": 55.2,
+    "shots_ot_home": 4.5,
+    "shots_ot_away": 3.6,
+    "shots_ratio": 0.556,
+    "xg_dominance": 0.553,
+    "clean_sheet_home": 0.35,
+    "clean_sheet_away": 0.22,
+    "sp_taker_home": "Kubo / Mitoma",
+    "sp_taker_away": "Msakni / Jaziri",
+    "style_home": "Posesión técnica, presión alta, disciplina",
+    "style_away": "Bloque defensivo, contraataque",
+    "form_home": "WWWWL",
+    "form_away": "WDWLW",
+    "elo_home": 1622,
+    "elo_away": 1476,
+    "best_bet": {
+      "market": "Gana Japan o Empate (1X)",
+      "prob": 0.8395,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Japan",
+      "alt_prob": 0.6293
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Japan",
+      "expected_value": 1.888,
+      "score_prob": 0.127,
+      "result_1x2_best": "Gana Japan",
+      "result_1x2_prob": 0.6293,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 12.7
+        },
+        {
+          "score": "1-1",
+          "prob": 11.59
+        },
+        {
+          "score": "2-0",
+          "prob": 10.51
+        }
+      ],
+      "cumulative_top3": 0.348,
+      "confidence": "Baja"
+    }
+  },
+  "F3": {
+    "home_win": 0.5951,
+    "draw": 0.2109,
+    "away_win": 0.194,
+    "exp_home": 1.65,
+    "exp_away": 1.05,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 11.66
+      },
+      {
+        "score": "1-0",
+        "prob": 11.15
+      },
+      {
+        "score": "2-1",
+        "prob": 9.6
+      },
+      {
+        "score": "2-0",
+        "prob": 9.18
+      },
+      {
+        "score": "0-1",
+        "prob": 7.08
+      },
+      {
+        "score": "0-0",
+        "prob": 6.77
+      }
+    ],
+    "over0_5": 0.9323,
+    "over1_5": 0.75,
+    "over2_5": 0.5046,
+    "over3_5": 0.2843,
+    "over4_5": 0.136,
+    "btts": 0.5236,
+    "first_goal_home": 0.612,
+    "corners_exp_home": 6.44,
+    "corners_exp_away": 3.29,
+    "corners_total_exp": 9.73,
+    "corners_over7_5": 0.7547,
+    "corners_over8_5": 0.6362,
+    "corners_over9_5": 0.5081,
+    "corners_over10_5": 0.3835,
+    "corners_over11_5": 0.2732,
+    "corners_over12_5": 0.1837,
+    "corners_home_handicap": 0.6991,
+    "cards_exp_total": 2.9,
+    "cards_over2_5": 0.554,
+    "cards_over3_5": 0.3304,
+    "cards_over4_5": 0.1682,
+    "cards_over5_5": 0.0742,
+    "possession_home_pct": 51.8,
+    "shots_ot_home": 5.3,
+    "shots_ot_away": 4.5,
+    "shots_ratio": 0.541,
+    "xg_dominance": 0.538,
+    "clean_sheet_home": 0.38,
+    "clean_sheet_away": 0.35,
+    "sp_taker_home": "Depay / Xavi Simons",
+    "sp_taker_away": "Kubo / Mitoma",
+    "style_home": "Presión, posesión, creatividad",
+    "style_away": "Posesión técnica, presión alta, disciplina",
+    "form_home": "WWDWW",
+    "form_away": "WWWWL",
+    "elo_home": 1738,
+    "elo_away": 1622,
+    "best_bet": {
+      "market": "Gana Netherlands o Empate (1X)",
+      "prob": 0.806,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Netherlands",
+      "alt_prob": 0.5951
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Netherlands",
+      "expected_value": 1.785,
+      "score_prob": 0.1166,
+      "result_1x2_best": "Gana Netherlands",
+      "result_1x2_prob": 0.5951,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 11.66
+        },
+        {
+          "score": "1-0",
+          "prob": 11.15
+        },
+        {
+          "score": "2-1",
+          "prob": 9.6
+        }
+      ],
+      "cumulative_top3": 0.324,
+      "confidence": "Baja"
+    }
+  },
+  "F4": {
+    "home_win": 0.4895,
+    "draw": 0.2337,
+    "away_win": 0.2768,
+    "exp_home": 1.35,
+    "exp_away": 1.06,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 12.83
+      },
+      {
+        "score": "1-0",
+        "prob": 12.06
+      },
+      {
+        "score": "0-1",
+        "prob": 9.48
+      },
+      {
+        "score": "0-0",
+        "prob": 8.9
+      },
+      {
+        "score": "2-1",
+        "prob": 8.69
+      },
+      {
+        "score": "2-0",
+        "prob": 8.16
+      }
+    ],
+    "over0_5": 0.911,
+    "over1_5": 0.6956,
+    "over2_5": 0.4352,
+    "over3_5": 0.2252,
+    "over4_5": 0.0982,
+    "btts": 0.486,
+    "first_goal_home": 0.56,
+    "corners_exp_home": 5.3,
+    "corners_exp_away": 3.46,
+    "corners_total_exp": 8.76,
+    "corners_over7_5": 0.6474,
+    "corners_over8_5": 0.5125,
+    "corners_over9_5": 0.3812,
+    "corners_over10_5": 0.2661,
+    "corners_over11_5": 0.1745,
+    "corners_over12_5": 0.1075,
+    "corners_home_handicap": 0.5421,
+    "cards_exp_total": 3.6,
+    "cards_over2_5": 0.6973,
+    "cards_over3_5": 0.4848,
+    "cards_over4_5": 0.2936,
+    "cards_over5_5": 0.1559,
+    "possession_home_pct": 52.7,
+    "shots_ot_home": 3.9,
+    "shots_ot_away": 3.6,
+    "shots_ratio": 0.52,
+    "xg_dominance": 0.508,
+    "clean_sheet_home": 0.24,
+    "clean_sheet_away": 0.22,
+    "sp_taker_home": "Isak / Kulusevski",
+    "sp_taker_away": "Msakni / Jaziri",
+    "style_home": "Balanceado, físico nórdico, Isak dinámico",
+    "style_away": "Bloque defensivo, contraataque",
+    "form_home": "WDWWL",
+    "form_away": "WDWLW",
+    "elo_home": 1482,
+    "elo_away": 1476,
+    "best_bet": {
+      "market": "Gana Sweden o Empate (1X)",
+      "prob": 0.7232,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Tunisia o Empate (X2)",
+      "alt_prob": 0.5105
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Sweden",
+      "expected_value": 1.468,
+      "score_prob": 0.1283,
+      "result_1x2_best": "Gana Sweden",
+      "result_1x2_prob": 0.4895,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 12.83
+        },
+        {
+          "score": "1-0",
+          "prob": 12.06
+        },
+        {
+          "score": "0-1",
+          "prob": 9.48
+        }
+      ],
+      "cumulative_top3": 0.344,
+      "confidence": "Baja"
+    }
+  },
+  "F5": {
+    "home_win": 0.7234,
+    "draw": 0.1813,
+    "away_win": 0.0953,
+    "exp_home": 1.96,
+    "exp_away": 0.84,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 11.98
+      },
+      {
+        "score": "2-0",
+        "prob": 11.72
+      },
+      {
+        "score": "1-1",
+        "prob": 10.02
+      },
+      {
+        "score": "2-1",
+        "prob": 9.8
+      },
+      {
+        "score": "3-0",
+        "prob": 7.64
+      },
+      {
+        "score": "3-1",
+        "prob": 6.39
+      }
+    ],
+    "over0_5": 0.9387,
+    "over1_5": 0.7677,
+    "over2_5": 0.5288,
+    "over3_5": 0.3064,
+    "over4_5": 0.1512,
+    "btts": 0.4866,
+    "first_goal_home": 0.701,
+    "corners_exp_home": 6.57,
+    "corners_exp_away": 2.88,
+    "corners_total_exp": 9.46,
+    "corners_over7_5": 0.7269,
+    "corners_over8_5": 0.6029,
+    "corners_over9_5": 0.4726,
+    "corners_over10_5": 0.3494,
+    "corners_over11_5": 0.2435,
+    "corners_over12_5": 0.16,
+    "corners_home_handicap": 0.7619,
+    "cards_exp_total": 3.7,
+    "cards_over2_5": 0.7146,
+    "cards_over3_5": 0.5058,
+    "cards_over4_5": 0.3128,
+    "cards_over5_5": 0.1699,
+    "possession_home_pct": 57.0,
+    "shots_ot_home": 5.3,
+    "shots_ot_away": 3.6,
+    "shots_ratio": 0.596,
+    "xg_dominance": 0.59,
+    "clean_sheet_home": 0.38,
+    "clean_sheet_away": 0.22,
+    "sp_taker_home": "Depay / Xavi Simons",
+    "sp_taker_away": "Msakni / Jaziri",
+    "style_home": "Presión, posesión, creatividad",
+    "style_away": "Bloque defensivo, contraataque",
+    "form_home": "WWDWW",
+    "form_away": "WDWLW",
+    "elo_home": 1738,
+    "elo_away": 1476,
+    "best_bet": {
+      "market": "Gana Netherlands o Empate (1X)",
+      "prob": 0.9047,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Netherlands",
+      "alt_prob": 0.7234
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Netherlands",
+      "expected_value": 2.17,
+      "score_prob": 0.1198,
+      "result_1x2_best": "Gana Netherlands",
+      "result_1x2_prob": 0.7234,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 11.98
+        },
+        {
+          "score": "2-0",
+          "prob": 11.72
+        },
+        {
+          "score": "1-1",
+          "prob": 10.02
+        }
+      ],
+      "cumulative_top3": 0.337,
+      "confidence": "Media"
+    }
+  },
+  "F6": {
+    "home_win": 0.6193,
+    "draw": 0.2128,
+    "away_win": 0.1679,
+    "exp_home": 1.63,
+    "exp_away": 0.93,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 12.58
+      },
+      {
+        "score": "1-1",
+        "prob": 11.74
+      },
+      {
+        "score": "2-0",
+        "prob": 10.23
+      },
+      {
+        "score": "2-1",
+        "prob": 9.54
+      },
+      {
+        "score": "0-0",
+        "prob": 7.74
+      },
+      {
+        "score": "0-1",
+        "prob": 7.22
+      }
+    ],
+    "over0_5": 0.9226,
+    "over1_5": 0.7247,
+    "over2_5": 0.4713,
+    "over3_5": 0.2552,
+    "over4_5": 0.1169,
+    "btts": 0.4874,
+    "first_goal_home": 0.635,
+    "corners_exp_home": 4.45,
+    "corners_exp_away": 4.61,
+    "corners_total_exp": 9.06,
+    "corners_over7_5": 0.6833,
+    "corners_over8_5": 0.5525,
+    "corners_over9_5": 0.4207,
+    "corners_over10_5": 0.3014,
+    "corners_over11_5": 0.203,
+    "corners_over12_5": 0.1288,
+    "corners_home_handicap": 0.2882,
+    "cards_exp_total": 2.8,
+    "cards_over2_5": 0.5305,
+    "cards_over3_5": 0.3081,
+    "cards_over4_5": 0.1523,
+    "cards_over5_5": 0.0651,
+    "possession_home_pct": 52.5,
+    "shots_ot_home": 4.5,
+    "shots_ot_away": 3.9,
+    "shots_ratio": 0.536,
+    "xg_dominance": 0.545,
+    "clean_sheet_home": 0.35,
+    "clean_sheet_away": 0.24,
+    "sp_taker_home": "Kubo / Mitoma",
+    "sp_taker_away": "Isak / Kulusevski",
+    "style_home": "Posesión técnica, presión alta, disciplina",
+    "style_away": "Balanceado, físico nórdico, Isak dinámico",
+    "form_home": "WWWWL",
+    "form_away": "WDWWL",
+    "elo_home": 1622,
+    "elo_away": 1482,
+    "best_bet": {
+      "market": "Gana Japan o Empate (1X)",
+      "prob": 0.8321,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Japan",
+      "alt_prob": 0.6193
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Japan",
+      "expected_value": 1.858,
+      "score_prob": 0.1258,
+      "result_1x2_best": "Gana Japan",
+      "result_1x2_prob": 0.6193,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 12.58
+        },
+        {
+          "score": "1-1",
+          "prob": 11.74
+        },
+        {
+          "score": "2-0",
+          "prob": 10.23
+        }
+      ],
+      "cumulative_top3": 0.345,
+      "confidence": "Baja"
+    }
+  },
+  "G1": {
+    "home_win": 0.7193,
+    "draw": 0.1817,
+    "away_win": 0.099,
+    "exp_home": 1.95,
+    "exp_away": 0.84,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 12.01
+      },
+      {
+        "score": "2-0",
+        "prob": 11.72
+      },
+      {
+        "score": "1-1",
+        "prob": 10.05
+      },
+      {
+        "score": "2-1",
+        "prob": 9.8
+      },
+      {
+        "score": "3-0",
+        "prob": 7.62
+      },
+      {
+        "score": "3-1",
+        "prob": 6.38
+      }
+    ],
+    "over0_5": 0.9384,
+    "over1_5": 0.7668,
+    "over2_5": 0.5276,
+    "over3_5": 0.3054,
+    "over4_5": 0.1504,
+    "btts": 0.4862,
+    "first_goal_home": 0.7,
+    "corners_exp_home": 6.76,
+    "corners_exp_away": 2.47,
+    "corners_total_exp": 9.23,
+    "corners_over7_5": 0.7025,
+    "corners_over8_5": 0.5744,
+    "corners_over9_5": 0.443,
+    "corners_over10_5": 0.3217,
+    "corners_over11_5": 0.22,
+    "corners_over12_5": 0.1417,
+    "corners_home_handicap": 0.823,
+    "cards_exp_total": 3.6,
+    "cards_over2_5": 0.6973,
+    "cards_over3_5": 0.4848,
+    "cards_over4_5": 0.2936,
+    "cards_over5_5": 0.1559,
+    "possession_home_pct": 55.6,
+    "shots_ot_home": 5.2,
+    "shots_ot_away": 3.8,
+    "shots_ratio": 0.578,
+    "xg_dominance": 0.586,
+    "clean_sheet_home": 0.4,
+    "clean_sheet_away": 0.22,
+    "sp_taker_home": "De Bruyne / Trossard",
+    "sp_taker_away": "Taremi / Jahanbakhsh",
+    "style_home": "Posesión dominante, corners ofensivos",
+    "style_away": "Bloque compacto, contraataque",
+    "form_home": "WWWWW",
+    "form_away": "WWWDL",
+    "elo_home": 1742,
+    "elo_away": 1492,
+    "best_bet": {
+      "market": "Gana Belgium o Empate (1X)",
+      "prob": 0.901,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Belgium",
+      "alt_prob": 0.7193
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Belgium",
+      "expected_value": 2.158,
+      "score_prob": 0.1201,
+      "result_1x2_best": "Gana Belgium",
+      "result_1x2_prob": 0.7193,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 12.01
+        },
+        {
+          "score": "2-0",
+          "prob": 11.72
+        },
+        {
+          "score": "1-1",
+          "prob": 10.05
+        }
+      ],
+      "cumulative_top3": 0.338,
+      "confidence": "Media"
+    }
+  },
+  "G2": {
+    "home_win": 0.5457,
+    "draw": 0.2294,
+    "away_win": 0.2249,
+    "exp_home": 1.44,
+    "exp_away": 0.96,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 13.06
+      },
+      {
+        "score": "1-1",
+        "prob": 12.54
+      },
+      {
+        "score": "2-0",
+        "prob": 9.4
+      },
+      {
+        "score": "0-0",
+        "prob": 9.07
+      },
+      {
+        "score": "2-1",
+        "prob": 9.03
+      },
+      {
+        "score": "0-1",
+        "prob": 8.71
+      }
+    ],
+    "over0_5": 0.9093,
+    "over1_5": 0.6917,
+    "over2_5": 0.4305,
+    "over3_5": 0.2214,
+    "over4_5": 0.096,
+    "btts": 0.4711,
+    "first_goal_home": 0.6,
+    "corners_exp_home": 5.17,
+    "corners_exp_away": 3.0,
+    "corners_total_exp": 8.17,
+    "corners_over7_5": 0.5705,
+    "corners_over8_5": 0.4311,
+    "corners_over9_5": 0.3047,
+    "corners_over10_5": 0.2013,
+    "corners_over11_5": 0.1246,
+    "corners_over12_5": 0.0723,
+    "corners_home_handicap": 0.5883,
+    "cards_exp_total": 3.6,
+    "cards_over2_5": 0.6973,
+    "cards_over3_5": 0.4848,
+    "cards_over4_5": 0.2936,
+    "cards_over5_5": 0.1559,
+    "possession_home_pct": 54.8,
+    "shots_ot_home": 3.8,
+    "shots_ot_away": 3.0,
+    "shots_ratio": 0.559,
+    "xg_dominance": 0.535,
+    "clean_sheet_home": 0.24,
+    "clean_sheet_away": 0.16,
+    "sp_taker_home": "Salah / Trezeguet",
+    "sp_taker_away": "Wood / McGlinchey",
+    "style_home": "Salah dependencia, bloque medio",
+    "style_away": "Físico directo, presencia aérea",
+    "form_home": "WWDLW",
+    "form_away": "WDWLW",
+    "elo_home": 1468,
+    "elo_away": 1412,
+    "best_bet": {
+      "market": "Gana Egypt o Empate (1X)",
+      "prob": 0.7751,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Egypt",
+      "alt_prob": 0.5457
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Egypt",
+      "expected_value": 1.637,
+      "score_prob": 0.1306,
+      "result_1x2_best": "Gana Egypt",
+      "result_1x2_prob": 0.5457,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 13.06
+        },
+        {
+          "score": "1-1",
+          "prob": 12.54
+        },
+        {
+          "score": "2-0",
+          "prob": 9.4
+        }
+      ],
+      "cumulative_top3": 0.35,
+      "confidence": "Baja"
+    }
+  },
+  "G3": {
+    "home_win": 0.7306,
+    "draw": 0.1785,
+    "away_win": 0.0909,
+    "exp_home": 1.99,
+    "exp_away": 0.84,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 11.81
+      },
+      {
+        "score": "2-0",
+        "prob": 11.73
+      },
+      {
+        "score": "1-1",
+        "prob": 9.88
+      },
+      {
+        "score": "2-1",
+        "prob": 9.81
+      },
+      {
+        "score": "3-0",
+        "prob": 7.76
+      },
+      {
+        "score": "3-1",
+        "prob": 6.49
+      }
+    ],
+    "over0_5": 0.9406,
+    "over1_5": 0.7728,
+    "over2_5": 0.5359,
+    "over3_5": 0.3131,
+    "over4_5": 0.1559,
+    "btts": 0.489,
+    "first_goal_home": 0.704,
+    "corners_exp_home": 6.76,
+    "corners_exp_away": 2.47,
+    "corners_total_exp": 9.23,
+    "corners_over7_5": 0.7025,
+    "corners_over8_5": 0.5744,
+    "corners_over9_5": 0.443,
+    "corners_over10_5": 0.3217,
+    "corners_over11_5": 0.22,
+    "corners_over12_5": 0.1417,
+    "corners_home_handicap": 0.823,
+    "cards_exp_total": 3.4,
+    "cards_over2_5": 0.6603,
+    "cards_over3_5": 0.4416,
+    "cards_over4_5": 0.2558,
+    "cards_over5_5": 0.1295,
+    "possession_home_pct": 54.5,
+    "shots_ot_home": 5.2,
+    "shots_ot_away": 3.8,
+    "shots_ratio": 0.578,
+    "xg_dominance": 0.588,
+    "clean_sheet_home": 0.4,
+    "clean_sheet_away": 0.24,
+    "sp_taker_home": "De Bruyne / Trossard",
+    "sp_taker_away": "Salah / Trezeguet",
+    "style_home": "Posesión dominante, corners ofensivos",
+    "style_away": "Salah dependencia, bloque medio",
+    "form_home": "WWWWW",
+    "form_away": "WWDLW",
+    "elo_home": 1742,
+    "elo_away": 1468,
+    "best_bet": {
+      "market": "Gana Belgium o Empate (1X)",
+      "prob": 0.9091,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Belgium",
+      "alt_prob": 0.7306
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Belgium",
+      "expected_value": 2.192,
+      "score_prob": 0.1181,
+      "result_1x2_best": "Gana Belgium",
+      "result_1x2_prob": 0.7306,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 11.81
+        },
+        {
+          "score": "2-0",
+          "prob": 11.73
+        },
+        {
+          "score": "1-1",
+          "prob": 9.88
+        }
+      ],
+      "cumulative_top3": 0.334,
+      "confidence": "Media"
+    }
+  },
+  "G4": {
+    "home_win": 0.5606,
+    "draw": 0.2297,
+    "away_win": 0.2097,
+    "exp_home": 1.44,
+    "exp_away": 0.94,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 13.28
+      },
+      {
+        "score": "1-1",
+        "prob": 12.53
+      },
+      {
+        "score": "2-0",
+        "prob": 9.56
+      },
+      {
+        "score": "0-0",
+        "prob": 9.22
+      },
+      {
+        "score": "2-1",
+        "prob": 9.02
+      },
+      {
+        "score": "0-1",
+        "prob": 8.7
+      }
+    ],
+    "over0_5": 0.9078,
+    "over1_5": 0.688,
+    "over2_5": 0.4261,
+    "over3_5": 0.2179,
+    "over4_5": 0.0939,
+    "btts": 0.4661,
+    "first_goal_home": 0.604,
+    "corners_exp_home": 5.17,
+    "corners_exp_away": 3.0,
+    "corners_total_exp": 8.17,
+    "corners_over7_5": 0.5705,
+    "corners_over8_5": 0.4311,
+    "corners_over9_5": 0.3047,
+    "corners_over10_5": 0.2013,
+    "corners_over11_5": 0.1246,
+    "corners_over12_5": 0.0723,
+    "corners_home_handicap": 0.5883,
+    "cards_exp_total": 3.8,
+    "cards_over2_5": 0.7311,
+    "cards_over3_5": 0.5265,
+    "cards_over4_5": 0.3322,
+    "cards_over5_5": 0.1844,
+    "possession_home_pct": 53.7,
+    "shots_ot_home": 3.8,
+    "shots_ot_away": 3.0,
+    "shots_ratio": 0.559,
+    "xg_dominance": 0.537,
+    "clean_sheet_home": 0.22,
+    "clean_sheet_away": 0.16,
+    "sp_taker_home": "Taremi / Jahanbakhsh",
+    "sp_taker_away": "Wood / McGlinchey",
+    "style_home": "Bloque compacto, contraataque",
+    "style_away": "Físico directo, presencia aérea",
+    "form_home": "WWWDL",
+    "form_away": "WDWLW",
+    "elo_home": 1492,
+    "elo_away": 1412,
+    "best_bet": {
+      "market": "Gana Iran o Empate (1X)",
+      "prob": 0.7903,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Iran",
+      "alt_prob": 0.5606
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Iran",
+      "expected_value": 1.682,
+      "score_prob": 0.1328,
+      "result_1x2_best": "Gana Iran",
+      "result_1x2_prob": 0.5606,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 13.28
+        },
+        {
+          "score": "1-1",
+          "prob": 12.53
+        },
+        {
+          "score": "2-0",
+          "prob": 9.56
+        }
+      ],
+      "cumulative_top3": 0.354,
+      "confidence": "Baja"
+    }
+  },
+  "G5": {
+    "home_win": 0.7787,
+    "draw": 0.1591,
+    "away_win": 0.0622,
+    "exp_home": 2.16,
+    "exp_away": 0.74,
+    "likely_score": "2-0",
+    "top_scores": [
+      {
+        "score": "2-0",
+        "prob": 12.82
+      },
+      {
+        "score": "1-0",
+        "prob": 11.87
+      },
+      {
+        "score": "2-1",
+        "prob": 9.5
+      },
+      {
+        "score": "3-0",
+        "prob": 9.23
+      },
+      {
+        "score": "1-1",
+        "prob": 8.8
+      },
+      {
+        "score": "3-1",
+        "prob": 6.84
+      }
+    ],
+    "over0_5": 0.9451,
+    "over1_5": 0.7857,
+    "over2_5": 0.5545,
+    "over3_5": 0.3308,
+    "over4_5": 0.1685,
+    "btts": 0.4632,
+    "first_goal_home": 0.745,
+    "corners_exp_home": 7.81,
+    "corners_exp_away": 1.87,
+    "corners_total_exp": 9.68,
+    "corners_over7_5": 0.7494,
+    "corners_over8_5": 0.6299,
+    "corners_over9_5": 0.5013,
+    "corners_over10_5": 0.3768,
+    "corners_over11_5": 0.2673,
+    "corners_over12_5": 0.179,
+    "corners_home_handicap": 0.9306,
+    "cards_exp_total": 3.2,
+    "cards_over2_5": 0.6201,
+    "cards_over3_5": 0.3975,
+    "cards_over4_5": 0.2194,
+    "cards_over5_5": 0.1054,
+    "possession_home_pct": 59.1,
+    "shots_ot_home": 5.2,
+    "shots_ot_away": 3.0,
+    "shots_ratio": 0.634,
+    "xg_dominance": 0.621,
+    "clean_sheet_home": 0.4,
+    "clean_sheet_away": 0.16,
+    "sp_taker_home": "De Bruyne / Trossard",
+    "sp_taker_away": "Wood / McGlinchey",
+    "style_home": "Posesión dominante, corners ofensivos",
+    "style_away": "Físico directo, presencia aérea",
+    "form_home": "WWWWW",
+    "form_away": "WDWLW",
+    "elo_home": 1742,
+    "elo_away": 1412,
+    "best_bet": {
+      "market": "Gana Belgium o Empate (1X)",
+      "prob": 0.9378,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Belgium",
+      "alt_prob": 0.7787
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Belgium",
+      "expected_value": 2.336,
+      "score_prob": 0.1282,
+      "result_1x2_best": "Gana Belgium",
+      "result_1x2_prob": 0.7787,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "2-0",
+          "prob": 12.82
+        },
+        {
+          "score": "1-0",
+          "prob": 11.87
+        },
+        {
+          "score": "2-1",
+          "prob": 9.5
+        }
+      ],
+      "cumulative_top3": 0.342,
+      "confidence": "Media"
+    }
+  },
+  "G6": {
+    "home_win": 0.4611,
+    "draw": 0.237,
+    "away_win": 0.3019,
+    "exp_home": 1.3,
+    "exp_away": 1.08,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 12.99
+      },
+      {
+        "score": "1-0",
+        "prob": 11.99
+      },
+      {
+        "score": "0-1",
+        "prob": 9.98
+      },
+      {
+        "score": "0-0",
+        "prob": 9.21
+      },
+      {
+        "score": "2-1",
+        "prob": 8.45
+      },
+      {
+        "score": "2-0",
+        "prob": 7.8
+      }
+    ],
+    "over0_5": 0.9079,
+    "over1_5": 0.6882,
+    "over2_5": 0.4262,
+    "over3_5": 0.218,
+    "over4_5": 0.0939,
+    "btts": 0.4815,
+    "first_goal_home": 0.546,
+    "corners_exp_home": 4.47,
+    "corners_exp_away": 3.97,
+    "corners_total_exp": 8.44,
+    "corners_over7_5": 0.6072,
+    "corners_over8_5": 0.4692,
+    "corners_over9_5": 0.3398,
+    "corners_over10_5": 0.2305,
+    "corners_over11_5": 0.1466,
+    "corners_over12_5": 0.0876,
+    "corners_home_handicap": 0.362,
+    "cards_exp_total": 4.0,
+    "cards_over2_5": 0.7619,
+    "cards_over3_5": 0.5665,
+    "cards_over4_5": 0.3712,
+    "cards_over5_5": 0.2149,
+    "possession_home_pct": 51.1,
+    "shots_ot_home": 3.8,
+    "shots_ot_away": 3.8,
+    "shots_ratio": 0.5,
+    "xg_dominance": 0.498,
+    "clean_sheet_home": 0.24,
+    "clean_sheet_away": 0.22,
+    "sp_taker_home": "Salah / Trezeguet",
+    "sp_taker_away": "Taremi / Jahanbakhsh",
+    "style_home": "Salah dependencia, bloque medio",
+    "style_away": "Bloque compacto, contraataque",
+    "form_home": "WWDLW",
+    "form_away": "WWWDL",
+    "elo_home": 1468,
+    "elo_away": 1492,
+    "best_bet": {
+      "market": "Gana Egypt o Empate (1X)",
+      "prob": 0.6981,
+      "type": "doble",
+      "confidence": "Media",
+      "alt_market": "Más de 3.5 tarjetas amarillas",
+      "alt_prob": 0.5665
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Egypt",
+      "expected_value": 1.383,
+      "score_prob": 0.1299,
+      "result_1x2_best": "Gana Egypt",
+      "result_1x2_prob": 0.4611,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 12.99
+        },
+        {
+          "score": "1-0",
+          "prob": 11.99
+        },
+        {
+          "score": "0-1",
+          "prob": 9.98
+        }
+      ],
+      "cumulative_top3": 0.35,
+      "confidence": "Baja"
+    }
+  },
+  "H1": {
+    "home_win": 0.8108,
+    "draw": 0.146,
+    "away_win": 0.0432,
+    "exp_home": 2.28,
+    "exp_away": 0.69,
+    "likely_score": "2-0",
+    "top_scores": [
+      {
+        "score": "2-0",
+        "prob": 13.32
+      },
+      {
+        "score": "1-0",
+        "prob": 11.68
+      },
+      {
+        "score": "3-0",
+        "prob": 10.13
+      },
+      {
+        "score": "2-1",
+        "prob": 9.2
+      },
+      {
+        "score": "1-1",
+        "prob": 8.07
+      },
+      {
+        "score": "3-1",
+        "prob": 7.0
+      }
+    ],
+    "over0_5": 0.9488,
+    "over1_5": 0.7966,
+    "over2_5": 0.5704,
+    "over3_5": 0.3464,
+    "over4_5": 0.18,
+    "btts": 0.4478,
+    "first_goal_home": 0.768,
+    "corners_exp_home": 6.96,
+    "corners_exp_away": 2.61,
+    "corners_total_exp": 9.57,
+    "corners_over7_5": 0.7382,
+    "corners_over8_5": 0.6164,
+    "corners_over9_5": 0.4869,
+    "corners_over10_5": 0.363,
+    "corners_over11_5": 0.2552,
+    "corners_over12_5": 0.1693,
+    "corners_home_handicap": 0.8239,
+    "cards_exp_total": 3.5,
+    "cards_over2_5": 0.6792,
+    "cards_over3_5": 0.4634,
+    "cards_over4_5": 0.2746,
+    "cards_over5_5": 0.1424,
+    "possession_home_pct": 60.8,
+    "shots_ot_home": 6.0,
+    "shots_ot_away": 3.3,
+    "shots_ratio": 0.645,
+    "xg_dominance": 0.641,
+    "clean_sheet_home": 0.5,
+    "clean_sheet_away": 0.18,
+    "sp_taker_home": "Yamal / Olmo",
+    "sp_taker_away": "Tavares / Andrade",
+    "style_home": "Posesión dominante, pressing en bloque",
+    "style_away": "Compacto, contraataque simple",
+    "form_home": "WWWWW",
+    "form_away": "WWWDL",
+    "elo_home": 1828,
+    "elo_away": 1432,
+    "best_bet": {
+      "market": "Gana Spain o Empate (1X)",
+      "prob": 0.9568,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Spain",
+      "alt_prob": 0.8108
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Spain",
+      "expected_value": 2.432,
+      "score_prob": 0.1332,
+      "result_1x2_best": "Gana Spain",
+      "result_1x2_prob": 0.8108,
+      "joker_recommended": true,
+      "top3_scores": [
+        {
+          "score": "2-0",
+          "prob": 13.32
+        },
+        {
+          "score": "1-0",
+          "prob": 11.68
+        },
+        {
+          "score": "3-0",
+          "prob": 10.13
+        }
+      ],
+      "cumulative_top3": 0.351,
+      "confidence": "Media"
+    }
+  },
+  "H2": {
+    "home_win": 0.7227,
+    "draw": 0.1828,
+    "away_win": 0.0945,
+    "exp_home": 1.93,
+    "exp_away": 0.82,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 12.37
+      },
+      {
+        "score": "2-0",
+        "prob": 11.95
+      },
+      {
+        "score": "1-1",
+        "prob": 10.1
+      },
+      {
+        "score": "2-1",
+        "prob": 9.76
+      },
+      {
+        "score": "3-0",
+        "prob": 7.69
+      },
+      {
+        "score": "0-0",
+        "prob": 6.41
+      }
+    ],
+    "over0_5": 0.9359,
+    "over1_5": 0.7599,
+    "over2_5": 0.518,
+    "over3_5": 0.2965,
+    "over4_5": 0.1443,
+    "btts": 0.4771,
+    "first_goal_home": 0.703,
+    "corners_exp_home": 5.3,
+    "corners_exp_away": 3.53,
+    "corners_total_exp": 8.83,
+    "corners_over7_5": 0.656,
+    "corners_over8_5": 0.522,
+    "corners_over9_5": 0.3904,
+    "corners_over10_5": 0.2743,
+    "corners_over11_5": 0.181,
+    "corners_over12_5": 0.1123,
+    "corners_home_handicap": 0.5325,
+    "cards_exp_total": 4.2,
+    "cards_over2_5": 0.7898,
+    "cards_over3_5": 0.6046,
+    "cards_over4_5": 0.4102,
+    "cards_over5_5": 0.2469,
+    "possession_home_pct": 53.3,
+    "shots_ot_home": 4.5,
+    "shots_ot_away": 3.5,
+    "shots_ratio": 0.562,
+    "xg_dominance": 0.582,
+    "clean_sheet_home": 0.38,
+    "clean_sheet_away": 0.2,
+    "sp_taker_home": "Valverde / Núñez",
+    "sp_taker_away": "Al-Dawsari / Salem",
+    "style_home": "Bloque bajo, contraataque, físico",
+    "style_away": "Bloque bajo, presión alta esporádica",
+    "form_home": "WDWWW",
+    "form_away": "WWDLL",
+    "elo_home": 1708,
+    "elo_away": 1448,
+    "best_bet": {
+      "market": "Gana Uruguay o Empate (1X)",
+      "prob": 0.9055,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Uruguay",
+      "alt_prob": 0.7227
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Uruguay",
+      "expected_value": 2.168,
+      "score_prob": 0.1237,
+      "result_1x2_best": "Gana Uruguay",
+      "result_1x2_prob": 0.7227,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 12.37
+        },
+        {
+          "score": "2-0",
+          "prob": 11.95
+        },
+        {
+          "score": "1-1",
+          "prob": 10.1
+        }
+      ],
+      "cumulative_top3": 0.344,
+      "confidence": "Media"
+    }
+  },
+  "H3": {
+    "home_win": 0.6063,
+    "draw": 0.2058,
+    "away_win": 0.1879,
+    "exp_home": 1.71,
+    "exp_away": 1.04,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 11.36
+      },
+      {
+        "score": "1-0",
+        "prob": 10.88
+      },
+      {
+        "score": "2-1",
+        "prob": 9.72
+      },
+      {
+        "score": "2-0",
+        "prob": 9.31
+      },
+      {
+        "score": "0-1",
+        "prob": 6.64
+      },
+      {
+        "score": "0-0",
+        "prob": 6.36
+      }
+    ],
+    "over0_5": 0.9364,
+    "over1_5": 0.7612,
+    "over2_5": 0.5198,
+    "over3_5": 0.2981,
+    "over4_5": 0.1454,
+    "btts": 0.531,
+    "first_goal_home": 0.621,
+    "corners_exp_home": 6.26,
+    "corners_exp_away": 3.43,
+    "corners_total_exp": 9.69,
+    "corners_over7_5": 0.751,
+    "corners_over8_5": 0.6318,
+    "corners_over9_5": 0.5033,
+    "corners_over10_5": 0.3788,
+    "corners_over11_5": 0.2691,
+    "corners_over12_5": 0.1804,
+    "corners_home_handicap": 0.6632,
+    "cards_exp_total": 3.8,
+    "cards_over2_5": 0.7311,
+    "cards_over3_5": 0.5265,
+    "cards_over4_5": 0.3322,
+    "cards_over5_5": 0.1844,
+    "possession_home_pct": 56.4,
+    "shots_ot_home": 6.0,
+    "shots_ot_away": 4.5,
+    "shots_ratio": 0.571,
+    "xg_dominance": 0.552,
+    "clean_sheet_home": 0.5,
+    "clean_sheet_away": 0.38,
+    "sp_taker_home": "Yamal / Olmo",
+    "sp_taker_away": "Valverde / Núñez",
+    "style_home": "Posesión dominante, pressing en bloque",
+    "style_away": "Bloque bajo, contraataque, físico",
+    "form_home": "WWWWW",
+    "form_away": "WDWWW",
+    "elo_home": 1828,
+    "elo_away": 1708,
+    "best_bet": {
+      "market": "Gana Spain o Empate (1X)",
+      "prob": 0.8121,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Spain",
+      "alt_prob": 0.6063
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Spain",
+      "expected_value": 1.819,
+      "score_prob": 0.1136,
+      "result_1x2_best": "Gana Spain",
+      "result_1x2_prob": 0.6063,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 11.36
+        },
+        {
+          "score": "1-0",
+          "prob": 10.88
+        },
+        {
+          "score": "2-1",
+          "prob": 9.72
+        }
+      ],
+      "cumulative_top3": 0.32,
+      "confidence": "Baja"
+    }
+  },
+  "H4": {
+    "home_win": 0.461,
+    "draw": 0.2386,
+    "away_win": 0.3004,
+    "exp_home": 1.28,
+    "exp_away": 1.09,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 13.05
+      },
+      {
+        "score": "1-0",
+        "prob": 11.99
+      },
+      {
+        "score": "0-1",
+        "prob": 10.22
+      },
+      {
+        "score": "0-0",
+        "prob": 9.39
+      },
+      {
+        "score": "2-1",
+        "prob": 8.34
+      },
+      {
+        "score": "2-0",
+        "prob": 7.66
+      }
+    ],
+    "over0_5": 0.9061,
+    "over1_5": 0.6841,
+    "over2_5": 0.4213,
+    "over3_5": 0.2142,
+    "over4_5": 0.0916,
+    "btts": 0.4784,
+    "first_goal_home": 0.54,
+    "corners_exp_home": 4.03,
+    "corners_exp_away": 3.92,
+    "corners_total_exp": 7.95,
+    "corners_over7_5": 0.5402,
+    "corners_over8_5": 0.4007,
+    "corners_over9_5": 0.2774,
+    "corners_over10_5": 0.1793,
+    "corners_over11_5": 0.1084,
+    "corners_over12_5": 0.0615,
+    "corners_home_handicap": 0.3069,
+    "cards_exp_total": 3.9,
+    "cards_over2_5": 0.7469,
+    "cards_over3_5": 0.5468,
+    "cards_over4_5": 0.3516,
+    "cards_over5_5": 0.1994,
+    "possession_home_pct": 48.8,
+    "shots_ot_home": 3.3,
+    "shots_ot_away": 3.5,
+    "shots_ratio": 0.485,
+    "xg_dominance": 0.492,
+    "clean_sheet_home": 0.18,
+    "clean_sheet_away": 0.2,
+    "sp_taker_home": "Tavares / Andrade",
+    "sp_taker_away": "Al-Dawsari / Salem",
+    "style_home": "Compacto, contraataque simple",
+    "style_away": "Bloque bajo, presión alta esporádica",
+    "form_home": "WWWDL",
+    "form_away": "WWDLL",
+    "elo_home": 1432,
+    "elo_away": 1448,
+    "best_bet": {
+      "market": "Gana Cape Verde o Empate (1X)",
+      "prob": 0.6996,
+      "type": "doble",
+      "confidence": "Media",
+      "alt_market": "Más de 3.5 tarjetas amarillas",
+      "alt_prob": 0.5468
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Cape Verde",
+      "expected_value": 1.383,
+      "score_prob": 0.1305,
+      "result_1x2_best": "Gana Cape Verde",
+      "result_1x2_prob": 0.461,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 13.05
+        },
+        {
+          "score": "1-0",
+          "prob": 11.99
+        },
+        {
+          "score": "0-1",
+          "prob": 10.22
+        }
+      ],
+      "cumulative_top3": 0.353,
+      "confidence": "Baja"
+    }
+  },
+  "H5": {
+    "home_win": 0.8019,
+    "draw": 0.1502,
+    "away_win": 0.0479,
+    "exp_home": 2.24,
+    "exp_away": 0.71,
+    "likely_score": "2-0",
+    "top_scores": [
+      {
+        "score": "2-0",
+        "prob": 13.16
+      },
+      {
+        "score": "1-0",
+        "prob": 11.73
+      },
+      {
+        "score": "3-0",
+        "prob": 9.84
+      },
+      {
+        "score": "2-1",
+        "prob": 9.31
+      },
+      {
+        "score": "1-1",
+        "prob": 8.3
+      },
+      {
+        "score": "3-1",
+        "prob": 6.96
+      }
+    ],
+    "over0_5": 0.9477,
+    "over1_5": 0.7933,
+    "over2_5": 0.5656,
+    "over3_5": 0.3417,
+    "over4_5": 0.1765,
+    "btts": 0.4533,
+    "first_goal_home": 0.76,
+    "corners_exp_home": 6.68,
+    "corners_exp_away": 2.75,
+    "corners_total_exp": 9.43,
+    "corners_over7_5": 0.7236,
+    "corners_over8_5": 0.599,
+    "corners_over9_5": 0.4685,
+    "corners_over10_5": 0.3456,
+    "corners_over11_5": 0.2402,
+    "corners_over12_5": 0.1574,
+    "corners_home_handicap": 0.7869,
+    "cards_exp_total": 3.6,
+    "cards_over2_5": 0.6973,
+    "cards_over3_5": 0.4848,
+    "cards_over4_5": 0.2936,
+    "cards_over5_5": 0.1559,
+    "possession_home_pct": 59.6,
+    "shots_ot_home": 6.0,
+    "shots_ot_away": 3.5,
+    "shots_ratio": 0.632,
+    "xg_dominance": 0.633,
+    "clean_sheet_home": 0.5,
+    "clean_sheet_away": 0.2,
+    "sp_taker_home": "Yamal / Olmo",
+    "sp_taker_away": "Al-Dawsari / Salem",
+    "style_home": "Posesión dominante, pressing en bloque",
+    "style_away": "Bloque bajo, presión alta esporádica",
+    "form_home": "WWWWW",
+    "form_away": "WWDLL",
+    "elo_home": 1828,
+    "elo_away": 1448,
+    "best_bet": {
+      "market": "Gana Spain o Empate (1X)",
+      "prob": 0.9521,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Spain",
+      "alt_prob": 0.8019
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Spain",
+      "expected_value": 2.406,
+      "score_prob": 0.1316,
+      "result_1x2_best": "Gana Spain",
+      "result_1x2_prob": 0.8019,
+      "joker_recommended": true,
+      "top3_scores": [
+        {
+          "score": "2-0",
+          "prob": 13.16
+        },
+        {
+          "score": "1-0",
+          "prob": 11.73
+        },
+        {
+          "score": "3-0",
+          "prob": 9.84
+        }
+      ],
+      "cumulative_top3": 0.347,
+      "confidence": "Media"
+    }
+  },
+  "H6": {
+    "home_win": 0.2211,
+    "draw": 0.2145,
+    "away_win": 0.5644,
+    "exp_home": 0.97,
+    "exp_away": 1.61,
+    "likely_score": "0-1",
+    "top_scores": [
+      {
+        "score": "0-1",
+        "prob": 12.16
+      },
+      {
+        "score": "1-1",
+        "prob": 11.85
+      },
+      {
+        "score": "0-2",
+        "prob": 9.77
+      },
+      {
+        "score": "1-2",
+        "prob": 9.52
+      },
+      {
+        "score": "0-0",
+        "prob": 7.57
+      },
+      {
+        "score": "1-0",
+        "prob": 7.37
+      }
+    ],
+    "over0_5": 0.9243,
+    "over1_5": 0.729,
+    "over2_5": 0.4768,
+    "over3_5": 0.2599,
+    "over4_5": 0.1199,
+    "btts": 0.4977,
+    "first_goal_home": 0.377,
+    "corners_exp_home": 3.78,
+    "corners_exp_away": 4.9,
+    "corners_total_exp": 8.68,
+    "corners_over7_5": 0.6373,
+    "corners_over8_5": 0.5015,
+    "corners_over9_5": 0.3705,
+    "corners_over10_5": 0.2568,
+    "corners_over11_5": 0.1671,
+    "corners_over12_5": 0.1022,
+    "corners_home_handicap": 0.1831,
+    "cards_exp_total": 4.1,
+    "cards_over2_5": 0.7762,
+    "cards_over3_5": 0.5858,
+    "cards_over4_5": 0.3907,
+    "cards_over5_5": 0.2307,
+    "possession_home_pct": 45.5,
+    "shots_ot_home": 3.3,
+    "shots_ot_away": 4.5,
+    "shots_ratio": 0.423,
+    "xg_dominance": 0.41,
+    "clean_sheet_home": 0.18,
+    "clean_sheet_away": 0.38,
+    "sp_taker_home": "Tavares / Andrade",
+    "sp_taker_away": "Valverde / Núñez",
+    "style_home": "Compacto, contraataque simple",
+    "style_away": "Bloque bajo, contraataque, físico",
+    "form_home": "WWWDL",
+    "form_away": "WDWWW",
+    "elo_home": 1432,
+    "elo_away": 1708,
+    "best_bet": {
+      "market": "Gana Uruguay o Empate (X2)",
+      "prob": 0.7789,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Más de 3.5 tarjetas amarillas",
+      "alt_prob": 0.5858
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Uruguay",
+      "expected_value": 1.693,
+      "score_prob": 0.1216,
+      "result_1x2_best": "Gana Uruguay",
+      "result_1x2_prob": 0.5644,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "0-1",
+          "prob": 12.16
+        },
+        {
+          "score": "1-1",
+          "prob": 11.85
+        },
+        {
+          "score": "0-2",
+          "prob": 9.77
+        }
+      ],
+      "cumulative_top3": 0.338,
+      "confidence": "Baja"
+    }
+  },
+  "I1": {
+    "home_win": 0.8631,
+    "draw": 0.115,
+    "away_win": 0.0219,
+    "exp_home": 2.58,
+    "exp_away": 0.58,
+    "likely_score": "2-0",
+    "top_scores": [
+      {
+        "score": "2-0",
+        "prob": 14.19
+      },
+      {
+        "score": "3-0",
+        "prob": 12.2
+      },
+      {
+        "score": "1-0",
+        "prob": 11.0
+      },
+      {
+        "score": "2-1",
+        "prob": 8.16
+      },
+      {
+        "score": "4-0",
+        "prob": 7.86
+      },
+      {
+        "score": "3-1",
+        "prob": 7.02
+      }
+    ],
+    "over0_5": 0.9573,
+    "over1_5": 0.8227,
+    "over2_5": 0.6105,
+    "over3_5": 0.3873,
+    "over4_5": 0.2113,
+    "btts": 0.4043,
+    "first_goal_home": 0.818,
+    "corners_exp_home": 6.31,
+    "corners_exp_away": 2.67,
+    "corners_total_exp": 8.98,
+    "corners_over7_5": 0.6733,
+    "corners_over8_5": 0.5412,
+    "corners_over9_5": 0.4095,
+    "corners_over10_5": 0.2912,
+    "corners_over11_5": 0.1947,
+    "corners_over12_5": 0.1225,
+    "corners_home_handicap": 0.7626,
+    "cards_exp_total": 3.5,
+    "cards_over2_5": 0.6792,
+    "cards_over3_5": 0.4634,
+    "cards_over4_5": 0.2746,
+    "cards_over5_5": 0.1424,
+    "possession_home_pct": 59.1,
+    "shots_ot_home": 5.8,
+    "shots_ot_away": 2.9,
+    "shots_ratio": 0.667,
+    "xg_dominance": 0.66,
+    "clean_sheet_home": 0.46,
+    "clean_sheet_away": 0.14,
+    "sp_taker_home": "Mbappé / Griezmann",
+    "sp_taker_away": "Mohanad / Ayman",
+    "style_home": "Transición rápida, presión alta",
+    "style_away": "Físico, bloque bajo",
+    "form_home": "WWWDW",
+    "form_away": "WWLWL",
+    "elo_home": 1842,
+    "elo_away": 1372,
+    "best_bet": {
+      "market": "Gana France o Empate (1X)",
+      "prob": 0.9781,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana France",
+      "alt_prob": 0.8631
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana France",
+      "expected_value": 2.589,
+      "score_prob": 0.1419,
+      "result_1x2_best": "Gana France",
+      "result_1x2_prob": 0.8631,
+      "joker_recommended": true,
+      "top3_scores": [
+        {
+          "score": "2-0",
+          "prob": 14.19
+        },
+        {
+          "score": "3-0",
+          "prob": 12.2
+        },
+        {
+          "score": "1-0",
+          "prob": 11.0
+        }
+      ],
+      "cumulative_top3": 0.374,
+      "confidence": "Media"
+    }
+  },
+  "I2": {
+    "home_win": 0.4929,
+    "draw": 0.2254,
+    "away_win": 0.2817,
+    "exp_home": 1.42,
+    "exp_away": 1.16,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 12.47
+      },
+      {
+        "score": "1-0",
+        "prob": 10.74
+      },
+      {
+        "score": "2-1",
+        "prob": 8.87
+      },
+      {
+        "score": "0-1",
+        "prob": 8.76
+      },
+      {
+        "score": "2-0",
+        "prob": 7.64
+      },
+      {
+        "score": "0-0",
+        "prob": 7.55
+      }
+    ],
+    "over0_5": 0.9245,
+    "over1_5": 0.7295,
+    "over2_5": 0.4776,
+    "over3_5": 0.2606,
+    "over4_5": 0.1203,
+    "btts": 0.5214,
+    "first_goal_home": 0.551,
+    "corners_exp_home": 4.03,
+    "corners_exp_away": 5.41,
+    "corners_total_exp": 9.44,
+    "corners_over7_5": 0.7252,
+    "corners_over8_5": 0.6009,
+    "corners_over9_5": 0.4706,
+    "corners_over10_5": 0.3475,
+    "corners_over11_5": 0.2418,
+    "corners_over12_5": 0.1587,
+    "corners_home_handicap": 0.1709,
+    "cards_exp_total": 3.5,
+    "cards_over2_5": 0.6792,
+    "cards_over3_5": 0.4634,
+    "cards_over4_5": 0.2746,
+    "cards_over5_5": 0.1424,
+    "possession_home_pct": 48.5,
+    "shots_ot_home": 4.2,
+    "shots_ot_away": 5.1,
+    "shots_ratio": 0.452,
+    "xg_dominance": 0.469,
+    "clean_sheet_home": 0.32,
+    "clean_sheet_away": 0.36,
+    "sp_taker_home": "Mané / Diatta",
+    "sp_taker_away": "Haaland / Ødegaard",
+    "style_home": "Físico, transición, velocidad extremos",
+    "style_away": "Juego aéreo, set pieces, Haaland dominante",
+    "form_home": "WWWDL",
+    "form_away": "WWWWL",
+    "elo_home": 1628,
+    "elo_away": 1612,
+    "best_bet": {
+      "market": "Gana Senegal o Empate (1X)",
+      "prob": 0.7183,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Ambos anotan (BTTS)",
+      "alt_prob": 0.5214
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Senegal",
+      "expected_value": 1.479,
+      "score_prob": 0.1247,
+      "result_1x2_best": "Gana Senegal",
+      "result_1x2_prob": 0.4929,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 12.47
+        },
+        {
+          "score": "1-0",
+          "prob": 10.74
+        },
+        {
+          "score": "2-1",
+          "prob": 8.87
+        }
+      ],
+      "cumulative_top3": 0.321,
+      "confidence": "Baja"
+    }
+  },
+  "I3": {
+    "home_win": 0.6914,
+    "draw": 0.1897,
+    "away_win": 0.1189,
+    "exp_home": 1.88,
+    "exp_away": 0.88,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 11.93
+      },
+      {
+        "score": "2-0",
+        "prob": 11.19
+      },
+      {
+        "score": "1-1",
+        "prob": 10.49
+      },
+      {
+        "score": "2-1",
+        "prob": 9.84
+      },
+      {
+        "score": "3-0",
+        "prob": 7.0
+      },
+      {
+        "score": "0-0",
+        "prob": 6.36
+      }
+    ],
+    "over0_5": 0.9364,
+    "over1_5": 0.7611,
+    "over2_5": 0.5196,
+    "over3_5": 0.298,
+    "over4_5": 0.1453,
+    "btts": 0.4952,
+    "first_goal_home": 0.681,
+    "corners_exp_home": 5.69,
+    "corners_exp_away": 3.76,
+    "corners_total_exp": 9.46,
+    "corners_over7_5": 0.7267,
+    "corners_over8_5": 0.6027,
+    "corners_over9_5": 0.4724,
+    "corners_over10_5": 0.3492,
+    "corners_over11_5": 0.2433,
+    "corners_over12_5": 0.1599,
+    "corners_home_handicap": 0.5516,
+    "cards_exp_total": 3.4,
+    "cards_over2_5": 0.6603,
+    "cards_over3_5": 0.4416,
+    "cards_over4_5": 0.2558,
+    "cards_over5_5": 0.1295,
+    "possession_home_pct": 53.9,
+    "shots_ot_home": 5.8,
+    "shots_ot_away": 4.2,
+    "shots_ratio": 0.58,
+    "xg_dominance": 0.566,
+    "clean_sheet_home": 0.46,
+    "clean_sheet_away": 0.32,
+    "sp_taker_home": "Mbappé / Griezmann",
+    "sp_taker_away": "Mané / Diatta",
+    "style_home": "Transición rápida, presión alta",
+    "style_away": "Físico, transición, velocidad extremos",
+    "form_home": "WWWDW",
+    "form_away": "WWWDL",
+    "elo_home": 1842,
+    "elo_away": 1628,
+    "best_bet": {
+      "market": "Gana France o Empate (1X)",
+      "prob": 0.8811,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana France",
+      "alt_prob": 0.6914
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana France",
+      "expected_value": 2.074,
+      "score_prob": 0.1193,
+      "result_1x2_best": "Gana France",
+      "result_1x2_prob": 0.6914,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 11.93
+        },
+        {
+          "score": "2-0",
+          "prob": 11.19
+        },
+        {
+          "score": "1-1",
+          "prob": 10.49
+        }
+      ],
+      "cumulative_top3": 0.336,
+      "confidence": "Media"
+    }
+  },
+  "I4": {
+    "home_win": 0.7274,
+    "draw": 0.1791,
+    "away_win": 0.0935,
+    "exp_home": 1.95,
+    "exp_away": 0.76,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 12.94
+      },
+      {
+        "score": "2-0",
+        "prob": 12.62
+      },
+      {
+        "score": "1-1",
+        "prob": 9.86
+      },
+      {
+        "score": "2-1",
+        "prob": 9.62
+      },
+      {
+        "score": "3-0",
+        "prob": 8.21
+      },
+      {
+        "score": "0-0",
+        "prob": 6.63
+      }
+    ],
+    "over0_5": 0.9337,
+    "over1_5": 0.7538,
+    "over2_5": 0.5097,
+    "over3_5": 0.2889,
+    "over4_5": 0.1391,
+    "btts": 0.4575,
+    "first_goal_home": 0.719,
+    "corners_exp_home": 6.76,
+    "corners_exp_away": 2.53,
+    "corners_total_exp": 9.29,
+    "corners_over7_5": 0.7094,
+    "corners_over8_5": 0.5824,
+    "corners_over9_5": 0.4512,
+    "corners_over10_5": 0.3294,
+    "corners_over11_5": 0.2264,
+    "corners_over12_5": 0.1466,
+    "corners_home_handicap": 0.8164,
+    "cards_exp_total": 3.6,
+    "cards_over2_5": 0.6973,
+    "cards_over3_5": 0.4848,
+    "cards_over4_5": 0.2936,
+    "cards_over5_5": 0.1559,
+    "possession_home_pct": 56.8,
+    "shots_ot_home": 5.1,
+    "shots_ot_away": 2.9,
+    "shots_ratio": 0.637,
+    "xg_dominance": 0.627,
+    "clean_sheet_home": 0.36,
+    "clean_sheet_away": 0.14,
+    "sp_taker_home": "Haaland / Ødegaard",
+    "sp_taker_away": "Mohanad / Ayman",
+    "style_home": "Juego aéreo, set pieces, Haaland dominante",
+    "style_away": "Físico, bloque bajo",
+    "form_home": "WWWWL",
+    "form_away": "WWLWL",
+    "elo_home": 1612,
+    "elo_away": 1372,
+    "best_bet": {
+      "market": "Gana Norway o Empate (1X)",
+      "prob": 0.9065,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Norway",
+      "alt_prob": 0.7274
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Norway",
+      "expected_value": 2.182,
+      "score_prob": 0.1294,
+      "result_1x2_best": "Gana Norway",
+      "result_1x2_prob": 0.7274,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 12.94
+        },
+        {
+          "score": "2-0",
+          "prob": 12.62
+        },
+        {
+          "score": "1-1",
+          "prob": 9.86
+        }
+      ],
+      "cumulative_top3": 0.354,
+      "confidence": "Media"
+    }
+  },
+  "I5": {
+    "home_win": 0.6995,
+    "draw": 0.1866,
+    "away_win": 0.1139,
+    "exp_home": 1.91,
+    "exp_away": 0.9,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 11.53
+      },
+      {
+        "score": "2-0",
+        "prob": 11.04
+      },
+      {
+        "score": "1-1",
+        "prob": 10.32
+      },
+      {
+        "score": "2-1",
+        "prob": 9.88
+      },
+      {
+        "score": "3-0",
+        "prob": 7.04
+      },
+      {
+        "score": "3-1",
+        "prob": 6.31
+      }
+    ],
+    "over0_5": 0.9398,
+    "over1_5": 0.7706,
+    "over2_5": 0.5328,
+    "over3_5": 0.3102,
+    "over4_5": 0.1538,
+    "btts": 0.5043,
+    "first_goal_home": 0.681,
+    "corners_exp_home": 4.7,
+    "corners_exp_away": 4.71,
+    "corners_total_exp": 9.41,
+    "corners_over7_5": 0.7216,
+    "corners_over8_5": 0.5967,
+    "corners_over9_5": 0.4661,
+    "corners_over10_5": 0.3432,
+    "corners_over11_5": 0.2382,
+    "corners_over12_5": 0.1558,
+    "corners_home_handicap": 0.3088,
+    "cards_exp_total": 2.9,
+    "cards_over2_5": 0.554,
+    "cards_over3_5": 0.3304,
+    "cards_over4_5": 0.1682,
+    "cards_over5_5": 0.0742,
+    "possession_home_pct": 52.4,
+    "shots_ot_home": 5.8,
+    "shots_ot_away": 5.1,
+    "shots_ratio": 0.532,
+    "xg_dominance": 0.535,
+    "clean_sheet_home": 0.46,
+    "clean_sheet_away": 0.36,
+    "sp_taker_home": "Mbappé / Griezmann",
+    "sp_taker_away": "Haaland / Ødegaard",
+    "style_home": "Transición rápida, presión alta",
+    "style_away": "Juego aéreo, set pieces, Haaland dominante",
+    "form_home": "WWWDW",
+    "form_away": "WWWWL",
+    "elo_home": 1842,
+    "elo_away": 1612,
+    "best_bet": {
+      "market": "Gana France o Empate (1X)",
+      "prob": 0.8861,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana France",
+      "alt_prob": 0.6995
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana France",
+      "expected_value": 2.099,
+      "score_prob": 0.1153,
+      "result_1x2_best": "Gana France",
+      "result_1x2_prob": 0.6995,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 11.53
+        },
+        {
+          "score": "2-0",
+          "prob": 11.04
+        },
+        {
+          "score": "1-1",
+          "prob": 10.32
+        }
+      ],
+      "cumulative_top3": 0.329,
+      "confidence": "Media"
+    }
+  },
+  "I6": {
+    "home_win": 0.2231,
+    "draw": 0.2182,
+    "away_win": 0.5587,
+    "exp_home": 0.91,
+    "exp_away": 1.57,
+    "likely_score": "0-1",
+    "top_scores": [
+      {
+        "score": "0-1",
+        "prob": 13.13
+      },
+      {
+        "score": "1-1",
+        "prob": 11.98
+      },
+      {
+        "score": "0-2",
+        "prob": 10.29
+      },
+      {
+        "score": "1-2",
+        "prob": 9.39
+      },
+      {
+        "score": "0-0",
+        "prob": 8.37
+      },
+      {
+        "score": "1-0",
+        "prob": 7.64
+      }
+    ],
+    "over0_5": 0.9163,
+    "over1_5": 0.7087,
+    "over2_5": 0.4512,
+    "over3_5": 0.2383,
+    "over4_5": 0.1062,
+    "btts": 0.4737,
+    "first_goal_home": 0.368,
+    "corners_exp_home": 3.46,
+    "corners_exp_away": 4.8,
+    "corners_total_exp": 8.26,
+    "corners_over7_5": 0.5821,
+    "corners_over8_5": 0.443,
+    "corners_over9_5": 0.3155,
+    "corners_over10_5": 0.2102,
+    "corners_over11_5": 0.1312,
+    "corners_over12_5": 0.0769,
+    "corners_home_handicap": 0.1572,
+    "cards_exp_total": 4.1,
+    "cards_over2_5": 0.7762,
+    "cards_over3_5": 0.5858,
+    "cards_over4_5": 0.3907,
+    "cards_over5_5": 0.2307,
+    "possession_home_pct": 44.7,
+    "shots_ot_home": 2.9,
+    "shots_ot_away": 4.2,
+    "shots_ratio": 0.408,
+    "xg_dominance": 0.401,
+    "clean_sheet_home": 0.14,
+    "clean_sheet_away": 0.32,
+    "sp_taker_home": "Mohanad / Ayman",
+    "sp_taker_away": "Mané / Diatta",
+    "style_home": "Físico, bloque bajo",
+    "style_away": "Físico, transición, velocidad extremos",
+    "form_home": "WWLWL",
+    "form_away": "WWWDL",
+    "elo_home": 1372,
+    "elo_away": 1628,
+    "best_bet": {
+      "market": "Gana Senegal o Empate (X2)",
+      "prob": 0.7769,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Más de 3.5 tarjetas amarillas",
+      "alt_prob": 0.5858
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Senegal",
+      "expected_value": 1.676,
+      "score_prob": 0.1313,
+      "result_1x2_best": "Gana Senegal",
+      "result_1x2_prob": 0.5587,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "0-1",
+          "prob": 13.13
+        },
+        {
+          "score": "1-1",
+          "prob": 11.98
+        },
+        {
+          "score": "0-2",
+          "prob": 10.29
+        }
+      ],
+      "cumulative_top3": 0.354,
+      "confidence": "Baja"
+    }
+  },
+  "J1": {
+    "home_win": 0.8777,
+    "draw": 0.105,
+    "away_win": 0.0173,
+    "exp_home": 2.69,
+    "exp_away": 0.54,
+    "likely_score": "2-0",
+    "top_scores": [
+      {
+        "score": "2-0",
+        "prob": 14.26
+      },
+      {
+        "score": "3-0",
+        "prob": 12.78
+      },
+      {
+        "score": "1-0",
+        "prob": 10.6
+      },
+      {
+        "score": "4-0",
+        "prob": 8.59
+      },
+      {
+        "score": "2-1",
+        "prob": 7.76
+      },
+      {
+        "score": "3-1",
+        "prob": 6.95
+      }
+    ],
+    "over0_5": 0.9606,
+    "over1_5": 0.833,
+    "over2_5": 0.6269,
+    "over3_5": 0.4048,
+    "over4_5": 0.2253,
+    "btts": 0.3912,
+    "first_goal_home": 0.832,
+    "corners_exp_home": 6.66,
+    "corners_exp_away": 2.64,
+    "corners_total_exp": 9.3,
+    "corners_over7_5": 0.7099,
+    "corners_over8_5": 0.583,
+    "corners_over9_5": 0.4519,
+    "corners_over10_5": 0.3299,
+    "corners_over11_5": 0.2269,
+    "corners_over12_5": 0.147,
+    "corners_home_handicap": 0.7976,
+    "cards_exp_total": 3.7,
+    "cards_over2_5": 0.7146,
+    "cards_over3_5": 0.5058,
+    "cards_over4_5": 0.3128,
+    "cards_over5_5": 0.1699,
+    "possession_home_pct": 60.9,
+    "shots_ot_home": 5.6,
+    "shots_ot_away": 2.7,
+    "shots_ratio": 0.675,
+    "xg_dominance": 0.668,
+    "clean_sheet_home": 0.48,
+    "clean_sheet_away": 0.12,
+    "sp_taker_home": "Messi / Di María",
+    "sp_taker_away": "Baha / Al-Nawateer",
+    "style_home": "Contraataque veloz, pressing alto",
+    "style_away": "Bloque muy bajo, contraataque",
+    "form_home": "WWWWW",
+    "form_away": "WDWLL",
+    "elo_home": 1855,
+    "elo_away": 1362,
+    "best_bet": {
+      "market": "Gana Argentina o Empate (1X)",
+      "prob": 0.9827,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Argentina",
+      "alt_prob": 0.8777
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Argentina",
+      "expected_value": 2.633,
+      "score_prob": 0.1426,
+      "result_1x2_best": "Gana Argentina",
+      "result_1x2_prob": 0.8777,
+      "joker_recommended": true,
+      "top3_scores": [
+        {
+          "score": "2-0",
+          "prob": 14.26
+        },
+        {
+          "score": "3-0",
+          "prob": 12.78
+        },
+        {
+          "score": "1-0",
+          "prob": 10.6
+        }
+      ],
+      "cumulative_top3": 0.376,
+      "confidence": "Media"
+    }
+  },
+  "J2": {
+    "home_win": 0.5351,
+    "draw": 0.2239,
+    "away_win": 0.241,
+    "exp_home": 1.48,
+    "exp_away": 1.06,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 12.36
+      },
+      {
+        "score": "1-0",
+        "prob": 11.68
+      },
+      {
+        "score": "2-1",
+        "prob": 9.16
+      },
+      {
+        "score": "2-0",
+        "prob": 8.66
+      },
+      {
+        "score": "0-1",
+        "prob": 8.34
+      },
+      {
+        "score": "0-0",
+        "prob": 7.88
+      }
+    ],
+    "over0_5": 0.9212,
+    "over1_5": 0.721,
+    "over2_5": 0.4667,
+    "over3_5": 0.2512,
+    "over4_5": 0.1144,
+    "btts": 0.5047,
+    "first_goal_home": 0.583,
+    "corners_exp_home": 5.4,
+    "corners_exp_away": 3.63,
+    "corners_total_exp": 9.03,
+    "corners_over7_5": 0.679,
+    "corners_over8_5": 0.5476,
+    "corners_over9_5": 0.4159,
+    "corners_over10_5": 0.297,
+    "corners_over11_5": 0.1994,
+    "corners_over12_5": 0.1261,
+    "corners_home_handicap": 0.5324,
+    "cards_exp_total": 3.7,
+    "cards_over2_5": 0.7146,
+    "cards_over3_5": 0.5058,
+    "cards_over4_5": 0.3128,
+    "cards_over5_5": 0.1699,
+    "possession_home_pct": 53.1,
+    "shots_ot_home": 4.4,
+    "shots_ot_away": 3.9,
+    "shots_ratio": 0.53,
+    "xg_dominance": 0.52,
+    "clean_sheet_home": 0.34,
+    "clean_sheet_away": 0.28,
+    "sp_taker_home": "Alaba / Sabitzer",
+    "sp_taker_away": "Mahrez / Bennacer",
+    "style_home": "Presión alta, organizado tácticamente",
+    "style_away": "Contraataque, Mahrez creativo",
+    "form_home": "WWWWW",
+    "form_away": "WDWWL",
+    "elo_home": 1608,
+    "elo_away": 1558,
+    "best_bet": {
+      "market": "Gana Austria o Empate (1X)",
+      "prob": 0.759,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Austria",
+      "alt_prob": 0.5351
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Austria",
+      "expected_value": 1.605,
+      "score_prob": 0.1236,
+      "result_1x2_best": "Gana Austria",
+      "result_1x2_prob": 0.5351,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 12.36
+        },
+        {
+          "score": "1-0",
+          "prob": 11.68
+        },
+        {
+          "score": "2-1",
+          "prob": 9.16
+        }
+      ],
+      "cumulative_top3": 0.332,
+      "confidence": "Baja"
+    }
+  },
+  "J3": {
+    "home_win": 0.7197,
+    "draw": 0.1804,
+    "away_win": 0.0999,
+    "exp_home": 1.97,
+    "exp_away": 0.84,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 11.88
+      },
+      {
+        "score": "2-0",
+        "prob": 11.68
+      },
+      {
+        "score": "1-1",
+        "prob": 9.98
+      },
+      {
+        "score": "2-1",
+        "prob": 9.81
+      },
+      {
+        "score": "3-0",
+        "prob": 7.66
+      },
+      {
+        "score": "3-1",
+        "prob": 6.43
+      }
+    ],
+    "over0_5": 0.9396,
+    "over1_5": 0.77,
+    "over2_5": 0.532,
+    "over3_5": 0.3094,
+    "over4_5": 0.1533,
+    "btts": 0.4887,
+    "first_goal_home": 0.701,
+    "corners_exp_home": 5.51,
+    "corners_exp_away": 4.28,
+    "corners_total_exp": 9.79,
+    "corners_over7_5": 0.7605,
+    "corners_over8_5": 0.6433,
+    "corners_over9_5": 0.5158,
+    "corners_over10_5": 0.391,
+    "corners_over11_5": 0.2799,
+    "corners_over12_5": 0.1892,
+    "corners_home_handicap": 0.4619,
+    "cards_exp_total": 3.5,
+    "cards_over2_5": 0.6792,
+    "cards_over3_5": 0.4634,
+    "cards_over4_5": 0.2746,
+    "cards_over5_5": 0.1424,
+    "possession_home_pct": 51.9,
+    "shots_ot_home": 5.6,
+    "shots_ot_away": 4.4,
+    "shots_ratio": 0.56,
+    "xg_dominance": 0.578,
+    "clean_sheet_home": 0.48,
+    "clean_sheet_away": 0.34,
+    "sp_taker_home": "Messi / Di María",
+    "sp_taker_away": "Alaba / Sabitzer",
+    "style_home": "Contraataque veloz, pressing alto",
+    "style_away": "Presión alta, organizado tácticamente",
+    "form_home": "WWWWW",
+    "form_away": "WWWWW",
+    "elo_home": 1855,
+    "elo_away": 1608,
+    "best_bet": {
+      "market": "Gana Argentina o Empate (1X)",
+      "prob": 0.9001,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Argentina",
+      "alt_prob": 0.7197
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Argentina",
+      "expected_value": 2.159,
+      "score_prob": 0.1188,
+      "result_1x2_best": "Gana Argentina",
+      "result_1x2_prob": 0.7197,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 11.88
+        },
+        {
+          "score": "2-0",
+          "prob": 11.68
+        },
+        {
+          "score": "1-1",
+          "prob": 9.98
+        }
+      ],
+      "cumulative_top3": 0.335,
+      "confidence": "Media"
+    }
+  },
+  "J4": {
+    "home_win": 0.2685,
+    "draw": 0.2288,
+    "away_win": 0.5027,
+    "exp_home": 0.96,
+    "exp_away": 1.45,
+    "likely_score": "0-1",
+    "top_scores": [
+      {
+        "score": "0-1",
+        "prob": 13.02
+      },
+      {
+        "score": "1-1",
+        "prob": 12.51
+      },
+      {
+        "score": "0-2",
+        "prob": 9.42
+      },
+      {
+        "score": "1-2",
+        "prob": 9.05
+      },
+      {
+        "score": "0-0",
+        "prob": 9.0
+      },
+      {
+        "score": "1-0",
+        "prob": 8.65
+      }
+    ],
+    "over0_5": 0.91,
+    "over1_5": 0.6933,
+    "over2_5": 0.4324,
+    "over3_5": 0.223,
+    "over4_5": 0.0969,
+    "btts": 0.4722,
+    "first_goal_home": 0.399,
+    "corners_exp_home": 3.32,
+    "corners_exp_away": 4.38,
+    "corners_total_exp": 7.71,
+    "corners_over7_5": 0.5055,
+    "corners_over8_5": 0.3666,
+    "corners_over9_5": 0.2478,
+    "corners_over10_5": 0.1561,
+    "corners_over11_5": 0.0919,
+    "corners_over12_5": 0.0507,
+    "corners_home_handicap": 0.1741,
+    "cards_exp_total": 3.9,
+    "cards_over2_5": 0.7469,
+    "cards_over3_5": 0.5468,
+    "cards_over4_5": 0.3516,
+    "cards_over5_5": 0.1994,
+    "possession_home_pct": 43.9,
+    "shots_ot_home": 2.7,
+    "shots_ot_away": 3.9,
+    "shots_ratio": 0.409,
+    "xg_dominance": 0.422,
+    "clean_sheet_home": 0.12,
+    "clean_sheet_away": 0.28,
+    "sp_taker_home": "Baha / Al-Nawateer",
+    "sp_taker_away": "Mahrez / Bennacer",
+    "style_home": "Bloque muy bajo, contraataque",
+    "style_away": "Contraataque, Mahrez creativo",
+    "form_home": "WDWLL",
+    "form_away": "WDWWL",
+    "elo_home": 1362,
+    "elo_away": 1558,
+    "best_bet": {
+      "market": "Gana Algeria o Empate (X2)",
+      "prob": 0.7315,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Más de 3.5 tarjetas amarillas",
+      "alt_prob": 0.5468
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Algeria",
+      "expected_value": 1.508,
+      "score_prob": 0.1302,
+      "result_1x2_best": "Gana Algeria",
+      "result_1x2_prob": 0.5027,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "0-1",
+          "prob": 13.02
+        },
+        {
+          "score": "1-1",
+          "prob": 12.51
+        },
+        {
+          "score": "0-2",
+          "prob": 9.42
+        }
+      ],
+      "cumulative_top3": 0.35,
+      "confidence": "Baja"
+    }
+  },
+  "J5": {
+    "home_win": 0.7573,
+    "draw": 0.1674,
+    "away_win": 0.0753,
+    "exp_home": 2.09,
+    "exp_away": 0.78,
+    "likely_score": "2-0",
+    "top_scores": [
+      {
+        "score": "2-0",
+        "prob": 12.41
+      },
+      {
+        "score": "1-0",
+        "prob": 11.9
+      },
+      {
+        "score": "2-1",
+        "prob": 9.65
+      },
+      {
+        "score": "1-1",
+        "prob": 9.25
+      },
+      {
+        "score": "3-0",
+        "prob": 8.64
+      },
+      {
+        "score": "3-1",
+        "prob": 6.71
+      }
+    ],
+    "over0_5": 0.943,
+    "over1_5": 0.7796,
+    "over2_5": 0.5457,
+    "over3_5": 0.3224,
+    "over4_5": 0.1625,
+    "btts": 0.4734,
+    "first_goal_home": 0.729,
+    "corners_exp_home": 6.02,
+    "corners_exp_away": 3.54,
+    "corners_total_exp": 9.56,
+    "corners_over7_5": 0.7379,
+    "corners_over8_5": 0.616,
+    "corners_over9_5": 0.4864,
+    "corners_over10_5": 0.3626,
+    "corners_over11_5": 0.2548,
+    "corners_over12_5": 0.169,
+    "corners_home_handicap": 0.6215,
+    "cards_exp_total": 3.8,
+    "cards_over2_5": 0.7311,
+    "cards_over3_5": 0.5265,
+    "cards_over4_5": 0.3322,
+    "cards_over5_5": 0.1844,
+    "possession_home_pct": 54.9,
+    "shots_ot_home": 5.6,
+    "shots_ot_away": 3.9,
+    "shots_ratio": 0.589,
+    "xg_dominance": 0.597,
+    "clean_sheet_home": 0.48,
+    "clean_sheet_away": 0.28,
+    "sp_taker_home": "Messi / Di María",
+    "sp_taker_away": "Mahrez / Bennacer",
+    "style_home": "Contraataque veloz, pressing alto",
+    "style_away": "Contraataque, Mahrez creativo",
+    "form_home": "WWWWW",
+    "form_away": "WDWWL",
+    "elo_home": 1855,
+    "elo_away": 1558,
+    "best_bet": {
+      "market": "Gana Argentina o Empate (1X)",
+      "prob": 0.9247,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Argentina",
+      "alt_prob": 0.7573
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Argentina",
+      "expected_value": 2.272,
+      "score_prob": 0.1241,
+      "result_1x2_best": "Gana Argentina",
+      "result_1x2_prob": 0.7573,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "2-0",
+          "prob": 12.41
+        },
+        {
+          "score": "1-0",
+          "prob": 11.9
+        },
+        {
+          "score": "2-1",
+          "prob": 9.65
+        }
+      ],
+      "cumulative_top3": 0.34,
+      "confidence": "Media"
+    }
+  },
+  "J6": {
+    "home_win": 0.2266,
+    "draw": 0.2187,
+    "away_win": 0.5547,
+    "exp_home": 0.91,
+    "exp_away": 1.56,
+    "likely_score": "0-1",
+    "top_scores": [
+      {
+        "score": "0-1",
+        "prob": 13.24
+      },
+      {
+        "score": "1-1",
+        "prob": 11.99
+      },
+      {
+        "score": "0-2",
+        "prob": 10.35
+      },
+      {
+        "score": "1-2",
+        "prob": 9.37
+      },
+      {
+        "score": "0-0",
+        "prob": 8.47
+      },
+      {
+        "score": "1-0",
+        "prob": 7.67
+      }
+    ],
+    "over0_5": 0.9153,
+    "over1_5": 0.7062,
+    "over2_5": 0.4481,
+    "over3_5": 0.2357,
+    "over4_5": 0.1047,
+    "btts": 0.4709,
+    "first_goal_home": 0.367,
+    "corners_exp_home": 3.04,
+    "corners_exp_away": 5.3,
+    "corners_total_exp": 8.34,
+    "corners_over7_5": 0.5937,
+    "corners_over8_5": 0.4551,
+    "corners_over9_5": 0.3266,
+    "corners_over10_5": 0.2194,
+    "corners_over11_5": 0.1382,
+    "corners_over12_5": 0.0817,
+    "corners_home_handicap": 0.0917,
+    "cards_exp_total": 3.6,
+    "cards_over2_5": 0.6973,
+    "cards_over3_5": 0.4848,
+    "cards_over4_5": 0.2936,
+    "cards_over5_5": 0.1559,
+    "possession_home_pct": 40.9,
+    "shots_ot_home": 2.7,
+    "shots_ot_away": 4.4,
+    "shots_ratio": 0.38,
+    "xg_dominance": 0.403,
+    "clean_sheet_home": 0.12,
+    "clean_sheet_away": 0.34,
+    "sp_taker_home": "Baha / Al-Nawateer",
+    "sp_taker_away": "Alaba / Sabitzer",
+    "style_home": "Bloque muy bajo, contraataque",
+    "style_away": "Presión alta, organizado tácticamente",
+    "form_home": "WDWLL",
+    "form_away": "WWWWW",
+    "elo_home": 1362,
+    "elo_away": 1608,
+    "best_bet": {
+      "market": "Gana Austria o Empate (X2)",
+      "prob": 0.7734,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Austria",
+      "alt_prob": 0.5547
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Austria",
+      "expected_value": 1.664,
+      "score_prob": 0.1324,
+      "result_1x2_best": "Gana Austria",
+      "result_1x2_prob": 0.5547,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "0-1",
+          "prob": 13.24
+        },
+        {
+          "score": "1-1",
+          "prob": 11.99
+        },
+        {
+          "score": "0-2",
+          "prob": 10.35
+        }
+      ],
+      "cumulative_top3": 0.356,
+      "confidence": "Baja"
+    }
+  },
+  "K1": {
+    "home_win": 0.8125,
+    "draw": 0.142,
+    "away_win": 0.0455,
+    "exp_home": 2.33,
+    "exp_away": 0.69,
+    "likely_score": "2-0",
+    "top_scores": [
+      {
+        "score": "2-0",
+        "prob": 13.26
+      },
+      {
+        "score": "1-0",
+        "prob": 11.39
+      },
+      {
+        "score": "3-0",
+        "prob": 10.29
+      },
+      {
+        "score": "2-1",
+        "prob": 9.14
+      },
+      {
+        "score": "1-1",
+        "prob": 7.85
+      },
+      {
+        "score": "3-1",
+        "prob": 7.09
+      }
+    ],
+    "over0_5": 0.9511,
+    "over1_5": 0.8035,
+    "over2_5": 0.5808,
+    "over3_5": 0.3568,
+    "over4_5": 0.1878,
+    "btts": 0.4496,
+    "first_goal_home": 0.772,
+    "corners_exp_home": 6.15,
+    "corners_exp_away": 2.83,
+    "corners_total_exp": 8.98,
+    "corners_over7_5": 0.674,
+    "corners_over8_5": 0.542,
+    "corners_over9_5": 0.4102,
+    "corners_over10_5": 0.2919,
+    "corners_over11_5": 0.1953,
+    "corners_over12_5": 0.1229,
+    "corners_home_handicap": 0.7268,
+    "cards_exp_total": 3.5,
+    "cards_over2_5": 0.6792,
+    "cards_over3_5": 0.4634,
+    "cards_over4_5": 0.2746,
+    "cards_over5_5": 0.1424,
+    "possession_home_pct": 57.6,
+    "shots_ot_home": 5.5,
+    "shots_ot_away": 3.2,
+    "shots_ratio": 0.632,
+    "xg_dominance": 0.634,
+    "clean_sheet_home": 0.4,
+    "clean_sheet_away": 0.16,
+    "sp_taker_home": "Ronaldo / Bernardo",
+    "sp_taker_away": "Shomurodov / Tursunov",
+    "style_home": "Transición, Cristiano cabezazos",
+    "style_away": "Organizado, físico, mejorando",
+    "form_home": "WWWWL",
+    "form_away": "WWDWL",
+    "elo_home": 1778,
+    "elo_away": 1402,
+    "best_bet": {
+      "market": "Gana Portugal o Empate (1X)",
+      "prob": 0.9545,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Portugal",
+      "alt_prob": 0.8125
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Portugal",
+      "expected_value": 2.438,
+      "score_prob": 0.1326,
+      "result_1x2_best": "Gana Portugal",
+      "result_1x2_prob": 0.8125,
+      "joker_recommended": true,
+      "top3_scores": [
+        {
+          "score": "2-0",
+          "prob": 13.26
+        },
+        {
+          "score": "1-0",
+          "prob": 11.39
+        },
+        {
+          "score": "3-0",
+          "prob": 10.29
+        }
+      ],
+      "cumulative_top3": 0.349,
+      "confidence": "Media"
+    }
+  },
+  "K2": {
+    "home_win": 0.6411,
+    "draw": 0.203,
+    "away_win": 0.1559,
+    "exp_home": 1.74,
+    "exp_away": 0.95,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 11.77
+      },
+      {
+        "score": "1-1",
+        "prob": 11.23
+      },
+      {
+        "score": "2-0",
+        "prob": 10.24
+      },
+      {
+        "score": "2-1",
+        "prob": 9.76
+      },
+      {
+        "score": "0-0",
+        "prob": 6.77
+      },
+      {
+        "score": "0-1",
+        "prob": 6.45
+      }
+    ],
+    "over0_5": 0.9323,
+    "over1_5": 0.7501,
+    "over2_5": 0.5047,
+    "over3_5": 0.2844,
+    "over4_5": 0.1361,
+    "btts": 0.5068,
+    "first_goal_home": 0.646,
+    "corners_exp_home": 5.4,
+    "corners_exp_away": 3.37,
+    "corners_total_exp": 8.77,
+    "corners_over7_5": 0.6487,
+    "corners_over8_5": 0.514,
+    "corners_over9_5": 0.3826,
+    "corners_over10_5": 0.2674,
+    "corners_over11_5": 0.1755,
+    "corners_over12_5": 0.1083,
+    "corners_home_handicap": 0.5666,
+    "cards_exp_total": 4.0,
+    "cards_over2_5": 0.7619,
+    "cards_over3_5": 0.5665,
+    "cards_over4_5": 0.3712,
+    "cards_over5_5": 0.2149,
+    "possession_home_pct": 54.2,
+    "shots_ot_home": 4.7,
+    "shots_ot_away": 3.6,
+    "shots_ratio": 0.566,
+    "xg_dominance": 0.561,
+    "clean_sheet_home": 0.36,
+    "clean_sheet_away": 0.24,
+    "sp_taker_home": "James / Díaz",
+    "sp_taker_away": "Mbemba / Bongonda",
+    "style_home": "Contraataque técnico, creatividad",
+    "style_away": "Físico, directo, limitado técnicamente",
+    "form_home": "WWWWW",
+    "form_away": "WWDLW",
+    "elo_home": 1692,
+    "elo_away": 1532,
+    "best_bet": {
+      "market": "Gana Colombia o Empate (1X)",
+      "prob": 0.8441,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Colombia",
+      "alt_prob": 0.6411
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Colombia",
+      "expected_value": 1.923,
+      "score_prob": 0.1177,
+      "result_1x2_best": "Gana Colombia",
+      "result_1x2_prob": 0.6411,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 11.77
+        },
+        {
+          "score": "1-1",
+          "prob": 11.23
+        },
+        {
+          "score": "2-0",
+          "prob": 10.24
+        }
+      ],
+      "cumulative_top3": 0.332,
+      "confidence": "Baja"
+    }
+  },
+  "K3": {
+    "home_win": 0.5795,
+    "draw": 0.2065,
+    "away_win": 0.214,
+    "exp_home": 1.7,
+    "exp_away": 1.11,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 11.36
+      },
+      {
+        "score": "1-0",
+        "prob": 10.27
+      },
+      {
+        "score": "2-1",
+        "prob": 9.66
+      },
+      {
+        "score": "2-0",
+        "prob": 8.73
+      },
+      {
+        "score": "0-1",
+        "prob": 6.68
+      },
+      {
+        "score": "1-2",
+        "prob": 6.29
+      }
+    ],
+    "over0_5": 0.9396,
+    "over1_5": 0.7701,
+    "over2_5": 0.5322,
+    "over3_5": 0.3096,
+    "over4_5": 0.1534,
+    "btts": 0.5471,
+    "first_goal_home": 0.606,
+    "corners_exp_home": 5.51,
+    "corners_exp_away": 3.87,
+    "corners_total_exp": 9.38,
+    "corners_over7_5": 0.7192,
+    "corners_over8_5": 0.5938,
+    "corners_over9_5": 0.4631,
+    "corners_over10_5": 0.3405,
+    "corners_over11_5": 0.2358,
+    "corners_over12_5": 0.154,
+    "corners_home_handicap": 0.5139,
+    "cards_exp_total": 3.7,
+    "cards_over2_5": 0.7146,
+    "cards_over3_5": 0.5058,
+    "cards_over4_5": 0.3128,
+    "cards_over5_5": 0.1699,
+    "possession_home_pct": 52.3,
+    "shots_ot_home": 5.5,
+    "shots_ot_away": 4.7,
+    "shots_ratio": 0.539,
+    "xg_dominance": 0.535,
+    "clean_sheet_home": 0.4,
+    "clean_sheet_away": 0.36,
+    "sp_taker_home": "Ronaldo / Bernardo",
+    "sp_taker_away": "James / Díaz",
+    "style_home": "Transición, Cristiano cabezazos",
+    "style_away": "Contraataque técnico, creatividad",
+    "form_home": "WWWWL",
+    "form_away": "WWWWW",
+    "elo_home": 1778,
+    "elo_away": 1692,
+    "best_bet": {
+      "market": "Gana Portugal o Empate (1X)",
+      "prob": 0.786,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Portugal",
+      "alt_prob": 0.5795
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Portugal",
+      "expected_value": 1.739,
+      "score_prob": 0.1136,
+      "result_1x2_best": "Gana Portugal",
+      "result_1x2_prob": 0.5795,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 11.36
+        },
+        {
+          "score": "1-0",
+          "prob": 10.27
+        },
+        {
+          "score": "2-1",
+          "prob": 9.66
+        }
+      ],
+      "cumulative_top3": 0.313,
+      "confidence": "Baja"
+    }
+  },
+  "K4": {
+    "home_win": 0.3371,
+    "draw": 0.2367,
+    "away_win": 0.4262,
+    "exp_home": 1.08,
+    "exp_away": 1.31,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 12.97
+      },
+      {
+        "score": "0-1",
+        "prob": 11.97
+      },
+      {
+        "score": "1-0",
+        "prob": 9.93
+      },
+      {
+        "score": "0-0",
+        "prob": 9.16
+      },
+      {
+        "score": "1-2",
+        "prob": 8.47
+      },
+      {
+        "score": "0-2",
+        "prob": 7.82
+      }
+    ],
+    "over0_5": 0.9084,
+    "over1_5": 0.6893,
+    "over2_5": 0.4276,
+    "over3_5": 0.2192,
+    "over4_5": 0.0946,
+    "btts": 0.4824,
+    "first_goal_home": 0.453,
+    "corners_exp_home": 3.95,
+    "corners_exp_away": 3.76,
+    "corners_total_exp": 7.71,
+    "corners_over7_5": 0.506,
+    "corners_over8_5": 0.3671,
+    "corners_over9_5": 0.2482,
+    "corners_over10_5": 0.1565,
+    "corners_over11_5": 0.0922,
+    "corners_over12_5": 0.0509,
+    "corners_home_handicap": 0.3133,
+    "cards_exp_total": 3.8,
+    "cards_over2_5": 0.7311,
+    "cards_over3_5": 0.5265,
+    "cards_over4_5": 0.3322,
+    "cards_over5_5": 0.1844,
+    "possession_home_pct": 48.8,
+    "shots_ot_home": 3.2,
+    "shots_ot_away": 3.6,
+    "shots_ratio": 0.471,
+    "xg_dominance": 0.456,
+    "clean_sheet_home": 0.16,
+    "clean_sheet_away": 0.24,
+    "sp_taker_home": "Shomurodov / Tursunov",
+    "sp_taker_away": "Mbemba / Bongonda",
+    "style_home": "Organizado, físico, mejorando",
+    "style_away": "Físico, directo, limitado técnicamente",
+    "form_home": "WWDWL",
+    "form_away": "WWDLW",
+    "elo_home": 1402,
+    "elo_away": 1532,
+    "best_bet": {
+      "market": "Gana DR Congo o Empate (X2)",
+      "prob": 0.6629,
+      "type": "doble",
+      "confidence": "Media",
+      "alt_market": "Gana Uzbekistan o Empate (1X)",
+      "alt_prob": 0.5738
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana DR Congo",
+      "expected_value": 1.279,
+      "score_prob": 0.1297,
+      "result_1x2_best": "Gana DR Congo",
+      "result_1x2_prob": 0.4262,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 12.97
+        },
+        {
+          "score": "0-1",
+          "prob": 11.97
+        },
+        {
+          "score": "1-0",
+          "prob": 9.93
+        }
+      ],
+      "cumulative_top3": 0.349,
+      "confidence": "Baja"
+    }
+  },
+  "K5": {
+    "home_win": 0.7185,
+    "draw": 0.1789,
+    "away_win": 0.1026,
+    "exp_home": 2.0,
+    "exp_away": 0.87,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 11.35
+      },
+      {
+        "score": "2-0",
+        "prob": 11.33
+      },
+      {
+        "score": "1-1",
+        "prob": 9.89
+      },
+      {
+        "score": "2-1",
+        "prob": 9.87
+      },
+      {
+        "score": "3-0",
+        "prob": 7.54
+      },
+      {
+        "score": "3-1",
+        "prob": 6.56
+      }
+    ],
+    "over0_5": 0.9431,
+    "over1_5": 0.78,
+    "over2_5": 0.5463,
+    "over3_5": 0.3229,
+    "over4_5": 0.1629,
+    "btts": 0.5024,
+    "first_goal_home": 0.696,
+    "corners_exp_home": 6.02,
+    "corners_exp_away": 2.98,
+    "corners_total_exp": 9.0,
+    "corners_over7_5": 0.6764,
+    "corners_over8_5": 0.5447,
+    "corners_over9_5": 0.413,
+    "corners_over10_5": 0.2944,
+    "corners_over11_5": 0.1973,
+    "corners_over12_5": 0.1244,
+    "corners_home_handicap": 0.6942,
+    "cards_exp_total": 3.7,
+    "cards_over2_5": 0.7146,
+    "cards_over3_5": 0.5058,
+    "cards_over4_5": 0.3128,
+    "cards_over5_5": 0.1699,
+    "possession_home_pct": 56.4,
+    "shots_ot_home": 5.5,
+    "shots_ot_away": 3.6,
+    "shots_ratio": 0.604,
+    "xg_dominance": 0.594,
+    "clean_sheet_home": 0.4,
+    "clean_sheet_away": 0.24,
+    "sp_taker_home": "Ronaldo / Bernardo",
+    "sp_taker_away": "Mbemba / Bongonda",
+    "style_home": "Transición, Cristiano cabezazos",
+    "style_away": "Físico, directo, limitado técnicamente",
+    "form_home": "WWWWL",
+    "form_away": "WWDLW",
+    "elo_home": 1778,
+    "elo_away": 1532,
+    "best_bet": {
+      "market": "Gana Portugal o Empate (1X)",
+      "prob": 0.8974,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Portugal",
+      "alt_prob": 0.7185
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Portugal",
+      "expected_value": 2.155,
+      "score_prob": 0.1135,
+      "result_1x2_best": "Gana Portugal",
+      "result_1x2_prob": 0.7185,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 11.35
+        },
+        {
+          "score": "2-0",
+          "prob": 11.33
+        },
+        {
+          "score": "1-1",
+          "prob": 9.89
+        }
+      ],
+      "cumulative_top3": 0.326,
+      "confidence": "Media"
+    }
+  },
+  "K6": {
+    "home_win": 0.7521,
+    "draw": 0.1716,
+    "away_win": 0.0763,
+    "exp_home": 2.03,
+    "exp_away": 0.76,
+    "likely_score": "2-0",
+    "top_scores": [
+      {
+        "score": "2-0",
+        "prob": 12.72
+      },
+      {
+        "score": "1-0",
+        "prob": 12.53
+      },
+      {
+        "score": "2-1",
+        "prob": 9.6
+      },
+      {
+        "score": "1-1",
+        "prob": 9.47
+      },
+      {
+        "score": "3-0",
+        "prob": 8.6
+      },
+      {
+        "score": "3-1",
+        "prob": 6.5
+      }
+    ],
+    "over0_5": 0.9382,
+    "over1_5": 0.7662,
+    "over2_5": 0.5268,
+    "over3_5": 0.3046,
+    "over4_5": 0.1499,
+    "btts": 0.4604,
+    "first_goal_home": 0.729,
+    "corners_exp_home": 5.51,
+    "corners_exp_away": 3.2,
+    "corners_total_exp": 8.72,
+    "corners_over7_5": 0.6421,
+    "corners_over8_5": 0.5067,
+    "corners_over9_5": 0.3755,
+    "corners_over10_5": 0.2612,
+    "corners_over11_5": 0.1706,
+    "corners_over12_5": 0.1047,
+    "corners_home_handicap": 0.6044,
+    "cards_exp_total": 3.8,
+    "cards_over2_5": 0.7311,
+    "cards_over3_5": 0.5265,
+    "cards_over4_5": 0.3322,
+    "cards_over5_5": 0.1844,
+    "possession_home_pct": 55.3,
+    "shots_ot_home": 4.7,
+    "shots_ot_away": 3.2,
+    "shots_ratio": 0.595,
+    "xg_dominance": 0.603,
+    "clean_sheet_home": 0.36,
+    "clean_sheet_away": 0.16,
+    "sp_taker_home": "James / Díaz",
+    "sp_taker_away": "Shomurodov / Tursunov",
+    "style_home": "Contraataque técnico, creatividad",
+    "style_away": "Organizado, físico, mejorando",
+    "form_home": "WWWWW",
+    "form_away": "WWDWL",
+    "elo_home": 1692,
+    "elo_away": 1402,
+    "best_bet": {
+      "market": "Gana Colombia o Empate (1X)",
+      "prob": 0.9237,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Colombia",
+      "alt_prob": 0.7521
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Colombia",
+      "expected_value": 2.256,
+      "score_prob": 0.1272,
+      "result_1x2_best": "Gana Colombia",
+      "result_1x2_prob": 0.7521,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "2-0",
+          "prob": 12.72
+        },
+        {
+          "score": "1-0",
+          "prob": 12.53
+        },
+        {
+          "score": "2-1",
+          "prob": 9.6
+        }
+      ],
+      "cumulative_top3": 0.349,
+      "confidence": "Media"
+    }
+  },
+  "L1": {
+    "home_win": 0.7359,
+    "draw": 0.1762,
+    "away_win": 0.0879,
+    "exp_home": 2.0,
+    "exp_away": 0.81,
+    "likely_score": "2-0",
+    "top_scores": [
+      {
+        "score": "2-0",
+        "prob": 11.98
+      },
+      {
+        "score": "1-0",
+        "prob": 11.96
+      },
+      {
+        "score": "2-1",
+        "prob": 9.76
+      },
+      {
+        "score": "1-1",
+        "prob": 9.75
+      },
+      {
+        "score": "3-0",
+        "prob": 8.0
+      },
+      {
+        "score": "3-1",
+        "prob": 6.52
+      }
+    ],
+    "over0_5": 0.9403,
+    "over1_5": 0.7721,
+    "over2_5": 0.5349,
+    "over3_5": 0.3122,
+    "over4_5": 0.1552,
+    "btts": 0.4821,
+    "first_goal_home": 0.711,
+    "corners_exp_home": 6.63,
+    "corners_exp_away": 3.05,
+    "corners_total_exp": 9.68,
+    "corners_over7_5": 0.7498,
+    "corners_over8_5": 0.6304,
+    "corners_over9_5": 0.5018,
+    "corners_over10_5": 0.3773,
+    "corners_over11_5": 0.2678,
+    "corners_over12_5": 0.1794,
+    "corners_home_handicap": 0.7468,
+    "cards_exp_total": 3.7,
+    "cards_over2_5": 0.7146,
+    "cards_over3_5": 0.5058,
+    "cards_over4_5": 0.3128,
+    "cards_over5_5": 0.1699,
+    "possession_home_pct": 57.4,
+    "shots_ot_home": 5.4,
+    "shots_ot_away": 3.4,
+    "shots_ratio": 0.614,
+    "xg_dominance": 0.604,
+    "clean_sheet_home": 0.42,
+    "clean_sheet_away": 0.22,
+    "sp_taker_home": "Trent / Bellingham",
+    "sp_taker_away": "Davis / Fajardo",
+    "style_home": "Físico directo, set pieces peligrosos",
+    "style_away": "Bloque bajo, físico, largas pelotas",
+    "form_home": "WWWDW",
+    "form_away": "WDWLW",
+    "elo_home": 1792,
+    "elo_away": 1518,
+    "best_bet": {
+      "market": "Gana England o Empate (1X)",
+      "prob": 0.9121,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana England",
+      "alt_prob": 0.7359
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana England",
+      "expected_value": 2.208,
+      "score_prob": 0.1198,
+      "result_1x2_best": "Gana England",
+      "result_1x2_prob": 0.7359,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "2-0",
+          "prob": 11.98
+        },
+        {
+          "score": "1-0",
+          "prob": 11.96
+        },
+        {
+          "score": "2-1",
+          "prob": 9.76
+        }
+      ],
+      "cumulative_top3": 0.337,
+      "confidence": "Media"
+    }
+  },
+  "L2": {
+    "home_win": 0.6406,
+    "draw": 0.2046,
+    "away_win": 0.1548,
+    "exp_home": 1.71,
+    "exp_away": 0.89,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 12.62
+      },
+      {
+        "score": "1-1",
+        "prob": 11.29
+      },
+      {
+        "score": "2-0",
+        "prob": 10.82
+      },
+      {
+        "score": "2-1",
+        "prob": 9.68
+      },
+      {
+        "score": "0-0",
+        "prob": 7.36
+      },
+      {
+        "score": "0-1",
+        "prob": 6.58
+      }
+    ],
+    "over0_5": 0.9264,
+    "over1_5": 0.7344,
+    "over2_5": 0.4839,
+    "over3_5": 0.266,
+    "over4_5": 0.1239,
+    "btts": 0.4847,
+    "first_goal_home": 0.657,
+    "corners_exp_home": 5.83,
+    "corners_exp_away": 2.98,
+    "corners_total_exp": 8.81,
+    "corners_over7_5": 0.6537,
+    "corners_over8_5": 0.5195,
+    "corners_over9_5": 0.388,
+    "corners_over10_5": 0.2721,
+    "corners_over11_5": 0.1792,
+    "corners_over12_5": 0.111,
+    "corners_home_handicap": 0.673,
+    "cards_exp_total": 3.8,
+    "cards_over2_5": 0.7311,
+    "cards_over3_5": 0.5265,
+    "cards_over4_5": 0.3322,
+    "cards_over5_5": 0.1844,
+    "possession_home_pct": 55.3,
+    "shots_ot_home": 4.4,
+    "shots_ot_away": 3.5,
+    "shots_ratio": 0.557,
+    "xg_dominance": 0.563,
+    "clean_sheet_home": 0.36,
+    "clean_sheet_away": 0.2,
+    "sp_taker_home": "Modric / Kovacic",
+    "sp_taker_away": "Kudus / Williams",
+    "style_home": "Posesión, control del ritmo",
+    "style_away": "Transición directa, físico",
+    "form_home": "DWWWW",
+    "form_away": "LWWDW",
+    "elo_home": 1644,
+    "elo_away": 1498,
+    "best_bet": {
+      "market": "Gana Croatia o Empate (1X)",
+      "prob": 0.8452,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Croatia",
+      "alt_prob": 0.6406
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Croatia",
+      "expected_value": 1.922,
+      "score_prob": 0.1262,
+      "result_1x2_best": "Gana Croatia",
+      "result_1x2_prob": 0.6406,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 12.62
+        },
+        {
+          "score": "1-1",
+          "prob": 11.29
+        },
+        {
+          "score": "2-0",
+          "prob": 10.82
+        }
+      ],
+      "cumulative_top3": 0.347,
+      "confidence": "Baja"
+    }
+  },
+  "L3": {
+    "home_win": 0.6162,
+    "draw": 0.2086,
+    "away_win": 0.1752,
+    "exp_home": 1.68,
+    "exp_away": 1.03,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 11.53
+      },
+      {
+        "score": "1-0",
+        "prob": 11.23
+      },
+      {
+        "score": "2-1",
+        "prob": 9.66
+      },
+      {
+        "score": "2-0",
+        "prob": 9.41
+      },
+      {
+        "score": "0-1",
+        "prob": 6.88
+      },
+      {
+        "score": "0-0",
+        "prob": 6.7
+      }
+    ],
+    "over0_5": 0.933,
+    "over1_5": 0.7519,
+    "over2_5": 0.5072,
+    "over3_5": 0.2866,
+    "over4_5": 0.1376,
+    "btts": 0.5219,
+    "first_goal_home": 0.62,
+    "corners_exp_home": 5.04,
+    "corners_exp_away": 4.42,
+    "corners_total_exp": 9.46,
+    "corners_over7_5": 0.727,
+    "corners_over8_5": 0.6031,
+    "corners_over9_5": 0.4728,
+    "corners_over10_5": 0.3496,
+    "corners_over11_5": 0.2436,
+    "corners_over12_5": 0.1601,
+    "corners_home_handicap": 0.3835,
+    "cards_exp_total": 3.3,
+    "cards_over2_5": 0.6406,
+    "cards_over3_5": 0.4197,
+    "cards_over4_5": 0.2374,
+    "cards_over5_5": 0.1171,
+    "possession_home_pct": 50.9,
+    "shots_ot_home": 5.4,
+    "shots_ot_away": 4.4,
+    "shots_ratio": 0.551,
+    "xg_dominance": 0.538,
+    "clean_sheet_home": 0.42,
+    "clean_sheet_away": 0.36,
+    "sp_taker_home": "Trent / Bellingham",
+    "sp_taker_away": "Modric / Kovacic",
+    "style_home": "Físico directo, set pieces peligrosos",
+    "style_away": "Posesión, control del ritmo",
+    "form_home": "WWWDW",
+    "form_away": "DWWWW",
+    "elo_home": 1792,
+    "elo_away": 1644,
+    "best_bet": {
+      "market": "Gana England o Empate (1X)",
+      "prob": 0.8248,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana England",
+      "alt_prob": 0.6162
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana England",
+      "expected_value": 1.849,
+      "score_prob": 0.1153,
+      "result_1x2_best": "Gana England",
+      "result_1x2_prob": 0.6162,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 11.53
+        },
+        {
+          "score": "1-0",
+          "prob": 11.23
+        },
+        {
+          "score": "2-1",
+          "prob": 9.66
+        }
+      ],
+      "cumulative_top3": 0.324,
+      "confidence": "Baja"
+    }
+  },
+  "L4": {
+    "home_win": 0.4976,
+    "draw": 0.2331,
+    "away_win": 0.2693,
+    "exp_home": 1.36,
+    "exp_away": 1.07,
+    "likely_score": "1-1",
+    "top_scores": [
+      {
+        "score": "1-1",
+        "prob": 12.81
+      },
+      {
+        "score": "1-0",
+        "prob": 11.98
+      },
+      {
+        "score": "0-1",
+        "prob": 9.42
+      },
+      {
+        "score": "0-0",
+        "prob": 8.81
+      },
+      {
+        "score": "2-1",
+        "prob": 8.71
+      },
+      {
+        "score": "2-0",
+        "prob": 8.15
+      }
+    ],
+    "over0_5": 0.9119,
+    "over1_5": 0.6979,
+    "over2_5": 0.4379,
+    "over3_5": 0.2274,
+    "over4_5": 0.0996,
+    "btts": 0.4882,
+    "first_goal_home": 0.56,
+    "corners_exp_home": 4.03,
+    "corners_exp_away": 3.92,
+    "corners_total_exp": 7.95,
+    "corners_over7_5": 0.5402,
+    "corners_over8_5": 0.4007,
+    "corners_over9_5": 0.2774,
+    "corners_over10_5": 0.1793,
+    "corners_over11_5": 0.1084,
+    "corners_over12_5": 0.0615,
+    "corners_home_handicap": 0.3069,
+    "cards_exp_total": 4.2,
+    "cards_over2_5": 0.7898,
+    "cards_over3_5": 0.6046,
+    "cards_over4_5": 0.4102,
+    "cards_over5_5": 0.2469,
+    "possession_home_pct": 48.8,
+    "shots_ot_home": 3.4,
+    "shots_ot_away": 3.5,
+    "shots_ratio": 0.493,
+    "xg_dominance": 0.496,
+    "clean_sheet_home": 0.22,
+    "clean_sheet_away": 0.2,
+    "sp_taker_home": "Davis / Fajardo",
+    "sp_taker_away": "Kudus / Williams",
+    "style_home": "Bloque bajo, físico, largas pelotas",
+    "style_away": "Transición directa, físico",
+    "form_home": "WDWLW",
+    "form_away": "LWWDW",
+    "elo_home": 1518,
+    "elo_away": 1498,
+    "best_bet": {
+      "market": "Gana Panama o Empate (1X)",
+      "prob": 0.7307,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Más de 3.5 tarjetas amarillas",
+      "alt_prob": 0.6046
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Panama",
+      "expected_value": 1.493,
+      "score_prob": 0.1281,
+      "result_1x2_best": "Gana Panama",
+      "result_1x2_prob": 0.4976,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-1",
+          "prob": 12.81
+        },
+        {
+          "score": "1-0",
+          "prob": 11.98
+        },
+        {
+          "score": "0-1",
+          "prob": 9.42
+        }
+      ],
+      "cumulative_top3": 0.342,
+      "confidence": "Baja"
+    }
+  },
+  "L5": {
+    "home_win": 0.7482,
+    "draw": 0.1723,
+    "away_win": 0.0795,
+    "exp_home": 2.04,
+    "exp_away": 0.8,
+    "likely_score": "2-0",
+    "top_scores": [
+      {
+        "score": "2-0",
+        "prob": 12.19
+      },
+      {
+        "score": "1-0",
+        "prob": 11.95
+      },
+      {
+        "score": "2-1",
+        "prob": 9.72
+      },
+      {
+        "score": "1-1",
+        "prob": 9.53
+      },
+      {
+        "score": "3-0",
+        "prob": 8.29
+      },
+      {
+        "score": "3-1",
+        "prob": 6.61
+      }
+    ],
+    "over0_5": 0.9414,
+    "over1_5": 0.7752,
+    "over2_5": 0.5394,
+    "over3_5": 0.3164,
+    "over4_5": 0.1582,
+    "btts": 0.4779,
+    "first_goal_home": 0.719,
+    "corners_exp_home": 6.36,
+    "corners_exp_away": 3.22,
+    "corners_total_exp": 9.58,
+    "corners_over7_5": 0.7394,
+    "corners_over8_5": 0.6178,
+    "corners_over9_5": 0.4884,
+    "corners_over10_5": 0.3644,
+    "corners_over11_5": 0.2564,
+    "corners_over12_5": 0.1703,
+    "corners_home_handicap": 0.701,
+    "cards_exp_total": 3.5,
+    "cards_over2_5": 0.6792,
+    "cards_over3_5": 0.4634,
+    "cards_over4_5": 0.2746,
+    "cards_over5_5": 0.1424,
+    "possession_home_pct": 56.2,
+    "shots_ot_home": 5.4,
+    "shots_ot_away": 3.5,
+    "shots_ratio": 0.607,
+    "xg_dominance": 0.6,
+    "clean_sheet_home": 0.42,
+    "clean_sheet_away": 0.2,
+    "sp_taker_home": "Trent / Bellingham",
+    "sp_taker_away": "Kudus / Williams",
+    "style_home": "Físico directo, set pieces peligrosos",
+    "style_away": "Transición directa, físico",
+    "form_home": "WWWDW",
+    "form_away": "LWWDW",
+    "elo_home": 1792,
+    "elo_away": 1498,
+    "best_bet": {
+      "market": "Gana England o Empate (1X)",
+      "prob": 0.9205,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana England",
+      "alt_prob": 0.7482
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana England",
+      "expected_value": 2.245,
+      "score_prob": 0.1219,
+      "result_1x2_best": "Gana England",
+      "result_1x2_prob": 0.7482,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "2-0",
+          "prob": 12.19
+        },
+        {
+          "score": "1-0",
+          "prob": 11.95
+        },
+        {
+          "score": "2-1",
+          "prob": 9.72
+        }
+      ],
+      "cumulative_top3": 0.339,
+      "confidence": "Media"
+    }
+  },
+  "L6": {
+    "home_win": 0.6244,
+    "draw": 0.2075,
+    "away_win": 0.1681,
+    "exp_home": 1.68,
+    "exp_away": 0.91,
+    "likely_score": "1-0",
+    "top_scores": [
+      {
+        "score": "1-0",
+        "prob": 12.53
+      },
+      {
+        "score": "1-1",
+        "prob": 11.45
+      },
+      {
+        "score": "2-0",
+        "prob": 10.55
+      },
+      {
+        "score": "2-1",
+        "prob": 9.65
+      },
+      {
+        "score": "0-0",
+        "prob": 7.44
+      },
+      {
+        "score": "0-1",
+        "prob": 6.8
+      }
+    ],
+    "over0_5": 0.9256,
+    "over1_5": 0.7323,
+    "over2_5": 0.4812,
+    "over3_5": 0.2637,
+    "over4_5": 0.1224,
+    "btts": 0.4879,
+    "first_goal_home": 0.648,
+    "corners_exp_home": 6.08,
+    "corners_exp_away": 2.83,
+    "corners_total_exp": 8.91,
+    "corners_over7_5": 0.6651,
+    "corners_over8_5": 0.532,
+    "corners_over9_5": 0.4003,
+    "corners_over10_5": 0.283,
+    "corners_over11_5": 0.1881,
+    "corners_over12_5": 0.1176,
+    "corners_home_handicap": 0.719,
+    "cards_exp_total": 4.0,
+    "cards_over2_5": 0.7619,
+    "cards_over3_5": 0.5665,
+    "cards_over4_5": 0.3712,
+    "cards_over5_5": 0.2149,
+    "possession_home_pct": 56.5,
+    "shots_ot_home": 4.4,
+    "shots_ot_away": 3.4,
+    "shots_ratio": 0.564,
+    "xg_dominance": 0.568,
+    "clean_sheet_home": 0.36,
+    "clean_sheet_away": 0.22,
+    "sp_taker_home": "Modric / Kovacic",
+    "sp_taker_away": "Davis / Fajardo",
+    "style_home": "Posesión, control del ritmo",
+    "style_away": "Bloque bajo, físico, largas pelotas",
+    "form_home": "DWWWW",
+    "form_away": "WDWLW",
+    "elo_home": 1644,
+    "elo_away": 1518,
+    "best_bet": {
+      "market": "Gana Croatia o Empate (1X)",
+      "prob": 0.8319,
+      "type": "doble",
+      "confidence": "Alta",
+      "alt_market": "Gana Croatia",
+      "alt_prob": 0.6244
+    },
+    "polla": {
+      "play_type": "RESULTADO 1X2",
+      "play_pick": "Gana Croatia",
+      "expected_value": 1.873,
+      "score_prob": 0.1253,
+      "result_1x2_best": "Gana Croatia",
+      "result_1x2_prob": 0.6244,
+      "joker_recommended": false,
+      "top3_scores": [
+        {
+          "score": "1-0",
+          "prob": 12.53
+        },
+        {
+          "score": "1-1",
+          "prob": 11.45
+        },
+        {
+          "score": "2-0",
+          "prob": 10.55
+        }
+      ],
+      "cumulative_top3": 0.345,
+      "confidence": "Baja"
+    }
+  }
+}

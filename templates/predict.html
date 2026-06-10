@@ -1,0 +1,271 @@
+{% extends "base.html" %}
+{% block title %}Predecir — Polla AutoRed{% endblock %}
+{% block content %}
+
+<div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:18px">
+  <div>
+    <h2 style="font-size:1.3rem;font-weight:800">🎯 Tus predicciones — {{ nombre }}</h2>
+    <p style="color:var(--muted);font-size:.8rem;margin-top:4px">
+      Ingresa el marcador que predices para cada partido. Puedes editar hasta 5 min antes del inicio.
+    </p>
+  </div>
+  <div style="background:var(--dark3);border:1px solid {% if jokers_usados|length >= jokers_max %}var(--red){% else %}rgba(124,77,255,.4){% endif %};
+    border-radius:10px;padding:10px 16px;text-align:center">
+    <div style="font-size:1.4rem;font-weight:900;color:#b388ff">{{ jokers_usados|length }}/{{ jokers_max }}</div>
+    <div style="font-size:.68rem;color:var(--muted)">comodines 🃏 usados</div>
+  </div>
+</div>
+
+<!-- MINI REGLAS -->
+<div style="background:var(--dark2);border:1px solid var(--border);border-radius:10px;
+  padding:12px 16px;margin-bottom:16px;display:flex;gap:16px;flex-wrap:wrap;font-size:.78rem">
+  <span>✅ <strong style="color:var(--gold)">{{ cfg.pts_exacto }} pts</strong> marcador exacto</span>
+  <span>🔵 <strong style="color:#8bc34a">{{ cfg.pts_resultado }} pts</strong> resultado correcto (1X2)</span>
+  <span>🃏 <strong style="color:#b388ff">×2</strong> comodín duplica puntos ({{ cfg.jokers_disponibles }} disponibles)</span>
+  <span style="color:var(--red)">❌ <strong>0 pts</strong> si el resultado es incorrecto</span>
+</div>
+
+{% if not upcoming %}
+<div class="card" style="text-align:center;padding:40px">
+  <div style="font-size:3rem;margin-bottom:12px">🏁</div>
+  <div style="font-weight:700">No hay partidos disponibles para predecir</div>
+</div>
+{% else %}
+
+<form method="POST" id="predict-form">
+
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+  <div style="font-size:.8rem;color:var(--muted)">
+    {{ upcoming|length }} partidos · haz clic en un marcador sugerido para rellenarlo automáticamente
+  </div>
+  <button type="submit" class="btn btn-primary">💾 Guardar todo</button>
+</div>
+
+<!-- PARTIDOS POR JORNADA -->
+{% set ns = namespace(current_round=0) %}
+{% for f in upcoming %}
+  {% if f.round != ns.current_round %}
+    {% if ns.current_round != 0 %}</div></div>{% endif %}
+    {% set ns.current_round = f.round %}
+    <div class="card" style="margin-bottom:14px">
+      <div class="card-title">
+        Jornada {{ f.round }}
+        <span style="font-size:.72rem;font-weight:400;color:var(--muted)">
+          — {{ upcoming | selectattr('round','eq',f.round) | list | length }} partidos
+          &nbsp;·&nbsp;
+          {% set round_picks = upcoming | selectattr('round','eq',f.round) | selectattr('user_pick') | list | length %}
+          <span style="color:{% if round_picks > 0 %}var(--green){% else %}var(--muted){% endif %}">
+            {{ round_picks }} completados
+          </span>
+        </span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px">
+  {% endif %}
+
+  <!-- PARTIDO -->
+  <div id="{{ f.id }}" class="match-card" style="
+    {% if f.user_pick %}border-color:rgba(0,170,204,.5);{% endif %}
+    {% if f.id in already_locked %}opacity:.6{% endif %}">
+
+    <!-- header -->
+    <div class="match-meta">
+      <span class="match-group">Grupo {{ f.group }} · {{ f.id }}</span>
+      <span class="match-date">{{ f.date }} {{ f.time }}</span>
+    </div>
+
+    <!-- equipos -->
+    <div class="match-teams" style="margin-bottom:8px">
+      <div class="team">
+        <div class="team-flag">{{ f.home_flag }}</div>
+        <div class="team-name">{{ f.home }}</div>
+      </div>
+      <span class="score-vs">vs</span>
+      <div class="team">
+        <div class="team-flag">{{ f.away_flag }}</div>
+        <div class="team-name">{{ f.away }}</div>
+      </div>
+    </div>
+
+    <!-- proba bar -->
+    {% if f.hw %}
+    <div class="prob-bar">
+      <div class="pb-h" style="width:{{ (f.hw*100)|round(1) }}%"></div>
+      <div class="pb-d" style="width:{{ (f.draw*100)|round(1) }}%"></div>
+      <div class="pb-a" style="width:{{ (f.aw*100)|round(1) }}%"></div>
+    </div>
+    <div class="prob-labels">
+      <span>{{ (f.hw*100)|round(0)|int }}%</span>
+      <span>{{ (f.draw*100)|round(0)|int }}%</span>
+      <span>{{ (f.aw*100)|round(0)|int }}%</span>
+    </div>
+    {% endif %}
+
+    <!-- marcadores sugeridos (clic para rellenar) -->
+    {% if f.top_scores %}
+    <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px">
+      <span style="font-size:.65rem;color:var(--muted);align-self:center">Toca para elegir:</span>
+      {% for s in f.top_scores %}
+      <button type="button"
+        onclick="setScore('{{ f.id }}','{{ s.score.split('-')[0] }}','{{ s.score.split('-')[1] }}')"
+        style="background:var(--dark3);border:1px solid var(--border);border-radius:5px;
+          padding:3px 8px;font-size:.72rem;color:var(--muted);cursor:pointer;transition:all .15s"
+        onmouseover="this.style.borderColor='var(--ar)';this.style.color='var(--ar)'"
+        onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">
+        {{ s.score }} <span style="opacity:.5">({{ s.prob }}%)</span>
+      </button>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- input marcador -->
+    <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin:8px 0">
+      <div style="text-align:center">
+        <div style="font-size:.62rem;color:var(--muted);margin-bottom:3px">{{ f.home }}</div>
+        <input class="form-input" type="number" min="0" max="20"
+          name="h_{{ f.id }}" id="h_{{ f.id }}"
+          value="{{ f.user_pick.home if f.user_pick else '' }}"
+          placeholder="0"
+          style="width:58px;text-align:center;font-size:1.4rem;font-weight:900;padding:6px"
+          {% if f.id in already_locked %}readonly style="opacity:.5"{% endif %}>
+      </div>
+      <span style="font-size:1.4rem;font-weight:900;color:var(--muted)">-</span>
+      <div style="text-align:center">
+        <div style="font-size:.62rem;color:var(--muted);margin-bottom:3px">{{ f.away }}</div>
+        <input class="form-input" type="number" min="0" max="20"
+          name="a_{{ f.id }}" id="a_{{ f.id }}"
+          value="{{ f.user_pick.away if f.user_pick else '' }}"
+          placeholder="0"
+          style="width:58px;text-align:center;font-size:1.4rem;font-weight:900;padding:6px"
+          {% if f.id in already_locked %}readonly style="opacity:.5"{% endif %}>
+      </div>
+    </div>
+
+    <!-- joker toggle -->
+    {% set joker_active = f.id in jokers_usados %}
+    <label class="joker-btn {{ 'active' if joker_active else '' }}" id="joker-label-{{ f.id }}"
+      style="justify-content:center">
+      <input type="checkbox" name="joker_{{ f.id }}" value="1"
+        {{ 'checked' if joker_active else '' }}
+        onchange="toggleJoker('{{ f.id }}', this)">
+      🃏 Usar comodín ×2
+    </label>
+
+    {% if f.id in already_locked %}
+    <div style="text-align:center;font-size:.68rem;color:var(--muted);margin-top:4px">🔒 Partido finalizado</div>
+    {% endif %}
+  </div>
+
+{% endfor %}
+{% if upcoming %}</div></div>{% endif %}
+
+<!-- PREMIOS DEL TORNEO -->
+<div class="card" style="margin-top:20px">
+  <div class="card-title">🏅 Premios del torneo</div>
+  <p style="font-size:.78rem;color:var(--muted);margin-bottom:16px">
+    Predice quién ganará cada premio individual. Se suman al puntaje final cuando el torneo termine.
+  </p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px">
+
+    <div style="background:var(--dark2);border:1px solid var(--border);border-radius:10px;padding:14px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+        <span style="font-size:1.5rem">⚽</span>
+        <div>
+          <div style="font-weight:700;font-size:.88rem">Goleador</div>
+          <div style="font-size:.68rem;color:var(--gold);font-weight:700">+15 pts</div>
+        </div>
+      </div>
+      <input class="form-input" name="torneo_goleador"
+        placeholder="Nombre del jugador"
+        value="{{ torneo_picks.get('goleador','') }}"
+        style="font-size:.85rem">
+      {% if torneo_res.get('goleador') %}
+      <div style="font-size:.68rem;color:var(--green);margin-top:5px">
+        ✅ Ganador confirmado: <strong>{{ torneo_res.goleador }}</strong>
+      </div>
+      {% endif %}
+    </div>
+
+    <div style="background:var(--dark2);border:1px solid var(--border);border-radius:10px;padding:14px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+        <span style="font-size:1.5rem">🧤</span>
+        <div>
+          <div style="font-weight:700;font-size:.88rem">Mejor Arquero</div>
+          <div style="font-size:.68rem;color:var(--gold);font-weight:700">+10 pts</div>
+        </div>
+      </div>
+      <input class="form-input" name="torneo_arquero"
+        placeholder="Nombre del jugador"
+        value="{{ torneo_picks.get('arquero','') }}"
+        style="font-size:.85rem">
+      {% if torneo_res.get('arquero') %}
+      <div style="font-size:.68rem;color:var(--green);margin-top:5px">
+        ✅ Ganador confirmado: <strong>{{ torneo_res.arquero }}</strong>
+      </div>
+      {% endif %}
+    </div>
+
+    <div style="background:var(--dark2);border:1px solid var(--border);border-radius:10px;padding:14px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+        <span style="font-size:1.5rem">⭐</span>
+        <div>
+          <div style="font-weight:700;font-size:.88rem">Mejor Jugador</div>
+          <div style="font-size:.68rem;color:var(--gold);font-weight:700">+15 pts</div>
+        </div>
+      </div>
+      <input class="form-input" name="torneo_mejor_jugador"
+        placeholder="Nombre del jugador"
+        value="{{ torneo_picks.get('mejor_jugador','') }}"
+        style="font-size:.85rem">
+      {% if torneo_res.get('mejor_jugador') %}
+      <div style="font-size:.68rem;color:var(--green);margin-top:5px">
+        ✅ Ganador confirmado: <strong>{{ torneo_res.mejor_jugador }}</strong>
+      </div>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
+
+<div style="display:flex;justify-content:center;margin-top:16px;padding-bottom:20px">
+  <button type="submit" class="btn btn-primary" style="padding:13px 40px;font-size:1rem">
+    💾 Guardar todas las predicciones
+  </button>
+</div>
+</form>
+{% endif %}
+
+<script>
+const JOKER_MAX = {{ jokers_max }};
+
+function setScore(fid, h, a) {
+  document.getElementById('h_'+fid).value = h;
+  document.getElementById('a_'+fid).value = a;
+  const card = document.getElementById(fid);
+  if (card) card.style.borderColor = 'var(--ar)';
+}
+
+function toggleJoker(fid, checkbox) {
+  const label = document.getElementById('joker-label-'+fid);
+  const activeCount = document.querySelectorAll('input[name^="joker_"]:checked').length;
+  if (checkbox.checked && activeCount > JOKER_MAX) {
+    checkbox.checked = false;
+    alert('Solo puedes usar ' + JOKER_MAX + ' comodines en total. Quita uno antes de agregar otro.');
+    return;
+  }
+  label.classList.toggle('active', checkbox.checked);
+  const newCount = document.querySelectorAll('input[name^="joker_"]:checked').length;
+  document.querySelectorAll('input[name^="joker_"]').forEach(inp => {
+    if (!inp.checked) inp.disabled = newCount >= JOKER_MAX;
+  });
+}
+
+// init joker button states
+document.addEventListener('DOMContentLoaded', () => {
+  const activeCount = document.querySelectorAll('input[name^="joker_"]:checked').length;
+  if (activeCount >= JOKER_MAX) {
+    document.querySelectorAll('input[name^="joker_"]:not(:checked)').forEach(inp => inp.disabled = true);
+  }
+});
+</script>
+{% endblock %}

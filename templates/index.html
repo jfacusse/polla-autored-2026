@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+{% block title %}{{ cfg.nombre_polla }}{% endblock %}
+{% block content %}
+
+<!-- HERO -->
+<div style="background:linear-gradient(135deg,var(--dark2),var(--dark3));border:1px solid var(--border);
+  border-radius:16px;padding:24px 28px;margin-bottom:20px;display:flex;align-items:center;
+  justify-content:space-between;flex-wrap:wrap;gap:16px">
+  <div>
+    <h1 style="font-size:1.6rem;font-weight:900;color:var(--white)">⚽ {{ cfg.nombre_polla }}</h1>
+    <p style="color:var(--muted);font-size:.83rem;margin-top:5px">
+      Mundial 2026 · USA · México · Canadá · 11 Jun – 19 Jul
+    </p>
+  </div>
+  {% if not session.user %}
+  <a href="/login" class="btn btn-primary" style="font-size:.95rem;padding:11px 24px">
+    ⚽ Unirse a la polla
+  </a>
+  {% else %}
+  <div style="display:flex;gap:10px;flex-wrap:wrap">
+    <a href="/predecir" class="btn btn-primary">🎯 Mis predicciones</a>
+    <a href="/mis-picks" class="btn btn-secondary">📋 Ver mis picks</a>
+  </div>
+  {% endif %}
+</div>
+
+<!-- REGLAS -->
+<div style="background:var(--dark2);border:1px solid var(--border);border-radius:14px;
+  padding:18px 22px;margin-bottom:20px">
+  <div style="font-size:.82rem;font-weight:800;color:var(--ar);margin-bottom:12px;
+    text-transform:uppercase;letter-spacing:.06em">📋 Cómo se puntúa</div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap">
+    <div style="background:var(--dark3);border:1px solid var(--border);border-radius:10px;
+      padding:12px 16px;flex:1;min-width:140px;text-align:center">
+      <div style="font-size:2rem;font-weight:900;color:var(--gold)">{{ cfg.pts_exacto }}</div>
+      <div style="font-size:.72rem;color:var(--muted);margin-top:3px">pts marcador exacto</div>
+      <div style="font-size:.68rem;color:var(--green);margin-top:2px">Ej: predices 2-1, sale 2-1</div>
+    </div>
+    <div style="background:var(--dark3);border:1px solid var(--border);border-radius:10px;
+      padding:12px 16px;flex:1;min-width:140px;text-align:center">
+      <div style="font-size:2rem;font-weight:900;color:#8bc34a">{{ cfg.pts_resultado }}</div>
+      <div style="font-size:.72rem;color:var(--muted);margin-top:3px">pts resultado correcto</div>
+      <div style="font-size:.68rem;color:#8bc34a;margin-top:2px">Ej: predices 1-0, sale 3-0</div>
+    </div>
+    <div style="background:var(--dark3);border:1px solid rgba(124,77,255,.4);border-radius:10px;
+      padding:12px 16px;flex:1;min-width:140px;text-align:center">
+      <div style="font-size:2rem;font-weight:900;color:#b388ff">×2</div>
+      <div style="font-size:.72rem;color:var(--muted);margin-top:3px">comodín ({{ cfg.jokers_disponibles }} disponibles)</div>
+      <div style="font-size:.68rem;color:#b388ff;margin-top:2px">Duplica los puntos del partido</div>
+    </div>
+    <div style="background:var(--dark3);border:1px solid var(--border);border-radius:10px;
+      padding:12px 16px;flex:1;min-width:140px;text-align:center">
+      <div style="font-size:2rem;font-weight:900;color:var(--red)">0</div>
+      <div style="font-size:.72rem;color:var(--muted);margin-top:3px">pts si el resultado es incorrecto</div>
+      <div style="font-size:.68rem;color:var(--red);margin-top:2px">Ej: predices 2-0, sale 0-2</div>
+    </div>
+    <div style="background:var(--dark3);border:1px solid var(--border);border-radius:10px;
+      padding:12px 16px;flex:1;min-width:140px;text-align:center">
+      <div style="font-size:2rem;font-weight:900;color:var(--ar)">⏰</div>
+      <div style="font-size:.72rem;color:var(--muted);margin-top:3px">cierre de picks</div>
+      <div style="font-size:.68rem;color:var(--ar);margin-top:2px">5 min antes del partido</div>
+    </div>
+  </div>
+</div>
+
+<!-- TABLA -->
+{% if tabla %}
+<div class="card">
+  <div class="card-title">🏆 Clasificación</div>
+  <table>
+    <thead><tr>
+      <th>#</th><th>Jugador</th><th>Puntos</th>
+      <th>Exactos ✅</th><th>Resultados 🔵</th><th>Picks</th><th>Comodines 🃏</th>
+    </tr></thead>
+    <tbody>
+    {% set max_pts = tabla[0].pts if tabla and tabla[0].pts > 0 else 1 %}
+    {% for p in tabla %}
+    <tr {% if p.id == session.user %}style="background:rgba(0,170,204,.07)"{% endif %}>
+      <td style="font-size:1.3rem;width:42px">
+        {{ ['🥇','🥈','🥉'][loop.index0] if loop.index0 < 3 else loop.index }}
+      </td>
+      <td style="font-weight:600">
+        {{ p.nombre }}
+        {% if p.id == session.user %}<span style="color:var(--ar);font-size:.72rem"> ← tú</span>{% endif %}
+      </td>
+      <td>
+        <span style="font-size:1.3rem;font-weight:900;color:var(--gold)">{{ p.pts }}</span>
+        <div style="background:var(--dark3);border-radius:3px;height:5px;margin-top:4px;overflow:hidden;width:80px">
+          <div style="background:var(--ar);height:5px;width:{{ ((p.pts/max_pts)*100)|int }}%"></div>
+        </div>
+      </td>
+      <td style="color:var(--green);font-weight:700">{{ p.exactos|default(0) }}</td>
+      <td style="color:#8bc34a;font-weight:700">{{ p.resultados|default(0) }}</td>
+      <td style="color:var(--muted)">{{ p.picks }}/72</td>
+      <td>
+        {% for i in range(p.jokers_usados) %}🃏{% endfor %}
+        <span style="color:var(--muted);font-size:.72rem"> {{ p.jokers_usados }}/{{ cfg.jokers_disponibles }}</span>
+      </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<div class="card" style="text-align:center;padding:40px">
+  <div style="font-size:3rem;margin-bottom:10px">⏳</div>
+  <div style="font-weight:700">Nadie ha ingresado predicciones aún</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-top:6px">¡Sé el primero en registrarte!</p>
+  <a href="/login" class="btn btn-primary" style="margin-top:16px;display:inline-block">Unirse ⚽</a>
+</div>
+{% endif %}
+
+<!-- PRÓXIMOS PARTIDOS agrupados por jornada -->
+{% if upcoming %}
+{% set ns = namespace(current_round=0) %}
+{% for f in upcoming %}
+  {% if f.round != ns.current_round %}
+    {% if ns.current_round != 0 %}</div></div>{% endif %}
+    {% set ns.current_round = f.round %}
+    <div class="card">
+      <div class="card-title">
+        ⚽ Jornada {{ f.round }}
+        <span style="font-size:.72rem;color:var(--muted);font-weight:400">
+          ({{ upcoming | selectattr('round','eq',f.round) | list | length }} partidos)
+        </span>
+      </div>
+      <div class="match-grid">
+  {% endif %}
+
+  <!-- MATCH CARD -->
+  <div class="match-card" style="{% if f.user_pick %}border-color:rgba(0,170,204,.5){% endif %}">
+    <div class="match-meta">
+      <span class="match-group">Grupo {{ f.group }} · {{ f.date }}</span>
+      <span class="match-date">{{ f.time }} · {{ f.venue.split(',')[0] }}</span>
+    </div>
+    <div class="match-teams">
+      <div class="team"><div class="team-flag">{{ f.home_flag }}</div><div class="team-name">{{ f.home }}</div></div>
+      <span class="score-vs">vs</span>
+      <div class="team"><div class="team-flag">{{ f.away_flag }}</div><div class="team-name">{{ f.away }}</div></div>
+    </div>
+    {% if f.hw %}
+    <div class="prob-bar">
+      <div class="pb-h" style="width:{{ (f.hw*100)|round(1) }}%"></div>
+      <div class="pb-d" style="width:{{ (f.draw*100)|round(1) }}%"></div>
+      <div class="pb-a" style="width:{{ (f.aw*100)|round(1) }}%"></div>
+    </div>
+    <div class="prob-labels">
+      <span>{{ (f.hw*100)|round(0)|int }}% local</span>
+      <span>{{ (f.draw*100)|round(0)|int }}% emp</span>
+      <span>{{ (f.aw*100)|round(0)|int }}% visita</span>
+    </div>
+    {% endif %}
+    <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px">
+      {% if f.likely_score and f.likely_score != '—' %}
+      <span style="background:var(--dark3);border:1px solid var(--ar);color:var(--ar);padding:2px 7px;border-radius:5px;font-size:.68rem">
+        🤖 {{ f.likely_score }}
+      </span>
+      {% endif %}
+      {% if f.over25 %}
+      <span style="background:var(--dark3);border:1px solid var(--border);color:var(--muted);padding:2px 7px;border-radius:5px;font-size:.68rem">
+        +2.5: {{ (f.over25*100)|round(0)|int }}%
+      </span>
+      {% endif %}
+    </div>
+    {% if session.user and session.user != 'admin' %}
+      {% if f.user_pick %}
+      <div style="background:rgba(0,230,118,.07);border:1px solid rgba(0,230,118,.3);
+        border-radius:7px;padding:5px 10px;font-size:.75rem;display:flex;align-items:center;gap:6px">
+        ✅ Tu pick: <strong style="color:var(--green)">{{ f.user_pick.home }}-{{ f.user_pick.away }}</strong>
+        {% if f.is_joker %}<span class="pill pill-joker">🃏 COMODÍN</span>{% endif %}
+      </div>
+      {% else %}
+      <a href="/predecir#{{ f.id }}" style="display:block;margin-top:4px;text-align:center;
+        font-size:.73rem;color:var(--ar);border:1px dashed rgba(0,170,204,.4);
+        border-radius:7px;padding:5px;text-decoration:none">
+        + Predecir este partido
+      </a>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endfor %}
+{% if upcoming %}</div></div>{% endif %}
+{% endif %}
+
+<!-- ÚLTIMOS RESULTADOS -->
+{% if finished %}
+<div class="card">
+  <div class="card-title">✅ Últimos resultados</div>
+  <div class="match-grid">
+  {% for f in finished %}
+  <div class="match-card">
+    <div class="match-meta">
+      <span class="match-group">Grupo {{ f.group }}</span>
+      <span class="match-date">{{ f.date }}</span>
+    </div>
+    <div class="match-teams" style="justify-content:center;gap:16px">
+      <div class="team" style="align-items:flex-end">
+        <div class="team-flag">{{ f.home_flag }}</div>
+        <div class="team-name">{{ f.home }}</div>
+      </div>
+      <div style="font-size:2.2rem;font-weight:900;color:var(--gold);min-width:80px;text-align:center">
+        {{ f.score_home }} - {{ f.score_away }}
+      </div>
+      <div class="team" style="align-items:flex-start">
+        <div class="team-flag">{{ f.away_flag }}</div>
+        <div class="team-name">{{ f.away }}</div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% endblock %}
