@@ -139,26 +139,24 @@
   <button type="submit" class="btn btn-primary">💾 Guardar todo</button>
 </div>
 
-<!-- PARTIDOS POR JORNADA -->
-{% set ns = namespace(current_round='') %}
+<!-- PARTIDOS POR FECHA -->
+{% set ns = namespace(current_date='') %}
 {% for f in upcoming %}
-  {% if f.round|string != ns.current_round %}
-    {% if ns.current_round != '' %}</div></div>{% endif %}
-    {% set ns.current_round = f.round|string %}
-    {% set round_matches = upcoming | selectattr('round','eq',f.round) | list %}
-    {% set round_picks = round_matches | selectattr('user_pick') | list | length %}
-    <div class="card" style="margin-bottom:14px">
-      <div class="card-title">
-        Jornada {{ f.round }}
-        <span style="font-size:.72rem;font-weight:400;color:var(--muted)">
-          — {{ round_matches|length }} partidos
-          &nbsp;·&nbsp;
-          <span style="color:{% if round_picks > 0 %}var(--green){% else %}var(--muted){% endif %}">
-            {{ round_picks }} completados
-          </span>
-        </span>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px">
+  {% if f.date != ns.current_date %}
+    {% if ns.current_date != '' %}</div>{% endif %}
+    {% set ns.current_date = f.date %}
+    {% set day_matches = upcoming | selectattr('date','eq',f.date) | list %}
+    {% set day_picks = day_matches | selectattr('user_pick') | list | length %}
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;{% if not loop.first %}margin-top:24px{% endif %}">
+      <div style="background:var(--ar);color:var(--dark);font-weight:900;font-size:.8rem;
+        padding:4px 12px;border-radius:20px;white-space:nowrap">{{ f.date | fecha }}</div>
+      <div style="flex:1;height:1px;background:var(--border)"></div>
+      <span style="font-size:.7rem;color:var(--muted);white-space:nowrap">
+        {{ day_matches|length }} partidos
+        {% if day_picks > 0 %}&nbsp;·&nbsp;<span style="color:var(--green)">{{ day_picks }} completados</span>{% endif %}
+      </span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px">
   {% endif %}
 
   <!-- PARTIDO -->
@@ -224,7 +222,7 @@
   </div>
 
 {% endfor %}
-{% if upcoming %}</div></div>{% endif %}
+{% if upcoming %}</div>{% endif %}
 
 <div style="display:flex;justify-content:center;margin-top:16px;padding-bottom:20px">
   <button type="submit" class="btn btn-primary" style="padding:13px 40px;font-size:1rem">
