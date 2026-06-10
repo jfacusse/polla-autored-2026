@@ -343,6 +343,8 @@ def my_picks():
 
     rows = []
     for fid, pick in preds.get(uid, {}).items():
+        if not isinstance(pick, dict) or "home" not in pick:
+            continue
         f = fix_map.get(fid, {})
         r = res.get(fid, {})
         d = next((x for x in detalle if x["fid"] == fid), None)
