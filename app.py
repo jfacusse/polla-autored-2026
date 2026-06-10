@@ -228,12 +228,20 @@ def index():
                 user_data = {**p, "pos": i + 1}
                 break
 
+    all_preds = _load("predictions")
+    torneo_picks_all = {
+        uid: all_preds.get(uid, {}).get("torneo", {})
+        for uid in parts
+        if not parts[uid].get("es_admin") and parts[uid].get("activo", True)
+    }
+
     return render_template("index.html",
         cfg=cfg, tabla=tabla, upcoming=upcoming, finished=finished,
         today_matches=today_matches, recent=recent,
         user=user_id, user_data=user_data,
         jokers_usados=len(jokers_usados), jokers_max=jokers_max,
-        torneo_res=torneo_res, total_jugados=len(res))
+        torneo_res=torneo_res, total_jugados=len(res),
+        torneo_picks_all=torneo_picks_all)
 
 
 @app.route("/login", methods=["GET","POST"])

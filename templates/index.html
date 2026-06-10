@@ -113,6 +113,44 @@
   </div>
   {% endif %}
 
+  <!-- PREDICCIONES DEL TORNEO -->
+  {% if torneo_picks_all %}
+  <div class="card">
+    <div class="card-title">🏆 Predicciones del torneo</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px">
+      {% for uid, picks in torneo_picks_all.items() %}
+      {% set nombre = tabla | selectattr('id','eq',uid) | map(attribute='nombre') | first | default(uid) %}
+      <div style="background:var(--dark2);border:1px solid var(--border);border-radius:10px;padding:12px">
+        <div style="font-weight:700;font-size:.82rem;margin-bottom:8px;color:var(--ar);
+          white-space:nowrap;overflow:hidden;text-overflow:ellipsis">
+          {{ nombre.split('@')[0] }}
+        </div>
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <div style="display:flex;align-items:center;gap:6px;font-size:.78rem">
+            <span style="color:var(--gold)">🏆</span>
+            <span style="color:{% if picks.get('campeon') %}var(--text){% else %}var(--muted){% endif %}">
+              {{ picks.get('campeon') or '—' }}
+            </span>
+            {% if torneo_res.get('campeon') and picks.get('campeon') and picks.campeon|lower == torneo_res.campeon|lower %}
+            <span style="color:var(--green);font-size:.7rem">✅</span>
+            {% endif %}
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:.78rem">
+            <span>⚽</span>
+            <span style="color:{% if picks.get('goleador') %}var(--text){% else %}var(--muted){% endif %}">
+              {{ picks.get('goleador') or '—' }}
+            </span>
+            {% if torneo_res.get('goleador') and picks.get('goleador') and picks.goleador|lower == torneo_res.goleador|lower %}
+            <span style="color:var(--green);font-size:.7rem">✅</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
   <!-- ÚLTIMOS RESULTADOS -->
   {% if recent %}
   <div class="card">
