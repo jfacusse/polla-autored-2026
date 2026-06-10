@@ -498,6 +498,16 @@ def admin():
             else:
                 flash("No se puede modificar a ese participante.", "error")
 
+        elif action == "toggle_pagado":
+            t_uid = request.form.get("uid")
+            if t_uid and t_uid in parts and not parts[t_uid].get("es_admin"):
+                parts[t_uid]["pagado"] = not parts[t_uid].get("pagado", False)
+                estado = "marcado como pagado" if parts[t_uid]["pagado"] else "marcado como pendiente"
+                _save("participants", parts)
+                flash(f"✅ {parts[t_uid]['nombre'].split('@')[0]} {estado}.", "ok")
+            else:
+                flash("No se puede modificar a ese participante.", "error")
+
         elif action == "torneo_resultado":
             torneo_res = _load("torneo_results")
             for key in ("campeon", "goleador"):
