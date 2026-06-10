@@ -56,7 +56,28 @@ def _load(name):
 def _save(name, data):
     (DATA_DIR / f"{name}.json").write_text(json.dumps(data, indent=2, ensure_ascii=False))
 
+DEFAULT_CONFIG = {
+    "nombre_polla": "Polla AutoRed — Mundial 2026",
+    "admin_pin": "autored26",
+    "pts_exacto": 5,
+    "pts_resultado": 3,
+    "jokers_disponibles": 3,
+    "pts_campeon": 20,
+    "activa": True,
+    "torneo_deadline": "2026-06-11 16:00"
+}
+
 def _migrate():
+    # seed config with defaults for any missing keys
+    cfg = _load("config")
+    changed = False
+    for key, val in DEFAULT_CONFIG.items():
+        if key not in cfg:
+            cfg[key] = val
+            changed = True
+    if changed:
+        _save("config", cfg)
+
     parts = _load("participants")
     changed = False
     for uid, p in parts.items():
