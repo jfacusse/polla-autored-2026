@@ -77,12 +77,12 @@
     <!-- equipos -->
     <div class="match-teams" style="margin-bottom:8px">
       <div class="team">
-        <div class="team-flag">{{ f.home_flag }}</div>
+        <img src="https://flagcdn.com/32x24/{{ f.home_code }}.png" style="height:28px;border-radius:3px" alt="{{ f.home }}">
         <div class="team-name">{{ f.home }}</div>
       </div>
       <span class="score-vs">vs</span>
       <div class="team">
-        <div class="team-flag">{{ f.away_flag }}</div>
+        <img src="https://flagcdn.com/32x24/{{ f.away_code }}.png" style="height:28px;border-radius:3px" alt="{{ f.away }}">
         <div class="team-name">{{ f.away }}</div>
       </div>
     </div>
@@ -129,7 +129,7 @@
 {% if upcoming %}</div></div>{% endif %}
 
 <!-- PREMIOS DEL TORNEO -->
-<div class="card" style="margin-top:20px">
+<div class="card" style="margin-top:20px" id="torneo">
   <div class="card-title">🏅 Premios del torneo</div>
   <p style="font-size:.78rem;color:var(--muted);margin-bottom:16px">
     Predice quién ganará cada premio individual. Se suman al puntaje final cuando el torneo termine.

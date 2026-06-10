@@ -12,7 +12,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇲🇽",
-    "away_flag": "🇿🇦"
+    "away_flag": "🇿🇦",
+    "home_code": "mx",
+    "away_code": "za"
   },
   {
     "id": "A2",
@@ -27,7 +29,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇰🇷",
-    "away_flag": "🇨🇿"
+    "away_flag": "🇨🇿",
+    "home_code": "kr",
+    "away_code": "cz"
   },
   {
     "id": "A3",
@@ -42,7 +46,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇲🇽",
-    "away_flag": "🇰🇷"
+    "away_flag": "🇰🇷",
+    "home_code": "mx",
+    "away_code": "kr"
   },
   {
     "id": "A4",
@@ -57,7 +63,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇿🇦",
-    "away_flag": "🇨🇿"
+    "away_flag": "🇨🇿",
+    "home_code": "za",
+    "away_code": "cz"
   },
   {
     "id": "A5",
@@ -72,7 +80,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇲🇽",
-    "away_flag": "🇨🇿"
+    "away_flag": "🇨🇿",
+    "home_code": "mx",
+    "away_code": "cz"
   },
   {
     "id": "A6",
@@ -87,7 +97,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇰🇷",
-    "away_flag": "🇿🇦"
+    "away_flag": "🇿🇦",
+    "home_code": "kr",
+    "away_code": "za"
   },
   {
     "id": "B1",
@@ -102,7 +114,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇨🇦",
-    "away_flag": "🇧🇦"
+    "away_flag": "🇧🇦",
+    "home_code": "ca",
+    "away_code": "ba"
   },
   {
     "id": "B2",
@@ -117,7 +131,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇨🇭",
-    "away_flag": "🇶🇦"
+    "away_flag": "🇶🇦",
+    "home_code": "ch",
+    "away_code": "qa"
   },
   {
     "id": "B3",
@@ -132,7 +148,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇨🇦",
-    "away_flag": "🇨🇭"
+    "away_flag": "🇨🇭",
+    "home_code": "ca",
+    "away_code": "ch"
   },
   {
     "id": "B4",
@@ -147,7 +165,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇧🇦",
-    "away_flag": "🇶🇦"
+    "away_flag": "🇶🇦",
+    "home_code": "ba",
+    "away_code": "qa"
   },
   {
     "id": "B5",
@@ -162,7 +182,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇨🇦",
-    "away_flag": "🇶🇦"
+    "away_flag": "🇶🇦",
+    "home_code": "ca",
+    "away_code": "qa"
   },
   {
     "id": "B6",
@@ -177,7 +199,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇨🇭",
-    "away_flag": "🇧🇦"
+    "away_flag": "🇧🇦",
+    "home_code": "ch",
+    "away_code": "ba"
   },
   {
     "id": "C1",
@@ -192,7 +216,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇧🇷",
-    "away_flag": "🇲🇦"
+    "away_flag": "🇲🇦",
+    "home_code": "br",
+    "away_code": "ma"
   },
   {
     "id": "C2",
@@ -207,7 +233,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-    "away_flag": "🇭🇹"
+    "away_flag": "🇭🇹",
+    "home_code": "gb-sct",
+    "away_code": "ht"
   },
   {
     "id": "C3",
@@ -222,7 +250,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇧🇷",
-    "away_flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+    "away_flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    "home_code": "br",
+    "away_code": "gb-sct"
   },
   {
     "id": "C4",
@@ -237,7 +267,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇲🇦",
-    "away_flag": "🇭🇹"
+    "away_flag": "🇭🇹",
+    "home_code": "ma",
+    "away_code": "ht"
   },
   {
     "id": "C5",
@@ -252,7 +284,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇧🇷",
-    "away_flag": "🇭🇹"
+    "away_flag": "🇭🇹",
+    "home_code": "br",
+    "away_code": "ht"
   },
   {
     "id": "C6",
@@ -267,7 +301,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇲🇦",
-    "away_flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+    "away_flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    "home_code": "ma",
+    "away_code": "gb-sct"
   },
   {
     "id": "D1",
@@ -282,7 +318,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇺🇸",
-    "away_flag": "🇹🇷"
+    "away_flag": "🇹🇷",
+    "home_code": "us",
+    "away_code": "tr"
   },
   {
     "id": "D2",
@@ -297,7 +335,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇦🇺",
-    "away_flag": "🇵🇾"
+    "away_flag": "🇵🇾",
+    "home_code": "au",
+    "away_code": "py"
   },
   {
     "id": "D3",
@@ -312,7 +352,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇺🇸",
-    "away_flag": "🇦🇺"
+    "away_flag": "🇦🇺",
+    "home_code": "us",
+    "away_code": "au"
   },
   {
     "id": "D4",
@@ -327,7 +369,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇹🇷",
-    "away_flag": "🇵🇾"
+    "away_flag": "🇵🇾",
+    "home_code": "tr",
+    "away_code": "py"
   },
   {
     "id": "D5",
@@ -342,7 +386,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇺🇸",
-    "away_flag": "🇵🇾"
+    "away_flag": "🇵🇾",
+    "home_code": "us",
+    "away_code": "py"
   },
   {
     "id": "D6",
@@ -357,7 +403,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇹🇷",
-    "away_flag": "🇦🇺"
+    "away_flag": "🇦🇺",
+    "home_code": "tr",
+    "away_code": "au"
   },
   {
     "id": "E1",
@@ -372,7 +420,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇩🇪",
-    "away_flag": "🇨🇼"
+    "away_flag": "🇨🇼",
+    "home_code": "de",
+    "away_code": "cw"
   },
   {
     "id": "E2",
@@ -387,7 +437,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇪🇨",
-    "away_flag": "🇨🇮"
+    "away_flag": "🇨🇮",
+    "home_code": "ec",
+    "away_code": "ci"
   },
   {
     "id": "E3",
@@ -402,7 +454,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇩🇪",
-    "away_flag": "🇪🇨"
+    "away_flag": "🇪🇨",
+    "home_code": "de",
+    "away_code": "ec"
   },
   {
     "id": "E4",
@@ -417,7 +471,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇨🇼",
-    "away_flag": "🇨🇮"
+    "away_flag": "🇨🇮",
+    "home_code": "cw",
+    "away_code": "ci"
   },
   {
     "id": "E5",
@@ -432,7 +488,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇩🇪",
-    "away_flag": "🇨🇮"
+    "away_flag": "🇨🇮",
+    "home_code": "de",
+    "away_code": "ci"
   },
   {
     "id": "E6",
@@ -447,7 +505,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇪🇨",
-    "away_flag": "🇨🇼"
+    "away_flag": "🇨🇼",
+    "home_code": "ec",
+    "away_code": "cw"
   },
   {
     "id": "F1",
@@ -462,7 +522,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇳🇱",
-    "away_flag": "🇸🇪"
+    "away_flag": "🇸🇪",
+    "home_code": "nl",
+    "away_code": "se"
   },
   {
     "id": "F2",
@@ -477,7 +539,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇯🇵",
-    "away_flag": "🇹🇳"
+    "away_flag": "🇹🇳",
+    "home_code": "jp",
+    "away_code": "tn"
   },
   {
     "id": "F3",
@@ -492,7 +556,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇳🇱",
-    "away_flag": "🇯🇵"
+    "away_flag": "🇯🇵",
+    "home_code": "nl",
+    "away_code": "jp"
   },
   {
     "id": "F4",
@@ -507,7 +573,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇸🇪",
-    "away_flag": "🇹🇳"
+    "away_flag": "🇹🇳",
+    "home_code": "se",
+    "away_code": "tn"
   },
   {
     "id": "F5",
@@ -522,7 +590,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇳🇱",
-    "away_flag": "🇹🇳"
+    "away_flag": "🇹🇳",
+    "home_code": "nl",
+    "away_code": "tn"
   },
   {
     "id": "F6",
@@ -537,7 +607,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇯🇵",
-    "away_flag": "🇸🇪"
+    "away_flag": "🇸🇪",
+    "home_code": "jp",
+    "away_code": "se"
   },
   {
     "id": "G1",
@@ -552,7 +624,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇧🇪",
-    "away_flag": "🇮🇷"
+    "away_flag": "🇮🇷",
+    "home_code": "be",
+    "away_code": "ir"
   },
   {
     "id": "G2",
@@ -567,7 +641,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇪🇬",
-    "away_flag": "🇳🇿"
+    "away_flag": "🇳🇿",
+    "home_code": "eg",
+    "away_code": "nz"
   },
   {
     "id": "G3",
@@ -582,7 +658,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇧🇪",
-    "away_flag": "🇪🇬"
+    "away_flag": "🇪🇬",
+    "home_code": "be",
+    "away_code": "eg"
   },
   {
     "id": "G4",
@@ -597,7 +675,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇮🇷",
-    "away_flag": "🇳🇿"
+    "away_flag": "🇳🇿",
+    "home_code": "ir",
+    "away_code": "nz"
   },
   {
     "id": "G5",
@@ -612,7 +692,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇧🇪",
-    "away_flag": "🇳🇿"
+    "away_flag": "🇳🇿",
+    "home_code": "be",
+    "away_code": "nz"
   },
   {
     "id": "G6",
@@ -627,7 +709,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇪🇬",
-    "away_flag": "🇮🇷"
+    "away_flag": "🇮🇷",
+    "home_code": "eg",
+    "away_code": "ir"
   },
   {
     "id": "H1",
@@ -642,7 +726,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇪🇸",
-    "away_flag": "🇨🇻"
+    "away_flag": "🇨🇻",
+    "home_code": "es",
+    "away_code": "cv"
   },
   {
     "id": "H2",
@@ -657,7 +743,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇺🇾",
-    "away_flag": "🇸🇦"
+    "away_flag": "🇸🇦",
+    "home_code": "uy",
+    "away_code": "sa"
   },
   {
     "id": "H3",
@@ -672,7 +760,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇪🇸",
-    "away_flag": "🇺🇾"
+    "away_flag": "🇺🇾",
+    "home_code": "es",
+    "away_code": "uy"
   },
   {
     "id": "H4",
@@ -687,7 +777,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇨🇻",
-    "away_flag": "🇸🇦"
+    "away_flag": "🇸🇦",
+    "home_code": "cv",
+    "away_code": "sa"
   },
   {
     "id": "H5",
@@ -702,7 +794,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇪🇸",
-    "away_flag": "🇸🇦"
+    "away_flag": "🇸🇦",
+    "home_code": "es",
+    "away_code": "sa"
   },
   {
     "id": "H6",
@@ -717,7 +811,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇨🇻",
-    "away_flag": "🇺🇾"
+    "away_flag": "🇺🇾",
+    "home_code": "cv",
+    "away_code": "uy"
   },
   {
     "id": "I1",
@@ -732,7 +828,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇫🇷",
-    "away_flag": "🇮🇶"
+    "away_flag": "🇮🇶",
+    "home_code": "fr",
+    "away_code": "iq"
   },
   {
     "id": "I2",
@@ -747,7 +845,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇸🇳",
-    "away_flag": "🇳🇴"
+    "away_flag": "🇳🇴",
+    "home_code": "sn",
+    "away_code": "no"
   },
   {
     "id": "I3",
@@ -762,7 +862,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇫🇷",
-    "away_flag": "🇸🇳"
+    "away_flag": "🇸🇳",
+    "home_code": "fr",
+    "away_code": "sn"
   },
   {
     "id": "I4",
@@ -777,7 +879,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇳🇴",
-    "away_flag": "🇮🇶"
+    "away_flag": "🇮🇶",
+    "home_code": "no",
+    "away_code": "iq"
   },
   {
     "id": "I5",
@@ -792,7 +896,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇫🇷",
-    "away_flag": "🇳🇴"
+    "away_flag": "🇳🇴",
+    "home_code": "fr",
+    "away_code": "no"
   },
   {
     "id": "I6",
@@ -807,7 +913,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇮🇶",
-    "away_flag": "🇸🇳"
+    "away_flag": "🇸🇳",
+    "home_code": "iq",
+    "away_code": "sn"
   },
   {
     "id": "J1",
@@ -822,7 +930,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇦🇷",
-    "away_flag": "🇯🇴"
+    "away_flag": "🇯🇴",
+    "home_code": "ar",
+    "away_code": "jo"
   },
   {
     "id": "J2",
@@ -837,7 +947,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇦🇹",
-    "away_flag": "🇩🇿"
+    "away_flag": "🇩🇿",
+    "home_code": "at",
+    "away_code": "dz"
   },
   {
     "id": "J3",
@@ -852,7 +964,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇦🇷",
-    "away_flag": "🇦🇹"
+    "away_flag": "🇦🇹",
+    "home_code": "ar",
+    "away_code": "at"
   },
   {
     "id": "J4",
@@ -867,7 +981,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇯🇴",
-    "away_flag": "🇩🇿"
+    "away_flag": "🇩🇿",
+    "home_code": "jo",
+    "away_code": "dz"
   },
   {
     "id": "J5",
@@ -882,7 +998,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇦🇷",
-    "away_flag": "🇩🇿"
+    "away_flag": "🇩🇿",
+    "home_code": "ar",
+    "away_code": "dz"
   },
   {
     "id": "J6",
@@ -897,7 +1015,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇯🇴",
-    "away_flag": "🇦🇹"
+    "away_flag": "🇦🇹",
+    "home_code": "jo",
+    "away_code": "at"
   },
   {
     "id": "K1",
@@ -912,7 +1032,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇵🇹",
-    "away_flag": "🇺🇿"
+    "away_flag": "🇺🇿",
+    "home_code": "pt",
+    "away_code": "uz"
   },
   {
     "id": "K2",
@@ -927,7 +1049,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇨🇴",
-    "away_flag": "🇨🇩"
+    "away_flag": "🇨🇩",
+    "home_code": "co",
+    "away_code": "cd"
   },
   {
     "id": "K3",
@@ -942,7 +1066,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇵🇹",
-    "away_flag": "🇨🇴"
+    "away_flag": "🇨🇴",
+    "home_code": "pt",
+    "away_code": "co"
   },
   {
     "id": "K4",
@@ -957,7 +1083,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇺🇿",
-    "away_flag": "🇨🇩"
+    "away_flag": "🇨🇩",
+    "home_code": "uz",
+    "away_code": "cd"
   },
   {
     "id": "K5",
@@ -972,7 +1100,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇵🇹",
-    "away_flag": "🇨🇩"
+    "away_flag": "🇨🇩",
+    "home_code": "pt",
+    "away_code": "cd"
   },
   {
     "id": "K6",
@@ -987,7 +1117,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇨🇴",
-    "away_flag": "🇺🇿"
+    "away_flag": "🇺🇿",
+    "home_code": "co",
+    "away_code": "uz"
   },
   {
     "id": "L1",
@@ -1002,7 +1134,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    "away_flag": "🇵🇦"
+    "away_flag": "🇵🇦",
+    "home_code": "gb-eng",
+    "away_code": "pa"
   },
   {
     "id": "L2",
@@ -1017,7 +1151,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇭🇷",
-    "away_flag": "🇬🇭"
+    "away_flag": "🇬🇭",
+    "home_code": "hr",
+    "away_code": "gh"
   },
   {
     "id": "L3",
@@ -1032,7 +1168,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    "away_flag": "🇭🇷"
+    "away_flag": "🇭🇷",
+    "home_code": "gb-eng",
+    "away_code": "hr"
   },
   {
     "id": "L4",
@@ -1047,7 +1185,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇵🇦",
-    "away_flag": "🇬🇭"
+    "away_flag": "🇬🇭",
+    "home_code": "pa",
+    "away_code": "gh"
   },
   {
     "id": "L5",
@@ -1062,7 +1202,9 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    "away_flag": "🇬🇭"
+    "away_flag": "🇬🇭",
+    "home_code": "gb-eng",
+    "away_code": "gh"
   },
   {
     "id": "L6",
@@ -1077,6 +1219,8 @@
     "score_away": null,
     "status": "upcoming",
     "home_flag": "🇭🇷",
-    "away_flag": "🇵🇦"
+    "away_flag": "🇵🇦",
+    "home_code": "hr",
+    "away_code": "pa"
   }
 ]

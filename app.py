@@ -6,6 +6,7 @@ Acceso: http://TU_IP:5002
 """
 import json, os, socket
 from pathlib import Path
+import score_updater
 
 DATA_DIR = Path(os.environ.get("DATA_DIR", Path(__file__).parent / "data"))
 DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -53,6 +54,7 @@ def _migrate():
         _save("participants", parts)
 
 _migrate()
+score_updater.start_background(interval_hours=2)
 
 def teams_data():
     f = BASE / "static_data" / "teams.json"
@@ -152,19 +154,25 @@ def tabla_general():
 # ── ROUTES ──────────────────────────────────────────────────────────────────
 @app.route("/")
 def index():
-    cfg   = _load("config")
-    tabla = tabla_general()
-    fixts = fixtures()
-    res   = _load("results")
+    cfg    = _load("config")
+    tabla  = tabla_general()
+    fixts  = fixtures()
+    res    = _load("results")
+    today  = datetime.now().strftime("%Y-%m-%d")
 
     upcoming = [f for f in fixts if f["status"] == "upcoming"]
     upcoming.sort(key=lambda x: x["date"] + x["time"])
     finished = [f for f in fixts if f["status"] == "finished"]
-    finished.sort(key=lambda x: x["date"], reverse=True)
-    finished = finished[:8]
+    finished.sort(key=lambda x: x["date"] + x["time"], reverse=True)
 
-    # attach result data to finished
-    for f in finished:
+    today_matches = [f for f in fixts if f["date"] == today]
+    for f in today_matches:
+        r = res.get(f["id"], {})
+        f["score_home"] = r.get("score_home")
+        f["score_away"] = r.get("score_away")
+
+    recent = [f for f in finished if res.get(f["id"])][:6]
+    for f in recent:
         r = res.get(f["id"], {})
         f["score_home"] = r.get("score_home")
         f["score_away"] = r.get("score_away")
@@ -174,14 +182,21 @@ def index():
     parts = _load("participants")
     jokers_usados = parts.get(user_id, {}).get("jokers_usados", []) if user_id else []
     jokers_max = cfg.get("jokers_disponibles", 3)
+    torneo_res = _load("torneo_results")
 
-    for f in upcoming:
-        f["user_pick"] = user_picks.get(f["id"])
-        f["is_joker"] = f["id"] in jokers_usados
+    user_data = None
+    if user_id and tabla:
+        for i, p in enumerate(tabla):
+            if p["id"] == user_id:
+                user_data = {**p, "pos": i + 1}
+                break
 
     return render_template("index.html",
         cfg=cfg, tabla=tabla, upcoming=upcoming, finished=finished,
-        user=user_id, jokers_usados=len(jokers_usados), jokers_max=jokers_max)
+        today_matches=today_matches, recent=recent,
+        user=user_id, user_data=user_data,
+        jokers_usados=len(jokers_usados), jokers_max=jokers_max,
+        torneo_res=torneo_res, total_jugados=len(res))
 
 
 @app.route("/login", methods=["GET","POST"])
@@ -471,6 +486,12 @@ def admin():
 @app.route("/api/standings")
 def api_standings():
     return jsonify(tabla_general())
+
+@app.route("/api/refresh-scores")
+@admin_required
+def refresh_scores():
+    updated = score_updater.run_update()
+    return jsonify({"updated": updated})
 
 
 @app.route("/api/picks/<user_id>")
