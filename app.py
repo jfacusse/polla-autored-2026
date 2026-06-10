@@ -320,6 +320,24 @@ def predict():
     user_picks = preds.get(uid, {})
 
     if request.method == "POST":
+        action = request.form.get("action", "")
+
+        if action == "torneo_picks":
+            # guardar solo premios del torneo
+            if torneo_is_open():
+                if not isinstance(preds.get(uid), dict):
+                    preds[uid] = {}
+                torneo = preds[uid].get("torneo", {})
+                for key in ("goleador", "arquero", "mejor_jugador", "campeon"):
+                    val = request.form.get(f"torneo_{key}", "").strip()
+                    if val:
+                        torneo[key] = val
+                preds[uid]["torneo"] = torneo
+                _save("predictions", preds)
+                flash("✅ Premios del torneo guardados.", "ok")
+            return redirect(url_for("predict") + "#torneo")
+
+        # guardar picks de partidos
         for f in fixts:
             if f["status"] != "upcoming":
                 continue
@@ -339,14 +357,6 @@ def predict():
         if not isinstance(preds.get(uid), dict):
             preds[uid] = {}
         preds[uid] = user_picks
-        # torneo picks — solo si aún está abierto
-        if torneo_is_open():
-            torneo = preds[uid].get("torneo", {})
-            for key in ("goleador", "arquero", "mejor_jugador", "campeon"):
-                val = request.form.get(f"torneo_{key}", "").strip()
-                if val:
-                    torneo[key] = val
-            preds[uid]["torneo"] = torneo
         _save("predictions", preds)
         _save("participants", parts)
         flash("✅ Predicciones guardadas correctamente.", "ok")

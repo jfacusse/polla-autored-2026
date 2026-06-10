@@ -40,6 +40,8 @@
 </div>
 
 <!-- PREMIOS DEL TORNEO — arriba de todo -->
+<form method="POST" id="torneo-form">
+<input type="hidden" name="action" value="torneo_picks">
 <div class="card" id="torneo" style="border-color:{% if torneo_abierto %}rgba(255,215,0,.4){% else %}var(--border){% endif %}">
   <div class="card-title">🏅 Premios del torneo</div>
 
@@ -58,7 +60,7 @@
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px">
 
     {% set premios = [
-      ('🏆', 'Campeón', cfg.pts_campeon or 20, 'campeon', 'equipo'),
+      ('🏆', 'Campeón', cfg.get('pts_campeon', 20), 'campeon', 'equipo'),
       ('⚽', 'Máximo Goleador', 15, 'goleador', 'jugador'),
       ('🧤', 'Mejor Arquero', 10, 'arquero', 'jugador'),
       ('⭐', 'Mejor Jugador', 15, 'mejor_jugador', 'jugador')
@@ -96,7 +98,14 @@
     {% endfor %}
 
   </div>
+
+  {% if torneo_abierto %}
+  <div style="margin-top:14px;display:flex;justify-content:flex-end">
+    <button type="submit" class="btn btn-primary">💾 Guardar premios</button>
+  </div>
+  {% endif %}
 </div>
+</form>
 
 <!-- BANNERS INFO -->
 <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px">
