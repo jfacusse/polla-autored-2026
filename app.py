@@ -523,8 +523,14 @@ def admin():
                 # server-side: only allow after match has started
                 target = next((f for f in fixts if f["id"] == fid), None)
                 if target:
-                    match_dt = parse_match_dt(target["date"], target["time"])
-                    if match_dt and datetime.now() < match_dt:
+                    match_dt_utc, _ = parse_match_dt(target["date"], target["time"])
+                    chile_now = datetime.utcnow() + timedelta(hours=FIXTURE_TZ_OFFSET)
+                    try:
+                        match_local = datetime.strptime(f"{target['date']} {target['time']}", "%Y-%m-%d %H:%M")
+                        not_started = chile_now < match_local
+                    except Exception:
+                        not_started = False
+                    if not_started:
                         flash(f"⛔ Aún no puedes ingresar el resultado de {fid} — el partido empieza a las {target['time']}.", "error")
                         return redirect(url_for("admin"))
                 for f in fixts:
