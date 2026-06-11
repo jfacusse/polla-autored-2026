@@ -222,15 +222,25 @@
   {% endif %}
 
   <!-- PARTIDO -->
+  {% set is_done = f.id in already_locked %}
+  {% set is_locked = f.is_locked or is_done %}
   <div id="{{ f.id }}" class="match-card" style="
-    {% if f.user_pick %}border-color:rgba(0,170,204,.5);{% endif %}
-    {% if f.id in already_locked %}opacity:.6{% endif %}">
+    {% if f.user_pick and not is_locked %}border-color:rgba(0,170,204,.5);{% endif %}
+    {% if is_locked %}opacity:.65;{% endif %}">
 
     <!-- header -->
     <div class="match-meta">
       <span class="match-group">Grupo {{ f.group }} · {{ f.id }}</span>
       <span class="match-date">{{ f.date }} {{ f.time }}</span>
     </div>
+
+    <!-- lock banner -->
+    {% if f.is_locked and not is_done %}
+    <div style="background:rgba(255,69,96,.1);border:1px solid rgba(255,69,96,.3);border-radius:6px;
+      padding:5px 10px;font-size:.7rem;color:var(--red);text-align:center;margin-bottom:6px">
+      🔒 Pick cerrado — menos de 5 min para el kickoff
+    </div>
+    {% endif %}
 
     <!-- equipos -->
     <div class="match-teams" style="margin-bottom:8px">
@@ -253,8 +263,8 @@
           name="h_{{ f.id }}" id="h_{{ f.id }}"
           value="{{ f.user_pick.home if f.user_pick else '' }}"
           placeholder="0"
-          style="width:58px;text-align:center;font-size:1.4rem;font-weight:900;padding:6px"
-          {% if f.id in already_locked %}readonly style="opacity:.5"{% endif %}>
+          style="width:58px;text-align:center;font-size:1.4rem;font-weight:900;padding:6px{% if is_locked %};opacity:.5{% endif %}"
+          {% if is_locked %}readonly{% endif %}>
       </div>
       <span style="font-size:1.4rem;font-weight:900;color:var(--muted)">-</span>
       <div style="text-align:center">
@@ -263,23 +273,24 @@
           name="a_{{ f.id }}" id="a_{{ f.id }}"
           value="{{ f.user_pick.away if f.user_pick else '' }}"
           placeholder="0"
-          style="width:58px;text-align:center;font-size:1.4rem;font-weight:900;padding:6px"
-          {% if f.id in already_locked %}readonly style="opacity:.5"{% endif %}>
+          style="width:58px;text-align:center;font-size:1.4rem;font-weight:900;padding:6px{% if is_locked %};opacity:.5{% endif %}"
+          {% if is_locked %}readonly{% endif %}>
       </div>
     </div>
 
     <!-- joker toggle -->
     {% set joker_active = f.id in jokers_usados %}
     <label class="joker-btn {{ 'active' if joker_active else '' }}" id="joker-label-{{ f.id }}"
-      style="justify-content:center">
+      style="justify-content:center{% if is_locked %};opacity:.4;pointer-events:none{% endif %}">
       <input type="checkbox" name="joker_{{ f.id }}" value="1"
         {{ 'checked' if joker_active else '' }}
+        {% if is_locked %}disabled{% endif %}
         onchange="toggleJoker('{{ f.id }}', this)">
       🃏 Usar comodín ×2
     </label>
 
-    {% if f.id in already_locked %}
-    <div style="text-align:center;font-size:.68rem;color:var(--muted);margin-top:4px">🔒 Partido finalizado</div>
+    {% if is_done %}
+    <div style="text-align:center;font-size:.68rem;color:var(--muted);margin-top:4px">🏁 Partido finalizado</div>
     {% endif %}
   </div>
 

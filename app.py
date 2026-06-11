@@ -347,7 +347,7 @@ def predict():
                 if not isinstance(preds.get(uid), dict):
                     preds[uid] = {}
                 torneo = preds[uid].get("torneo", {})
-                for key in ("goleador", "campeon"):
+                for key in ("campeon", "subcampeon", "goleador", "asistente"):
                     val = request.form.get(f"torneo_{key}", "").strip()
                     if val:
                         torneo[key] = val
@@ -356,9 +356,15 @@ def predict():
                 flash("✅ Premios del torneo guardados.", "ok")
             return redirect(url_for("predict") + "#torneo")
 
-        # guardar picks de partidos
+        # guardar picks de partidos (solo los que aún no cerraron)
+        now = datetime.now()
+        locked_now = set()
         for f in fixts:
             if f["status"] != "upcoming":
+                continue
+            match_dt = parse_match_dt(f["date"], f["time"])
+            if match_dt and now >= match_dt - timedelta(minutes=5):
+                locked_now.add(f["id"])
                 continue
             fid = f["id"]
             h = request.form.get(f"h_{fid}", "").strip()
@@ -371,6 +377,7 @@ def predict():
 
         jokers_new = [f["id"] for f in fixts
                       if f["status"] == "upcoming"
+                      and f["id"] not in locked_now
                       and request.form.get(f"joker_{f['id']}") == "1"]
         parts[uid]["jokers_usados"] = jokers_new[:jokers_max]
         if not isinstance(preds.get(uid), dict):
@@ -381,11 +388,19 @@ def predict():
         flash("✅ Predicciones guardadas correctamente.", "ok")
         return redirect(url_for("predict"))
 
+    now = datetime.now()
     upcoming = sorted([f for f in fixts if f["status"] == "upcoming"],
                       key=lambda x: (x.get("date",""), x.get("time","")))
     for f in upcoming:
         f["user_pick"] = user_picks.get(f["id"])
         f["is_joker"] = f["id"] in (parts[uid].get("jokers_usados", []))
+        match_dt = parse_match_dt(f["date"], f["time"])
+        f["is_locked"] = bool(match_dt and now >= match_dt - timedelta(minutes=5))
+        if match_dt:
+            secs = (match_dt - now).total_seconds()
+            f["mins_to_kick"] = max(0, int(secs // 60))
+        else:
+            f["mins_to_kick"] = None
     already_locked = [fid for fid in user_picks if res.get(fid)]
     torneo_picks = preds.get(uid, {}).get("torneo", {})
     torneo_res   = _load("torneo_results")
