@@ -63,7 +63,7 @@ DEFAULT_CONFIG = {
     "pts_exacto": 5,
     "pts_resultado": 3,
     "jokers_disponibles": 3,
-    "pts_campeon": 20,
+    "pts_campeon": 25,
     "activa": True,
     "torneo_deadline": "2026-06-11 16:00"
 }
@@ -96,6 +96,14 @@ bk.start_background(interval_hours=24)
 def teams_data():
     f = BASE / "static_data" / "teams.json"
     return json.loads(f.read_text())["teams"] if f.exists() else {}
+
+def teams_list():
+    f = BASE / "static_data" / "teams_list.json"
+    return json.loads(f.read_text()) if f.exists() else []
+
+def players_list():
+    f = BASE / "static_data" / "players.json"
+    return json.loads(f.read_text()) if f.exists() else []
 
 def fixtures():
     f = BASE / "static_data" / "fixtures.json"
@@ -165,7 +173,10 @@ def calcular_puntos(user_id):
     torneo_res   = _load("torneo_results")
     torneo_picks = preds.get(user_id, {}).get("torneo", {})
     torneo_pts_map = {
-        "goleador": 15, "campeon": cfg.get("pts_campeon", 20)
+        "campeon":    cfg.get("pts_campeon", 25),
+        "subcampeon": 10,
+        "goleador":   15,
+        "asistente":  10,
     }
     for key, bonus in torneo_pts_map.items():
         winner = torneo_res.get(key)
@@ -389,7 +400,9 @@ def predict():
         jokers_max=jokers_max, already_locked=already_locked,
         torneo_picks=torneo_picks, torneo_res=torneo_res,
         torneo_abierto=torneo_is_open(),
-        torneo_deadline=deadline_str)
+        torneo_deadline=deadline_str,
+        teams_list=teams_list(),
+        players_list=players_list())
 
 
 @app.route("/mis-picks")

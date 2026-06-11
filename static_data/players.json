@@ -1,0 +1,207 @@
+[
+  {"name": "Lionel Messi",        "team": "Argentina"},
+  {"name": "Lautaro Martínez",    "team": "Argentina"},
+  {"name": "Julián Álvarez",      "team": "Argentina"},
+  {"name": "Rodrigo De Paul",     "team": "Argentina"},
+  {"name": "Ángel Di María",      "team": "Argentina"},
+  {"name": "Gonzalo Montiel",     "team": "Argentina"},
+
+  {"name": "Kylian Mbappé",       "team": "Francia"},
+  {"name": "Antoine Griezmann",   "team": "Francia"},
+  {"name": "Ousmane Dembélé",     "team": "Francia"},
+  {"name": "Marcus Thuram",       "team": "Francia"},
+  {"name": "Aurélien Tchouaméni", "team": "Francia"},
+  {"name": "Randal Kolo Muani",   "team": "Francia"},
+
+  {"name": "Vinicius Jr.",        "team": "Brasil"},
+  {"name": "Rodrygo",             "team": "Brasil"},
+  {"name": "Raphinha",            "team": "Brasil"},
+  {"name": "Neymar",              "team": "Brasil"},
+  {"name": "Endrick",             "team": "Brasil"},
+  {"name": "Alisson Becker",      "team": "Brasil"},
+
+  {"name": "Erling Haaland",      "team": "Noruega"},
+  {"name": "Martin Ødegaard",     "team": "Noruega"},
+  {"name": "Alexander Sørloth",   "team": "Noruega"},
+
+  {"name": "Cristiano Ronaldo",   "team": "Portugal"},
+  {"name": "Bruno Fernandes",     "team": "Portugal"},
+  {"name": "Bernardo Silva",      "team": "Portugal"},
+  {"name": "Rafael Leão",         "team": "Portugal"},
+  {"name": "João Félix",          "team": "Portugal"},
+  {"name": "Rúben Dias",          "team": "Portugal"},
+
+  {"name": "Pedri",               "team": "España"},
+  {"name": "Gavi",                "team": "España"},
+  {"name": "Lamine Yamal",        "team": "España"},
+  {"name": "Álvaro Morata",       "team": "España"},
+  {"name": "Dani Olmo",           "team": "España"},
+  {"name": "Ferran Torres",       "team": "España"},
+  {"name": "Mikel Merino",        "team": "España"},
+
+  {"name": "Harry Kane",          "team": "Inglaterra"},
+  {"name": "Jude Bellingham",     "team": "Inglaterra"},
+  {"name": "Bukayo Saka",         "team": "Inglaterra"},
+  {"name": "Phil Foden",          "team": "Inglaterra"},
+  {"name": "Marcus Rashford",     "team": "Inglaterra"},
+  {"name": "Declan Rice",         "team": "Inglaterra"},
+
+  {"name": "Florian Wirtz",       "team": "Alemania"},
+  {"name": "Jamal Musiala",       "team": "Alemania"},
+  {"name": "Kai Havertz",         "team": "Alemania"},
+  {"name": "Leroy Sané",          "team": "Alemania"},
+  {"name": "Thomas Müller",       "team": "Alemania"},
+
+  {"name": "Romelu Lukaku",       "team": "Bélgica"},
+  {"name": "Kevin De Bruyne",     "team": "Bélgica"},
+  {"name": "Thibaut Courtois",    "team": "Bélgica"},
+  {"name": "Yannick Carrasco",    "team": "Bélgica"},
+
+  {"name": "Memphis Depay",       "team": "Países Bajos"},
+  {"name": "Virgil van Dijk",     "team": "Países Bajos"},
+  {"name": "Cody Gakpo",          "team": "Países Bajos"},
+  {"name": "Frenkie de Jong",     "team": "Países Bajos"},
+  {"name": "Xavi Simons",         "team": "Países Bajos"},
+
+  {"name": "Luka Modrić",         "team": "Croacia"},
+  {"name": "Ivan Perišić",        "team": "Croacia"},
+  {"name": "Andrej Kramarić",     "team": "Croacia"},
+  {"name": "Mateo Kovačić",       "team": "Croacia"},
+
+  {"name": "Achraf Hakimi",       "team": "Marruecos"},
+  {"name": "Hakim Ziyech",        "team": "Marruecos"},
+  {"name": "Youssef En-Nesyri",   "team": "Marruecos"},
+  {"name": "Sofiane Boufal",      "team": "Marruecos"},
+
+  {"name": "Sadio Mané",          "team": "Senegal"},
+  {"name": "Édouard Mendy",       "team": "Senegal"},
+  {"name": "Kalidou Koulibaly",   "team": "Senegal"},
+  {"name": "Ismaïla Sarr",        "team": "Senegal"},
+
+  {"name": "Mohamed Salah",       "team": "Egipto"},
+  {"name": "Omar Marmoush",       "team": "Egipto"},
+
+  {"name": "Son Heung-min",       "team": "Corea del Sur"},
+  {"name": "Hwang Hee-chan",      "team": "Corea del Sur"},
+  {"name": "Kim Min-jae",         "team": "Corea del Sur"},
+
+  {"name": "Daichi Kamada",       "team": "Japón"},
+  {"name": "Takumi Minamino",     "team": "Japón"},
+  {"name": "Ritsu Doan",          "team": "Japón"},
+  {"name": "Kaoru Mitoma",        "team": "Japón"},
+
+  {"name": "Hakan Çalhanoğlu",    "team": "Türkiye"},
+  {"name": "Arda Güler",          "team": "Türkiye"},
+  {"name": "Burak Yılmaz",        "team": "Türkiye"},
+
+  {"name": "Luis Díaz",           "team": "Colombia"},
+  {"name": "James Rodríguez",     "team": "Colombia"},
+  {"name": "Jhon Durán",          "team": "Colombia"},
+  {"name": "Falcao",              "team": "Colombia"},
+  {"name": "Cuadrado",            "team": "Colombia"},
+
+  {"name": "Pervis Estupiñán",    "team": "Ecuador"},
+  {"name": "Enner Valencia",      "team": "Ecuador"},
+  {"name": "Moisés Caicedo",      "team": "Ecuador"},
+  {"name": "Kendry Páez",         "team": "Ecuador"},
+
+  {"name": "Darwin Núñez",        "team": "Uruguay"},
+  {"name": "Federico Valverde",   "team": "Uruguay"},
+  {"name": "Ronald Araújo",       "team": "Uruguay"},
+  {"name": "Luis Suárez",         "team": "Uruguay"},
+
+  {"name": "Christian Pulisic",   "team": "Estados Unidos"},
+  {"name": "Weston McKennie",     "team": "Estados Unidos"},
+  {"name": "Gio Reyna",           "team": "Estados Unidos"},
+  {"name": "Tyler Adams",         "team": "Estados Unidos"},
+
+  {"name": "Hirving Lozano",      "team": "México"},
+  {"name": "Raúl Jiménez",        "team": "México"},
+  {"name": "Edson Álvarez",       "team": "México"},
+  {"name": "Santiago Giménez",    "team": "México"},
+
+  {"name": "Alphonso Davies",     "team": "Canadá"},
+  {"name": "Jonathan David",      "team": "Canadá"},
+  {"name": "Cyle Larin",          "team": "Canadá"},
+
+  {"name": "Viktor Gyökeres",     "team": "Suecia"},
+  {"name": "Alexander Isak",      "team": "Suecia"},
+  {"name": "Emil Forsberg",       "team": "Suecia"},
+
+  {"name": "Granit Xhaka",        "team": "Suiza"},
+  {"name": "Xherdan Shaqiri",     "team": "Suiza"},
+  {"name": "Noah Okafor",         "team": "Suiza"},
+  {"name": "Ruben Vargas",        "team": "Suiza"},
+
+  {"name": "Patrik Schick",       "team": "Chequia"},
+  {"name": "Adam Hložek",         "team": "Chequia"},
+  {"name": "Vladimír Coufal",     "team": "Chequia"},
+
+  {"name": "Akram Afif",          "team": "Qatar"},
+  {"name": "Almoez Ali",          "team": "Qatar"},
+
+  {"name": "Saleh Al-Shehri",     "team": "Arabia Saudita"},
+  {"name": "Salem Al-Dawsari",    "team": "Arabia Saudita"},
+
+  {"name": "Thomas Partey",       "team": "Ghana"},
+  {"name": "Jordan Ayew",         "team": "Ghana"},
+  {"name": "André Ayew",          "team": "Ghana"},
+
+  {"name": "Riyad Mahrez",        "team": "Argelia"},
+  {"name": "Islam Slimani",       "team": "Argelia"},
+
+  {"name": "Franck Kessié",       "team": "Costa de Marfil"},
+  {"name": "Sébastien Haller",    "team": "Costa de Marfil"},
+  {"name": "Nicolas Pépé",        "team": "Costa de Marfil"},
+
+  {"name": "Andrew Redmayne",     "team": "Australia"},
+  {"name": "Mathew Leckie",       "team": "Australia"},
+  {"name": "Mitchell Duke",       "team": "Australia"},
+
+  {"name": "Edin Džeko",          "team": "Bosnia y Herzegovina"},
+  {"name": "Miralem Pjanić",      "team": "Bosnia y Herzegovina"},
+
+  {"name": "Ryan Fraser",         "team": "Escocia"},
+  {"name": "Andy Robertson",      "team": "Escocia"},
+  {"name": "Scott McTominay",     "team": "Escocia"},
+
+  {"name": "Chris Wood",          "team": "Nueva Zelanda"},
+  {"name": "Liberato Cacace",     "team": "Nueva Zelanda"},
+
+  {"name": "Arnaut Danjuma",      "team": "Curazao"},
+
+  {"name": "Sarvar Jaloliddinov", "team": "Uzbekistán"},
+  {"name": "Eldor Shomurodov",    "team": "Uzbekistán"},
+
+  {"name": "Faris Haroun",        "team": "Irak"},
+  {"name": "Aymen Hussein",       "team": "Irak"},
+
+  {"name": "Sardar Azmoun",       "team": "Irán"},
+  {"name": "Mehdi Taremi",        "team": "Irán"},
+
+  {"name": "Yazan Al-Naimat",     "team": "Jordania"},
+
+  {"name": "Percy Tau",           "team": "Sudáfrica"},
+  {"name": "Bafana Bafana",       "team": "Sudáfrica"},
+
+  {"name": "Wanderson",           "team": "Cabo Verde"},
+
+  {"name": "Cedric Bakambu",      "team": "RD del Congo"},
+  {"name": "Yannick Bolasie",     "team": "RD del Congo"},
+
+  {"name": "Abdallah Sima",       "team": "Senegal"},
+  {"name": "Habib Diallo",        "team": "Senegal"},
+
+  {"name": "Yassine Bounou",      "team": "Marruecos"},
+  {"name": "Noussair Mazraoui",   "team": "Marruecos"},
+
+  {"name": "Arnaud Djoum",        "team": "Haití"},
+  {"name": "Frantzdy Pierrot",    "team": "Haití"},
+
+  {"name": "Adama Traoré",        "team": "Panamá"},
+  {"name": "Ismael Díaz",         "team": "Panamá"},
+
+  {"name": "Miguel Almirón",      "team": "Paraguay"},
+  {"name": "Julio Enciso",        "team": "Paraguay"},
+  {"name": "Roberto Fernández",   "team": "Paraguay"}
+]

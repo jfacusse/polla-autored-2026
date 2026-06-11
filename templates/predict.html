@@ -39,70 +39,132 @@
   {% endfor %}
 </div>
 
-<!-- PREMIOS DEL TORNEO — arriba de todo -->
+<!-- PREMIOS DEL TORNEO -->
+<style>
+.td-btn{background:var(--dark3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;
+  cursor:pointer;display:flex;align-items:center;gap:8px;font-size:.88rem;user-select:none}
+.td-btn:hover{border-color:var(--ar)}
+.td-list{background:var(--dark3);border:1px solid var(--border);border-radius:8px;margin-top:4px;
+  max-height:260px;overflow-y:auto;position:relative;z-index:50}
+.td-item{padding:10px 14px;cursor:pointer;font-size:.88rem}
+.td-item:hover{background:var(--dark2)}
+.td-item-active{background:rgba(0,170,204,.18);color:var(--ar)}
+.ps-selected{background:var(--dark3);border:1px solid rgba(0,170,204,.4);border-radius:8px;
+  padding:10px 14px;display:flex;justify-content:space-between;align-items:center;font-size:.88rem}
+.ps-clear{cursor:pointer;color:var(--muted);padding:0 2px;font-size:1rem;line-height:1}
+.ps-clear:hover{color:var(--red)}
+.ps-list{background:var(--dark3);border:1px solid var(--border);border-radius:8px;margin-top:4px;
+  max-height:210px;overflow-y:auto;position:relative;z-index:50}
+.ps-item{padding:9px 14px;cursor:pointer;font-size:.88rem;display:flex;justify-content:space-between;align-items:center}
+.ps-item:hover{background:var(--dark2)}
+</style>
+
 <form method="POST" id="torneo-form">
 <input type="hidden" name="action" value="torneo_picks">
-<div class="card" id="torneo" style="border-color:{% if torneo_abierto %}rgba(255,215,0,.4){% else %}var(--border){% endif %}">
-  <div class="card-title">🏅 Premios del torneo</div>
+
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+  <div style="border-left:3px solid var(--ar);padding-left:10px;font-size:1rem;font-weight:900;font-style:italic">Picks del torneo</div>
+  <div style="font-size:.68rem;color:var(--muted);letter-spacing:.07em;font-weight:700">CIERRA {{ torneo_deadline }}</div>
+</div>
+
+{% if torneo_abierto %}
+<div style="background:rgba(255,165,0,.08);border:1px solid rgba(255,165,0,.35);border-radius:10px;
+  padding:11px 16px;margin-bottom:14px;font-size:.8rem;line-height:1.45">
+  <strong>Una vez por torneo.</strong> Estas predicciones se cierran 5 min antes del kickoff inaugural. Después se vuelven inmodificables.
+</div>
+{% else %}
+<div style="background:rgba(255,69,96,.08);border:1px solid rgba(255,69,96,.3);border-radius:10px;
+  padding:11px 16px;margin-bottom:14px;font-size:.8rem">
+  🔒 Plazo cerrado. Ya no se pueden modificar las predicciones del torneo.
+</div>
+{% endif %}
+
+{% set torneo_cats = [
+  ('campeon',    'Campeón',         'Quién levanta la copa el 19 de julio.',                    '+25 PTS', 'equipo'),
+  ('subcampeon', 'Subcampeón',      'El equipo que pierde la final.',                           '+10 PTS', 'equipo'),
+  ('goleador',   'Bota de Oro',     'Goleador del torneo. Sólo top-5 ligas europeas para v1.', '+15 PTS', 'jugador'),
+  ('asistente',  'Mayor Asistente', 'Más asistencias acreditadas en el Mundial.',              '+10 PTS', 'jugador'),
+] %}
+
+{% for key, titulo, desc, pts_badge, tipo in torneo_cats %}
+<div style="background:var(--dark2);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:10px">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+    <div>
+      <div style="font-weight:900;font-style:italic;font-size:.95rem">{{ titulo }}</div>
+      <div style="font-size:.73rem;color:var(--muted);margin-top:3px">{{ desc }}</div>
+    </div>
+    <div style="background:rgba(0,170,204,.12);border:1px solid rgba(0,170,204,.3);border-radius:6px;
+      padding:4px 10px;font-size:.72rem;font-weight:900;color:var(--ar);white-space:nowrap;margin-left:12px">{{ pts_badge }}</div>
+  </div>
 
   {% if torneo_abierto %}
-  <div style="background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.3);border-radius:8px;
-    padding:8px 14px;margin-bottom:14px;font-size:.78rem;display:flex;align-items:center;gap:8px">
-    ⏰ <span>Cierra el <strong>11 Jun a las 12:00</strong> — ¡llénalo antes que empiece el Mundial!</span>
-  </div>
-  {% else %}
-  <div style="background:rgba(255,69,96,.08);border:1px solid rgba(255,69,96,.3);border-radius:8px;
-    padding:8px 14px;margin-bottom:14px;font-size:.78rem;display:flex;align-items:center;gap:8px">
-    🔒 <span>Plazo cerrado. Ya no se pueden modificar las predicciones del torneo.</span>
-  </div>
-  {% endif %}
-
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px">
-
-    {% set premios = [
-      ('🏆', 'Campeón', cfg.get('pts_campeon', 20), 'campeon', 'equipo'),
-      ('⚽', 'Máximo Goleador', 15, 'goleador', 'jugador')
-    ] %}
-
-    {% for icon, label, pts, key, tipo in premios %}
-    <div style="background:var(--dark2);border:1px solid {% if torneo_picks.get(key) %}rgba(0,170,204,.4){% else %}var(--border){% endif %};
-      border-radius:10px;padding:14px">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-        <div style="display:flex;align-items:center;gap:7px">
-          <span style="font-size:1.4rem">{{ icon }}</span>
-          <div>
-            <div style="font-weight:700;font-size:.85rem">{{ label }}</div>
-            <div style="font-size:.65rem;color:var(--gold);font-weight:700">+{{ pts }} pts</div>
+    {% if tipo == 'equipo' %}
+      {# Team dropdown #}
+      {% set ns = namespace(disp='') %}
+      {% for t in teams_list %}{% if t.es == torneo_picks.get(key,'') %}{% set ns.disp = t.flag + ' ' + t.es %}{% endif %}{% endfor %}
+      <div class="td-wrap" id="td-{{ key }}">
+        <input type="hidden" name="torneo_{{ key }}" id="inp-{{ key }}" value="{{ torneo_picks.get(key,'') }}">
+        <div class="td-btn" onclick="tdToggle('{{ key }}',event)">
+          <span id="td-sel-{{ key }}" style="flex:1">
+            {% if ns.disp %}{{ ns.disp }}{% else %}<span style="color:var(--muted)">Selecciona un equipo...</span>{% endif %}
+          </span>
+          <span style="color:var(--muted);font-size:.75rem">▾</span>
+        </div>
+        <div class="td-list" id="tdl-{{ key }}" style="display:none">
+          {% for t in teams_list %}
+          <div class="td-item {% if torneo_picks.get(key)==t.es %}td-item-active{% endif %}"
+               onclick="tdSelect('{{ key }}','{{ t.es }}','{{ t.flag }} {{ t.es }}')">
+            {{ t.flag }} {{ t.es }}
           </div>
+          {% endfor %}
         </div>
       </div>
-      {% if torneo_abierto %}
-      <input class="form-input" name="torneo_{{ key }}"
-        placeholder="{{ tipo | capitalize }}"
-        value="{{ torneo_picks.get(key,'') }}"
-        style="font-size:.85rem">
-      {% else %}
-      <div style="background:var(--dark3);border:1px solid var(--border);border-radius:8px;
-        padding:8px;font-size:.85rem;color:{% if torneo_picks.get(key) %}var(--text){% else %}var(--muted){% endif %}">
-        {{ torneo_picks.get(key) or '—' }}
+    {% else %}
+      {# Player search autocomplete #}
+      <div class="ps-wrap" id="ps-{{ key }}">
+        <input type="hidden" name="torneo_{{ key }}" id="psinp-{{ key }}" value="{{ torneo_picks.get(key,'') }}">
+        <div class="ps-selected" id="pssel-{{ key }}" style="display:{% if torneo_picks.get(key) %}flex{% else %}none{% endif %}">
+          <span id="psseltext-{{ key }}">{{ torneo_picks.get(key,'') }}</span>
+          <span class="ps-clear" onclick="psClear('{{ key }}')">✕</span>
+        </div>
+        <input class="form-input ps-input" id="pssearch-{{ key }}" type="text"
+          placeholder="buscar nombre o país..."
+          oninput="psSearch('{{ key }}',this.value)"
+          onfocus="psShowList('{{ key }}')"
+          style="margin-top:{% if torneo_picks.get(key) %}8px{% else %}0{% endif %}">
+        <div class="ps-list" id="pslist-{{ key }}" style="display:none">
+          {% for p in players_list %}
+          <div class="ps-item" data-value="{{ p.name }} · {{ p.team }}" data-search="{{ p.name|lower }} {{ p.team|lower }}"
+               onclick="psSelect('{{ key }}',this.dataset.value)">
+            <span>{{ p.name }}</span><span style="color:var(--muted);font-size:.8rem">{{ p.team }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        <div style="font-size:.75rem;color:var(--ar);margin-top:8px;cursor:pointer" onclick="psManual('{{ key }}')">
+          ¿No aparece tu jugador? Escribir nombre a mano →
+        </div>
       </div>
-      {% endif %}
-      {% if torneo_res.get(key) %}
-      <div style="font-size:.68rem;color:var(--green);margin-top:6px">
-        ✅ Confirmado: <strong>{{ torneo_res[key] }}</strong>
-      </div>
-      {% endif %}
+    {% endif %}
+  {% else %}
+    <div style="background:var(--dark3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;
+      font-size:.88rem;color:{% if torneo_picks.get(key) %}var(--text){% else %}var(--muted){% endif %}">
+      {{ torneo_picks.get(key) or '—' }}
     </div>
-    {% endfor %}
+  {% endif %}
 
-  </div>
-
-  {% if torneo_abierto %}
-  <div style="margin-top:14px;display:flex;justify-content:flex-end">
-    <button type="submit" class="btn btn-primary">💾 Guardar premios</button>
+  {% if torneo_res.get(key) %}
+  <div style="font-size:.7rem;color:var(--green);margin-top:8px">
+    ✅ Confirmado: <strong>{{ torneo_res[key] }}</strong>
   </div>
   {% endif %}
 </div>
+{% endfor %}
+
+{% if torneo_abierto %}
+<div style="display:flex;justify-content:flex-end;margin-bottom:20px">
+  <button type="submit" class="btn btn-primary">💾 Guardar picks del torneo</button>
+</div>
+{% endif %}
 </form>
 
 <!-- BANNERS INFO -->
@@ -233,6 +295,70 @@
 {% endif %}
 
 <script>
+// ── Team dropdown ─────────────────────────────
+function tdToggle(key, e) {
+  e.stopPropagation();
+  const list = document.getElementById('tdl-'+key);
+  const open = list.style.display !== 'none';
+  document.querySelectorAll('[id^="tdl-"]').forEach(el => el.style.display='none');
+  document.querySelectorAll('[id^="pslist-"]').forEach(el => el.style.display='none');
+  if (!open) list.style.display = 'block';
+}
+function tdSelect(key, value, display) {
+  document.getElementById('inp-'+key).value = value;
+  document.getElementById('td-sel-'+key).innerHTML = display;
+  document.getElementById('tdl-'+key).style.display = 'none';
+  document.querySelectorAll('#tdl-'+key+' .td-item').forEach(el => {
+    el.classList.toggle('td-item-active', el.textContent.trim() === display.trim());
+  });
+}
+
+// ── Player search ─────────────────────────────
+function psSearch(key, q) {
+  const list = document.getElementById('pslist-'+key);
+  const items = list.querySelectorAll('.ps-item');
+  const ql = q.toLowerCase();
+  let shown = 0;
+  items.forEach(item => {
+    const match = !ql || item.dataset.search.includes(ql);
+    item.style.display = match ? '' : 'none';
+    if (match) shown++;
+  });
+  list.style.display = shown > 0 ? 'block' : 'none';
+}
+function psShowList(key) {
+  document.querySelectorAll('[id^="tdl-"]').forEach(el => el.style.display='none');
+  const list = document.getElementById('pslist-'+key);
+  list.style.display = 'block';
+}
+function psSelect(key, value) {
+  document.getElementById('psinp-'+key).value = value;
+  document.getElementById('psseltext-'+key).textContent = value;
+  document.getElementById('pssel-'+key).style.display = 'flex';
+  const inp = document.getElementById('pssearch-'+key);
+  inp.value = '';
+  inp.style.marginTop = '8px';
+  document.getElementById('pslist-'+key).style.display = 'none';
+}
+function psClear(key) {
+  document.getElementById('psinp-'+key).value = '';
+  document.getElementById('psseltext-'+key).textContent = '';
+  document.getElementById('pssel-'+key).style.display = 'none';
+  document.getElementById('pssearch-'+key).style.marginTop = '0';
+}
+function psManual(key) {
+  const inp = document.getElementById('pssearch-'+key);
+  const val = inp.value.trim();
+  if (val) { psSelect(key, val); }
+  else { inp.focus(); inp.placeholder = 'Escribe el nombre del jugador...'; }
+}
+
+// ── Cerrar al click fuera ─────────────────────
+document.addEventListener('click', e => {
+  if (!e.target.closest('.td-wrap'))  document.querySelectorAll('[id^="tdl-"]').forEach(el => el.style.display='none');
+  if (!e.target.closest('.ps-wrap'))  document.querySelectorAll('[id^="pslist-"]').forEach(el => el.style.display='none');
+});
+
 const JOKER_MAX = {{ jokers_max }};
 
 function setScore(fid, h, a) {
