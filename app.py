@@ -255,7 +255,7 @@ def index():
         user=user_id, user_data=user_data,
         jokers_usados=len(jokers_usados), jokers_max=jokers_max,
         torneo_res=torneo_res, total_jugados=len(res),
-        torneo_picks_all=torneo_picks_all)
+        torneo_picks_all=torneo_picks_all, parts=parts)
 
 
 @app.route("/login", methods=["GET","POST"])

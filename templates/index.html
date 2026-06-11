@@ -210,6 +210,45 @@
   </div>
   {% endif %}
 
+  <!-- CUOTA DE INGRESO -->
+  <div class="card">
+    <div class="card-title">💰 Cuota de ingreso</div>
+    {% set pagados = parts.values() | selectattr('activo', 'equalto', true) | selectattr('pagado', 'equalto', true) | list | length %}
+    {% set total_p = parts.values() | selectattr('activo', 'equalto', true) | list | length %}
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+      <div style="font-size:.75rem;color:var(--muted)">{{ pagados }} de {{ total_p }} pagados</div>
+      <div style="background:var(--dark3);border-radius:20px;height:6px;flex:1;margin:0 10px;overflow:hidden">
+        <div style="background:var(--green);height:6px;width:{% if total_p > 0 %}{{ ((pagados/total_p)*100)|int }}{% else %}0{% endif %}%;border-radius:20px;transition:width .5s"></div>
+      </div>
+    </div>
+    {% for uid, p in parts.items() %}
+    {% if p.get('activo', true) %}
+    <div style="display:flex;align-items:center;justify-content:space-between;
+      padding:8px 0;border-bottom:{% if not loop.last %}1px solid var(--border){% else %}none{% endif %}">
+      <div style="display:flex;align-items:center;gap:8px">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--dark3);
+          border:2px solid {% if p.get('pagado') %}var(--green){% else %}var(--border){% endif %};
+          display:flex;align-items:center;justify-content:center;font-weight:900;
+          color:var(--ar);font-size:.75rem;flex-shrink:0">
+          {{ p.get('nombre', uid).split('@')[0][0].upper() }}
+        </div>
+        <span style="font-size:.85rem;font-weight:{% if uid == user %}700{% else %}500{% endif %}">
+          {{ p.get('nombre', uid).split('@')[0] }}
+          {% if uid == user %}<span style="color:var(--ar);font-size:.65rem"> ← tú</span>{% endif %}
+        </span>
+      </div>
+      {% if p.get('pagado') %}
+      <span style="background:rgba(0,230,118,.12);border:1px solid rgba(0,230,118,.35);
+        border-radius:20px;padding:3px 10px;font-size:.7rem;color:var(--green);font-weight:700">✅ Pagado</span>
+      {% else %}
+      <span style="background:rgba(255,69,96,.08);border:1px solid rgba(255,69,96,.25);
+        border-radius:20px;padding:3px 10px;font-size:.7rem;color:var(--red)">⏳ Pendiente</span>
+      {% endif %}
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+
   <!-- BONOS DEL TORNEO -->
   <div class="card">
     <div class="card-title">🏅 Bonos del torneo</div>
