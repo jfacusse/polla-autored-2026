@@ -177,7 +177,7 @@ def tabla_general():
     preds = _load("predictions")
     tabla = []
     for uid, p in parts.items():
-        if p.get("es_admin") or not p.get("activo", True):
+        if not p.get("activo", True):
             continue
         pts, detalle = calcular_puntos(uid)
         n_picks = len(preds.get(uid, {}))
