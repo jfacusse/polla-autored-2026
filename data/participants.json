@@ -3,7 +3,7 @@
     "nombre": "jfacusse@autored.cl",
     "email": "jfacusse@autored.cl",
     "pin": "6706",
-    "es_admin": true,
+    "es_admin": false,
     "jokers_usados": [],
     "activo": true
   }

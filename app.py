@@ -266,7 +266,7 @@ def login():
         nombre = request.form.get("nombre","").strip()
         pin    = request.form.get("pin","").strip()
         email = request.form.get("email","").strip().lower()
-        # admin login (by PIN only)
+        # admin login (by PIN only) — solo activa sesión, no marca la cuenta
         if pin == cfg.get("admin_pin"):
             if not email.endswith("@autored.cl"):
                 flash("Ingresa tu correo @autored.cl para acceder como admin.", "error")
@@ -276,10 +276,8 @@ def login():
             session["nombre"]   = email
             session["is_admin"] = True
             if uid not in parts:
-                parts[uid] = {"nombre": email, "email": email, "pin": pin, "es_admin": True, "jokers_usados": []}
-                _save("participants", parts)
-            elif not parts[uid].get("es_admin"):
-                parts[uid]["es_admin"] = True
+                parts[uid] = {"nombre": email, "email": email, "pin": "", "es_admin": False,
+                              "jokers_usados": [], "activo": True}
                 _save("participants", parts)
             flash("Bienvenido, Admin 🔑", "ok")
             return redirect(url_for("admin"))
