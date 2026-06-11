@@ -11,6 +11,10 @@ import backup as bk
 
 DATA_DIR = Path(os.environ.get("DATA_DIR", Path(__file__).parent / "data"))
 DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+# Offset de timezone de los horarios en fixtures.json respecto a UTC
+# Chile en junio (invierno) = UTC-4  →  FIXTURE_TZ_OFFSET = -4
+FIXTURE_TZ_OFFSET = int(os.environ.get("FIXTURE_TZ_OFFSET", "-4"))
 from functools import wraps
 from datetime import datetime, timedelta
 from flask import Flask, render_template, request, session, redirect, url_for, flash, jsonify
@@ -28,14 +32,13 @@ def torneo_is_open():
     except Exception:
         return True
 
-def parse_match_dt(date_str, time_str, to_utc=True):
+def parse_match_dt(date_str, time_str):
+    """Devuelve el kickoff como datetime UTC."""
     try:
         local_dt = datetime.strptime(f"{date_str} {time_str}", "%Y-%m-%d %H:%M")
-        if to_utc:
-            cfg = _load("config")
-            offset = cfg.get("fixture_tz_offset", DEFAULT_CONFIG["fixture_tz_offset"])
-            return local_dt - timedelta(hours=offset)  # local → UTC
-        return local_dt
+        # FIXTURE_TZ_OFFSET es negativo para zonas oeste de UTC (ej. Chile = -4)
+        # local - offset_negativo = local + 4h = UTC
+        return local_dt - timedelta(hours=FIXTURE_TZ_OFFSET)
     except Exception:
         return None
 
@@ -70,8 +73,7 @@ DEFAULT_CONFIG = {
     "jokers_disponibles": 3,
     "pts_campeon": 25,
     "activa": True,
-    "torneo_deadline": "2026-06-11 16:00",
-    "fixture_tz_offset": -4   # offset UTC de los horarios del fixture (Chile = -4 en junio)
+    "torneo_deadline": "2026-06-11 16:00"
 }
 
 def _migrate():
