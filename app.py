@@ -380,10 +380,17 @@ def predict():
                       and f["id"] not in locked_now
                       and request.form.get(f"joker_{f['id']}") == "1"]
         parts[uid]["jokers_usados"] = jokers_new[:jokers_max]
-        if not isinstance(preds.get(uid), dict):
-            preds[uid] = {}
-        preds[uid] = user_picks
-        _save("predictions", preds)
+
+        # Re-leer predictions justo antes de guardar para no pisar datos de otros usuarios
+        preds_fresh = _load("predictions")
+        if not isinstance(preds_fresh.get(uid), dict):
+            preds_fresh[uid] = {}
+        torneo_saved = preds_fresh[uid].get("torneo", {})
+        preds_fresh[uid].update(user_picks)
+        if torneo_saved:
+            preds_fresh[uid]["torneo"] = torneo_saved
+
+        _save("predictions", preds_fresh)
         _save("participants", parts)
         flash("✅ Predicciones guardadas correctamente.", "ok")
         return redirect(url_for("predict"))
@@ -583,6 +590,44 @@ def admin():
     return render_template("admin.html",
         cfg=cfg, parts=parts, upcoming=upcoming, finished=finished,
         tabla=tabla, res=res, preds=preds, torneo_res=torneo_res)
+
+
+@app.route("/admin/picks/<uid>")
+@admin_required
+def admin_picks(uid):
+    parts  = _load("participants")
+    preds  = _load("predictions")
+    res    = _load("results")
+    fixts  = fixtures()
+    cfg    = _load("config")
+    if uid not in parts:
+        flash("Usuario no encontrado.", "error")
+        return redirect(url_for("admin"))
+    pts, detalle = calcular_puntos(uid)
+    fix_map = {f["id"]: f for f in fixts}
+    rows = []
+    user_picks = preds.get(uid, {})
+    for fid, pick in user_picks.items():
+        if not isinstance(pick, dict) or "home" not in pick:
+            continue
+        f = fix_map.get(fid, {})
+        r = res.get(fid, {})
+        d = next((x for x in detalle if x["fid"] == fid), None)
+        rows.append({
+            "fid": fid, "date": f.get("date",""), "time": f.get("time",""),
+            "home": f.get("home","?"), "away": f.get("away","?"),
+            "group": f.get("group",""),
+            "pick_h": pick["home"], "pick_a": pick["away"],
+            "real_h": r.get("score_home"), "real_a": r.get("score_away"),
+            "pts": d["pts"] if d else None,
+            "tipo": d["tipo"] if d else ("pending" if not r else "sin_pick"),
+            "joker": fid in parts.get(uid, {}).get("jokers_usados", []),
+        })
+    rows.sort(key=lambda x: (x["date"], x["time"]))
+    torneo_picks = user_picks.get("torneo", {})
+    return render_template("admin_picks.html",
+        cfg=cfg, uid=uid, p=parts[uid], rows=rows, pts=pts,
+        torneo_picks=torneo_picks, torneo_res=_load("torneo_results"))
 
 
 @app.route("/api/standings")

@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}Picks de {{ uid }} — Admin{% endblock %}
+{% block content %}
+
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap">
+  <a href="/admin" style="font-size:.8rem;color:var(--muted)">← Admin</a>
+  <div style="width:42px;height:42px;border-radius:50%;background:var(--dark3);border:2px solid var(--ar);
+    display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--ar);font-size:1.1rem">
+    {{ p.get('nombre', uid).split('@')[0][0]|upper }}
+  </div>
+  <div>
+    <div style="font-size:1.1rem;font-weight:900">{{ p.get('nombre', uid).split('@')[0] }}</div>
+    <div style="font-size:.75rem;color:var(--muted)">{{ p.get('email','') }} · {{ rows|length }} picks guardados</div>
+  </div>
+  <div style="margin-left:auto;background:var(--dark2);border:1px solid var(--border);border-radius:10px;
+    padding:10px 20px;text-align:center">
+    <div style="font-size:1.6rem;font-weight:900;color:var(--gold)">{{ pts }}</div>
+    <div style="font-size:.65rem;color:var(--muted)">puntos totales</div>
+  </div>
+</div>
+
+<!-- PICKS DEL TORNEO -->
+{% if torneo_picks %}
+<div class="card" style="margin-bottom:16px">
+  <div class="card-title">🏅 Picks del torneo</div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap">
+    {% set labels = {'campeon':'Campeón','subcampeon':'Subcampeón','goleador':'Bota de Oro','asistente':'Mayor Asistente'} %}
+    {% set pts_map = {'campeon':25,'subcampeon':10,'goleador':15,'asistente':10} %}
+    {% for key, label in labels.items() %}
+    <div style="background:var(--dark2);border:1px solid {% if torneo_picks.get(key) %}rgba(0,170,204,.3){% else %}var(--border){% endif %};
+      border-radius:10px;padding:12px 16px;min-width:140px">
+      <div style="font-size:.68rem;color:var(--muted);margin-bottom:4px">{{ label }} · +{{ pts_map[key] }} pts</div>
+      <div style="font-weight:700;font-size:.9rem">{{ torneo_picks.get(key) or '—' }}</div>
+      {% if torneo_res.get(key) %}
+        {% if torneo_picks.get(key) and torneo_picks[key]|lower == torneo_res[key]|lower %}
+        <div style="font-size:.68rem;color:var(--green);margin-top:4px">✅ Correcto</div>
+        {% else %}
+        <div style="font-size:.68rem;color:var(--red);margin-top:4px">❌ {{ torneo_res[key] }}</div>
+        {% endif %}
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<!-- TABLA DE PICKS -->
+<div class="card">
+  <div class="card-title">🎯 Picks de partidos</div>
+  {% if not rows %}
+  <div style="text-align:center;padding:30px;color:var(--muted)">Este usuario no tiene picks guardados aún.</div>
+  {% else %}
+  <div style="overflow-x:auto">
+    <table style="width:100%;border-collapse:collapse;font-size:.82rem">
+      <thead>
+        <tr>
+          <th style="text-align:left;padding:8px 10px">Partido</th>
+          <th style="text-align:left;padding:8px 10px">Fecha</th>
+          <th style="text-align:center;padding:8px 10px">Pick</th>
+          <th style="text-align:center;padding:8px 10px">Real</th>
+          <th style="text-align:center;padding:8px 10px">Pts</th>
+          <th style="text-align:center;padding:8px 10px">Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for r in rows %}
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:9px 10px">
+          <span style="color:var(--ar);font-size:.72rem;font-weight:700">{{ r.fid }}</span>
+          <div style="font-size:.8rem">{{ r.home }} vs {{ r.away }}</div>
+          {% if r.joker %}<span style="font-size:.65rem;color:#b388ff">🃏 joker ×2</span>{% endif %}
+        </td>
+        <td style="padding:9px 10px;color:var(--muted);white-space:nowrap">{{ r.date }}<br>{{ r.time }}</td>
+        <td style="padding:9px 10px;text-align:center;font-weight:900;font-size:1rem;color:var(--ar)">
+          {{ r.pick_h }}-{{ r.pick_a }}
+        </td>
+        <td style="padding:9px 10px;text-align:center;font-weight:700;
+          color:{% if r.real_h is not none %}var(--gold){% else %}var(--muted){% endif %}">
+          {% if r.real_h is not none %}{{ r.real_h }}-{{ r.real_a }}{% else %}—{% endif %}
+        </td>
+        <td style="padding:9px 10px;text-align:center;font-weight:900;
+          color:{% if r.tipo=='exacto' %}var(--gold){% elif r.tipo=='resultado' %}var(--green){% elif r.tipo=='fallo' %}var(--red){% else %}var(--muted){% endif %}">
+          {% if r.pts is not none %}{{ r.pts }}{% else %}—{% endif %}
+        </td>
+        <td style="padding:9px 10px;text-align:center">
+          {% if r.tipo == 'exacto' %}
+          <span style="background:rgba(255,215,0,.15);border:1px solid rgba(255,215,0,.4);border-radius:20px;
+            padding:3px 8px;font-size:.68rem;color:var(--gold)">✅ Exacto</span>
+          {% elif r.tipo == 'resultado' %}
+          <span style="background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.35);border-radius:20px;
+            padding:3px 8px;font-size:.68rem;color:var(--green)">🔵 Resultado</span>
+          {% elif r.tipo == 'fallo' %}
+          <span style="background:rgba(255,69,96,.1);border:1px solid rgba(255,69,96,.3);border-radius:20px;
+            padding:3px 8px;font-size:.68rem;color:var(--red)">❌ Fallo</span>
+          {% else %}
+          <span style="color:var(--muted);font-size:.75rem">⏳ Pendiente</span>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

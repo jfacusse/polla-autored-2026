@@ -140,10 +140,16 @@
         {% for uid, p in parts.items() %}{% if not p.es_admin %}
         {% set activo = p.get('activo', True) %}
         {% set pagado = p.get('pagado', False) %}
+        {% set n_picks = preds.get(uid,{})|length %}
         <tr style="{{ 'opacity:.45' if not activo else '' }}">
           <td style="font-weight:600;font-size:.82rem">{{ p.nombre }}</td>
           <td style="font-family:monospace;color:var(--muted)">{{ p.pin }}</td>
-          <td style="color:var(--ar)">{{ preds.get(uid,{})|length }}</td>
+          <td>
+            <a href="/admin/picks/{{ uid }}" style="color:var(--ar);font-weight:700;text-decoration:none"
+               title="Ver picks de {{ p.nombre.split('@')[0] }}">
+              {{ n_picks }} 🔍
+            </a>
+          </td>
           <td style="font-weight:700;color:var(--gold)">
             {% for r in tabla %}{% if r.id == uid %}{{ r.pts }}{% endif %}{% endfor %}
           </td>
