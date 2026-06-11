@@ -274,16 +274,13 @@ def index():
         if not parts[uid].get("es_admin") and parts[uid].get("activo", True)
     }
 
-    torneo_ended = datetime.utcnow() + timedelta(hours=FIXTURE_TZ_OFFSET) >= datetime(2026, 7, 19, 22, 0)
-
     return render_template("index.html",
         cfg=cfg, tabla=tabla, upcoming=upcoming, finished=finished,
         today_matches=today_matches, recent=recent,
         user=user_id, user_data=user_data,
         jokers_usados=len(jokers_usados), jokers_max=jokers_max,
         torneo_res=torneo_res, total_jugados=len(res),
-        torneo_picks_all=torneo_picks_all, parts=parts,
-        torneo_ended=torneo_ended)
+        torneo_picks_all=torneo_picks_all, parts=parts)
 
 
 @app.route("/login", methods=["GET","POST"])
