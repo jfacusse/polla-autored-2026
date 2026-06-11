@@ -89,10 +89,8 @@
 {% endif %}
 
 {% set torneo_cats = [
-  ('campeon',    'Campeón',         'Quién levanta la copa el 19 de julio.',                    '+25 PTS', 'equipo'),
-  ('subcampeon', 'Subcampeón',      'El equipo que pierde la final.',                           '+10 PTS', 'equipo'),
-  ('goleador',   'Bota de Oro',     'Goleador del torneo. Sólo top-5 ligas europeas para v1.', '+15 PTS', 'jugador'),
-  ('asistente',  'Mayor Asistente', 'Más asistencias acreditadas en el Mundial.',              '+10 PTS', 'jugador'),
+  ('campeon',  'Campeón',     'Quién levanta la copa el 19 de julio.',                    '+25 PTS', 'equipo'),
+  ('goleador', 'Bota de Oro', 'Goleador del torneo. Sólo top-5 ligas europeas para v1.', '+15 PTS', 'jugador'),
 ] %}
 
 {% for key, titulo, desc, pts_badge, tipo in torneo_cats %}
