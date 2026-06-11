@@ -32,6 +32,15 @@ def _request(method, url, payload=None):
         return json.loads(resp.read())
 
 
+def _get_gist_id():
+    if GIST_ID_FILE.exists():
+        return GIST_ID_FILE.read_text().strip()
+    gist_id = os.environ.get("GIST_ID", "")
+    if gist_id:
+        GIST_ID_FILE.write_text(gist_id)
+    return gist_id
+
+
 def backup():
     token = _token()
     if not token:
@@ -46,45 +55,30 @@ def backup():
     ts = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
     payload = {"description": f"Polla AutoRed — backup {ts}", "public": False, "files": files}
 
-    gist_id_file = GIST_ID_FILE
+    gist_id = _get_gist_id()
     try:
-        if gist_id_file.exists():
-            gist_id = gist_id_file.read_text().strip()
+        if gist_id:
             _request("PATCH", f"{GIST_API}/{gist_id}", payload)
             print(f"[backup] Gist actualizado: {gist_id} ({ts})")
         else:
             resp = _request("POST", GIST_API, payload)
             gist_id = resp["id"]
-            gist_id_file.write_text(gist_id)
+            GIST_ID_FILE.write_text(gist_id)
             print(f"[backup] Gist creado: {gist_id} ({ts})")
     except Exception as e:
         print(f"[backup] Error: {e}")
 
 
-def restore_if_empty():
-    """Al arrancar, si participants.json no existe o está vacío, restaurar desde Gist."""
+def restore():
+    """Restaura desde Gist. Solo sobreescribe archivos donde el Gist tiene más datos."""
     token = _token()
     if not token:
         return
 
-    parts_file = DATA_DIR / "participants.json"
-    if parts_file.exists():
-        try:
-            data = json.loads(parts_file.read_text())
-            if data:
-                return
-        except Exception:
-            pass
-
-    gist_id_file = GIST_ID_FILE
-    if not gist_id_file.exists():
-        gist_id = os.environ.get("GIST_ID", "")
-        if not gist_id:
-            print("[backup] Sin Gist previo — arranque limpio")
-            return
-        gist_id_file.write_text(gist_id)
-    else:
-        gist_id = gist_id_file.read_text().strip()
+    gist_id = _get_gist_id()
+    if not gist_id:
+        print("[backup] Sin Gist — arranque limpio")
+        return
 
     try:
         resp = _request("GET", f"{GIST_API}/{gist_id}")
@@ -92,23 +86,49 @@ def restore_if_empty():
         restored = 0
         for name in DATA_FILES:
             fname = f"{name}.json"
-            if fname in gist_files:
-                content = gist_files[fname].get("content", "{}")
-                (DATA_DIR / fname).write_text(content)
-                restored += 1
+            if fname not in gist_files:
+                continue
+            remote_content = gist_files[fname].get("content", "{}")
+            try:
+                remote_data = json.loads(remote_content)
+            except Exception:
+                continue
+
+            local_file = DATA_DIR / fname
+            local_data = {}
+            if local_file.exists():
+                try:
+                    local_data = json.loads(local_file.read_text())
+                except Exception:
+                    pass
+
+            # Para predictions: merge — conservar lo que haya en local + lo del Gist
+            if name == "predictions":
+                merged = dict(remote_data)
+                merged.update(local_data)  # local gana si hay conflicto
+                if merged != local_data:
+                    local_file.write_text(json.dumps(merged, indent=2, ensure_ascii=False))
+                    restored += 1
+            else:
+                # Para el resto: el Gist gana si tiene más datos
+                if len(str(remote_data)) > len(str(local_data)):
+                    local_file.write_text(remote_content)
+                    restored += 1
+
         print(f"[backup] Restaurados {restored} archivos desde Gist {gist_id}")
     except Exception as e:
         print(f"[backup] Error al restaurar: {e}")
 
 
-def start_background(interval_hours=24):
+def start_background(interval_minutes=15):
     def loop():
-        time.sleep(3600)  # espera 1h antes del primer backup
+        # Primer backup inmediato al arrancar
+        time.sleep(10)
         while True:
             try:
                 backup()
             except Exception as e:
                 print(f"[backup] error en loop: {e}")
-            time.sleep(interval_hours * 3600)
+            time.sleep(interval_minutes * 60)
     t = threading.Thread(target=loop, daemon=True)
     t.start()

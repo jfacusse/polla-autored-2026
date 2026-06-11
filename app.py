@@ -88,10 +88,10 @@ def _migrate():
     if changed:
         _save("participants", parts)
 
-bk.restore_if_empty()
+bk.restore()
 _migrate()
 score_updater.start_background(interval_hours=2)
-bk.start_background(interval_hours=24)
+bk.start_background(interval_minutes=15)
 
 def teams_data():
     f = BASE / "static_data" / "teams.json"
