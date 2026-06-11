@@ -7,6 +7,7 @@ Acceso: http://TU_IP:5002
 import json, os, socket
 from pathlib import Path
 import score_updater
+import backup as bk
 
 DATA_DIR = Path(os.environ.get("DATA_DIR", Path(__file__).parent / "data"))
 DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -87,8 +88,10 @@ def _migrate():
     if changed:
         _save("participants", parts)
 
+bk.restore_if_empty()
 _migrate()
 score_updater.start_background(interval_hours=2)
+bk.start_background(interval_hours=24)
 
 def teams_data():
     f = BASE / "static_data" / "teams.json"
@@ -565,6 +568,15 @@ def api_standings():
 def refresh_scores():
     updated = score_updater.run_update()
     return jsonify({"updated": updated})
+
+@app.route("/api/backup-now")
+@admin_required
+def backup_now():
+    try:
+        bk.backup()
+        return jsonify({"ok": True})
+    except Exception as e:
+        return jsonify({"ok": False, "error": str(e)}), 500
 
 
 @app.route("/api/picks/<user_id>")
