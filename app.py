@@ -218,6 +218,8 @@ def tabla_general():
     for uid, p in parts.items():
         if not p.get("activo", True):
             continue
+        if p.get("es_admin"):
+            continue
         pts, detalle = calcular_puntos(uid)
         n_picks = len(preds.get(uid, {}))
         exactos    = sum(1 for d in detalle if d.get("tipo") == "exacto")
