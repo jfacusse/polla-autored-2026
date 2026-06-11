@@ -28,9 +28,14 @@ def torneo_is_open():
     except Exception:
         return True
 
-def parse_match_dt(date_str, time_str):
+def parse_match_dt(date_str, time_str, to_utc=True):
     try:
-        return datetime.strptime(f"{date_str} {time_str}", "%Y-%m-%d %H:%M")
+        local_dt = datetime.strptime(f"{date_str} {time_str}", "%Y-%m-%d %H:%M")
+        if to_utc:
+            cfg = _load("config")
+            offset = cfg.get("fixture_tz_offset", DEFAULT_CONFIG["fixture_tz_offset"])
+            return local_dt - timedelta(hours=offset)  # local → UTC
+        return local_dt
     except Exception:
         return None
 
@@ -65,7 +70,8 @@ DEFAULT_CONFIG = {
     "jokers_disponibles": 3,
     "pts_campeon": 25,
     "activa": True,
-    "torneo_deadline": "2026-06-11 16:00"
+    "torneo_deadline": "2026-06-11 16:00",
+    "fixture_tz_offset": -4   # offset UTC de los horarios del fixture (Chile = -4 en junio)
 }
 
 def _migrate():
@@ -357,14 +363,20 @@ def predict():
             return redirect(url_for("predict") + "#torneo")
 
         # guardar picks de partidos (solo los que aún no cerraron)
-        now = datetime.now()
+        now = datetime.utcnow()
         locked_now = set()
+        intentos_bloqueados = []
         for f in fixts:
             if f["status"] != "upcoming":
                 continue
-            match_dt = parse_match_dt(f["date"], f["time"])
+            match_dt = parse_match_dt(f["date"], f["time"])  # ya en UTC
             if match_dt and now >= match_dt - timedelta(minutes=5):
                 locked_now.add(f["id"])
+                # avisar si intentó guardar un pick bloqueado
+                h = request.form.get(f"h_{f['id']}", "").strip()
+                a = request.form.get(f"a_{f['id']}", "").strip()
+                if h != "" and a != "":
+                    intentos_bloqueados.append(f"{f['home']} vs {f['away']}")
                 continue
             fid = f["id"]
             h = request.form.get(f"h_{fid}", "").strip()
@@ -392,22 +404,21 @@ def predict():
 
         _save("predictions", preds_fresh)
         _save("participants", parts)
-        flash("✅ Predicciones guardadas correctamente.", "ok")
+        if intentos_bloqueados:
+            flash(f"⚠️ No se guardaron picks de partidos ya cerrados: {', '.join(intentos_bloqueados)}", "error")
+        else:
+            flash("✅ Predicciones guardadas correctamente.", "ok")
         return redirect(url_for("predict"))
 
-    now = datetime.now()
+    now_utc = datetime.utcnow()
     upcoming = sorted([f for f in fixts if f["status"] == "upcoming"],
                       key=lambda x: (x.get("date",""), x.get("time","")))
     for f in upcoming:
         f["user_pick"] = user_picks.get(f["id"])
         f["is_joker"] = f["id"] in (parts[uid].get("jokers_usados", []))
-        match_dt = parse_match_dt(f["date"], f["time"])
-        f["is_locked"] = bool(match_dt and now >= match_dt - timedelta(minutes=5))
-        if match_dt:
-            secs = (match_dt - now).total_seconds()
-            f["mins_to_kick"] = max(0, int(secs // 60))
-        else:
-            f["mins_to_kick"] = None
+        match_dt_utc = parse_match_dt(f["date"], f["time"])  # ya en UTC
+        f["is_locked"] = bool(match_dt_utc and now_utc >= match_dt_utc - timedelta(minutes=5))
+        f["kickoff_ts"] = int(match_dt_utc.timestamp()) if match_dt_utc else 0
     already_locked = [fid for fid in user_picks if res.get(fid)]
     torneo_picks = preds.get(uid, {}).get("torneo", {})
     torneo_res   = _load("torneo_results")

@@ -224,7 +224,7 @@
   <!-- PARTIDO -->
   {% set is_done = f.id in already_locked %}
   {% set is_locked = f.is_locked or is_done %}
-  <div id="{{ f.id }}" class="match-card" style="
+  <div id="{{ f.id }}" class="match-card" data-kickoff-ts="{{ f.kickoff_ts }}" style="
     {% if f.user_pick and not is_locked %}border-color:rgba(0,170,204,.5);{% endif %}
     {% if is_locked %}opacity:.65;{% endif %}">
 
@@ -401,5 +401,47 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('input[name^="joker_"]:not(:checked)').forEach(inp => inp.disabled = true);
   }
 });
+
+// ── Bloqueo en tiempo real ────────────────────────────────────────────────
+function applyLiveLocks() {
+  const nowSec = Math.floor(Date.now() / 1000);
+  document.querySelectorAll('.match-card[data-kickoff-ts]').forEach(card => {
+    const kickoff = parseInt(card.dataset.kickoffTs);
+    if (!kickoff) return;
+    const lockAt = kickoff - 300; // 5 min antes
+    if (nowSec < lockAt) return;  // aún no
+    if (card.dataset.locked) return; // ya procesado
+
+    card.dataset.locked = '1';
+    card.style.opacity = '0.65';
+
+    // inputs readonly
+    card.querySelectorAll('input[type="number"]').forEach(inp => {
+      inp.readOnly = true;
+      inp.style.opacity = '0.5';
+    });
+
+    // joker disabled
+    const jokerLabel = card.querySelector('.joker-btn');
+    if (jokerLabel) {
+      jokerLabel.style.opacity = '0.4';
+      jokerLabel.style.pointerEvents = 'none';
+      const cb = jokerLabel.querySelector('input[type="checkbox"]');
+      if (cb) cb.disabled = true;
+    }
+
+    // banner si no existe
+    if (!card.querySelector('.live-lock-banner')) {
+      const banner = document.createElement('div');
+      banner.className = 'live-lock-banner';
+      banner.style.cssText = 'background:rgba(255,69,96,.1);border:1px solid rgba(255,69,96,.3);border-radius:6px;padding:5px 10px;font-size:.7rem;color:#ff4560;text-align:center;margin-bottom:6px';
+      banner.textContent = '🔒 Pick cerrado — menos de 5 min para el kickoff';
+      card.insertBefore(banner, card.querySelector('.match-teams'));
+    }
+  });
+}
+
+applyLiveLocks();
+setInterval(applyLiveLocks, 15000); // chequea cada 15 segundos
 </script>
 {% endblock %}
