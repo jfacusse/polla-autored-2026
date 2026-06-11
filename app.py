@@ -4,7 +4,7 @@ Polla AutoRed — Mundial 2026
 Corre con: python3 app.py
 Acceso: http://TU_IP:5002
 """
-import json, os, socket
+import json, os, socket, calendar as _calendar
 from pathlib import Path
 import score_updater
 import backup as bk
@@ -14,7 +14,9 @@ DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 # Offset de timezone de los horarios en fixtures.json respecto a UTC
 # Chile en junio (invierno) = UTC-4  →  FIXTURE_TZ_OFFSET = -4
-FIXTURE_TZ_OFFSET = int(os.environ.get("FIXTURE_TZ_OFFSET", "-4"))
+_tz_raw = os.environ.get("FIXTURE_TZ_OFFSET", "-4").strip()
+FIXTURE_TZ_OFFSET = int(_tz_raw)
+print(f"[init] FIXTURE_TZ_OFFSET={FIXTURE_TZ_OFFSET} (raw='{_tz_raw}')")
 from functools import wraps
 from datetime import datetime, timedelta
 from flask import Flask, render_template, request, session, redirect, url_for, flash, jsonify
@@ -27,20 +29,35 @@ def torneo_is_open():
     cfg = _load("config")
     deadline_str = cfg.get("torneo_deadline", "2026-06-11 16:00")
     try:
-        deadline = datetime.strptime(deadline_str, "%Y-%m-%d %H:%M")
-        return datetime.utcnow() < deadline
+        # deadline en hora Chile local → convertir a UTC para comparar
+        deadline_local = datetime.strptime(deadline_str, "%Y-%m-%d %H:%M")
+        deadline_utc = deadline_local - timedelta(hours=FIXTURE_TZ_OFFSET)
+        return datetime.utcnow() < deadline_utc
     except Exception:
         return True
 
 def parse_match_dt(date_str, time_str):
-    """Devuelve el kickoff como datetime UTC."""
+    """Devuelve (kickoff_utc datetime, kickoff_unix_ts int) o (None, 0) si falla."""
     try:
         local_dt = datetime.strptime(f"{date_str} {time_str}", "%Y-%m-%d %H:%M")
-        # FIXTURE_TZ_OFFSET es negativo para zonas oeste de UTC (ej. Chile = -4)
-        # local - offset_negativo = local + 4h = UTC
-        return local_dt - timedelta(hours=FIXTURE_TZ_OFFSET)
+        # local → UTC: local - offset (offset=-4 para Chile → local + 4h = UTC)
+        utc_dt = local_dt - timedelta(hours=FIXTURE_TZ_OFFSET)
+        # calendar.timegm trata la tupla como UTC sin importar timezone del sistema
+        ts = _calendar.timegm(utc_dt.timetuple())
+        return utc_dt, ts
+    except Exception as e:
+        print(f"[lock] parse_match_dt error: {e}")
+        return None, 0
+
+def match_is_locked(date_str, time_str):
+    """True si el partido está cerrado (≥5 min antes del kickoff en hora Chile)."""
+    try:
+        # Comparar todo en hora Chile local — sin conversiones UTC
+        chile_now = datetime.utcnow() + timedelta(hours=FIXTURE_TZ_OFFSET)
+        match_local = datetime.strptime(f"{date_str} {time_str}", "%Y-%m-%d %H:%M")
+        return chile_now >= match_local - timedelta(minutes=5)
     except Exception:
-        return None
+        return False
 
 def date_pretty(date_str):
     try:
@@ -365,16 +382,13 @@ def predict():
             return redirect(url_for("predict") + "#torneo")
 
         # guardar picks de partidos (solo los que aún no cerraron)
-        now = datetime.utcnow()
         locked_now = set()
         intentos_bloqueados = []
         for f in fixts:
             if f["status"] != "upcoming":
                 continue
-            match_dt = parse_match_dt(f["date"], f["time"])  # ya en UTC
-            if match_dt and now >= match_dt - timedelta(minutes=5):
+            if match_is_locked(f["date"], f["time"]):
                 locked_now.add(f["id"])
-                # avisar si intentó guardar un pick bloqueado
                 h = request.form.get(f"h_{f['id']}", "").strip()
                 a = request.form.get(f"a_{f['id']}", "").strip()
                 if h != "" and a != "":
@@ -412,15 +426,17 @@ def predict():
             flash("✅ Predicciones guardadas correctamente.", "ok")
         return redirect(url_for("predict"))
 
-    now_utc = datetime.utcnow()
     upcoming = sorted([f for f in fixts if f["status"] == "upcoming"],
                       key=lambda x: (x.get("date",""), x.get("time","")))
+    chile_now = datetime.utcnow() + timedelta(hours=FIXTURE_TZ_OFFSET)
+    print(f"[predict] chile_now={chile_now} utc_now={datetime.utcnow()} tz_offset={FIXTURE_TZ_OFFSET}")
     for f in upcoming:
         f["user_pick"] = user_picks.get(f["id"])
         f["is_joker"] = f["id"] in (parts[uid].get("jokers_usados", []))
-        match_dt_utc = parse_match_dt(f["date"], f["time"])  # ya en UTC
-        f["is_locked"] = bool(match_dt_utc and now_utc >= match_dt_utc - timedelta(minutes=5))
-        f["kickoff_ts"] = int(match_dt_utc.timestamp()) if match_dt_utc else 0
+        f["is_locked"] = match_is_locked(f["date"], f["time"])
+        _, ts = parse_match_dt(f["date"], f["time"])
+        f["kickoff_ts"] = ts
+        print(f"[predict] {f['id']} {f['date']} {f['time']} locked={f['is_locked']} ts={ts}")
     already_locked = [fid for fid in user_picks if res.get(fid)]
     torneo_picks = preds.get(uid, {}).get("torneo", {})
     torneo_res   = _load("torneo_results")
@@ -592,11 +608,15 @@ def admin():
     upcoming = [f for f in fixts if f["status"] == "upcoming"]
     upcoming.sort(key=lambda x: (x["date"], x["time"]))
     finished = [f for f in fixts if f["status"] == "finished"]
-    now = datetime.now()
+    chile_now = datetime.utcnow() + timedelta(hours=FIXTURE_TZ_OFFSET)
     for f in upcoming:
-        match_dt = parse_match_dt(f["date"], f["time"])
-        f["can_enter_result"] = (match_dt is None) or (now >= match_dt)
-        f["unlocks_at"] = match_dt.strftime("%H:%M") if match_dt else ""
+        try:
+            match_local = datetime.strptime(f"{f['date']} {f['time']}", "%Y-%m-%d %H:%M")
+            f["can_enter_result"] = chile_now >= match_local
+            f["unlocks_at"] = match_local.strftime("%H:%M")
+        except Exception:
+            f["can_enter_result"] = True
+            f["unlocks_at"] = f.get("time", "")
         f["date_pretty"] = date_pretty(f["date"])
     tabla      = tabla_general()
     torneo_res = _load("torneo_results")
@@ -673,6 +693,31 @@ def api_picks(user_id):
     return jsonify({"user": user_id,
                     "nombre": parts.get(user_id, {}).get("nombre","?"),
                     "pts": pts, "detalle": detalle})
+
+
+@app.route("/debug/lock")
+@admin_required
+def debug_lock():
+    """Muestra el estado de lock de todos los partidos upcoming — diagnóstico."""
+    fixts = fixtures()
+    utc_now = datetime.utcnow()
+    chile_now = utc_now + timedelta(hours=FIXTURE_TZ_OFFSET)
+    upcoming = [f for f in fixts if f["status"] == "upcoming"]
+    rows = []
+    for f in upcoming:
+        locked = match_is_locked(f["date"], f["time"])
+        _, ts = parse_match_dt(f["date"], f["time"])
+        rows.append({
+            "id": f["id"], "match": f"{f['home']} vs {f['away']}",
+            "date": f["date"], "time": f["time"],
+            "is_locked": locked, "kickoff_ts": ts
+        })
+    return jsonify({
+        "server_utc": utc_now.strftime("%Y-%m-%d %H:%M:%S"),
+        "chile_now": chile_now.strftime("%Y-%m-%d %H:%M:%S"),
+        "FIXTURE_TZ_OFFSET": FIXTURE_TZ_OFFSET,
+        "matches": rows
+    })
 
 
 if __name__ == "__main__":
