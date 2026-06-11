@@ -57,6 +57,15 @@
   max-height:210px;overflow-y:auto;position:relative;z-index:50}
 .ps-item{padding:9px 14px;cursor:pointer;font-size:.88rem;display:flex;justify-content:space-between;align-items:center}
 .ps-item:hover{background:var(--dark2)}
+
+/* ── Lock state ─────────── */
+.lock-badge{background:#c0392b;color:#fff;font-size:.6rem;font-weight:900;
+  letter-spacing:.1em;padding:2px 7px;border-radius:4px;text-transform:uppercase}
+.score-row{display:flex;align-items:center;justify-content:center;gap:10px}
+.lock-overlay{position:absolute;top:0;left:0;right:0;bottom:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.82rem;font-weight:900;letter-spacing:.12em;color:rgba(255,69,96,.95)}
+.match-card.is-locked{border-color:rgba(255,69,96,.35) !important}
 </style>
 
 <form method="POST" id="torneo-form">
@@ -226,21 +235,18 @@
   {% set is_locked = f.is_locked or is_done %}
   <div id="{{ f.id }}" class="match-card" data-kickoff-ts="{{ f.kickoff_ts }}" style="
     {% if f.user_pick and not is_locked %}border-color:rgba(0,170,204,.5);{% endif %}
-    {% if is_locked %}opacity:.65;{% endif %}">
+    {% if is_locked %}border-color:rgba(255,69,96,.35);{% endif %}">
 
     <!-- header -->
     <div class="match-meta">
       <span class="match-group">Grupo {{ f.group }} · {{ f.id }}</span>
-      <span class="match-date">{{ f.date }} {{ f.time }}</span>
+      <div style="display:flex;align-items:center;gap:7px">
+        <span class="match-date">{{ f.date }} {{ f.time }}</span>
+        {% if is_locked %}
+        <span class="lock-badge">CERRADO</span>
+        {% endif %}
+      </div>
     </div>
-
-    <!-- lock banner -->
-    {% if f.is_locked and not is_done %}
-    <div style="background:rgba(255,69,96,.1);border:1px solid rgba(255,69,96,.3);border-radius:6px;
-      padding:5px 10px;font-size:.7rem;color:var(--red);text-align:center;margin-bottom:6px">
-      🔒 Pick cerrado — menos de 5 min para el kickoff
-    </div>
-    {% endif %}
 
     <!-- equipos -->
     <div class="match-teams" style="margin-bottom:8px">
@@ -255,33 +261,38 @@
       </div>
     </div>
 
-    <!-- input marcador -->
-    <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin:8px 0">
-      <div style="text-align:center">
-        <div style="font-size:.62rem;color:var(--muted);margin-bottom:3px">{{ f.home }}</div>
-        <input class="form-input" type="number" min="0" max="20"
-          name="h_{{ f.id }}" id="h_{{ f.id }}"
-          value="{{ f.user_pick.home if f.user_pick else '' }}"
-          placeholder="0"
-          style="width:58px;text-align:center;font-size:1.4rem;font-weight:900;padding:6px{% if is_locked %};opacity:.5{% endif %}"
-          {% if is_locked %}readonly{% endif %}>
+    <!-- input marcador (con overlay bloqueado) -->
+    <div style="position:relative;margin:8px 0">
+      <div class="score-row" style="{% if is_locked %}filter:blur(4px);pointer-events:none;user-select:none;{% endif %}">
+        <div style="text-align:center">
+          <div style="font-size:.62rem;color:var(--muted);margin-bottom:3px">{{ f.home }}</div>
+          <input class="form-input" type="number" min="0" max="20"
+            name="h_{{ f.id }}" id="h_{{ f.id }}"
+            value="{{ f.user_pick.home if f.user_pick else '' }}"
+            placeholder="0"
+            style="width:58px;text-align:center;font-size:1.4rem;font-weight:900;padding:6px"
+            {% if is_locked %}readonly{% endif %}>
+        </div>
+        <span style="font-size:1.4rem;font-weight:900;color:var(--muted)">-</span>
+        <div style="text-align:center">
+          <div style="font-size:.62rem;color:var(--muted);margin-bottom:3px">{{ f.away }}</div>
+          <input class="form-input" type="number" min="0" max="20"
+            name="a_{{ f.id }}" id="a_{{ f.id }}"
+            value="{{ f.user_pick.away if f.user_pick else '' }}"
+            placeholder="0"
+            style="width:58px;text-align:center;font-size:1.4rem;font-weight:900;padding:6px"
+            {% if is_locked %}readonly{% endif %}>
+        </div>
       </div>
-      <span style="font-size:1.4rem;font-weight:900;color:var(--muted)">-</span>
-      <div style="text-align:center">
-        <div style="font-size:.62rem;color:var(--muted);margin-bottom:3px">{{ f.away }}</div>
-        <input class="form-input" type="number" min="0" max="20"
-          name="a_{{ f.id }}" id="a_{{ f.id }}"
-          value="{{ f.user_pick.away if f.user_pick else '' }}"
-          placeholder="0"
-          style="width:58px;text-align:center;font-size:1.4rem;font-weight:900;padding:6px{% if is_locked %};opacity:.5{% endif %}"
-          {% if is_locked %}readonly{% endif %}>
-      </div>
+      {% if is_locked %}
+      <div class="lock-overlay">🔒 CERRADO</div>
+      {% endif %}
     </div>
 
     <!-- joker toggle -->
     {% set joker_active = f.id in jokers_usados %}
     <label class="joker-btn {{ 'active' if joker_active else '' }}" id="joker-label-{{ f.id }}"
-      style="justify-content:center{% if is_locked %};opacity:.4;pointer-events:none{% endif %}">
+      style="justify-content:center{% if is_locked %};opacity:.35;pointer-events:none{% endif %}">
       <input type="checkbox" name="joker_{{ f.id }}" value="1"
         {{ 'checked' if joker_active else '' }}
         {% if is_locked %}disabled{% endif %}
@@ -403,45 +414,57 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ── Bloqueo en tiempo real ────────────────────────────────────────────────
+function lockCard(card) {
+  if (card.dataset.locked) return;
+  card.dataset.locked = '1';
+  card.classList.add('is-locked');
+  card.style.borderColor = 'rgba(255,69,96,.35)';
+
+  // badge CERRADO en el header
+  const meta = card.querySelector('.match-meta');
+  if (meta && !meta.querySelector('.lock-badge')) {
+    const badge = document.createElement('span');
+    badge.className = 'lock-badge';
+    badge.textContent = 'CERRADO';
+    meta.appendChild(badge);
+  }
+
+  // blur inputs + overlay
+  const scoreRow = card.querySelector('.score-row');
+  if (scoreRow) {
+    scoreRow.style.filter = 'blur(4px)';
+    scoreRow.style.pointerEvents = 'none';
+    scoreRow.style.userSelect = 'none';
+    scoreRow.querySelectorAll('input[type="number"]').forEach(inp => { inp.readOnly = true; });
+    const parent = scoreRow.parentElement;
+    if (!parent.querySelector('.lock-overlay')) {
+      const ov = document.createElement('div');
+      ov.className = 'lock-overlay';
+      ov.textContent = '🔒 CERRADO';
+      parent.appendChild(ov);
+    }
+  }
+
+  // joker disabled
+  const jokerLabel = card.querySelector('.joker-btn');
+  if (jokerLabel) {
+    jokerLabel.style.opacity = '0.35';
+    jokerLabel.style.pointerEvents = 'none';
+    const cb = jokerLabel.querySelector('input[type="checkbox"]');
+    if (cb) cb.disabled = true;
+  }
+}
+
 function applyLiveLocks() {
   const nowSec = Math.floor(Date.now() / 1000);
   document.querySelectorAll('.match-card[data-kickoff-ts]').forEach(card => {
     const kickoff = parseInt(card.dataset.kickoffTs);
     if (!kickoff) return;
-    const lockAt = kickoff - 300; // 5 min antes
-    if (nowSec < lockAt) return;  // aún no
-    if (card.dataset.locked) return; // ya procesado
-
-    card.dataset.locked = '1';
-    card.style.opacity = '0.65';
-
-    // inputs readonly
-    card.querySelectorAll('input[type="number"]').forEach(inp => {
-      inp.readOnly = true;
-      inp.style.opacity = '0.5';
-    });
-
-    // joker disabled
-    const jokerLabel = card.querySelector('.joker-btn');
-    if (jokerLabel) {
-      jokerLabel.style.opacity = '0.4';
-      jokerLabel.style.pointerEvents = 'none';
-      const cb = jokerLabel.querySelector('input[type="checkbox"]');
-      if (cb) cb.disabled = true;
-    }
-
-    // banner si no existe
-    if (!card.querySelector('.live-lock-banner')) {
-      const banner = document.createElement('div');
-      banner.className = 'live-lock-banner';
-      banner.style.cssText = 'background:rgba(255,69,96,.1);border:1px solid rgba(255,69,96,.3);border-radius:6px;padding:5px 10px;font-size:.7rem;color:#ff4560;text-align:center;margin-bottom:6px';
-      banner.textContent = '🔒 Pick cerrado — menos de 5 min para el kickoff';
-      card.insertBefore(banner, card.querySelector('.match-teams'));
-    }
+    if (nowSec >= kickoff - 300) lockCard(card);
   });
 }
 
 applyLiveLocks();
-setInterval(applyLiveLocks, 15000); // chequea cada 15 segundos
+setInterval(applyLiveLocks, 15000);
 </script>
 {% endblock %}
