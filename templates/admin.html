@@ -198,6 +198,29 @@
       </div>
     </div>
 
+    <!-- EDITAR HORARIO PARTIDO -->
+    <div class="card" style="margin-top:0">
+      <div class="card-title">🕐 Corregir horario de partido</div>
+      <form method="POST">
+        <input type="hidden" name="action" value="update_fixture_time">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:10px;align-items:end">
+          <div class="form-group" style="margin:0">
+            <label class="form-label">ID partido (ej: D2)</label>
+            <input class="form-input" name="fid" placeholder="D2" style="text-transform:uppercase">
+          </div>
+          <div class="form-group" style="margin:0">
+            <label class="form-label">Fecha (YYYY-MM-DD)</label>
+            <input class="form-input" name="fecha" placeholder="2026-06-14">
+          </div>
+          <div class="form-group" style="margin:0">
+            <label class="form-label">Hora Chile (HH:MM)</label>
+            <input class="form-input" name="hora" placeholder="00:00">
+          </div>
+          <button class="btn btn-primary" type="submit">Actualizar</button>
+        </div>
+      </form>
+    </div>
+
     <!-- CONFIGURACIÓN -->
     <div class="card" style="margin-top:0">
       <div class="card-title">⚙️ Configuración</div>

@@ -609,6 +609,27 @@ def admin():
             _save("config", cfg)
             flash("✅ Configuración actualizada.", "ok")
 
+        elif action == "update_fixture_time":
+            fid   = request.form.get("fid", "").strip()
+            fecha = request.form.get("fecha", "").strip()
+            hora  = request.form.get("hora", "").strip()
+            if fid and fecha and hora:
+                updated = False
+                for f in fixts:
+                    if f["id"] == fid:
+                        f["date"] = fecha
+                        f["time"] = hora
+                        updated = True
+                        break
+                if updated:
+                    fix_path = BASE / "static_data" / "fixtures.json"
+                    fix_path.write_text(json.dumps(fixts, indent=2, ensure_ascii=False))
+                    flash(f"✅ Horario de {fid} actualizado a {fecha} {hora}", "ok")
+                else:
+                    flash(f"❌ No se encontró el partido {fid}", "error")
+            else:
+                flash("❌ Faltan datos (fid, fecha, hora)", "error")
+
         return redirect(url_for("admin"))
 
     upcoming = [f for f in fixts if f["status"] == "upcoming"]
