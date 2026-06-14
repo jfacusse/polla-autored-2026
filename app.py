@@ -652,6 +652,25 @@ def admin():
         tabla=tabla, res=res, preds=preds, torneo_res=torneo_res)
 
 
+@app.route("/admin/fix-time/<fid>/<fecha>/<hora>")
+@admin_required
+def admin_fix_time(fid, fecha, hora):
+    fixts = fixtures()
+    fix_path = BASE / "static_data" / "fixtures.json"
+    updated = False
+    for f in fixts:
+        if f["id"].upper() == fid.upper():
+            f["date"] = fecha
+            f["time"] = hora.replace("-", ":")
+            updated = True
+            break
+    if updated:
+        fix_path.write_text(json.dumps(fixts, indent=2, ensure_ascii=False))
+        flash(f"✅ {fid} actualizado a {fecha} {hora.replace('-',':')}", "ok")
+    else:
+        flash(f"❌ No se encontró {fid}", "error")
+    return redirect(url_for("admin"))
+
 @app.route("/admin/picks/<uid>")
 @admin_required
 def admin_picks(uid):
