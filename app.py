@@ -115,6 +115,27 @@ def _migrate():
 
 bk.restore()
 _migrate()
+
+def _seed_torneo_picks():
+    """Inyecta picks del torneo faltantes para usuarios registrados."""
+    SEEDS = {
+        "jfacussse": {"campeon": "Francia", "goleador": "Mbappe"},
+        "jfacusse":  {"campeon": "Francia", "goleador": "Mbappe"},
+    }
+    preds = _load("predictions")
+    changed = False
+    for uid, torneo in SEEDS.items():
+        if not isinstance(preds.get(uid), dict):
+            preds[uid] = {}
+        if not preds[uid].get("torneo"):
+            preds[uid]["torneo"] = torneo
+            print(f"[seed] torneo picks set for {uid}: {torneo}")
+            changed = True
+    if changed:
+        _save("predictions", preds)
+
+_seed_torneo_picks()
+
 score_updater.start_background(interval_hours=2)
 bk.start_background(interval_minutes=15)
 
@@ -216,7 +237,7 @@ def tabla_general():
     for uid, p in parts.items():
         if not p.get("activo", True):
             continue
-        if p.get("es_admin"):
+        if p.get("es_admin") and uid == "admin":
             continue
         pts, detalle = calcular_puntos(uid)
         n_picks = len(preds.get(uid, {}))
@@ -383,31 +404,32 @@ def predict():
 
         # guardar picks de partidos (solo los que aún no cerraron)
         locked_now = set()
-        intentos_bloqueados = []
+        saved_count = 0
         for f in fixts:
             if f["status"] != "upcoming":
                 continue
             if match_is_locked(f["date"], f["time"]):
                 locked_now.add(f["id"])
-                h = request.form.get(f"h_{f['id']}", "").strip()
-                a = request.form.get(f"a_{f['id']}", "").strip()
-                if h != "" and a != "":
-                    intentos_bloqueados.append(f"{f['home']} vs {f['away']}")
-                continue
+                continue  # readonly en el form, se ignoran silenciosamente
             fid = f["id"]
             h = request.form.get(f"h_{fid}", "").strip()
             a = request.form.get(f"a_{fid}", "").strip()
             if h != "" and a != "":
                 try:
                     user_picks[fid] = {"home": int(h), "away": int(a)}
+                    saved_count += 1
                 except ValueError:
                     pass
 
-        jokers_new = [f["id"] for f in fixts
-                      if f["status"] == "upcoming"
-                      and f["id"] not in locked_now
-                      and request.form.get(f"joker_{f['id']}") == "1"]
-        parts[uid]["jokers_usados"] = jokers_new[:jokers_max]
+        # IDs que el usuario puede togglear (upcoming + desbloqueados)
+        unlocked_upcoming = {f["id"] for f in fixts
+                             if f["status"] == "upcoming" and f["id"] not in locked_now}
+        prev_jokers = parts[uid].get("jokers_usados", [])
+        # Preservar jokers de partidos ya cerrados o terminados (no aparecen en el form)
+        preserved = [jid for jid in prev_jokers if jid not in unlocked_upcoming]
+        jokers_new = [fid for fid in unlocked_upcoming
+                      if request.form.get(f"joker_{fid}") == "1"]
+        parts[uid]["jokers_usados"] = (preserved + [j for j in jokers_new if j not in preserved])[:jokers_max]
 
         # Re-leer predictions justo antes de guardar para no pisar datos de otros usuarios
         preds_fresh = _load("predictions")
@@ -420,23 +442,21 @@ def predict():
 
         _save("predictions", preds_fresh)
         _save("participants", parts)
-        if intentos_bloqueados:
-            flash(f"⚠️ No se guardaron picks de partidos ya cerrados: {', '.join(intentos_bloqueados)}", "error")
+        if saved_count > 0:
+            flash(f"✅ {saved_count} prediccion(es) guardadas correctamente.", "ok")
         else:
-            flash("✅ Predicciones guardadas correctamente.", "ok")
+            flash("ℹ️ No hay nuevos marcadores para guardar. Ingresa puntajes en los partidos disponibles.", "error")
         return redirect(url_for("predict"))
 
     upcoming = sorted([f for f in fixts if f["status"] == "upcoming"],
                       key=lambda x: (x.get("date",""), x.get("time","")))
     chile_now = datetime.utcnow() + timedelta(hours=FIXTURE_TZ_OFFSET)
-    print(f"[predict] chile_now={chile_now} utc_now={datetime.utcnow()} tz_offset={FIXTURE_TZ_OFFSET}")
     for f in upcoming:
         f["user_pick"] = user_picks.get(f["id"])
         f["is_joker"] = f["id"] in (parts[uid].get("jokers_usados", []))
         f["is_locked"] = match_is_locked(f["date"], f["time"])
         _, ts = parse_match_dt(f["date"], f["time"])
         f["kickoff_ts"] = ts
-        print(f"[predict] {f['id']} {f['date']} {f['time']} locked={f['is_locked']} ts={ts}")
     already_locked = [fid for fid in user_picks if res.get(fid)]
     torneo_picks = preds.get(uid, {}).get("torneo", {})
     torneo_res   = _load("torneo_results")
@@ -523,16 +543,7 @@ def admin():
                 # server-side: only allow after match has started
                 target = next((f for f in fixts if f["id"] == fid), None)
                 if target:
-                    match_dt_utc, _ = parse_match_dt(target["date"], target["time"])
-                    chile_now = datetime.utcnow() + timedelta(hours=FIXTURE_TZ_OFFSET)
-                    try:
-                        match_local = datetime.strptime(f"{target['date']} {target['time']}", "%Y-%m-%d %H:%M")
-                        not_started = chile_now < match_local
-                    except Exception:
-                        not_started = False
-                    if not_started:
-                        flash(f"⛔ Aún no puedes ingresar el resultado de {fid} — el partido empieza a las {target['time']}.", "error")
-                        return redirect(url_for("admin"))
+                    pass  # admin puede siempre ingresar resultados
                 for f in fixts:
                     if f["id"] == fid:
                         f["status"] = "finished"
@@ -728,6 +739,58 @@ def backup_now():
     except Exception as e:
         return jsonify({"ok": False, "error": str(e)}), 500
 
+@app.route("/api/set-pred", methods=["POST"])
+@admin_required
+def set_pred():
+    data = request.get_json()
+    uid = data.get("uid")
+    match_id = data.get("match_id")
+    home = data.get("home")
+    away = data.get("away")
+    if not all([uid, match_id, home is not None, away is not None]):
+        return jsonify({"ok": False, "error": "Faltan datos"}), 400
+    preds = _load("predictions")
+    if uid not in preds:
+        preds[uid] = {}
+    preds[uid][match_id] = {"home": home, "away": away}
+    _save("predictions", preds)
+    return jsonify({"ok": True, "uid": uid, "match_id": match_id, "score": preds[uid][match_id]})
+
+
+@app.route("/api/set-torneo", methods=["POST"])
+@admin_required
+def set_torneo():
+    data = request.get_json()
+    uid = data.get("uid")
+    if not uid:
+        return jsonify({"ok": False, "error": "Falta uid"}), 400
+    preds = _load("predictions")
+    if uid not in preds:
+        preds[uid] = {}
+    torneo = preds[uid].get("torneo", {})
+    for key in ("campeon", "subcampeon", "goleador", "asistente"):
+        if key in data:
+            torneo[key] = data[key]
+    preds[uid]["torneo"] = torneo
+    _save("predictions", preds)
+    return jsonify({"ok": True, "uid": uid, "torneo": torneo})
+
+
+@app.route("/api/set-joker", methods=["POST"])
+@admin_required
+def set_joker():
+    data = request.get_json()
+    uid = data.get("uid")
+    match_ids = data.get("match_ids")  # lista de IDs, e.g. ["A1","E1"]
+    if not uid or match_ids is None:
+        return jsonify({"ok": False, "error": "Falta uid o match_ids"}), 400
+    parts = _load("participants")
+    if uid not in parts:
+        return jsonify({"ok": False, "error": "uid no encontrado"}), 404
+    parts[uid]["jokers_usados"] = match_ids
+    _save("participants", parts)
+    return jsonify({"ok": True, "uid": uid, "jokers_usados": match_ids})
+
 
 @app.route("/api/picks/<user_id>")
 @admin_required
@@ -739,6 +802,49 @@ def api_picks(user_id):
     return jsonify({"user": user_id,
                     "nombre": parts.get(user_id, {}).get("nombre","?"),
                     "pts": pts, "detalle": detalle})
+
+
+@app.route("/picks")
+@login_required
+def picks_dia():
+    from collections import defaultdict
+    cfg   = _load("config")
+    fixts = fixtures()
+    preds = _load("predictions")
+    parts = _load("participants")
+    res   = _load("results")
+
+    locked = [f for f in fixts if match_is_locked(f["date"], f["time"])]
+    locked.sort(key=lambda f: (f["date"], f["time"]), reverse=True)
+
+    active_parts = {
+        uid: p for uid, p in parts.items()
+        if p.get("activo", True) and not (p.get("es_admin") and uid == "admin")
+    }
+    sorted_uids = sorted(active_parts.keys(),
+                         key=lambda u: active_parts[u].get("nombre", u).lower())
+
+    by_date = defaultdict(list)
+    for f in locked:
+        r = res.get(f["id"], {})
+        picks = []
+        for uid in sorted_uids:
+            pick = preds.get(uid, {}).get(f["id"])
+            if isinstance(pick, dict) and "home" in pick:
+                picks.append({"uid": uid, "home": pick["home"], "away": pick["away"]})
+            else:
+                picks.append({"uid": uid, "home": None, "away": None})
+        by_date[f["date"]].append({
+            "fixture": f,
+            "result_home": r.get("score_home"),
+            "result_away": r.get("score_away"),
+            "picks": picks,
+        })
+
+    sorted_dates = sorted(by_date.keys(), reverse=True)
+    return render_template("picks_dia.html", cfg=cfg,
+                           sorted_dates=sorted_dates, by_date=by_date,
+                           sorted_uids=sorted_uids, parts=active_parts)
 
 
 @app.route("/debug/lock")
