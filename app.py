@@ -171,6 +171,7 @@ def _migrate():
         "lutrera":   {"home": 3, "away": 1},
         "coyarzun":  {"home": 3, "away": 1},
         "fbouthors": {"home": 2, "away": 1},
+        "ngil":      {"home": 1, "away": 1},
     }
     preds = _load("predictions")
     changed = False
