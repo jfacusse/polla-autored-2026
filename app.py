@@ -87,7 +87,7 @@ DEFAULT_CONFIG = {
     "admin_pin": "autored26",
     "pts_exacto": 5,
     "pts_resultado": 3,
-    "jokers_disponibles": 3,
+    "jokers_disponibles": 6,
     "pts_campeon": 25,
     "activa": True,
     "torneo_deadline": "2026-06-11 16:00"
@@ -164,6 +164,13 @@ def _migrate():
         res[R32_1] = {"score_home": 0, "score_away": 1, "home": "South Africa", "away": "Canada"}
         _save("results", res)
         print("[migrate] resultado R32_1 registrado: South Africa 0-1 Canada")
+
+    # ── Migración: aumentar comodines disponibles a 6 ────────────────────────────
+    cfg = _load("config")
+    if cfg.get("jokers_disponibles", 3) < 6:
+        cfg["jokers_disponibles"] = 6
+        _save("config", cfg)
+        print("[migrate] jokers_disponibles aumentado a 6")
 
     # ── Migración: picks manuales jfacusse (partidos no guardados) ─────────────
     MANUAL_PICKS_JFACUSSE = {
