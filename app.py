@@ -113,14 +113,65 @@ def _migrate():
     if changed:
         _save("participants", parts)
 
+    # ── Migración: jfacussse → jfacusse ─────────────────────────────────────
+    preds = _load("predictions")
+    parts = _load("participants")
+
+    if "jfacussse" in preds:
+        src = preds.pop("jfacussse")
+        if "jfacusse" not in preds:
+            preds["jfacusse"] = {}
+        for key, val in src.items():
+            if key not in preds["jfacusse"]:
+                preds["jfacusse"][key] = val
+        _save("predictions", preds)
+        print("[migrate] picks de jfacussse migrados a jfacusse")
+
+    if "jfacussse" in parts:
+        del parts["jfacussse"]
+        _save("participants", parts)
+        print("[migrate] jfacussse eliminado de participants")
+
+    if "jorgefacusse" in parts and parts["jorgefacusse"].get("activo", True):
+        parts["jorgefacusse"]["activo"] = False
+        _save("participants", parts)
+        print("[migrate] jorgefacusse desactivado")
+
+    # ── Migración: picks manuales R32_1 (South Africa 0-1 Canada, 28 jun) ────
+    R32_1 = "R32_1"
+    r32_picks = {
+        "jfacusse":      {"home": 0, "away": 2},
+        "coyarzun":      {"home": 1, "away": 2},
+        "ngil":          {"home": 0, "away": 2},
+        "lutrera":       {"home": 0, "away": 3},
+        "mdelgado":      {"home": 1, "away": 2},
+        "mgandolfo_217": {"home": 1, "away": 2},
+    }
+    preds = _load("predictions")
+    changed = False
+    for uid, pick in r32_picks.items():
+        if uid not in preds:
+            preds[uid] = {}
+        if R32_1 not in preds[uid]:
+            preds[uid][R32_1] = pick
+            changed = True
+    if changed:
+        _save("predictions", preds)
+        print(f"[migrate] picks R32_1 registrados para {sum(1 for uid in r32_picks if R32_1 not in _load('predictions').get(uid, {}))} usuarios")
+
+    res = _load("results")
+    if R32_1 not in res:
+        res[R32_1] = {"score_home": 0, "score_away": 1, "home": "South Africa", "away": "Canada"}
+        _save("results", res)
+        print("[migrate] resultado R32_1 registrado: South Africa 0-1 Canada")
+
 bk.restore()
 _migrate()
 
 def _seed_torneo_picks():
     """Inyecta picks del torneo faltantes para usuarios registrados."""
     SEEDS = {
-        "jfacussse": {"campeon": "Francia", "goleador": "Mbappe"},
-        "jfacusse":  {"campeon": "Francia", "goleador": "Mbappe"},
+        "jfacusse": {"campeon": "Francia", "goleador": "Mbappe"},
     }
     preds = _load("predictions")
     changed = False

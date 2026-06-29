@@ -12,7 +12,9 @@ NAME_MAP = {
     "Cote d'Ivoire": "Ivory Coast",
     "Congo DR": "DR Congo",
     "Bosnia-Herzegovina": "Bosnia",
+    "Bosnia & Herzegovina": "Bosnia",
     "Korea Republic": "South Korea",
+    "Curaçao": "Curacao",
 }
 
 def _load(name):

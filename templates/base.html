@@ -130,6 +130,7 @@ tr:hover td{background:var(--dark3)}
     {% if session.user %}
     <a href="/predecir" class="nav-link {% if request.path=='/predecir' %}active{% endif %}">🎯 Predecir</a>
     <a href="/mis-picks" class="nav-link {% if request.path=='/mis-picks' %}active{% endif %}">📋 Mis picks</a>
+    <a href="/picks" class="nav-link {% if request.path=='/picks' %}active{% endif %}">👀 Ver picks</a>
     {% endif %}
     {% if session.is_admin %}
     <a href="/admin" class="nav-link {% if request.path=='/admin' %}active{% endif %}">🔑 Admin</a>

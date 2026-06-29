@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block title %}Picks del día — Polla AutoRed 2026{% endblock %}
+{% block content %}
+<style>
+.pd-section{margin-bottom:32px}
+.pd-date{font-size:.78rem;font-weight:800;color:var(--ar);text-transform:uppercase;
+  letter-spacing:.08em;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.pd-date::after{content:'';flex:1;height:1px;background:var(--border)}
+.pd-match{background:var(--card);border:1px solid var(--border);border-radius:14px;
+  margin-bottom:10px;overflow:hidden}
+.pd-match-header{display:flex;align-items:center;justify-content:space-between;
+  padding:12px 16px;background:var(--dark2);border-bottom:1px solid var(--border)}
+.pd-match-info{display:flex;align-items:center;gap:10px}
+.pd-group-badge{font-size:.68rem;font-weight:800;color:var(--ar);background:var(--dark3);
+  border:1px solid var(--border);border-radius:6px;padding:2px 8px}
+.pd-teams{font-size:.95rem;font-weight:700;color:var(--white)}
+.pd-teams .flag{font-size:1.1rem}
+.pd-time{font-size:.72rem;color:var(--muted)}
+.pd-result{font-size:1.1rem;font-weight:900;color:var(--gold);
+  background:var(--dark3);border:1px solid var(--border);border-radius:8px;padding:4px 14px}
+.pd-result.pending{color:var(--muted);font-size:.75rem;font-weight:600}
+.pd-picks-grid{display:flex;flex-wrap:wrap;gap:8px;padding:12px 16px}
+.pd-pick-card{background:var(--dark3);border:1px solid var(--border);border-radius:10px;
+  padding:8px 14px;min-width:130px;display:flex;flex-direction:column;gap:3px;
+  position:relative;transition:border-color .2s}
+.pd-pick-card.exacto{border-color:var(--green)}
+.pd-pick-card.resultado{border-color:#558b2f}
+.pd-pick-card.fallo{border-color:var(--red)}
+.pd-pick-name{font-size:.7rem;font-weight:700;color:var(--ar);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pd-pick-score{font-size:1.2rem;font-weight:900;color:var(--white);line-height:1}
+.pd-pick-score.no-pick{font-size:.75rem;color:var(--muted);font-weight:400;padding-top:4px}
+.pd-pick-pts{font-size:.65rem;font-weight:700;position:absolute;top:6px;right:8px}
+.pts-exacto{color:var(--green)}
+.pts-resultado{color:#8bc34a}
+.pts-fallo{color:var(--red)}
+.pd-no-locked{text-align:center;padding:48px 24px;color:var(--muted);font-size:.95rem}
+</style>
+
+<h2 style="font-size:1.3rem;font-weight:900;margin-bottom:4px">👀 Picks del día</h2>
+<p style="color:var(--muted);font-size:.82rem;margin-bottom:24px">
+  Solo se muestran partidos ya iniciados. Los picks se revelan al momento del kickoff.
+</p>
+
+{% if not sorted_dates %}
+<div class="pd-no-locked">
+  No hay partidos iniciados todavía.<br>
+  <span style="font-size:.78rem">Los picks se revelan al inicio de cada partido.</span>
+</div>
+{% endif %}
+
+{% for date in sorted_dates %}
+<div class="pd-section">
+  <div class="pd-date">
+    {% set parts_date = date.split('-') %}
+    {{ parts_date[2] }}/{{ parts_date[1] }}/{{ parts_date[0] }}
+  </div>
+
+  {% for m in by_date[date] %}
+  {% set f = m.fixture %}
+  <div class="pd-match">
+    <div class="pd-match-header">
+      <div class="pd-match-info">
+        <span class="pd-group-badge">{% if f.group == 'R32' %}Ronda 32{% else %}Grupo {{ f.group }}{% endif %}</span>
+        <span class="pd-teams">
+          {{ f.home_flag or '' }} {{ f.home }} vs {{ f.away }} {{ f.away_flag or '' }}
+        </span>
+        <span class="pd-time">{{ f.time }}</span>
+      </div>
+      {% if m.result_home is not none %}
+        <span class="pd-result">{{ m.result_home }} – {{ m.result_away }}</span>
+      {% else %}
+        <span class="pd-result pending">en curso / pendiente</span>
+      {% endif %}
+    </div>
+
+    <div class="pd-picks-grid">
+      {% for pick in m.picks %}
+      {% set uid = pick.uid %}
+      {% set nombre = parts[uid].nombre if parts[uid].nombre else uid %}
+      {% set display = nombre.split('@')[0] %}
+
+      {% if pick.home is not none and m.result_home is not none %}
+        {% if pick.home == m.result_home and pick.away == m.result_away %}
+          {% set card_cls = 'exacto' %}{% set pts_lbl = '+5' %}{% set pts_cls = 'pts-exacto' %}
+        {% elif (pick.home > pick.away and m.result_home > m.result_away) or
+                (pick.home == pick.away and m.result_home == m.result_away) or
+                (pick.home < pick.away and m.result_home < m.result_away) %}
+          {% set card_cls = 'resultado' %}{% set pts_lbl = '+3' %}{% set pts_cls = 'pts-resultado' %}
+        {% else %}
+          {% set card_cls = 'fallo' %}{% set pts_lbl = '+0' %}{% set pts_cls = 'pts-fallo' %}
+        {% endif %}
+      {% else %}
+        {% set card_cls = '' %}{% set pts_lbl = '' %}{% set pts_cls = '' %}
+      {% endif %}
+
+      <div class="pd-pick-card {{ card_cls }}">
+        {% if pts_lbl %}
+          <span class="pd-pick-pts {{ pts_cls }}">{{ pts_lbl }}</span>
+        {% endif %}
+        <span class="pd-pick-name">{{ display }}</span>
+        {% if pick.home is not none %}
+          <span class="pd-pick-score">{{ pick.home }} – {{ pick.away }}</span>
+        {% else %}
+          <span class="pd-pick-score no-pick">sin pick</span>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endfor %}
+{% endblock %}
