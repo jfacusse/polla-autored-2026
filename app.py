@@ -132,10 +132,10 @@ def _migrate():
         _save("participants", parts)
         print("[migrate] jfacussse eliminado de participants")
 
-    if "jorgefacusse" in parts and parts["jorgefacusse"].get("activo", True):
-        parts["jorgefacusse"]["activo"] = False
+    if "jorgefacusse" in parts:
+        del parts["jorgefacusse"]
         _save("participants", parts)
-        print("[migrate] jorgefacusse desactivado")
+        print("[migrate] jorgefacusse eliminado")
 
     # ── Migración: picks manuales R32_1 (South Africa 0-1 Canada, 28 jun) ────
     R32_1 = "R32_1"
