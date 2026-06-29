@@ -165,6 +165,41 @@ def _migrate():
         _save("results", res)
         print("[migrate] resultado R32_1 registrado: South Africa 0-1 Canada")
 
+    # ── Migración: picks manuales jfacusse (partidos no guardados) ─────────────
+    MANUAL_PICKS_JFACUSSE = {
+        "F3":  {"pick": {"home": 2, "away": 0}, "result": {"score_home": 5, "score_away": 1, "home": "Netherlands", "away": "Sweden"}},
+        "E4":  {"pick": {"home": 3, "away": 0}, "result": {"score_home": 0, "score_away": 0, "home": "Ecuador", "away": "Curacao"}},
+        "F4":  {"pick": {"home": 0, "away": 2}, "result": {"score_home": 0, "score_away": 4, "home": "Tunisia", "away": "Japan"}},
+        "G3":  {"pick": {"home": 2, "away": 1}, "result": {"score_home": 0, "score_away": 0, "home": "Belgium", "away": "Iran"}},
+        "H3":  {"pick": {"home": 3, "away": 0}, "result": {"score_home": 4, "score_away": 0, "home": "Spain", "away": "Saudi Arabia"}},
+        "G4":  {"pick": {"home": 1, "away": 2}, "result": {"score_home": 1, "score_away": 3, "home": "New Zealand", "away": "Egypt"}},
+        "H4":  {"pick": {"home": 2, "away": 0}, "result": {"score_home": 2, "score_away": 2, "home": "Uruguay", "away": "Cape Verde"}},
+        "J5":  {"pick": {"home": 1, "away": 1}, "result": {"score_home": 3, "score_away": 3, "home": "Algeria", "away": "Austria"}},
+        "J6":  {"pick": {"home": 0, "away": 3}, "result": {"score_home": 1, "score_away": 3, "home": "Jordan", "away": "Argentina"}},
+        "K5":  {"pick": {"home": 2, "away": 2}, "result": {"score_home": 0, "score_away": 0, "home": "Colombia", "away": "Portugal"}},
+        "K6":  {"pick": {"home": 1, "away": 0}, "result": {"score_home": 3, "score_away": 1, "home": "DR Congo", "away": "Uzbekistan"}},
+        "L5":  {"pick": {"home": 0, "away": 3}, "result": {"score_home": 0, "score_away": 2, "home": "Panama", "away": "England"}},
+        "L6":  {"pick": {"home": 2, "away": 1}, "result": {"score_home": 2, "score_away": 1, "home": "Croatia", "away": "Ghana"}},
+    }
+    preds = _load("predictions")
+    res   = _load("results")
+    p_changed = r_changed = False
+    if "jfacusse" not in preds:
+        preds["jfacusse"] = {}
+    for fid, data in MANUAL_PICKS_JFACUSSE.items():
+        if fid not in preds["jfacusse"]:
+            preds["jfacusse"][fid] = data["pick"]
+            p_changed = True
+        if fid not in res:
+            res[fid] = data["result"]
+            r_changed = True
+    if p_changed:
+        _save("predictions", preds)
+        print("[migrate] picks manuales jfacusse agregados")
+    if r_changed:
+        _save("results", res)
+        print("[migrate] resultados manuales agregados")
+
 bk.restore()
 _migrate()
 
