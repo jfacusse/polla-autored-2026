@@ -498,6 +498,8 @@ def predict():
         # guardar picks de partidos (solo los que aún no cerraron)
         locked_now = set()
         saved_count = 0
+        upcoming_ids = [f["id"] for f in fixts if f["status"] == "upcoming"]
+        print(f"[predict] POST uid={uid} upcoming={upcoming_ids}")
         for f in fixts:
             if f["status"] != "upcoming":
                 continue
@@ -507,6 +509,7 @@ def predict():
             fid = f["id"]
             h = request.form.get(f"h_{fid}", "").strip()
             a = request.form.get(f"a_{fid}", "").strip()
+            print(f"[predict]   {fid}: h={repr(h)} a={repr(a)}")
             if h != "" and a != "":
                 try:
                     user_picks[fid] = {"home": int(h), "away": int(a)}
