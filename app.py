@@ -137,6 +137,13 @@ def _migrate():
         _save("participants", parts)
         print("[migrate] jorgefacusse eliminado")
 
+    if parts.get("jfacusse", {}).get("penalty_pts", 0) != 15:
+        if "jfacusse" not in parts:
+            parts["jfacusse"] = {}
+        parts["jfacusse"]["penalty_pts"] = 15
+        _save("participants", parts)
+        print("[migrate] penalty_pts=15 aplicado a jfacusse")
+
     # ── Migración: picks manuales R32_1 (South Africa 0-1 Canada, 28 jun) ────
     R32_1 = "R32_1"
     r32_picks = {
@@ -341,6 +348,9 @@ def calcular_puntos(user_id):
         pick   = torneo_picks.get(key, "").strip().lower()
         if winner and pick and pick == winner.strip().lower():
             total += bonus
+
+    penalty = parts.get(user_id, {}).get("penalty_pts", 0)
+    total -= penalty
 
     return total, detalle
 
