@@ -165,6 +165,24 @@ def _migrate():
         _save("results", res)
         print("[migrate] resultado R32_1 registrado: South Africa 0-1 Canada")
 
+    # ── Migración: picks manuales R32_2 (Brazil vs Japan, 29 jun) ───────────────
+    R32_2 = "R32_2"
+    r32_2_picks = {
+        "lutrera":  {"home": 3, "away": 1},
+        "coyarzun": {"home": 3, "away": 1},
+    }
+    preds = _load("predictions")
+    changed = False
+    for uid, pick in r32_2_picks.items():
+        if uid not in preds:
+            preds[uid] = {}
+        if R32_2 not in preds[uid]:
+            preds[uid][R32_2] = pick
+            changed = True
+    if changed:
+        _save("predictions", preds)
+        print("[migrate] picks R32_2 registrados: lutrera y coyarzun 3-1 Brazil")
+
     # ── Migración: aumentar comodines disponibles a 6 ────────────────────────────
     cfg = _load("config")
     if cfg.get("jokers_disponibles", 3) < 6:
