@@ -191,6 +191,16 @@ def _migrate():
         _save("predictions", preds)
         print("[migrate] picks R32_2 registrados: lutrera 3-1, coyarzun 3-1, fbouthors 2-1 Brazil")
 
+    # ── Migración: pick manual R32_4 (Netherlands vs Morocco, 29 jun) ──────────
+    R32_4 = "R32_4"
+    preds = _load("predictions")
+    if "lutrera" not in preds:
+        preds["lutrera"] = {}
+    if R32_4 not in preds["lutrera"]:
+        preds["lutrera"][R32_4] = {"home": 1, "away": 1}
+        _save("predictions", preds)
+        print("[migrate] pick R32_4 registrado: lutrera 1-1")
+
     # ── Migración: aumentar comodines disponibles a 6 ────────────────────────────
     cfg = _load("config")
     if cfg.get("jokers_disponibles", 3) < 6:
