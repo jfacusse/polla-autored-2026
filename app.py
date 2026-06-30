@@ -137,12 +137,10 @@ def _migrate():
         _save("participants", parts)
         print("[migrate] jorgefacusse eliminado")
 
-    if parts.get("jfacusse", {}).get("penalty_pts", 0) != 15:
-        if "jfacusse" not in parts:
-            parts["jfacusse"] = {}
-        parts["jfacusse"]["penalty_pts"] = 15
+    if parts.get("jfacusse", {}).get("penalty_pts", 0) != 0:
+        parts["jfacusse"]["penalty_pts"] = 0
         _save("participants", parts)
-        print("[migrate] penalty_pts=15 aplicado a jfacusse")
+        print("[migrate] penalty_pts reseteado a 0 para jfacusse")
 
     # ── Migración: picks manuales R32_1 (South Africa 0-1 Canada, 28 jun) ────
     R32_1 = "R32_1"
