@@ -223,6 +223,7 @@ def _migrate():
         "K6":  {"pick": {"home": 1, "away": 0}, "result": {"score_home": 3, "score_away": 1, "home": "DR Congo", "away": "Uzbekistan"}},
         "L5":  {"pick": {"home": 0, "away": 3}, "result": {"score_home": 0, "score_away": 2, "home": "Panama", "away": "England"}},
         "L6":  {"pick": {"home": 2, "away": 1}, "result": {"score_home": 2, "score_away": 1, "home": "Croatia", "away": "Ghana"}},
+        "R32_16": {"pick": {"home": 2, "away": 1}, "result": {"score_home": None, "score_away": None, "home": "Colombia", "away": "Ghana"}},
     }
     preds = _load("predictions")
     res   = _load("results")
