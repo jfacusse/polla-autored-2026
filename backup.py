@@ -102,10 +102,17 @@ def restore():
                 except Exception:
                     pass
 
-            # Para predictions: merge — conservar lo que haya en local + lo del Gist
+            # Para predictions: merge profundo — Gist gana a nivel de pick individual
             if name == "predictions":
-                merged = dict(remote_data)
-                merged.update(local_data)  # local gana si hay conflicto
+                merged = dict(local_data)
+                for uid, gist_picks in remote_data.items():
+                    if uid not in merged:
+                        merged[uid] = gist_picks
+                    elif isinstance(gist_picks, dict) and isinstance(merged[uid], dict):
+                        # Gist aporta picks que no existen en local
+                        base = dict(gist_picks)
+                        base.update(merged[uid])  # local gana si el pick ya existe
+                        merged[uid] = base
                 if merged != local_data:
                     local_file.write_text(json.dumps(merged, indent=2, ensure_ascii=False))
                     restored += 1
