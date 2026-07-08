@@ -27,7 +27,7 @@
     {% for r in rows %}
     <tr>
       <td style="font-weight:600">{{ r.home }} vs {{ r.away }}
-        <span style="color:var(--muted);font-size:.72rem;margin-left:4px">[{% if r.group == 'R32' %}R32{% else %}Gr.{{ r.group }}{% endif %}]</span>
+        <span style="color:var(--muted);font-size:.72rem;margin-left:4px">[{% if r.group == 'R32' %}R32{% elif r.group == 'R16' %}R16{% elif r.group == 'QF' %}QF{% else %}Gr.{{ r.group }}{% endif %}]</span>
       </td>
       <td style="color:var(--muted)">{{ r.date }}</td>
       <td style="font-weight:700;color:var(--ar)">

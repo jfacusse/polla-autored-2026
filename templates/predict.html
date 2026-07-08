@@ -237,7 +237,7 @@
 
     <!-- header -->
     <div class="match-meta">
-      <span class="match-group">{% if f.group == 'R32' %}Ronda de 32{% else %}Grupo {{ f.group }}{% endif %} · {{ f.id }}</span>
+      <span class="match-group">{% if f.group == 'R32' %}Ronda de 32{% elif f.group == 'R16' %}Octavos de Final{% elif f.group == 'QF' %}Cuartos de Final{% else %}Grupo {{ f.group }}{% endif %} · {{ f.id }}</span>
       <div style="display:flex;align-items:center;gap:7px">
         <span class="match-date">{{ f.date }} {{ f.time }}</span>
         {% if is_locked %}

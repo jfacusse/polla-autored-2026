@@ -60,7 +60,7 @@
   <div class="pd-match">
     <div class="pd-match-header">
       <div class="pd-match-info">
-        <span class="pd-group-badge">{% if f.group == 'R32' %}Ronda 32{% else %}Grupo {{ f.group }}{% endif %}</span>
+        <span class="pd-group-badge">{% if f.group == 'R32' %}Ronda 32{% elif f.group == 'R16' %}Octavos{% elif f.group == 'QF' %}Cuartos{% else %}Grupo {{ f.group }}{% endif %}</span>
         <span class="pd-teams">
           {{ f.home_flag or '' }} {{ f.home }} vs {{ f.away }} {{ f.away_flag or '' }}
         </span>
