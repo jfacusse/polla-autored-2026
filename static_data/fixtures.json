@@ -1698,5 +1698,39 @@
     "away_flag": "🇨🇭",
     "home_code": "ar",
     "away_code": "ch"
+  },
+  {
+    "id": "SF_1",
+    "group": "SF",
+    "round": 4,
+    "date": "2026-07-14",
+    "time": "15:00",
+    "home": "France",
+    "away": "Spain",
+    "venue": "AT&T Stadium, Arlington",
+    "score_home": null,
+    "score_away": null,
+    "status": "upcoming",
+    "home_flag": "🇫🇷",
+    "away_flag": "🇪🇸",
+    "home_code": "fr",
+    "away_code": "es"
+  },
+  {
+    "id": "SF_2",
+    "group": "SF",
+    "round": 4,
+    "date": "2026-07-15",
+    "time": "15:00",
+    "home": "England",
+    "away": "Argentina",
+    "venue": "Mercedes-Benz Stadium, Atlanta",
+    "score_home": null,
+    "score_away": null,
+    "status": "upcoming",
+    "home_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "away_flag": "🇦🇷",
+    "home_code": "gb-eng",
+    "away_code": "ar"
   }
 ]
