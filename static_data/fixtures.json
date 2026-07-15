@@ -1732,5 +1732,22 @@
     "away_flag": "🇦🇷",
     "home_code": "gb-eng",
     "away_code": "ar"
+  },
+  {
+    "id": "FINAL",
+    "group": "Final",
+    "round": 7,
+    "date": "2026-07-19",
+    "time": "15:00",
+    "home": "Spain",
+    "away": "Argentina",
+    "venue": "MetLife Stadium, Nueva Jersey",
+    "score_home": null,
+    "score_away": null,
+    "status": "upcoming",
+    "home_flag": "🇪🇸",
+    "away_flag": "🇦🇷",
+    "home_code": "es",
+    "away_code": "ar"
   }
 ]
