@@ -244,6 +244,15 @@ def _migrate():
         _save("results", res)
         print("[migrate] resultados manuales agregados")
 
+    # ── Migración: pick manual mdelgado SF_2 (no se guardó, sin comodín) ─────
+    preds = _load("predictions")
+    if "mdelgado" not in preds:
+        preds["mdelgado"] = {}
+    if "SF_2" not in preds["mdelgado"]:
+        preds["mdelgado"]["SF_2"] = {"home": 1, "away": 2}
+        _save("predictions", preds)
+        print("[migrate] pick manual SF_2 agregado a mdelgado: 1-2 (Argentina gana)")
+
 bk.restore()
 _migrate()
 
