@@ -158,7 +158,7 @@
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px">
     {% for f in recent %}
     <div style="background:var(--dark2);border:1px solid var(--border);border-radius:10px;padding:12px">
-      <div style="font-size:.65rem;color:var(--muted);margin-bottom:8px">{% if f.group == 'R32' %}Ronda 32{% elif f.group == 'R16' %}Octavos{% elif f.group == 'QF' %}Cuartos{% elif f.group == 'SF' %}Semifinal{% elif f.group == 'Final' %}🏆 Final{% else %}Grupo {{ f.group }}{% endif %} · {{ f.date }}</div>
+      <div style="font-size:.65rem;color:var(--muted);margin-bottom:8px">{% if f.group == 'R32' %}Ronda 32{% elif f.group == 'R16' %}Octavos{% elif f.group == 'QF' %}Cuartos{% elif f.group == 'SF' %}Semifinal{% elif f.group == '3er Puesto' %}🥉 3er Puesto{% elif f.group == 'Final' %}🏆 Final{% else %}Grupo {{ f.group }}{% endif %} · {{ f.date }}</div>
       <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
         <div style="display:flex;align-items:center;gap:6px;flex:1">
           <img src="https://flagcdn.com/24x18/{{ f.home_code }}.png" style="height:16px;border-radius:2px" alt="">
@@ -190,7 +190,7 @@
     {% for f in today_matches %}
     <div style="background:var(--dark2);border:1px solid {% if f.status=='finished' %}rgba(0,230,118,.3){% else %}var(--ar){% endif %};
       border-radius:10px;padding:12px;margin-bottom:8px">
-      <div style="font-size:.65rem;color:var(--muted);margin-bottom:8px">{{ f.time }} · {% if f.group == 'R32' %}Ronda 32{% elif f.group == 'R16' %}Octavos{% elif f.group == 'QF' %}Cuartos{% elif f.group == 'SF' %}Semifinal{% elif f.group == 'Final' %}🏆 Final{% else %}Grupo {{ f.group }}{% endif %}</div>
+      <div style="font-size:.65rem;color:var(--muted);margin-bottom:8px">{{ f.time }} · {% if f.group == 'R32' %}Ronda 32{% elif f.group == 'R16' %}Octavos{% elif f.group == 'QF' %}Cuartos{% elif f.group == 'SF' %}Semifinal{% elif f.group == '3er Puesto' %}🥉 3er Puesto{% elif f.group == 'Final' %}🏆 Final{% else %}Grupo {{ f.group }}{% endif %}</div>
       <div style="display:flex;align-items:center;gap:8px">
         <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1">
           <img src="https://flagcdn.com/32x24/{{ f.home_code }}.png" style="height:20px;border-radius:2px" alt="">

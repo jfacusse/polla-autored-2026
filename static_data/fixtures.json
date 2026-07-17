@@ -1734,6 +1734,23 @@
     "away_code": "ar"
   },
   {
+    "id": "TERCERO",
+    "group": "3er Puesto",
+    "round": 7,
+    "date": "2026-07-18",
+    "time": "17:00",
+    "home": "France",
+    "away": "England",
+    "venue": "Hard Rock Stadium, Miami",
+    "score_home": null,
+    "score_away": null,
+    "status": "upcoming",
+    "home_flag": "🇫🇷",
+    "away_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "home_code": "fr",
+    "away_code": "gb-eng"
+  },
+  {
     "id": "FINAL",
     "group": "Final",
     "round": 7,
