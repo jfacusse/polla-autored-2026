@@ -253,6 +253,47 @@ def _migrate():
         _save("predictions", preds)
         print("[migrate] pick manual SF_2 agregado a mdelgado: 1-2 (Argentina gana)")
 
+    # ── Migración: resultados finales Mundial 2026 ───────────────────────────
+    RESULTADOS_FINALES = {
+        "SF_1":    {"score_home": 0, "score_away": 2, "home": "France",   "away": "Spain"},
+        "SF_2":    {"score_home": 1, "score_away": 2, "home": "England",  "away": "Argentina"},
+        "TERCERO": {"score_home": 4, "score_away": 6, "home": "France",   "away": "England"},
+        "FINAL":   {"score_home": 1, "score_away": 0, "home": "Spain",    "away": "Argentina"},
+    }
+    res = _load("results")
+    fixts_path = BASE / "static_data" / "fixtures.json"
+    fixts_data = json.loads(fixts_path.read_text()) if fixts_path.exists() else []
+    r_changed = f_changed = False
+    for fid, result in RESULTADOS_FINALES.items():
+        if fid not in res:
+            res[fid] = result
+            r_changed = True
+        for f in fixts_data:
+            if f["id"] == fid and f.get("status") != "finished":
+                f["status"] = "finished"
+                f["score_home"] = result["score_home"]
+                f["score_away"] = result["score_away"]
+                f_changed = True
+    if r_changed:
+        _save("results", res)
+        print("[migrate] resultados finales Mundial 2026 guardados")
+    if f_changed:
+        fixts_path.write_text(json.dumps(fixts_data, indent=2, ensure_ascii=False))
+        print("[migrate] fixtures marcados como finished")
+
+    # ── Migración: ganador torneo y goleador ────────────────────────────────
+    torneo_res = _load("torneo_results")
+    changed = False
+    if not torneo_res.get("campeon"):
+        torneo_res["campeon"] = "España"
+        changed = True
+    if not torneo_res.get("goleador"):
+        torneo_res["goleador"] = "Mbappe"
+        changed = True
+    if changed:
+        _save("torneo_results", torneo_res)
+        print("[migrate] torneo_results: campeon=España, goleador=Mbappe")
+
 bk.restore()
 _migrate()
 
